@@ -6,20 +6,23 @@ import com.aspose.pdf.DocumentInfo;
 public class SetPDFFileInformation {
 
 	public static void main(String[] args) {
-
 		// open document
 		Document doc = new Document("Original.pdf");
-		// get document information
-		DocumentInfo docInfo = doc.getInfo();
-		// set Author information
-		docInfo.setAuthor("Aspose.Pdf for java");
-		docInfo.setCreationDate(new java.util.Date());
-		docInfo.setKeywords("Aspose.Pdf, DOM, API");
-		docInfo.setModDate(new java.util.Date());
-		docInfo.setSubject("PDF Information");
-		docInfo.setTitle("Setting PDF Document Information");
-		// save update document with new information
-		doc.save("Updated_Information.pdf");
+		try {
+			// get document information
+			DocumentInfo docInfo = doc.getInfo();
+			// set Author information
+			docInfo.setAuthor("Aspose.Pdf for java");
+			docInfo.setCreationDate(new java.util.Date());
+			docInfo.setKeywords("Aspose.Pdf, DOM, API");
+			docInfo.setModDate(new java.util.Date());
+			docInfo.setSubject("PDF Information");
+			docInfo.setTitle("Setting PDF Document Information");
+			// save update document with new information
+			doc.save("Updated_Information.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
-
 }
