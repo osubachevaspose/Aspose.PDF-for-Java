@@ -15,7 +15,7 @@ Directory | Description
 
 ## `aspose.pdf` Package Features
 
-### PDF Document Featres
+### PDF Document Features
 
 - Set basic information (e.g. author, creator) of the PDF document.
 - Configure PDF Page properties (e.g. width, height, cropbox, bleedbox etc.).

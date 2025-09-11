@@ -18,7 +18,7 @@ public class ConvertPDFPagesToTIFFImage {
 
 	public static void convertAllPDFPagesToTIFFImages() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		
 		// Create stream object to save the output image
 		java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image.tiff");
@@ -38,7 +38,7 @@ public class ConvertPDFPagesToTIFFImage {
 		// Create TiffDevice object with particular resolution
 		TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 		// Convert a all pages of PDF file to TIFF format
-		tiffDevice.process(pdfDocument, imageStream);
+		tiffDevice.process(doc, imageStream);
 		
 		// Close the stream
 		imageStream.close();
@@ -46,7 +46,7 @@ public class ConvertPDFPagesToTIFFImage {
 
 	public static void convertOnePageToTIFF() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		
 		// Create stream object to save the output image
 		java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image.tiff");
@@ -66,7 +66,7 @@ public class ConvertPDFPagesToTIFFImage {
 		// Create TiffDevice object with particular resolution
 		TiffDevice tiffDevice = new TiffDevice(resolution, tiffSettings);
 		// Convert a particular page (Page 1) and save the image to stream
-		tiffDevice.process(pdfDocument, 1, 1, imageStream);
+		tiffDevice.process(doc, 1, 1, imageStream);
 		
 		// Close the stream
 		imageStream.close();

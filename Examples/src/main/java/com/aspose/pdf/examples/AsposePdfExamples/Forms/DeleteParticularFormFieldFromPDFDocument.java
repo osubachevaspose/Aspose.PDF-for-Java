@@ -6,11 +6,11 @@ public class DeleteParticularFormFieldFromPDFDocument {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Delete a named field by name
-		pdfDocument.getForm().delete("textbox1");
+		doc.getForm().delete("textbox1");
 		// Save the modified PDF
-		pdfDocument.save("output.pdf");
+		doc.save("output.pdf");
 	}
 
 }

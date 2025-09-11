@@ -6,10 +6,15 @@ public class GetXMPMetadataFromPDFFile {
 
 	public static void main(String[] args) {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
-		// Get properties
-		System.out.println("xmp:CreateDate: " + pdfDocument.getMetadata().get_Item("xmp:CreateDate"));
-		System.out.println("xmp:Nickname: " + pdfDocument.getMetadata().get_Item("xmp:Nickname"));
-		System.out.println("xmp:CustomProperty: " + pdfDocument.getMetadata().get_Item("xmp:CustomProperty"));
+		Document doc = new Document("input.pdf");
+		try {
+			// Get properties
+			System.out.println("xmp:CreateDate: " + doc.getMetadata().get_Item("xmp:CreateDate"));
+			System.out.println("xmp:Nickname: " + doc.getMetadata().get_Item("xmp:Nickname"));
+			System.out.println("xmp:CustomProperty: " + doc.getMetadata().get_Item("xmp:CustomProperty"));
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 }

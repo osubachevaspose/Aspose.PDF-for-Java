@@ -8,19 +8,20 @@ public class HelloWorld {
 
 	public static void main(String[] args) {
 		// TODO Auto-generated method stub
-		//ExStart: HelloWorld
+		// ExStart: HelloWorld
 		// Initialize document object
-		Document document = new Document();
-		 
-		//Add page
-		Page page = document.getPages().add();
-		 
-		// Add text to new page
-		page.getParagraphs().add(new TextFragment("Hello World!"));
-		 
-		// Save updated PDF
-		document.save("HelloWorld_out.pdf");
-		//ExEnd: HelloWorld
+		Document doc = new Document();
+		try {
+			// Add page
+			Page page = doc.getPages().add();
+			// Add text to new page
+			page.getParagraphs().add(new TextFragment("Hello World!"));
+			// Save updated PDF
+			doc.save("HelloWorld_out.pdf");
+			// ExEnd: HelloWorld
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
-
 }

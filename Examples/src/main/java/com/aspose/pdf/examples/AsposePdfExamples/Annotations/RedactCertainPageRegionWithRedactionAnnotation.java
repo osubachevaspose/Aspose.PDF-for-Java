@@ -13,6 +13,7 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/redactCertainPageRegionWithRedactionAnnotation/";
@@ -32,28 +33,37 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
     }
 
     public static void redactCertainPageRegionWithRedactionAnnotation(String dataDir, String outputDir) {
-        //ExStart: RedactCertainPageRegionWithRedactionAnnotation
+        // ExStart: RedactCertainPageRegionWithRedactionAnnotation
         Document doc = new Document(dataDir + "input.pdf");
-        Rectangle rect = new Rectangle(200, 500, 300, 600);
-        RedactionAnnotation annot = new RedactionAnnotation(doc.getPages().get_Item(1), rect);
-        annot.setFillColor(Color.getBlack());
-        annot.setBorderColor(Color.getYellow());
-        annot.setColor(Color.getBlue());
-        annot.setFontSize(20);
-        annot.setOverlayText("REDACTED");
-        annot.setTextAlignment(HorizontalAlignment.Center);
-        annot.setRepeat(true);
-        doc.getPages().get_Item(1).getAnnotations().add(annot);
-        doc.save(outputDir + "Redaction_out.pdf");
-        //ExEnd: RedactCertainPageRegionWithRedactionAnnotation
+        try {
+            Rectangle rect = new Rectangle(200, 500, 300, 600);
+            RedactionAnnotation annot = new RedactionAnnotation(doc.getPages().get_Item(1), rect);
+            annot.setFillColor(Color.getBlack());
+            annot.setBorderColor(Color.getYellow());
+            annot.setColor(Color.getBlue());
+            annot.setFontSize(20);
+            annot.setOverlayText("REDACTED");
+            annot.setTextAlignment(HorizontalAlignment.Center);
+            annot.setRepeat(true);
+            doc.getPages().get_Item(1).getAnnotations().add(annot);
+            doc.save(outputDir + "Redaction_out.pdf");
+            // ExEnd: RedactCertainPageRegionWithRedactionAnnotation
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 
     public static void facadesApproach(String dataDir, String outputDir) {
         PdfAnnotationEditor editor = new PdfAnnotationEditor();
-        editor.bindPdf(dataDir + "input.pdf");
-        // redact certain page region
-        editor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.WHITE);
-        editor.save(outputDir + "Redaction_out.pdf");
+        try {
+            editor.bindPdf(dataDir + "input.pdf");
+            // redact certain page region
+            editor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.WHITE);
+            editor.save(outputDir + "Redaction_out.pdf");
+        } finally {
+            if (editor != null)
+                editor.close();
+        }
     }
-
 }

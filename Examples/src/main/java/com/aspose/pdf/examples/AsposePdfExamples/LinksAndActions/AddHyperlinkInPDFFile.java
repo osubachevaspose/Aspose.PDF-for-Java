@@ -16,6 +16,7 @@ public class AddHyperlinkInPDFFile {
 	public static void main(String[] args) {
 		runExamples();
 	}
+	
 	public static void runExamples() {
 		// The paths to resources and output directories.
 		String testID = "com/aspose/pdf/examples/AsposePdf/LinksAndActions/";

@@ -7,14 +7,13 @@ import com.aspose.pdf.FloatingBox;
 import com.aspose.pdf.Image;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
-import com.aspose.pdf.examples.AsposePdfExamples.Tables.AddTableInExistingPDFDocument;
-
 
 public class AddImageStampAsBackgroundInFloatingBox {
 
         public static void main(String[] args) {
                 runExamples();
         }
+
         public static void runExamples() {
                 // The paths to resources and output directories.
                 String testID = "com/aspose/pdf/examples/AsposePdf/Stamps-Watermarks/";
@@ -26,6 +25,7 @@ public class AddImageStampAsBackgroundInFloatingBox {
                 addImageStampAsBackgroundInFloatingBox(dataDir, outputDir);
                 System.out.println("Example addImageStampAsBackgroundInFloatingBox end");
         }
+
 	public static void addImageStampAsBackgroundInFloatingBox(String dataDir, String outputDir) {
 		// TODO Auto-generated method stub
 		//ExStart: AddImageStampAsBackgroundInFloatingBox

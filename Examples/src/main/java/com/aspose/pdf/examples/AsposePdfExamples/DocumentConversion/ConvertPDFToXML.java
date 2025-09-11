@@ -9,6 +9,7 @@ public class ConvertPDFToXML {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoxml/";
@@ -24,9 +25,12 @@ public class ConvertPDFToXML {
     private static void convertPDFToXML(String dataDir, String outputDir) {
         // instantiate Document object
         Document doc = new Document(dataDir + "input.pdf");
-
-        // save the output in XML format
-        doc.save(outputDir + "resultant.xml", SaveFormat.Xml);
+        try {
+            // save the output in XML format
+            doc.save(outputDir + "resultant.xml", SaveFormat.Xml);
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

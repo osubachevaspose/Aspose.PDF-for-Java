@@ -10,6 +10,7 @@ public class ConvertSVGFileToPDFFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/svgtopdf/";
@@ -27,9 +28,13 @@ public class ConvertSVGFileToPDFFormat {
         // Instantiate LoadOption object using SVG load option
         LoadOptions options = new SvgLoadOptions();
         // Create Document object
-        Document document = new Document(file, options);
-        // Save the resultant PDF document
-        document.save(outputDir + "Result.pdf");
+        Document doc = new Document(file, options);
+        try {
+            // Save the resultant PDF document
+            doc.save(outputDir + "Result.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

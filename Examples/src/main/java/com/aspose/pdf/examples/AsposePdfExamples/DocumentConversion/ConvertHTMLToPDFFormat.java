@@ -10,6 +10,7 @@ public class ConvertHTMLToPDFFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/htmltopdf/";
@@ -31,16 +32,22 @@ public class ConvertHTMLToPDFFormat {
         renderContentToSamePage(dataDir, outputDir);
         System.out.println("Example renderContentToSamePage end");
 
-        //settingToNotPullDownRemoteResourcesDuringConversion();
+        // settingToNotPullDownRemoteResourcesDuringConversion();
     }
 
     public static void convertHTMLFileToPDF(String dataDir, String outputDir) {
-        // Specify the The base path/url for the html file which serves as images database
+        // Specify the The base path/url for the html file which serves as images
+        // database
         HtmlLoadOptions htmloptions = new HtmlLoadOptions(dataDir);
         // Load HTML file
         Document doc = new Document(dataDir + "EmailDemo_updated.html", htmloptions);
-        // Save HTML file
-        doc.save(outputDir + "Web+URL_output.pdf");
+        try {
+            // Save HTML file
+            doc.save(outputDir + "Web+URL_output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 
     public static void renderContentToSamePage(String dataDir, String outputDir) {
@@ -50,9 +57,14 @@ public class ConvertHTMLToPDFFormat {
         options.setRenderToSinglePage(true);
         // Load document
         Document doc = new Document(dataDir + "HTMLToPDF.html", options);
-        // Save
-        doc.save(outputDir + "RenderContentToSamePage_out.pdf");
-        // ExEnd:RenderContentToSamePage
+        try {
+            // Save
+            doc.save(outputDir + "RenderContentToSamePage_out.pdf");
+            // ExEnd:RenderContentToSamePage
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 
     public static void renderHTMLwithSVGData(String dataDir, String outputDir) {
@@ -63,19 +75,23 @@ public class ConvertHTMLToPDFFormat {
         // Initialize HtmlLoadOptions
         HtmlLoadOptions options = new HtmlLoadOptions(inFile);
         // Initialize Document object
-        Document pdfDocument = new Document(inFile, options);
-        // save
-        pdfDocument.save(outFile);
-        // ExEnd:RenderHTMLwithSVGData
+        Document doc = new Document(inFile, options);
+        try {
+            // save
+            doc.save(outFile);
+            // ExEnd:RenderHTMLwithSVGData
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 
     public static void settingToNotPullDownRemoteResourcesDuringConversion() {
         HtmlLoadOptions options = new HtmlLoadOptions();
         options.setCustomLoaderOfExternalResources(new LoadOptions.ResourceLoadingStrategy() {
             public LoadOptions.ResourceLoadingResult invoke(String resourceURI) {
                 // Creating clear template resource for replacing:
-                LoadOptions.ResourceLoadingResult res = new LoadOptions.ResourceLoadingResult(new byte[]{});
+                LoadOptions.ResourceLoadingResult res = new LoadOptions.ResourceLoadingResult(new byte[] {});
                 // Return empty byte array in case i.imgur.com server
                 if (resourceURI.contains("i.imgur.com")) {
                     return res;
@@ -87,7 +103,12 @@ public class ConvertHTMLToPDFFormat {
             }
         });
         // Do conversion
-        Document pdfDocument = new Document("in.html", options);
-        pdfDocument.save("out/out.pdf");
+        Document doc = new Document("in.html", options);
+        try {
+            doc.save("out/out.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 }

@@ -9,6 +9,7 @@ public class EscapeHTMLTagsAndSpecialCharacters {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfGenerator/escapeHTMLTagsAndSpecialCharacters/";
@@ -28,12 +29,16 @@ public class EscapeHTMLTagsAndSpecialCharacters {
         String CSS = " *{font-weight : normal !important ; margin :0 !important ; padding:0 !important ; list-style-type:none !important}";
         // instantiate Document instance
         Document doc = new Document();
-        // add page to pages collection of Document object
-        Page page = doc.getPages().add();
-        // add HTMLFragment to paragraphs collection of PDF page
-        page.getParagraphs().add(new com.aspose.pdf.HtmlFragment(CSS + HTML));
-        // save resultant PDF file
-        doc.save(outputDir + "escapeHTMLTagsAndSpecialCharacters.pdf");
+        try {
+            // add page to pages collection of Document object
+            Page page = doc.getPages().add();
+            // add HTMLFragment to paragraphs collection of PDF page
+            page.getParagraphs().add(new com.aspose.pdf.HtmlFragment(CSS + HTML));
+            // save resultant PDF file
+            doc.save(outputDir + "escapeHTMLTagsAndSpecialCharacters.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

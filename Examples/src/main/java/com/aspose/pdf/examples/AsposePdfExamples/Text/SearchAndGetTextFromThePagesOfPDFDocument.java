@@ -9,12 +9,12 @@ public class SearchAndGetTextFromThePagesOfPDFDocument {
 
 	public static void main(String[] args) {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Create TextAbsorber object to find all instances of the input search
 		// phrase
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("sample");
 		// Accept the absorber for all the pages
-		pdfDocument.getPages().accept(textFragmentAbsorber);
+		doc.getPages().accept(textFragmentAbsorber);
 		// Get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// Loop through the fragments
@@ -33,7 +33,7 @@ public class SearchAndGetTextFromThePagesOfPDFDocument {
 /*
 		// Info
 		// Accept the absorber for first page of document
-		pdfDocument.getPages().get_Item(1).accept(textFragmentAbsorber);
+		doc.getPages().get_Item(1).accept(textFragmentAbsorber);
 		// Info
 		 */
 	}

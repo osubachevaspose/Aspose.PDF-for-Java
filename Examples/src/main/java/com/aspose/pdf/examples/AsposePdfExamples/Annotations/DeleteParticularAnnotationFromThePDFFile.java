@@ -8,6 +8,7 @@ public class DeleteParticularAnnotationFromThePDFFile {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/deleteparticularannotation/";
@@ -22,11 +23,15 @@ public class DeleteParticularAnnotationFromThePDFFile {
 
     private static void deleteParticularAnnotationFromThePDFFile(String dataDir, String outputDir) {
         // Open source PDF document
-        Document pdfDocument = new Document(dataDir + "input.pdf");
-        // Delete particular annotation
-        pdfDocument.getPages().get_Item(1).getAnnotations().delete(1);
-        // Save the update document
-        pdfDocument.save(outputDir + "output.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
+        try {
+            // Delete particular annotation
+            doc.getPages().get_Item(1).getAnnotations().delete(1);
+            // Save the update document
+            doc.save(outputDir + "output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

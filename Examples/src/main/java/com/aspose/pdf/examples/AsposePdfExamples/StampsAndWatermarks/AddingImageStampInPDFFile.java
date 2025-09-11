@@ -8,7 +8,7 @@ public class AddingImageStampInPDFFile {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// create image stamp
 		ImageStamp imageStamp = new ImageStamp("sample.jpg");
 		imageStamp.setBackground(true);
@@ -19,8 +19,8 @@ public class AddingImageStampInPDFFile {
 		imageStamp.setRotate(Rotation.on270);
 		imageStamp.setOpacity(0.5);
 		// add stamp to particular page
-		pdfDocument.getPages().get_Item(1).addStamp(imageStamp);
+		doc.getPages().get_Item(1).addStamp(imageStamp);
 		// save output document
-		pdfDocument.save("PageNumberStamp_output.pdf");
+		doc.save("PageNumberStamp_output.pdf");
 	}
 }

@@ -13,9 +13,9 @@ public class AddTextToAnExistingPDFFile {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// get particular page
-		Page pdfPage = pdfDocument.getPages().get_Item(1);
+		Page pdfPage = doc.getPages().get_Item(1);
 		// create text fragment
 		TextFragment textFragment = new TextFragment("main text");
 		textFragment.setPosition(new Position(100, 600));
@@ -29,6 +29,6 @@ public class AddTextToAnExistingPDFFile {
 		// append the text fragment to the PDF page
 		textBuilder.appendText(textFragment);
 		// save updated PDF file
-		pdfDocument.save("Text_Added.pdf");
+		doc.save("Text_Added.pdf");
 	}
 }

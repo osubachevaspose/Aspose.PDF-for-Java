@@ -7,13 +7,17 @@ import com.aspose.pdf.RgbToDeviceGrayConversionStrategy;
 public class ConvertPDFFromRGBColorspaceToGrayscale {
 
     public static void main(String[] args) {
-        Document document = new Document("input.pdf");
-        RgbToDeviceGrayConversionStrategy strategy = new RgbToDeviceGrayConversionStrategy();
-        for (int idxPage = 1; idxPage <= document.getPages().size(); idxPage++) {
-            Page page = document.getPages().get_Item(idxPage);
-            strategy.convert(page);
+        Document doc = new Document("input.pdf");
+        try {
+            RgbToDeviceGrayConversionStrategy strategy = new RgbToDeviceGrayConversionStrategy();
+            for (int idxPage = 1; idxPage <= doc.getPages().size(); idxPage++) {
+                Page page = doc.getPages().get_Item(idxPage);
+                strategy.convert(page);
+            }
+            doc.save("output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
         }
-        document.save("output.pdf");
     }
-
 }

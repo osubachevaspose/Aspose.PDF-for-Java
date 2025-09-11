@@ -8,9 +8,9 @@ public class SetPDFFileInformation {
 	public static void main(String[] args) {
 
 		// open document
-		Document pdfDocument = new Document("Original.pdf");
+		Document doc = new Document("Original.pdf");
 		// get document information
-		DocumentInfo docInfo = pdfDocument.getInfo();
+		DocumentInfo docInfo = doc.getInfo();
 		// set Author information
 		docInfo.setAuthor("Aspose.Pdf for java");
 		docInfo.setCreationDate(new java.util.Date());
@@ -19,7 +19,7 @@ public class SetPDFFileInformation {
 		docInfo.setSubject("PDF Information");
 		docInfo.setTitle("Setting PDF Document Information");
 		// save update document with new information
-		pdfDocument.save("Updated_Information.pdf");
+		doc.save("Updated_Information.pdf");
 	}
 
 }

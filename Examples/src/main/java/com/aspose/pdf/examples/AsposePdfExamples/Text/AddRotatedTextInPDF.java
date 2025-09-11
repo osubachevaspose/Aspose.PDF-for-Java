@@ -6,9 +6,9 @@ public class AddRotatedTextInPDF {
 
 	public static void main(String[] args) {
 		// Open document
-        Document pdfDocument = new Document();
+        Document doc = new Document();
         // Get particular page
-        Page pdfPage = (Page)pdfDocument.getPages().add();
+        Page pdfPage = (Page)doc.getPages().add();
 
         // Create rotated text fragment
         TextFragment tf = new TextFragment("rotated text");
@@ -28,6 +28,6 @@ public class AddRotatedTextInPDF {
         // Append the text fragment to the PDF page
         textBuilder.appendText(tf);
         // Save document
-        pdfDocument.save("TextFragmentTests_Rotated.pdf");
+        doc.save("TextFragmentTests_Rotated.pdf");
 	}
 }

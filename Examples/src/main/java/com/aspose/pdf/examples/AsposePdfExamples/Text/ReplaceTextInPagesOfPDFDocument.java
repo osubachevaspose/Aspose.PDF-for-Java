@@ -21,11 +21,11 @@ public class ReplaceTextInPagesOfPDFDocument {
 
 	public static void replaceTextOnAllPages() {
 		// Open document
-		Document pdfDocument = new Document("source.pdf");
+		Document doc = new Document("source.pdf");
 		// Create TextAbsorber object to find all instances of the input search phrase
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("sample");
 		// Accept the absorber for first page of document
-		pdfDocument.getPages().accept(textFragmentAbsorber);
+		doc.getPages().accept(textFragmentAbsorber);
 		// Get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// Loop through the fragments
@@ -38,12 +38,12 @@ public class ReplaceTextInPagesOfPDFDocument {
 			textFragment.getTextState().setBackgroundColor(Color.getGray());
 		}
 		// Save the updated PDF file
-		pdfDocument.save("Updated_Text.pdf");
+		doc.save("Updated_Text.pdf");
 	}
 
 	public static void replaceTextUsingRegularExpression() {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Create TextAbsorber object to find all instances of the input search
 		// phrase
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // like 1999-2000
@@ -51,7 +51,7 @@ public class ReplaceTextInPagesOfPDFDocument {
 		TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 		textFragmentAbsorber.setTextSearchOptions(textSearchOptions);
 		// Accept the absorber for first page of document
-		pdfDocument.getPages().accept(textFragmentAbsorber);
+		doc.getPages().accept(textFragmentAbsorber);
 		// Get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// Loop through the fragments
@@ -64,7 +64,7 @@ public class ReplaceTextInPagesOfPDFDocument {
 			textFragment.getTextState().setBackgroundColor(Color.getGray());
 		}
 		// Save the updated PDF file
-		pdfDocument.save("Updated_Text.pdf");
+		doc.save("Updated_Text.pdf");
 	}
 
 	public static void useNonEnglishFontWhenReplacingText() {
@@ -101,13 +101,13 @@ public class ReplaceTextInPagesOfPDFDocument {
 	public static void searchTextStringsAndRemoveTheContentsBetweenThem() {
 		String path = "PathToDir";
 		// open document
-		Document pdfDocument = new Document(path + "testHeading (2).pdf");
+		Document doc = new Document(path + "testHeading (2).pdf");
 		// create TextAbsorber object to find all instances of the input search phrase
 		String from = "this is heading of level 1";
 		String till = "this is bullet style 1";
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(from + ".*" + till, new TextSearchOptions(true));
 		// accept the absorber for first page of document
-		pdfDocument.getPages().accept(textFragmentAbsorber);
+		doc.getPages().accept(textFragmentAbsorber);
 		// get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// loop through the Text fragments
@@ -120,9 +120,9 @@ public class ReplaceTextInPagesOfPDFDocument {
 				textFragment.getSegments().delete(2);// removes the second fragment and recalculates the remaining fragments
 			}
 		}
-		pdfDocument.save(path + "testHeading_out.pdf");
+		doc.save(path + "testHeading_out.pdf");
 	}
 	/*
-	 * //Info // Accept the absorber for first page of document pdfDocument.getPages().get_Item(1).accept(textFragmentAbsorber); //ExEnd:Info
+	 * //Info // Accept the absorber for first page of document doc.getPages().get_Item(1).accept(textFragmentAbsorber); //ExEnd:Info
 	 */
 }

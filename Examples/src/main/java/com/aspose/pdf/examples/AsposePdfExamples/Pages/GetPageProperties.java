@@ -8,9 +8,9 @@ public class GetPageProperties {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Get the page collection
-		PageCollection pageCollection = pdfDocument.getPages();
+		PageCollection pageCollection = doc.getPages();
 		// Get a specific page
 		Page pdfPage = pageCollection.get_Item(1);
 		// Get the page properties

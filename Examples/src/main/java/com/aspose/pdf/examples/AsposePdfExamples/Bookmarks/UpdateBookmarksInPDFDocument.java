@@ -10,6 +10,7 @@ public class UpdateBookmarksInPDFDocument {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/updatebookmarks/";
@@ -24,13 +25,17 @@ public class UpdateBookmarksInPDFDocument {
 
     private static void updateBookmarksInPDFDocument(String dataDir, String outputDir) {
         // Open document
-        Document pdfDocument = new Document(dataDir + "input.pdf");
-        // Get a bookmark object
-        OutlineItemCollection pdfOutline = pdfDocument.getOutlines().get_Item(1);
-        // Set the target page as 10
-        pdfOutline.setDestination(new GoToAction(pdfDocument.getPages().get_Item(1)));
-        // Save output
-        pdfDocument.save(outputDir + "Bookmarkupdated_output.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
+        try {
+            // Get a bookmark object
+            OutlineItemCollection pdfOutline = doc.getOutlines().get_Item(1);
+            // Set the target page as 10
+            pdfOutline.setDestination(new GoToAction(doc.getPages().get_Item(1)));
+            // Save output
+            doc.save(outputDir + "Bookmarkupdated_output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

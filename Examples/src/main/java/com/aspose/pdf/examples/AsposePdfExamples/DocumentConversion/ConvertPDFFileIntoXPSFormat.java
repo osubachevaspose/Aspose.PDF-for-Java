@@ -9,6 +9,7 @@ public class ConvertPDFFileIntoXPSFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoxps/";
@@ -24,28 +25,37 @@ public class ConvertPDFFileIntoXPSFormat {
         System.out.println("Example ConvertPDFtoXPS start");
         ConvertPDFtoXPS(dataDir, outputDir);
         System.out.println("Example ConvertPDFtoXPS end");
-
     }
 
     public static void ConvertPDFtoXPS(String dataDir, String outputDir) {
         // Load PDF document
-        Document pdfDocument = new Document(dataDir + "input.pdf");
-        // Instantiate XPS Save options
-        XpsSaveOptions saveOptions = new XpsSaveOptions();
-        // Save the XPS document
-        pdfDocument.save(outputDir + "ConvertPDFtoXPS_out.xps", saveOptions);
-        //ExEnd: ConvertPDFToXPS
+        Document doc = new Document(dataDir + "input.pdf");
+        try {
+            // Instantiate XPS Save options
+            XpsSaveOptions saveOptions = new XpsSaveOptions();
+            // Save the XPS document
+            doc.save(outputDir + "ConvertPDFtoXPS_out.xps", saveOptions);
+            // ExEnd: ConvertPDFToXPS
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 
     public static void KeepingTextSelectableInConvertedXPS(String dataDir, String outputDir) {
         // load PDF document
         Document doc = new Document(dataDir + "Input.pdf");
-        // instantiate an object of SvgSaveOptions
-        XpsSaveOptions saveOptions = new XpsSaveOptions();
-        // Allow text selectable in output XPS
-        saveOptions.setSaveTransparentTexts(true);
-        // save the output in XPS files
-        doc.save(outputDir + "KeepingTextSelectableInConvertedXPS_out.xps", saveOptions);
-        //ExEnd: KeepingTextSelectableInConvertedXPS
+        try {
+            // instantiate an object of SvgSaveOptions
+            XpsSaveOptions saveOptions = new XpsSaveOptions();
+            // Allow text selectable in output XPS
+            saveOptions.setSaveTransparentTexts(true);
+            // save the output in XPS files
+            doc.save(outputDir + "KeepingTextSelectableInConvertedXPS_out.xps", saveOptions);
+            // ExEnd: KeepingTextSelectableInConvertedXPS
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 }

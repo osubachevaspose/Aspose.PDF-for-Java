@@ -9,6 +9,7 @@ public class ConvertXSLFOToPDF {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/xslfotopdf/";
@@ -17,17 +18,21 @@ public class ConvertXSLFOToPDF {
 
         System.out.println("============================");
         System.out.println("Example ConvertXSLFOToPDF start");
-        ConvertXSLFOToPDF(dataDir, outputDir);
+        convertXSLFOToPDF(dataDir, outputDir);
         System.out.println("Example ConvertXSLFOToPDF end");
     }
 
-    public static void ConvertXSLFOToPDF(String dataDir, String outputDir) {
+    public static void convertXSLFOToPDF(String dataDir, String outputDir) {
         // Instantiate XSLFO load options instance
         XslFoLoadOptions xslLoadOptions = new XslFoLoadOptions();
         // Open document
         Document doc = new Document(dataDir + "test.fo", xslLoadOptions);
-        // Save PDF document
-        doc.save(outputDir + "XSL_FO.pdf");
+        try {
+            // Save PDF document
+            doc.save(outputDir + "XSL_FO.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

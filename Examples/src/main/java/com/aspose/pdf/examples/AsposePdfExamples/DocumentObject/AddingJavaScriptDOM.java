@@ -1,7 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.DocumentObject;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.Field;
 import com.aspose.pdf.JavascriptAction;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.TeXFragment;
@@ -31,7 +30,6 @@ public class AddingJavaScriptDOM {
         System.out.println("Example addFormattingCodeAndValueValidation start");
         addFormattingCodeAndValueValidation(dataDir, outputDir);
         System.out.println("Example addFormattingCodeAndValueValidation end");
-
     }
 
     public static void addingJavaScriptDOM(String dataDir, String outputDir) {

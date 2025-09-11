@@ -9,6 +9,7 @@ public class ConvertPDFtoXLSX {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoxlsx/";
@@ -23,11 +24,16 @@ public class ConvertPDFtoXLSX {
 
     private static void convertPDFtoXLSX(String dataDir, String outputDir) {
         Document doc = new Document(dataDir + "input.pdf");
-        // Initialize ExcelSaveOptions
-        ExcelSaveOptions options = new ExcelSaveOptions();
-        // Set output format
-        options.setFormat(ExcelSaveOptions.ExcelFormat.XLSX);
-        // Save output file
-        doc.save(outputDir + "ouput.xlsx", options);
+        try {
+            // Initialize ExcelSaveOptions
+            ExcelSaveOptions options = new ExcelSaveOptions();
+            // Set output format
+            options.setFormat(ExcelSaveOptions.ExcelFormat.XLSX);
+            // Save output file
+            doc.save(outputDir + "ouput.xlsx", options);
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 }

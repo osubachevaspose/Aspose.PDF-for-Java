@@ -11,6 +11,7 @@ public class ConvertTextFileToPDFFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/texttopdf/";
@@ -33,9 +34,10 @@ public class ConvertTextFileToPDFFormat {
             java.io.ByteArrayOutputStream bos = new java.io.ByteArrayOutputStream();
             byte[] buf = new byte[1024];
             try {
-                for (int readNum; (readNum = fis.read(buf)) != -1; ) {
+                for (int readNum; (readNum = fis.read(buf)) != -1;) {
                     bos.write(buf, 0, readNum); // no doubt here is 0
-                    // Writes len bytes from the specified byte array starting at offset off to this byte array output stream.
+                    // Writes len bytes from the specified byte array starting at offset off to this
+                    // byte array output stream.
                     System.out.println("read " + readNum + " bytes,");
                 }
             } catch (java.io.IOException ex) {
@@ -58,15 +60,22 @@ public class ConvertTextFileToPDFFormat {
                 }
                 // Instantiate a Document object by calling its empty constructor
                 Document doc = new Document();
-                // Add a new page in Pages collection of Document
-                Page page = doc.getPages().add();
-                // Create an instance of TextFragmet and pass the text from reader object to its constructor as argument
-                TextFragment text = new TextFragment(builder.toString());
-                // text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
-                // Add a new text paragraph in paragraphs collection and pass the TextFragment object
-                page.getParagraphs().add(text);
-                // Save resultant PDF file
-                doc.save(outputDir + "TExtFile_TexttoPDF.pdf");
+                try {
+                    // Add a new page in Pages collection of Document
+                    Page page = doc.getPages().add();
+                    // Create an instance of TextFragmet and pass the text from reader object to its
+                    // constructor as argument
+                    TextFragment text = new TextFragment(builder.toString());
+                    // text.TextState.Font = FontRepository.FindFont("Arial Unicode MS");
+                    // Add a new text paragraph in paragraphs collection and pass the TextFragment
+                    // object
+                    page.getParagraphs().add(text);
+                    // Save resultant PDF file
+                    doc.save(outputDir + "TExtFile_TexttoPDF.pdf");
+                } finally {
+                    if (doc != null)
+                        doc.close();
+                }
             }
         } catch (FileNotFoundException e) {
             e.printStackTrace();

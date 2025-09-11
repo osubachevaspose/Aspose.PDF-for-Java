@@ -9,6 +9,7 @@ public class ConvertEPUBFileToPDFFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/epubtopdf/";
@@ -25,9 +26,13 @@ public class ConvertEPUBFileToPDFFormat {
         // Instantiate LoadOption object using EPUB load option
         EpubLoadOptions optionsEpub = new EpubLoadOptions();
         // Create Document object
-        Document docEpub = new Document(dataDir + "Sample.epub", optionsEpub);
-        // Save the resultant PDF document
-        docEpub.save(outputDir + "wasteland.pdf");
+        Document doc = new Document(dataDir + "Sample.epub", optionsEpub);
+        try {
+            // Save the resultant PDF document
+            doc.save(outputDir + "wasteland.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

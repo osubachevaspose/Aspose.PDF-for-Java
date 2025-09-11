@@ -9,6 +9,7 @@ public class PDFToHTMLSpecifyImagesFolder {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
@@ -23,13 +24,17 @@ public class PDFToHTMLSpecifyImagesFolder {
 
     public static void specifyImagesFolder(String dataDir, String outputDir) {
         // Load PDF document
-        Document pdfDocument = new Document(dataDir + "SampleDataTable.pdf");
-        // Instantiate HtmlSaveOptions instance
-        HtmlSaveOptions saveOptions = new HtmlSaveOptions();
-        // Specify the folder (that exist) to save images during conversion process
-        saveOptions.setSpecialFolderForAllImages(outputDir + "imageFolder/");
-        // Save the resultant HTML file
-        pdfDocument.save(outputDir + "resultant.html", saveOptions);
+        Document doc = new Document(dataDir + "SampleDataTable.pdf");
+        try {
+            // Instantiate HtmlSaveOptions instance
+            HtmlSaveOptions saveOptions = new HtmlSaveOptions();
+            // Specify the folder (that exist) to save images during conversion process
+            saveOptions.setSpecialFolderForAllImages(outputDir + "imageFolder/");
+            // Save the resultant HTML file
+            doc.save(outputDir + "resultant.html", saveOptions);
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

@@ -11,12 +11,12 @@ public class ReplaceOnlyFirstOccurrenceOfThePhrase {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// create TextAbsorber object to find all instances of the input search
 		// phrase
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("line");
 		// accept the absorber for first page of document
-		pdfDocument.getPages().get_Item(1).accept(textFragmentAbsorber);
+		doc.getPages().get_Item(1).accept(textFragmentAbsorber);
 		// get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// get first occurrence of text and replace
@@ -29,12 +29,12 @@ public class ReplaceOnlyFirstOccurrenceOfThePhrase {
 		textFragment.getTextState().setBackgroundColor(Color.getGray());
 
 		// save updated PDF file
-		pdfDocument.save("Text_Updated.pdf");
+		doc.save("Text_Updated.pdf");
 	}
 		/*
 		// Info
 		// accept the absorber for first page of document
-		pdfDocument.getPages().get_Item(1).accept(textFragmentAbsorber);
+		doc.getPages().get_Item(1).accept(textFragmentAbsorber);
 		// Info
 		 * 
 		 */

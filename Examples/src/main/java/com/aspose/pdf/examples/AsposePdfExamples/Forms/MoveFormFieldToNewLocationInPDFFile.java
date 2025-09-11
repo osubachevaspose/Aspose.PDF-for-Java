@@ -8,13 +8,13 @@ public class MoveFormFieldToNewLocationInPDFFile {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Get a field
-		TextBoxField textBoxField = (TextBoxField) pdfDocument.getForm().get("textbox1");
+		TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
 		// Modify the field location
 		textBoxField.setRect(new Rectangle(300, 400, 600, 500));
 		// Save the modified document
-		pdfDocument.save("output.pdf");
+		doc.save("output.pdf");
 	}
 
 }

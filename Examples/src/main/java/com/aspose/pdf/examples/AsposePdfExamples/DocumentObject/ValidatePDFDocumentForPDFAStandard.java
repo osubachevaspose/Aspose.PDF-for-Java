@@ -7,10 +7,10 @@ public class ValidatePDFDocumentForPDFAStandard {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("Original.pdf");
+		Document doc = new Document("Original.pdf");
 		// validate PDF for PDF/A-1a
-		pdfDocument.validate("validation-result-A1A.xml", PdfFormat.PDF_A_1B);
+		doc.validate("validation-result-A1A.xml", PdfFormat.PDF_A_1B);
 		// save output document
-		pdfDocument.save("Optimized_output.pdf");
+		doc.save("Optimized_output.pdf");
 	}
 }

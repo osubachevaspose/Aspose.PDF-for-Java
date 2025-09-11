@@ -8,6 +8,7 @@ public class GetAllAnnotationsFromPageInPDF {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/getallannotations/";
@@ -22,13 +23,22 @@ public class GetAllAnnotationsFromPageInPDF {
 
     private static void getAllAnnotationsFromPageInPDF(String dataDir, String outputDir) {
         // Open source PDF document
-        Document pdfDocument = new Document(dataDir + "input.pdf");
-        // Loop through all the annotations
-        for (int Annot_counter = 1; Annot_counter <= pdfDocument.getPages().get_Item(1).getAnnotations().size(); Annot_counter++) {
-            // Get annotation properties
-            System.out.printf("Full Name :- " + pdfDocument.getPages().get_Item(Annot_counter).getAnnotations().get_Item(Annot_counter).getFullName());
-            System.out.printf("Page Number :-  " + pdfDocument.getPages().get_Item(Annot_counter).getAnnotations().get_Item(Annot_counter).getPageIndex());
-            System.out.printf("Contents :- " + pdfDocument.getPages().get_Item(Annot_counter).getAnnotations().get_Item(Annot_counter).getContents());
+        Document doc = new Document(dataDir + "input.pdf");
+        try {
+            // Loop through all the annotations
+            for (int Annot_counter = 1; Annot_counter <= doc.getPages().get_Item(1).getAnnotations()
+                    .size(); Annot_counter++) {
+                // Get annotation properties
+                System.out.printf("Full Name :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                        .get_Item(Annot_counter).getFullName());
+                System.out.printf("Page Number :-  " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                        .get_Item(Annot_counter).getPageIndex());
+                System.out.printf("Contents :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                        .get_Item(Annot_counter).getContents());
+            }
+        } finally {
+            if (doc != null)
+                doc.close();
         }
     }
 }

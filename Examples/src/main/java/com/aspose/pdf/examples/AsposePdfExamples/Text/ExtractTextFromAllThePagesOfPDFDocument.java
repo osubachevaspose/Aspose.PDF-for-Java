@@ -8,11 +8,11 @@ public class ExtractTextFromAllThePagesOfPDFDocument {
 
 	public static void main(String[] args) throws Exception {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Create TextAbsorber object to extract text
 		TextAbsorber textAbsorber = new TextAbsorber();
 		// Accept the absorber for all the pages
-		pdfDocument.getPages().accept(textAbsorber);
+		doc.getPages().accept(textAbsorber);
 		// Get the extracted text
 		String extractedText = textAbsorber.getText();
 		// Create a writer and open the file
@@ -25,7 +25,7 @@ public class ExtractTextFromAllThePagesOfPDFDocument {
 /*
 		// ExStart:Info1
 		// Accept the absorber for particular PDF page
-		pdfDocument.getPages().get_Item(1).accept(textAbsorber);
+		doc.getPages().get_Item(1).accept(textAbsorber);
 		// ExEnd:Info1
 
 		// ExStart:Info2

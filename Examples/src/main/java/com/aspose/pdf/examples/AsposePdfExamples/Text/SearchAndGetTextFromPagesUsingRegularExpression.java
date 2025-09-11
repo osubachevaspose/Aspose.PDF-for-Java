@@ -10,14 +10,14 @@ public class SearchAndGetTextFromPagesUsingRegularExpression {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument = new Document("source.pdf");
+		Document doc = new Document("source.pdf");
 		// Create TextAbsorber object to find all instances of the input search phrase
 		TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // like 1999-2000
 		// Set text search option to specify regular expression usage
 		TextSearchOptions textSearchOptions = new TextSearchOptions(true);
 		textFragmentAbsorber.setTextSearchOptions(textSearchOptions);
 		// Accept the absorber for first page of document
-		pdfDocument.getPages().accept(textFragmentAbsorber);
+		doc.getPages().accept(textFragmentAbsorber);
 		// Get the extracted text fragments into collection
 		TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
 		// Loop through the fragments
@@ -36,7 +36,7 @@ public class SearchAndGetTextFromPagesUsingRegularExpression {
 /*
 		// Info1
 		// Accept the absorber for the first page of the document.
-		pdfDocument.getPages().get_Item(1).accept(textFragmentAbsorber);
+		doc.getPages().get_Item(1).accept(textFragmentAbsorber);
 		// Info1
 
 		// Info2

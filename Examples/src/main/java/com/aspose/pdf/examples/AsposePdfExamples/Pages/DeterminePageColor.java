@@ -6,11 +6,11 @@ public class DeterminePageColor {
 
 	public static void main(String[] args) {
 		// Open source PDF file
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Iterate through all the page of PDF file
-		for (int pageCount = 1; pageCount <= pdfDocument.getPages().size(); pageCount++) {
+		for (int pageCount = 1; pageCount <= doc.getPages().size(); pageCount++) {
 			// Get the color type information for particular PDF page
-			int pageColorType = pdfDocument.getPages().get_Item(pageCount).getColorType();
+			int pageColorType = doc.getPages().get_Item(pageCount).getColorType();
 			switch (pageColorType) {
 			case 2:
 				System.out.println("Page # -" + pageCount + " is Black and white..");

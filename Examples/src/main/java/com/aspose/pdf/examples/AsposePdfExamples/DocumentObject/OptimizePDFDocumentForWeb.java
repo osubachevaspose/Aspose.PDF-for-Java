@@ -6,10 +6,15 @@ public class OptimizePDFDocumentForWeb {
 
 	public static void main(String[] args) {
 		// Open document
-		Document pdfDocument = new Document("Original.pdf");
-		// Optimize for web
-		pdfDocument.optimize();
-		// Save output document
-		pdfDocument.save("Optimized_output.pdf");
+		Document doc = new Document("Original.pdf");
+		try {
+			// Optimize for web
+			doc.optimize();
+			// Save output document
+			doc.save("Optimized_output.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 }

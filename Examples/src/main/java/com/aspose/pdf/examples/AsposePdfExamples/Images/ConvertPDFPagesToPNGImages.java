@@ -15,9 +15,9 @@ public class ConvertPDFPagesToPNGImages {
 
 	public static void convertAllPDFPagesToPNGImages() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Loop through all the pages of PDF file
-		for (int pageCount = 1; pageCount <= pdfDocument.getPages().size(); pageCount++) {
+		for (int pageCount = 1; pageCount <= doc.getPages().size(); pageCount++) {
 			// Create stream object to save the output image
 			java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image" + pageCount + ".png");
 			// Create Resolution object
@@ -25,7 +25,7 @@ public class ConvertPDFPagesToPNGImages {
 			// Create PngDevice object with particular resolution
 			PngDevice pngDevice = new PngDevice(resolution);
 			// Convert a particular page and save the image to stream
-			pngDevice.process(pdfDocument.getPages().get_Item(pageCount), imageStream);
+			pngDevice.process(doc.getPages().get_Item(pageCount), imageStream);
 			// Close the stream
 			imageStream.close();
 		}
@@ -33,7 +33,7 @@ public class ConvertPDFPagesToPNGImages {
 
 	public static void convertOnePageToPNGImage() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Create stream object to save the output image
 		java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image.png");
 		// Create Resolution object
@@ -41,7 +41,7 @@ public class ConvertPDFPagesToPNGImages {
 		// Create PngDevice object with particular resolution
 		PngDevice pngDevice = new PngDevice(resolution);
 		// Convert a particular page and save the image to stream
-		pngDevice.process(pdfDocument.getPages().get_Item(1), imageStream);
+		pngDevice.process(doc.getPages().get_Item(1), imageStream);
 		// Close the stream
 		imageStream.close();
 	}

@@ -9,6 +9,7 @@ public class ConvertPCLToPDFFormat {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pcltopdf/";
@@ -25,7 +26,12 @@ public class ConvertPCLToPDFFormat {
         PclLoadOptions loadoptions = new PclLoadOptions();
         // Create Document object
         Document doc = new Document(dataDir + "test.pcl", loadoptions);
-        // Save the resultant PDF document
-        doc.save(outputDir + "test1-converted.pdf");
+        try {
+            // Save the resultant PDF document
+            doc.save(outputDir + "test1-converted.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 }

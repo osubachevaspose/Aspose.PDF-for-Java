@@ -7,13 +7,13 @@ public class AddTooltipToFormField {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Get a field
-		TextBoxField textBoxField = (TextBoxField) pdfDocument.getForm().get("textbox1");
+		TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
 		// Set the tooltip for textfield
 		textBoxField.setAlternateName("Text box tool tip");
 		// Save modified document
-		pdfDocument.save("output.pdf");
+		doc.save("output.pdf");
 	}
 
 }

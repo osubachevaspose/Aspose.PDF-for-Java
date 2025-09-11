@@ -15,9 +15,9 @@ public class ConvertPDFPagesToJPEGImage {
 
 	public static void convertAllPagesToJPEGImages() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Loop through all the pages of PDF file
-		for (int pageCount = 1; pageCount <= pdfDocument.getPages().size(); pageCount++) {
+		for (int pageCount = 1; pageCount <= doc.getPages().size(); pageCount++) {
 			// Create stream object to save the output image
 			java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image" + pageCount + ".jpg");
 			// Create Resolution object
@@ -25,7 +25,7 @@ public class ConvertPDFPagesToJPEGImage {
 			// Create JpegDevice object where second argument indicates the quality of resultant image
 			JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 			// Convert a particular page and save the image to stream
-			jpegDevice.process(pdfDocument.getPages().get_Item(pageCount), imageStream);
+			jpegDevice.process(doc.getPages().get_Item(pageCount), imageStream);
 			// Close the stream
 			imageStream.close();
 		}
@@ -33,7 +33,7 @@ public class ConvertPDFPagesToJPEGImage {
 
 	public static void convertOnePDFPageToJPEGImage() throws IOException {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Create stream object to save the output image
 		java.io.OutputStream imageStream = new java.io.FileOutputStream("Converted_Image.jpg");
 		// Create JPEG device with specified attributes
@@ -43,7 +43,7 @@ public class ConvertPDFPagesToJPEGImage {
 		// Create JpegDevice object where second argument indicates the quality of resultant image
 		JpegDevice jpegDevice = new JpegDevice(resolution, 100);
 		// Convert a particular page and save the image to stream
-		jpegDevice.process(pdfDocument.getPages().get_Item(1), imageStream);
+		jpegDevice.process(doc.getPages().get_Item(1), imageStream);
 		// Close the stream
 		imageStream.close();
 	}

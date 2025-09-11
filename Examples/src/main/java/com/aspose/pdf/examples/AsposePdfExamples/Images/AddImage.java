@@ -9,6 +9,7 @@ public class AddImage {
 	public static void main(String[] args) {
 		runExamples();
 	}
+	
 	public static void runExamples() {
 		// The paths to resources and output directories.
 		String testID = "com/aspose/pdf/examples/AsposePdf/Images/";
@@ -28,14 +29,14 @@ public class AddImage {
 		try {
 			imageStream = new java.io.FileInputStream(new java.io.File(dataDir + "0002.dcm"));
 
-			Document pdfDocument = new Document();
-			pdfDocument.getPages().add();
+			Document doc = new Document();
+			doc.getPages().add();
 			com.aspose.pdf.Image image = new com.aspose.pdf.Image();
 			image.setFileType(ImageFileType.Dicom);
 			image.setImageStream(imageStream);
-			pdfDocument.getPages().get_Item(1).getParagraphs().add(image);
+			doc.getPages().get_Item(1).getParagraphs().add(image);
 			// Save output as PDF format
-			pdfDocument.save(outputDir + "PdfWithDicomImage_out.pdf");
+			doc.save(outputDir + "PdfWithDicomImage_out.pdf");
 			//ExEnd: AddDicomImage
 		} catch (FileNotFoundException e) {
 			throw new RuntimeException(e);

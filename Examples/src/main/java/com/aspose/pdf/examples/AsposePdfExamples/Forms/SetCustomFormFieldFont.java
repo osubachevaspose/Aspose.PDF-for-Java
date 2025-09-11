@@ -12,9 +12,9 @@ public class SetCustomFormFieldFont {
 
 	public static void main(String[] args) {
 		// Open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// Get a field
-		TextBoxField textBoxField = (TextBoxField) pdfDocument.getForm().get("textbox1");
+		TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
 		// Create an instance of font object and try loading ComicSansMS font
 		// from system font repository
 		Font font = FontRepository.findFont("ComicSansMS");
@@ -23,7 +23,7 @@ public class SetCustomFormFieldFont {
 		// Set the font information for form field by using its name textBoxField.setDefaultAppearance(new
 		// DefaultAppearance("ComicSansMS", 10, Color.black));
 		// Save updated document
-		pdfDocument.save("output.pdf");
+		doc.save("output.pdf");
 	}
 
 }

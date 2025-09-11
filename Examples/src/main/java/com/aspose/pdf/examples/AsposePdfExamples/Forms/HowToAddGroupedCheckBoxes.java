@@ -13,11 +13,11 @@ public class HowToAddGroupedCheckBoxes {
 
 	public static void main(String[] args) {
 		// instantiate Document object
-		Document pdfDocument = new Document();
+		Document doc = new Document();
 		// add a page to PDF file
-		Page page = pdfDocument.getPages().add();
+		Page page = doc.getPages().add();
 		// instatiate RadioButtonField object with page number as argument
-		RadioButtonField radio = new RadioButtonField(pdfDocument.getPages().get_Item(1));
+		RadioButtonField radio = new RadioButtonField(doc.getPages().get_Item(1));
 		// add first radio button option and also specify its origin using Rectangle object
 		RadioButtonOptionField opt1 = new RadioButtonOptionField(page, new Rectangle(0, 0, 20, 20));
 		RadioButtonOptionField opt2 = new RadioButtonOptionField(page, new Rectangle(100, 0, 120, 20));
@@ -38,9 +38,9 @@ public class HowToAddGroupedCheckBoxes {
 		opt2.getBorder().setStyle(BorderStyle.Solid);
 		opt2.getCharacteristics().setBorder(java.awt.Color.black);
 		// add radio button to form object of Document object
-		pdfDocument.getForm().add(radio);
+		doc.getForm().add(radio);
 		// save the PDF file
-		pdfDocument.save("RadioButtonSample.pdf");
+		doc.save("RadioButtonSample.pdf");
 	}
 
 }

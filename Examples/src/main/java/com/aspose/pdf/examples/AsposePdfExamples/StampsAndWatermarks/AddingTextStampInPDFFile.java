@@ -11,7 +11,7 @@ public class AddingTextStampInPDFFile {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// create text stamp
 		TextStamp textStamp = new TextStamp("Sample Stamp");
 		// set whether stamp is background
@@ -28,15 +28,15 @@ public class AddingTextStampInPDFFile {
 		textStamp.getTextState().setFontStyle(FontStyles.Italic);
 		textStamp.getTextState().setForegroundColor(Color.getGreen());
 		// add stamp to particular page
-		pdfDocument.getPages().get_Item(1).addStamp(textStamp);
+		doc.getPages().get_Item(1).addStamp(textStamp);
 		// save output document
-		pdfDocument.save("TextStamp_output.pdf");
+		doc.save("TextStamp_output.pdf");
 /*
 		// ExStart:InfoClass
 		// iterate through all pages of PDF file
-		for (int Page_counter = 1; Page_counter <= pdfDocument.getPages().size(); Page_counter++) {
+		for (int Page_counter = 1; Page_counter <= doc.getPages().size(); Page_counter++) {
 			// add stamp to all pages of PDF file
-			pdfDocument.getPages().get_Item(Page_counter).addStamp(textStamp);
+			doc.getPages().get_Item(Page_counter).addStamp(textStamp);
 		}
 		// ExEnd:InfoClass
 */

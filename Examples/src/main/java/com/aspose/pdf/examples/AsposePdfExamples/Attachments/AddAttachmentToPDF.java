@@ -9,6 +9,7 @@ public class AddAttachmentToPDF {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Attachments/addattachment/";
@@ -19,18 +20,21 @@ public class AddAttachmentToPDF {
         System.out.println("Example addAttachmentToPDF start");
         addAttachmentToPDF(dataDir, outputDir);
         System.out.println("Example addAttachmentToPDF end");
-
     }
 
     private static void addAttachmentToPDF(String dataDir, String outputDir) {
         // Open a document
-        Document pdfDocument = new Document(dataDir + "input.pdf");
-        // Set up a new file to be added as attachment
-        FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
-        // Add an attachment to document's attachment collection
-        pdfDocument.getEmbeddedFiles().add(fileSpecification);
-        // Save the updated document
-        pdfDocument.save(outputDir + "output.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
+        try {
+            // Set up a new file to be added as attachment
+            FileSpecification fileSpecification = new FileSpecification(dataDir + "test.txt", "Sample text file");
+            // Add an attachment to document's attachment collection
+            doc.getEmbeddedFiles().add(fileSpecification);
+            // Save the updated document
+            doc.save(outputDir + "output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

@@ -10,6 +10,7 @@ public class CreatePDFwithTaggedImage {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfGenerator/CreatePDFwithTaggedImage/";
@@ -24,22 +25,26 @@ public class CreatePDFwithTaggedImage {
 
     public static void createPDFwithTaggedImage(String dataDir, String outputDir) {
         // ExStart:CreatePDFWithTaggedImage
-        Document document = new Document();
-        ITaggedContent taggedContent = document.getTaggedContent();
+        Document doc = new Document();
+        try {
+            ITaggedContent taggedContent = doc.getTaggedContent();
 
-        taggedContent.setTitle(dataDir + "CreatePDFwithTaggedImage");
-        taggedContent.setLanguage("en-US");
+            taggedContent.setTitle(dataDir + "CreatePDFwithTaggedImage");
+            taggedContent.setLanguage("en-US");
 
-        IllustrationElement figure1 = taggedContent.createFigureElement();
-        taggedContent.getRootElement().appendChild(figure1);
-        figure1.setAlternativeText("Aspose Logo");
-        figure1.setTitle("Image 1");
-        figure1.setTag("Fig");
-        // Add image with resolution 300 DPI (by default)
-        figure1.setImage(dataDir + "aspose-logo.jpg");
-        // Save PDF Document
-        document.save(outputDir + "PDFwithTaggedImage.pdf");
-        // ExEnd:CreatePDFWithTaggedImage
+            IllustrationElement figure1 = taggedContent.createFigureElement();
+            taggedContent.getRootElement().appendChild(figure1);
+            figure1.setAlternativeText("Aspose Logo");
+            figure1.setTitle("Image 1");
+            figure1.setTag("Fig");
+            // Add image with resolution 300 DPI (by default)
+            figure1.setImage(dataDir + "aspose-logo.jpg");
+            // Save PDF Document
+            doc.save(outputDir + "PDFwithTaggedImage.pdf");
+            // ExEnd:CreatePDFWithTaggedImage
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

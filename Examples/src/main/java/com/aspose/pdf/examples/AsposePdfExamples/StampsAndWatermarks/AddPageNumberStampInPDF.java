@@ -11,12 +11,12 @@ public class AddPageNumberStampInPDF {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// create page number stamp
 		PageNumberStamp pageNumberStamp = new PageNumberStamp();
 		// whether the stamp is background
 		pageNumberStamp.setBackground(false);
-		pageNumberStamp.setFormat("Page # of " + pdfDocument.getPages().size());
+		pageNumberStamp.setFormat("Page # of " + doc.getPages().size());
 		pageNumberStamp.setBottomMargin(10);
 		pageNumberStamp.setHorizontalAlignment(HorizontalAlignment.Center);
 		pageNumberStamp.setStartingNumber(1);
@@ -27,8 +27,8 @@ public class AddPageNumberStampInPDF {
 		pageNumberStamp.getTextState().setFontStyle(FontStyles.Italic);
 		pageNumberStamp.getTextState().setForegroundColor(Color.getBlue());
 		// add stamp to particular page
-		pdfDocument.getPages().get_Item(1).addStamp(pageNumberStamp);
+		doc.getPages().get_Item(1).addStamp(pageNumberStamp);
 		// save output document
-		pdfDocument.save("PageNumberStamp_output.pdf");
+		doc.save("PageNumberStamp_output.pdf");
 	}
 }

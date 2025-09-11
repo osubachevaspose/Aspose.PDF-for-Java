@@ -9,7 +9,7 @@ public class AddingPDFPageStampInThePDFFile {
 	public static void main(String[] args) {
 		String myDir = "PathToDir";
 		// open document
-		Document pdfDocument = new Document(myDir + "input.pdf");
+		Document doc = new Document(myDir + "input.pdf");
 		Document pdfDocument1 = new Document(myDir + "stamp.pdf");
 		// create page stamp
 		PdfPageStamp pageStamp = new PdfPageStamp(pdfDocument1.getPages().get_Item(1));
@@ -18,8 +18,8 @@ public class AddingPDFPageStampInThePDFFile {
 		pageStamp.setYIndent(100);
 		pageStamp.setRotate(Rotation.on180);
 		// add stamp to particular page
-		pdfDocument.getPages().get_Item(1).addStamp(pageStamp);
+		doc.getPages().get_Item(1).addStamp(pageStamp);
 		// save output document
-		pdfDocument.save(myDir + "output_pdfpagestamp.pdf");
+		doc.save(myDir + "output_pdfpagestamp.pdf");
 	}
 }

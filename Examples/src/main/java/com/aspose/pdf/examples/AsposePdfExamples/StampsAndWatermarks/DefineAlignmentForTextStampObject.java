@@ -10,7 +10,7 @@ public class DefineAlignmentForTextStampObject {
 
 	public static void main(String[] args) {
 		// open document
-		Document pdfDocument = new Document("input.pdf");
+		Document doc = new Document("input.pdf");
 		// instantiate FormattedText object with sample string
 		FormattedText text = new FormattedText("This");
 		// add new text line to FormattedText
@@ -29,8 +29,8 @@ public class DefineAlignmentForTextStampObject {
 		// set top margin for stamp object
 		stamp.setTopMargin(20);
 		// add stamp to all pages of PDF file
-		pdfDocument.getPages().get_Item(1).addStamp(stamp);
+		doc.getPages().get_Item(1).addStamp(stamp);
 		// save output document
-		pdfDocument.save("TextStamp_output.pdf");
+		doc.save("TextStamp_output.pdf");
 	}
 }
