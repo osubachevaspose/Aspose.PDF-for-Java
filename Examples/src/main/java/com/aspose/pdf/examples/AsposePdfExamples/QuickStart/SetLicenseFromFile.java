@@ -14,7 +14,6 @@ public class SetLicenseFromFile {
 		try {
 			license.setLicense("Aspose.Pdf.Java.lic");
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

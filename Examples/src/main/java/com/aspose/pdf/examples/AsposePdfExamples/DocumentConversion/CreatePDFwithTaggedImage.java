@@ -24,14 +24,11 @@ public class CreatePDFwithTaggedImage {
     }
 
     public static void createPDFwithTaggedImage(String dataDir, String outputDir) {
-        // ExStart:CreatePDFWithTaggedImage
         Document doc = new Document();
         try {
             ITaggedContent taggedContent = doc.getTaggedContent();
-
             taggedContent.setTitle(dataDir + "CreatePDFwithTaggedImage");
             taggedContent.setLanguage("en-US");
-
             IllustrationElement figure1 = taggedContent.createFigureElement();
             taggedContent.getRootElement().appendChild(figure1);
             figure1.setAlternativeText("Aspose Logo");
@@ -41,7 +38,6 @@ public class CreatePDFwithTaggedImage {
             figure1.setImage(dataDir + "aspose-logo.jpg");
             // Save PDF Document
             doc.save(outputDir + "PDFwithTaggedImage.pdf");
-            // ExEnd:CreatePDFWithTaggedImage
         } finally {
             if (doc != null)
                 doc.close();

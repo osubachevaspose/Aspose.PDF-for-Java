@@ -10,22 +10,28 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.Rectangle;
 
 public class GetPDFHyperlinkDestination {
-	public static void main(String[] args) {
-		Document document = new Document("update_Service_Work_Order.pdf");
-		// Extract actions
-		Page page = document.getPages().get_Item(1);
-		AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Rectangle.getTrivial()));
-		page.accept(selector);
-		List list = selector.getSelected();
-		// Iterate through individual item inside list
-		if (list.size() == 0)
-			System.out.println("No Hyperlinks found..");
-		else {
-			// Loop through all the bookmarks
-			for (LinkAnnotation annot : (Iterable<LinkAnnotation>) list) {
-				// Print the destination URL
-				System.out.println("<br />Destination: " + ((GoToURIAction) annot.getAction()).getURI() + "<br />");
-			}
-		}// end else
-	}
+
+    public static void main(String[] args) {
+        Document doc = new Document("update_Service_Work_Order.pdf");
+        try {
+            // Extract actions
+            Page page = doc.getPages().get_Item(1);
+            AnnotationSelector selector = new AnnotationSelector(new LinkAnnotation(page, Rectangle.getTrivial()));
+            page.accept(selector);
+            List list = selector.getSelected();
+            // Iterate through individual item inside list
+            if (list.size() == 0)
+                System.out.println("No Hyperlinks found..");
+            else {
+                // Loop through all the bookmarks
+                for (LinkAnnotation annot : (Iterable<LinkAnnotation>) list) {
+                    // Print the destination URL
+                    System.out.println("<br />Destination: " + ((GoToURIAction) annot.getAction()).getURI() + "<br />");
+                }
+            } // end else
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

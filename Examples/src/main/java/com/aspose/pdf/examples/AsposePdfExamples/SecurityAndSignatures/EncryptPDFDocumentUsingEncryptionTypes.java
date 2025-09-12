@@ -7,10 +7,15 @@ public class EncryptPDFDocumentUsingEncryptionTypes {
 
 	public static void main(String[] args) {
 		// open document
-		Document document = new Document("input.pdf");
-		// encrypt PDF
-		document.encrypt("user", "owner", 0, CryptoAlgorithm.AESx256);
-		// save updated PDF
-		document.save("Encrypted_output.pdf");
+		Document doc = new Document("input.pdf");
+		try {
+			// encrypt PDF
+			doc.encrypt("user", "owner", 0, CryptoAlgorithm.AESx256);
+			// save updated PDF
+			doc.save("Encrypted_output.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 }

@@ -8,10 +8,10 @@ import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.AddImageSta
 
 public class UseLatexScript3 {
 
-
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/";
@@ -25,11 +25,7 @@ public class UseLatexScript3 {
     }
 
     public static void useLatexScript3(String dataDir, String outputDir) {
-
-		//ExStart: UseLatexScript3
-
-		String s =
-                "\\usepackage{amsmath,amsthm}" +
+        String s = "\\usepackage{amsmath,amsthm}" +
                 "\\begin{document}" +
                 "\\begin{proof} The proof is a follows: " +
                 "\\begin{align}" +
@@ -39,16 +35,15 @@ public class UseLatexScript3 {
                 "\\end{align}" +
                 "\\end{proof}" +
                 "\\end{document}";
-
         Document doc = new Document();
-        Page page = doc.getPages().add();
-
-        LatexFragment latex = new LatexFragment(s);
-
-        page.getParagraphs().add(latex);
-        
-        doc.save(outputDir + "Script_out.pdf");
-		//ExEnd: UseLatexScript3
-	}
-
+        try {
+            Page page = doc.getPages().add();
+            LatexFragment latex = new LatexFragment(s);
+            page.getParagraphs().add(latex);
+            doc.save(outputDir + "Script_out.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

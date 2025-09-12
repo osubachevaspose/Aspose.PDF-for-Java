@@ -13,17 +13,22 @@ public class SetCustomFormFieldFont {
 	public static void main(String[] args) {
 		// Open document
 		Document doc = new Document("input.pdf");
-		// Get a field
-		TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
-		// Create an instance of font object and try loading ComicSansMS font
-		// from system font repository
-		Font font = FontRepository.findFont("ComicSansMS");
-		// Set the font information for form field by using Font object
-		textBoxField.setDefaultAppearance(new DefaultAppearance(font, 10, Color.black));
-		// Set the font information for form field by using its name textBoxField.setDefaultAppearance(new
-		// DefaultAppearance("ComicSansMS", 10, Color.black));
-		// Save updated document
-		doc.save("output.pdf");
+		try {
+			// Get a field
+			TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
+			// Create an instance of font object and try loading ComicSansMS font
+			// from system font repository
+			Font font = FontRepository.findFont("ComicSansMS");
+			// Set the font information for form field by using Font object
+			textBoxField.setDefaultAppearance(new DefaultAppearance(font, 10, Color.black));
+			// Set the font information for form field by using its name
+			// textBoxField.setDefaultAppearance(new
+			// DefaultAppearance("ComicSansMS", 10, Color.black));
+			// Save updated document
+			doc.save("output.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
-
 }

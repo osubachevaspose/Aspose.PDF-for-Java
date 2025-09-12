@@ -8,7 +8,6 @@ import com.aspose.pdf.tagged.logicalstructure.elements.IllustrationElement;
 public class CreatePDFwithTaggedImage {
 
     public static void main(String[] args) {
-        // ExStart:1
         // The path to the documents directory.
         String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
         Document doc = new Document();
@@ -25,7 +24,6 @@ public class CreatePDFwithTaggedImage {
             figure1.setImage(dataDir + "aspose-logo.jpg");
             // Save PDF Document
             doc.save(dataDir + "PDFwithTaggedImage.pdf");
-            // ExEnd:1
         } finally {
             if (doc != null)
                 doc.close();

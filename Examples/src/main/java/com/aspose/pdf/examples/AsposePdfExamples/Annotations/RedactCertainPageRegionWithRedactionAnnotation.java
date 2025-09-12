@@ -29,11 +29,9 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
         System.out.println("Example facadesApproach start");
         facadesApproach(dataDir, outputDir);
         System.out.println("Example facadesApproach end");
-
     }
 
     public static void redactCertainPageRegionWithRedactionAnnotation(String dataDir, String outputDir) {
-        // ExStart: RedactCertainPageRegionWithRedactionAnnotation
         Document doc = new Document(dataDir + "input.pdf");
         try {
             Rectangle rect = new Rectangle(200, 500, 300, 600);
@@ -47,7 +45,6 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
             annot.setRepeat(true);
             doc.getPages().get_Item(1).getAnnotations().add(annot);
             doc.save(outputDir + "Redaction_out.pdf");
-            // ExEnd: RedactCertainPageRegionWithRedactionAnnotation
         } finally {
             if (doc != null)
                 doc.close();

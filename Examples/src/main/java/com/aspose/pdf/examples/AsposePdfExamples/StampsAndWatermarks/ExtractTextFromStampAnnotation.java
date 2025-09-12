@@ -9,36 +9,35 @@ import com.aspose.pdf.examples.Utils;
 
 public class ExtractTextFromStampAnnotation {
 
-	public static void main(String[] args) {
-		runExamples();
-	}
-	
-	public static void runExamples() {
-		// The paths to resources and output directories.
-		String testID = "com/aspose/pdf/examples/AsposePdf/Stamps-Watermarks/";
-		String dataDir = Utils.getDataDir(testID);
-//		String outputDir = Utils.getOutDir(testID);
+    public static void main(String[] args) {
+        runExamples();
+    }
 
-		System.out.println("============================1");
-		System.out.println("Example extractTextFromStampAnnotation start");
-		extractTextFromStampAnnotation(dataDir);
-		System.out.println("Example extractTextFromStampAnnotation end");
-	}
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Stamps-Watermarks/";
+        String dataDir = Utils.getDataDir(testID);
 
-	public static void extractTextFromStampAnnotation(String dataDir) {
+        System.out.println("============================1");
+        System.out.println("Example extractTextFromStampAnnotation start");
+        extractTextFromStampAnnotation(dataDir);
+        System.out.println("Example extractTextFromStampAnnotation end");
+    }
 
-		//ExStart: ExtractTextFromStampAnnotation
-
-		Document doc = new Document(dataDir+"test.pdf");
-	        Annotation item = doc.getPages().get_Item(1).getAnnotations().get_Item(3);
-	        if (item instanceof StampAnnotation ) {
-	            StampAnnotation annot = (StampAnnotation) item;
-	            TextAbsorber ta = new TextAbsorber();
-	            XForm ap = annot.getNormalAppearance();
-	            ta.visit(ap);
-	            System.out.println(ta.getText());
-	        }
-		//ExEnd: ExtractTextFromStampAnnotation
-	}
-
+    public static void extractTextFromStampAnnotation(String dataDir) {
+        Document doc = new Document(dataDir + "test.pdf");
+        try {
+            Annotation item = doc.getPages().get_Item(1).getAnnotations().get_Item(3);
+            if (item instanceof StampAnnotation) {
+                StampAnnotation annot = (StampAnnotation) item;
+                TextAbsorber ta = new TextAbsorber();
+                XForm ap = annot.getNormalAppearance();
+                ta.visit(ap);
+                System.out.println(ta.getText());
+            }
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

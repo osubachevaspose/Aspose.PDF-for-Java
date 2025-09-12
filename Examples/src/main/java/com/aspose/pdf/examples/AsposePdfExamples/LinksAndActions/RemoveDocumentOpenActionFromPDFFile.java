@@ -4,13 +4,17 @@ import com.aspose.pdf.Document;
 
 public class RemoveDocumentOpenActionFromPDFFile {
 
-	public static void main(String[] args) {
-		// Open document
-		Document document = new Document("Input.pdf");
-		// Remove document open action
-		document.setOpenAction(null);
-		// Save updated document
-		document.save("Output.pdf");
-	}
-
+    public static void main(String[] args) {
+        // Open document
+        Document doc = new Document("Input.pdf");
+        try {
+            // Remove document open action
+            doc.setOpenAction(null);
+            // Save updated document
+            doc.save("Output.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

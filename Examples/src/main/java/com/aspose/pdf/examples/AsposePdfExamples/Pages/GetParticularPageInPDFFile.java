@@ -7,14 +7,24 @@ public class GetParticularPageInPDFFile {
 
 	public static void main(String[] args) {
 		// Open the first document
-		Document pdfDocument1 = new Document("Mobile Software.pdf");
-		// Get the page at a particular index of the Page Collection
-		Page pdfPage = pdfDocument1.getPages().get_Item(3);
-		// Create a new Document object
-		Document newDocument = new Document();
-		// Add the page to the Pages collection of new document object
-		newDocument.getPages().add(pdfPage);
-		// Save the new file
-		newDocument.save("page_" + pdfPage.getNumber() + ".pdf");
+		Document doc = new Document("Mobile Software.pdf");
+		try {
+			// Get the page at a particular index of the Page Collection
+			Page page = doc.getPages().get_Item(3);
+			// Create a new Document object
+			Document newDoc = new Document();
+			try {
+				// Add the page to the Pages collection of new document object
+				newDoc.getPages().add(page);
+				// Save the new file
+				newDoc.save("page_" + page.getNumber() + ".pdf");
+			} finally {
+				if (newDoc != null)
+					newDoc.close();
+			}
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 }

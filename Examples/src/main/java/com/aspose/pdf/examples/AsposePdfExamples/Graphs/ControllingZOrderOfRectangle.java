@@ -11,25 +11,30 @@ public class ControllingZOrderOfRectangle {
 	public static void main(String[] args) {
 		// Create Document instance
 		Document doc = new Document();
-		// Add page to pages collection of PDF file
-		Page page = doc.getPages().add();
-		// set size of PDF page
-		page.setPageSize(375, 300);
-		// set left margin for page object as 0
-		page.getPageInfo().getMargin().setLeft(0);
-		// set top margin of page object as 0
-		page.getPageInfo().getMargin().setTop(0);
-		// create a new rectangle with Color as Red, Z-Order as 0 and certain
-		// dimensions
-		addRectangle(page, 50, 40, 60, 40, Color.getRed(), 2);
-		// create a new rectangle with Color as Blue, Z-Order as 0 and certain
-		// dimensions
-		addRectangle(page, 20, 20, 30, 30, Color.getBlue(), 1);
-		// create a new rectangle with Color as Green, Z-Order as 0 and certain
-		// dimensions
-		addRectangle(page, 40, 40, 60, 30, Color.getGreen(), 0);
-		// save resultant PDF file
-		doc.save("Z-Order_Test.pdf");
+		try {
+			// Add page to pages collection of PDF file
+			Page page = doc.getPages().add();
+			// set size of PDF page
+			page.setPageSize(375, 300);
+			// set left margin for page object as 0
+			page.getPageInfo().getMargin().setLeft(0);
+			// set top margin of page object as 0
+			page.getPageInfo().getMargin().setTop(0);
+			// create a new rectangle with Color as Red, Z-Order as 0 and certain
+			// dimensions
+			addRectangle(page, 50, 40, 60, 40, Color.getRed(), 2);
+			// create a new rectangle with Color as Blue, Z-Order as 0 and certain
+			// dimensions
+			addRectangle(page, 20, 20, 30, 30, Color.getBlue(), 1);
+			// create a new rectangle with Color as Green, Z-Order as 0 and certain
+			// dimensions
+			addRectangle(page, 40, 40, 60, 30, Color.getGreen(), 0);
+			// save resultant PDF file
+			doc.save("Z-Order_Test.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 
 	private static void addRectangle(Page page, float x, float y, float width, float height, Color color, int zindex) {

@@ -6,16 +6,25 @@ public class SplitPDFFileIntoIndividualPages {
 
 	public static void main(String[] args) {
 		// Open a document
-		Document pdfDocument1 = new Document("input.pdf");
-
-		// Loop through the pages
-		for (int pdfPage = 1; pdfPage <= pdfDocument1.getPages().size(); pdfPage++) {
-			// Create a new Document object
-			Document newDocument = new Document();
-			// Get the page at a given index of the Page Collection
-			newDocument.getPages().add(pdfDocument1.getPages().get_Item(pdfPage));
-			// Save the new PDF file
-			newDocument.save("page_" + pdfPage + ".pdf");
+		Document doc = new Document("input.pdf");
+		try {
+			// Loop through the pages
+			for (int i = 1; i <= doc.getPages().size(); i++) {
+				// Create a new Document object
+				Document newDoc = new Document();
+				try {
+					// Get the page at a given index of the Page Collection
+					newDoc.getPages().add(doc.getPages().get_Item(i));
+					// Save the new PDF file
+					newDoc.save("page_" + i + ".pdf");
+				} finally {
+					if (newDoc != null)
+						newDoc.close();
+				}
+			}
+		} finally {
+			if (doc != null)
+				doc.close();
 		}
 	}
 }

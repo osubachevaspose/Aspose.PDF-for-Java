@@ -44,20 +44,17 @@ public class PDFToHTMLAllResourceEmbeddedInSingleResultantStream {
             newOptions.setCustomHtmlSavingStrategy(new HtmlSaveOptions.HtmlPageMarkupSavingStrategy() {
                 public void invoke(HtmlSaveOptions.HtmlPageMarkupSavingInfo htmlSavingInfo) {
                     try {
-                        // TODO Auto-generated method stub
                         byte[] resultHtmlAsBytes = new byte[(int) htmlSavingInfo.getContentStream().available()];
                         htmlSavingInfo.getContentStream().read(resultHtmlAsBytes, 0, resultHtmlAsBytes.length);
-                        // here You can use any writable stream, file stream is taken just as example
+                        // here you can use any writable stream, file stream is taken just as example
                         FileOutputStream fos;
                         try {
                             fos = new FileOutputStream(outputDir + "allResourceEmbeddedInSingleResultantStream.html");
                             fos.write(resultHtmlAsBytes);
                             fos.close();
                         } catch (FileNotFoundException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         } catch (IOException e) {
-                            // TODO Auto-generated catch block
                             e.printStackTrace();
                         }
                     } catch (IOException ex) {
@@ -66,8 +63,7 @@ public class PDFToHTMLAllResourceEmbeddedInSingleResultantStream {
                     }
                 }
             });
-            // we can use some non-existing file name all real saving will be done in
-            // CustomerHtmlSavingStrategy
+            // we can use some non-existing file name all real saving will be done in CustomHtmlSavingStrategy
             String outHtmlFile = outputDir + "ThisFileWillNotAppearOnDisk.html";
             doc.save(outHtmlFile, newOptions);
         } finally {

@@ -7,18 +7,16 @@ import com.aspose.pdf.facades.DocumentPrivilege;
 public class SetPrivilegesOnAnExistingPDFFile {
 
 	public static void main(String[] args) {
-		Document document = new Document("inputFile.pdf");
-		try /* JAVA: was using */
-		{
+		Document doc = new Document("inputFile.pdf");
+		try {
 			DocumentPrivilege documentPrivilege = DocumentPrivilege.getForbidAll();
 			documentPrivilege.setAllowScreenReaders(true);
 			documentPrivilege.setAllowPrint(true);
-
-			document.encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
-			document.save("outputFile.pdf");
+			doc.encrypt("user", "owner", documentPrivilege, CryptoAlgorithm.AESx128, false);
+			doc.save("outputFile.pdf");
 		} finally {
-			if (document != null)
-				document.dispose();
+			if (doc != null)
+				doc.close();
 		}
 	}
 }

@@ -38,7 +38,6 @@ public class PDFtoHTMLExcludeFontResources {
         try {
             // Save
             doc.save(outMainHtmlFile, htmlOptions);
-            // ExEnd:ExcludeFontResources
         } finally {
             if (doc != null)
                 doc.close();
@@ -72,7 +71,6 @@ public class PDFtoHTMLExcludeFontResources {
         Document doc = new Document(dataDir + "ExcludeFontResourcesWithAdditionalOptions.pdf");
         try {
             doc.save(outputDir + "ExcludeFontResourcesWithAdditionalOptions.html", htmlOptions);
-            // ExEnd:PDFtoHTMLExcludeFontResourcesWithAdditionalOptions
         } finally {
             if (doc != null)
                 doc.close();

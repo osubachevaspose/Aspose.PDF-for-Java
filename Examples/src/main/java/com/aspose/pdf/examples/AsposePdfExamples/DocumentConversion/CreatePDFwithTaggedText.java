@@ -52,10 +52,8 @@ public class CreatePDFwithTaggedText {
             paragraphElement6.setActualText("test 6");
             ParagraphElement paragraphElement7 = taggedContent.createParagraphElement();
             paragraphElement7.setActualText("test 7");
-
             // Save PDF Document
             doc.save(outputDir + "PDFwithTaggedText.pdf");
-            // ExEnd:CreatePDFwithTaggedImage
         } finally {
             if (doc != null)
                 doc.close();

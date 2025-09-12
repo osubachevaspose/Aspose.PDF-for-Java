@@ -13,24 +13,29 @@ public class AddingTextInHeaderOrFooterOfPDFFile {
 	public static void main(String[] args) {
 		// open document
 		Document doc = new Document("input.pdf");
-		// create text stamp
-		TextStamp textStamp = new TextStamp("Sample Stamp");
-		// set properties of the stamp
-		textStamp.setTopMargin(10);
-		textStamp.setHorizontalAlignment(HorizontalAlignment.Center);
-		textStamp.setVerticalAlignment(VerticalAlignment.Top);
-		// set text properties
-		textStamp.getTextState().setFont(new FontRepository().findFont("Arial"));
-		textStamp.getTextState().setFontSize(14.0F);
-		textStamp.getTextState().setFontStyle(FontStyles.Bold);
-		textStamp.getTextState().setFontStyle(FontStyles.Italic);
-		textStamp.getTextState().setForegroundColor(Color.getGreen());
-		// iterate through all pages of PDF file
-		for (int Page_counter = 1; Page_counter <= doc.getPages().size(); Page_counter++) {
-			// add stamp to all pages of PDF file
-			doc.getPages().get_Item(Page_counter).addStamp(textStamp);
+		try {
+			// create text stamp
+			TextStamp textStamp = new TextStamp("Sample Stamp");
+			// set properties of the stamp
+			textStamp.setTopMargin(10);
+			textStamp.setHorizontalAlignment(HorizontalAlignment.Center);
+			textStamp.setVerticalAlignment(VerticalAlignment.Top);
+			// set text properties
+			textStamp.getTextState().setFont(FontRepository.findFont("Arial"));
+			textStamp.getTextState().setFontSize(14.0F);
+			textStamp.getTextState().setFontStyle(FontStyles.Bold);
+			textStamp.getTextState().setFontStyle(FontStyles.Italic);
+			textStamp.getTextState().setForegroundColor(Color.getGreen());
+			// iterate through all pages of PDF file
+			for (int Page_counter = 1; Page_counter <= doc.getPages().size(); Page_counter++) {
+				// add stamp to all pages of PDF file
+				doc.getPages().get_Item(Page_counter).addStamp(textStamp);
+			}
+			// save output document
+			doc.save("TextStamp_output.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
 		}
-		// save output document
-		doc.save("TextStamp_output.pdf");
 	}
 }

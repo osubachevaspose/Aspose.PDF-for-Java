@@ -35,7 +35,6 @@ public class ConvertPDFFileIntoXPSFormat {
             XpsSaveOptions saveOptions = new XpsSaveOptions();
             // Save the XPS document
             doc.save(outputDir + "ConvertPDFtoXPS_out.xps", saveOptions);
-            // ExEnd: ConvertPDFToXPS
         } finally {
             if (doc != null)
                 doc.close();
@@ -52,7 +51,6 @@ public class ConvertPDFFileIntoXPSFormat {
             saveOptions.setSaveTransparentTexts(true);
             // save the output in XPS files
             doc.save(outputDir + "KeepingTextSelectableInConvertedXPS_out.xps", saveOptions);
-            // ExEnd: KeepingTextSelectableInConvertedXPS
         } finally {
             if (doc != null)
                 doc.close();

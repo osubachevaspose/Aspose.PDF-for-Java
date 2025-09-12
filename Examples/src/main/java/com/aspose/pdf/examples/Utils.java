@@ -47,9 +47,9 @@ public class Utils {
 
     public static void main(String[] args) {
 
-        //run all examples in evaluation mode:
+        // run all examples in evaluation mode:
 
-        //AsposePdfExamples.Annotations
+        // AsposePdfExamples.Annotations
         AddAnnotationToPDF.runExamples();
         DeleteAllAnnotationsFromPageOfPDFFile.runExamples();
         DeleteParticularAnnotationFromThePDFFile.runExamples();
@@ -58,14 +58,14 @@ public class Utils {
         RedactCertainPageRegionWithRedactionAnnotation.runExamples();
         StrikeOutWordsUsingStrikeOutAnnotation.runExamples();
 
-        //AsposePdfExamples.Attachments
+        // AsposePdfExamples.Attachments
         AddAttachmentToPDF.runExamples();
         DeleteAllAttachmentsFromPDF.runExamples();
         DisableFilesCompressionWhenAddingAsEmbeddedResources.runExamples();
         GetAttachmentInformation.runExamples();
         GetAttachmentsFromPDFDocument.runExamples();
 
-        //AsposePdfExamples.Bookmarks
+        // AsposePdfExamples.Bookmarks
         AddBookmarkToPDFDocument.runExamples();
         AddChildBookmarkToPDFDocument.runExamples();
         BookmarkShouldPointToStartOfPage.runExamples();
@@ -74,7 +74,7 @@ public class Utils {
         GetBookmarksFromPDFDocument.runExamples();
         UpdateBookmarksInPDFDocument.runExamples();
 
-        //DocumentConversion
+        // DocumentConversion
         ConvertEPUBFileToPDFFormat.runExamples();
         ConvertHTMLToPDFFormat.runExamples();
         ConvertPCLToPDFFormat.runExamples();
@@ -96,10 +96,8 @@ public class Utils {
         PDFToHTMLSplittingOutputToMultipageHTML.runExamples();
         ValidatePDFUAStandards.runExamples();
 
-        //DocumentObject
+        // DocumentObject
         AddingJavaScriptDOM.runExamples();
-
-
     }
 
     private static File dir = null;
@@ -116,7 +114,6 @@ public class Utils {
         if (dir == null) {
             dir = new File(dir, "src/main/resources/");
         }
-        
         return dir.toString() + File.separator;
     }
 }

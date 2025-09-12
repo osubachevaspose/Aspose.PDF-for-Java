@@ -16,10 +16,8 @@ public class SetLicenseFromStream {
 		try {
 			license.setLicense(new java.io.FileInputStream("Aspose.Pdf.Java.lic"));
 		} catch (FileNotFoundException e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		} catch (Exception e) {
-			// TODO Auto-generated catch block
 			e.printStackTrace();
 		}
 	}

@@ -7,8 +7,6 @@ import com.aspose.pdf.TextFragment;
 public class HelloWorld {
 
 	public static void main(String[] args) {
-		// TODO Auto-generated method stub
-		// ExStart: HelloWorld
 		// Initialize document object
 		Document doc = new Document();
 		try {
@@ -18,7 +16,6 @@ public class HelloWorld {
 			page.getParagraphs().add(new TextFragment("Hello World!"));
 			// Save updated PDF
 			doc.save("HelloWorld_out.pdf");
-			// ExEnd: HelloWorld
 		} finally {
 			if (doc != null)
 				doc.close();

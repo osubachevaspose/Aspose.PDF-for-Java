@@ -24,11 +24,16 @@ public class ValidatePDFUAStandards {
     public static void validatePDFUAStandards(String dataDir, String outputDir) {
         // Load existing PDF document
         Document doc = new Document(dataDir + "input.pdf");
-        // Validate PDF/UA Standards
-        boolean validate = doc.validate(outputDir + "logfile.xml", com.aspose.pdf.PdfFormat.PDF_UA_1);
-        if (validate)
-            System.out.println("Document is compliant with PDF_UA_1");
-        else
-            System.out.println("Document is not compliant with PDF_UA_1");
+        try {
+            // Validate PDF/UA Standards
+            boolean validate = doc.validate(outputDir + "logfile.xml", com.aspose.pdf.PdfFormat.PDF_UA_1);
+            if (validate)
+                System.out.println("Document is compliant with PDF_UA_1");
+            else
+                System.out.println("Document is not compliant with PDF_UA_1");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
 }

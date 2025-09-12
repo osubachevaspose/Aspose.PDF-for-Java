@@ -6,11 +6,16 @@ public class ExtractTextFromTheWholePDFFile {
 
 	public static void main(String[] args) {
 		// open input PDF
-		PdfExtractor pdfExtractor = new PdfExtractor();
-		pdfExtractor.bindPdf("Input.pdf");
-		// use parameterless ExtractText method
-		pdfExtractor.extractText();
-		// Save the extracted text to a text file
-		pdfExtractor.getText("Output.txt");
+		PdfExtractor extractor = new PdfExtractor();
+		try {
+			extractor.bindPdf("Input.pdf");
+			// use parameterless ExtractText method
+			extractor.extractText();
+			// Save the extracted text to a text file
+			extractor.getText("Output.txt");
+		} finally {
+			if (extractor != null)
+				extractor.close();
+		}
 	}
 }

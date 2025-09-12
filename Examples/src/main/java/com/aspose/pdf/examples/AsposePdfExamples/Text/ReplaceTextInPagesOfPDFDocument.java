@@ -122,7 +122,4 @@ public class ReplaceTextInPagesOfPDFDocument {
 		}
 		doc.save(path + "testHeading_out.pdf");
 	}
-	/*
-	 * //Info // Accept the absorber for first page of document doc.getPages().get_Item(1).accept(textFragmentAbsorber); //ExEnd:Info
-	 */
 }

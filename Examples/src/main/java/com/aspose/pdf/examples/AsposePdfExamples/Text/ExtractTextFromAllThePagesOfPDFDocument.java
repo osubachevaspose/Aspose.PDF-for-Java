@@ -18,20 +18,7 @@ public class ExtractTextFromAllThePagesOfPDFDocument {
 		// Create a writer and open the file
 		java.io.FileWriter writer = new java.io.FileWriter(new java.io.File("Extracted_text.txt"));
 		writer.write(extractedText);
-		// Write a line of text to the file
-		// tw.WriteLine(extractedText);
 		// Close the stream
 		writer.close();
-/*
-		// ExStart:Info1
-		// Accept the absorber for particular PDF page
-		doc.getPages().get_Item(1).accept(textAbsorber);
-		// ExEnd:Info1
-
-		// ExStart:Info2
-		MemoryCleaner.clear();
-		// ExEnd:Info2
-		 * 
-		 */
 	}
 }

@@ -60,7 +60,6 @@ public class ConvertHTMLToPDFFormat {
         try {
             // Save
             doc.save(outputDir + "RenderContentToSamePage_out.pdf");
-            // ExEnd:RenderContentToSamePage
         } finally {
             if (doc != null)
                 doc.close();
@@ -79,7 +78,6 @@ public class ConvertHTMLToPDFFormat {
         try {
             // save
             doc.save(outFile);
-            // ExEnd:RenderHTMLwithSVGData
         } finally {
             if (doc != null)
                 doc.close();

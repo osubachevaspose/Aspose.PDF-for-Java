@@ -23,13 +23,15 @@ public class GetSetZoomFactorOfPDFFile {
 			GoToAction actionzoom = new GoToAction(new XYZExplicitDestination(doc.getPages().get_Item(1),
 					doc.getPages().get_Item(1).getMediaBox().getWidth(),
 					doc.getPages().get_Item(1).getMediaBox().getHeight(), zoom));
+			doc.setOpenAction(actionzoom);
 			// setting action to fit to page width zoom
 			GoToAction actionFittoWidth = new GoToAction(new FitHExplicitDestination(doc.getPages().get_Item(1),
 					doc.getPages().get_Item(1).getMediaBox().getWidth()));
+			doc.setOpenAction(actionFittoWidth);
 			// setting action to fit to page height zoom
 			GoToAction actionFittoHeight = new GoToAction(new FitVExplicitDestination(doc.getPages().get_Item(1),
 					doc.getPages().get_Item(1).getMediaBox().getHeight()));
-			doc.setOpenAction(actionzoom);
+			doc.setOpenAction(actionFittoHeight);
 			doc.save(myDir + "Zoomed_actionzoom.pdf");
 		} finally {
 			if (doc != null)

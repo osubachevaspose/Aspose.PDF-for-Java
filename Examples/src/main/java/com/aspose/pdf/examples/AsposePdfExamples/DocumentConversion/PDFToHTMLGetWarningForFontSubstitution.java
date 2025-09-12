@@ -13,6 +13,7 @@ public class PDFToHTMLGetWarningForFontSubstitution {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
@@ -27,20 +28,25 @@ public class PDFToHTMLGetWarningForFontSubstitution {
 
     public static void getWarningForFontSubstitution(String dataDir, String outputDir) {
         // Load existing PDf file
-        Document pdfDoc = new Document(dataDir + "input1.pdf");
-        final Map names = new HashMap();
-        pdfDoc.FontSubstitution.add(new Document.FontSubstitutionHandler() {
-            public void invoke(Font font, Font newFont) {
-                // add substituted FontNames into map.
-                names.put(font.getFontName(), newFont.getFontName());
-                // or print the message into console
-                System.out.println("Warning: Font " + font.getFontName() + " was substituted with another font -> " + newFont.getFontName());
-            }
-        });
-        // instantiate HTMLSave option to save output in HTML
-        HtmlSaveOptions htmlSaveOps = new HtmlSaveOptions();
-        // save resultant file
-        pdfDoc.save(outputDir + "getWarningForFontSubstitution.html", htmlSaveOps);
+        Document doc = new Document(dataDir + "input1.pdf");
+        try {
+            final Map names = new HashMap();
+            doc.FontSubstitution.add(new Document.FontSubstitutionHandler() {
+                public void invoke(Font font, Font newFont) {
+                    // add substituted FontNames into map.
+                    names.put(font.getFontName(), newFont.getFontName());
+                    // or print the message into console
+                    System.out.println("Warning: Font " + font.getFontName() + " was substituted with another font -> "
+                            + newFont.getFontName());
+                }
+            });
+            // instantiate HTMLSave option to save output in HTML
+            HtmlSaveOptions htmlSaveOps = new HtmlSaveOptions();
+            // save resultant file
+            doc.save(outputDir + "getWarningForFontSubstitution.html", htmlSaveOps);
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

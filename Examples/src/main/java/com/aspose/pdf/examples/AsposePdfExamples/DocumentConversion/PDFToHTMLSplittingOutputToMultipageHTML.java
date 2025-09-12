@@ -9,6 +9,7 @@ public class PDFToHTMLSplittingOutputToMultipageHTML {
     public static void main(String[] args) {
         runExamples();
     }
+
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
@@ -24,12 +25,16 @@ public class PDFToHTMLSplittingOutputToMultipageHTML {
     public static void splittingOutputToMultipageHTML(String dataDir, String outputDir) {
         // Load PDF document
         Document doc = new Document(dataDir + "input.pdf");
-        // Instantiate HtmlSaveOptions instance
-        HtmlSaveOptions html = new HtmlSaveOptions();
-        // Specify the folder to save images during conversion process
-        html.setSplitIntoPages(true);
-        // Save the resultant HTML file
-        doc.save(outputDir + "splittingOutputToMultipageHTML.html", html);
+        try {
+            // Instantiate HtmlSaveOptions instance
+            HtmlSaveOptions html = new HtmlSaveOptions();
+            // Specify the folder to save images during conversion process
+            html.setSplitIntoPages(true);
+            // Save the resultant HTML file
+            doc.save(outputDir + "splittingOutputToMultipageHTML.html", html);
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
     }
-
 }

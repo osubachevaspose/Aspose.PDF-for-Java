@@ -6,10 +6,15 @@ public class DecryptPDFFileUsingOwnerPassword {
 
 	public static void main(String[] args) {
 		// open document
-		Document document = new Document("input.pdf", "password");
-		// decrypt PDF
-		document.decrypt();
-		// save updated PDF
-		document.save("output.pdf");
+		Document doc = new Document("input.pdf", "password");
+		try {
+			// decrypt PDF
+			doc.decrypt();
+			// save updated PDF
+			doc.save("output.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
 }

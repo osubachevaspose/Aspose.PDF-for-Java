@@ -38,7 +38,6 @@ public class OptimizePDFFileSize {
 			doc.optimizeResources(optimizeOptions);
 			// Save updated document
 			doc.save(outputDir + "removeUnnecessaryObjects_out.pdf");
-			// ExEnd: removeUnnecessaryObjects
 		} finally {
 			if (doc != null)
 				doc.close();
@@ -60,7 +59,6 @@ public class OptimizePDFFileSize {
 			doc.optimizeResources(opt);
 			// Save the updated file
 			doc.save(outputDir + "compressingPDFWithImages_out.pdf");
-			// ExEnd: compressingPDFWithImages
 		} finally {
 			if (doc != null)
 				doc.close();

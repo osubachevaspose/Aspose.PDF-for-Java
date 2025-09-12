@@ -7,11 +7,15 @@ public class ConvertDynamicXFAFormToStandardAcroForm {
 
 	public static void main(String[] args) {
 		// Load dynamic XFA form
-		Document document = new Document("XFAform.pdf");
-		// Set the form fields type as standard AcroForm
-		document.getForm().setType(FormType.Standard);
-		// Save the resultant PDF
-		document.save("Standard_AcroForm.pdf");
+		Document doc = new Document("XFAform.pdf");
+		try {
+			// Set the form fields type as standard AcroForm
+			doc.getForm().setType(FormType.Standard);
+			// Save the resultant PDF
+			doc.save("Standard_AcroForm.pdf");
+		} finally {
+			if (doc != null)
+				doc.close();
+		}
 	}
-
 }
