@@ -75,14 +75,14 @@ public class BookmarkShouldPointToStartOfPage {
     }
 
     public static void settingViewerPreferences(String dataDir, String outputDir) {
-        PdfContentEditor editor = new PdfContentEditor();
+        PdfContentEditor contentEditor = new PdfContentEditor();
         try {
-            editor.bindPdf(dataDir + "input.pdf");
-            editor.changeViewerPreference(ViewerPreference.PAGE_LAYOUT_SINGLE_PAGE);
-            editor.save(outputDir + "settingViewerPreferences.pdf");
+            contentEditor.bindPdf(dataDir + "input.pdf");
+            contentEditor.changeViewerPreference(ViewerPreference.PAGE_LAYOUT_SINGLE_PAGE);
+            contentEditor.save(outputDir + "settingViewerPreferences.pdf");
         } finally {
-            if (editor != null)
-                editor.close();
+            if (contentEditor != null)
+                contentEditor.close();
         }
     }
 }

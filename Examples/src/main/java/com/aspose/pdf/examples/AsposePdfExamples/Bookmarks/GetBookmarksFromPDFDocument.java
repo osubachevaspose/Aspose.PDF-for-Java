@@ -49,12 +49,12 @@ public class GetBookmarksFromPDFDocument {
 
     public static void gettingBookmarksPageNumber(String dataDir, String outputDir) {
         // Create PdfBookmarkEditor
-        PdfBookmarkEditor editor = new PdfBookmarkEditor();
+        PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            editor.bindPdf(dataDir + "input.pdf");
+            bookmarkEditor.bindPdf(dataDir + "input.pdf");
             // Extract bookmarks
-            Bookmarks bookmarks = editor.extractBookmarks();
+            Bookmarks bookmarks = bookmarkEditor.extractBookmarks();
             for (Bookmark bookmark : bookmarks) {
                 String strLevelSeprator = "";
                 for (int i = 1; i < bookmark.getLevel(); i++) {
@@ -65,8 +65,8 @@ public class GetBookmarksFromPDFDocument {
                 System.out.println("Page Action :- " + strLevelSeprator + bookmark.getAction());
             }
         } finally {
-            if (editor != null)
-                editor.close();
+            if (bookmarkEditor != null)
+                bookmarkEditor.close();
         }
     }
 }

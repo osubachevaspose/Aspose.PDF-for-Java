@@ -52,15 +52,15 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
     }
 
     public static void facadesApproach(String dataDir, String outputDir) {
-        PdfAnnotationEditor editor = new PdfAnnotationEditor();
+        PdfAnnotationEditor annotationEditor = new PdfAnnotationEditor();
         try {
-            editor.bindPdf(dataDir + "input.pdf");
+            annotationEditor.bindPdf(dataDir + "input.pdf");
             // redact certain page region
-            editor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.WHITE);
-            editor.save(outputDir + "Redaction_out.pdf");
+            annotationEditor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.WHITE);
+            annotationEditor.save(outputDir + "Redaction_out.pdf");
         } finally {
-            if (editor != null)
-                editor.close();
+            if (annotationEditor != null)
+                annotationEditor.close();
         }
     }
 }

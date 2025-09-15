@@ -1,6 +1,5 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Document;
 
-import com.aspose.pdf.facades.DefaultMetadataProperties;
 import com.aspose.pdf.facades.PdfXmpMetadata;
 
 public class SetXMPMetadataOfAnExistingPDF {

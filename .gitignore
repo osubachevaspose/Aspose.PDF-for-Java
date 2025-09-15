@@ -38,3 +38,6 @@ Out*/
 *.lic
 Data/*Out*
 *out*
+
+# Visual Studio Code files
+.vscode

@@ -33,7 +33,6 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
                                 .exec("tesseract" + " " + myDir + "test.jpg" + " " + myDir + "out hocr");
                         System.out.println("tesseract" + " " + myDir + "test.jpg" + " " + myDir + "out hocr");
                         process.waitFor();
-
                     } catch (IOException e) {
                         e.printStackTrace();
                     } catch (InterruptedException e) {

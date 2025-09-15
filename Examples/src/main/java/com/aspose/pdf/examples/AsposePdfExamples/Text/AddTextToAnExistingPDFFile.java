@@ -8,27 +8,31 @@ import com.aspose.pdf.Position;
 import com.aspose.pdf.TextBuilder;
 import com.aspose.pdf.TextFragment;
 
-//import java.awt.Color;
 public class AddTextToAnExistingPDFFile {
 
-	public static void main(String[] args) {
-		// open document
-		Document doc = new Document("input.pdf");
-		// get particular page
-		Page pdfPage = doc.getPages().get_Item(1);
-		// create text fragment
-		TextFragment textFragment = new TextFragment("main text");
-		textFragment.setPosition(new Position(100, 600));
-		// set text properties
-		textFragment.getTextState().setFont(FontRepository.findFont("Verdana"));
-		textFragment.getTextState().setFontSize(14);
-		textFragment.getTextState().setForegroundColor(Color.getBlue());
-		textFragment.getTextState().setBackgroundColor(Color.getGray());
-		// create TextBuilder object
-		TextBuilder textBuilder = new TextBuilder(pdfPage);
-		// append the text fragment to the PDF page
-		textBuilder.appendText(textFragment);
-		// save updated PDF file
-		doc.save("Text_Added.pdf");
-	}
+    public static void main(String[] args) {
+        // open document
+        Document doc = new Document("input.pdf");
+        try {
+            // get particular page
+            Page pdfPage = doc.getPages().get_Item(1);
+            // create text fragment
+            TextFragment textFragment = new TextFragment("main text");
+            textFragment.setPosition(new Position(100, 600));
+            // set text properties
+            textFragment.getTextState().setFont(FontRepository.findFont("Verdana"));
+            textFragment.getTextState().setFontSize(14);
+            textFragment.getTextState().setForegroundColor(Color.getBlue());
+            textFragment.getTextState().setBackgroundColor(Color.getGray());
+            // create TextBuilder object
+            TextBuilder textBuilder = new TextBuilder(pdfPage);
+            // append the text fragment to the PDF page
+            textBuilder.appendText(textFragment);
+            // save updated PDF file
+            doc.save("Text_Added.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

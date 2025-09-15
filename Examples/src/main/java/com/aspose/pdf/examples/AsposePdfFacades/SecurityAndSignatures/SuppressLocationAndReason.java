@@ -6,21 +6,27 @@ import com.aspose.pdf.facades.PdfFileSignature;
 import java.awt.*;
 
 public class SuppressLocationAndReason {
-    public static void main(String[] args)  {
+
+    public static void main(String[] args) {
         // The path to the documents directory.
         String dataDir = "PathToDir";
         String inPfxFile = dataDir + "certificate.pfx";
         String inFile = dataDir + "input.pdf";
         String outFile = dataDir + "output.pdf";
-        PdfFileSignature pdfSign = new PdfFileSignature();
-        pdfSign.bindPdf(inFile);
-        //create a rectangle for signature location
-        Rectangle rect = new Rectangle(100, 100, 200, 100);
-        //create any of the three signature types
-        PKCS1 signature = new PKCS1(inPfxFile, "12345");
-        // sign the PDF file
-        pdfSign.sign(1, "", "Contact", "", true, rect, signature);
-        //save output PDF file
-        pdfSign.save(outFile);
+        PdfFileSignature fileSignature = new PdfFileSignature();
+        try {
+            fileSignature.bindPdf(inFile);
+            // create a rectangle for signature location
+            Rectangle rect = new Rectangle(100, 100, 200, 100);
+            // create any of the three signature types
+            PKCS1 signature = new PKCS1(inPfxFile, "12345");
+            // sign the PDF file
+            fileSignature.sign(1, "", "Contact", "", true, rect, signature);
+            // save output PDF file
+            fileSignature.save(outFile);
+        } finally {
+            if (fileSignature != null)
+                fileSignature.close();
+        }
     }
 }
