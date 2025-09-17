@@ -26,29 +26,40 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFFi
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToDOCOrDOCXFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToEPUBFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToExcelWorkbook;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToMobiXML;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToPDFAFormat;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToPPTX;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToSVGFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToXML;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFtoXLSX;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPostScriptFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertSVGFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertTextFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXMLFileToPDF;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXPSFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXSLFOToPDF;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.CreatePDFwithTaggedImage;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.CreatePDFwithTaggedText;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.EscapeHTMLTagsAndSpecialCharacters;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToEMF;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLAllResourceEmbeddedInSingleResultantStream;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLAvoidSavingImagesInSVGFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLGetWarningForFontSubstitution;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLRenderPDFDataLayersAsSeparateHTMLLayerElement;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSingleHTMLWithAllResourcesEmbedded;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSpecifyImagesFolder;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSplittingOutputToMultipageHTML;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLWithFontSubstitution;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFtoHTMLExcludeFontResources;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ValidatePDFUAStandards;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddingJavaScriptDOM;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddLayersToPDFFile;
 
 import java.io.File;
 
 public class Utils {
 
     public static void main(String[] args) {
-
         // run all examples in evaluation mode:
 
         // AsposePdfExamples.Annotations
@@ -84,40 +95,53 @@ public class Utils {
         ConvertPDFToDOCOrDOCXFormat.runExamples();
         ConvertPDFToEPUBFormat.runExamples();
         ConvertPDFToExcelWorkbook.runExamples();
+        ConvertPDFToMobiXML.runExamples();
         ConvertPDFToPDFAFormat.runExamples();
+        ConvertPDFToPPTX.runExamples();
         ConvertPDFToSVGFormat.runExamples();
+        ConvertPDFtoXLSX.runExamples();
         ConvertPDFToXML.runExamples();
+        ConvertPostScriptFileToPDFFormat.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();
         ConvertTextFileToPDFFormat.runExamples();
         ConvertXMLFileToPDF.runExamples();
         ConvertXPSFileToPDFFormat.runExamples();
         ConvertXSLFOToPDF.runExamples();
+        CreatePDFwithTaggedImage.runExamples();
         CreatePDFwithTaggedText.runExamples();
+        EscapeHTMLTagsAndSpecialCharacters.runExamples();
         PDFToEMF.runExamples();
+        PDFToHTMLAllResourceEmbeddedInSingleResultantStream.runExamples();
         PDFToHTMLAvoidSavingImagesInSVGFormat.runExamples();
+        PDFtoHTMLExcludeFontResources.runExamples();
         PDFToHTMLGetWarningForFontSubstitution.runExamples();
+        PDFToHTMLRenderPDFDataLayersAsSeparateHTMLLayerElement.runExamples();
         PDFToHTMLSingleHTMLWithAllResourcesEmbedded.runExamples();
+        PDFToHTMLSpecifyImagesFolder.runExamples();
         PDFToHTMLSplittingOutputToMultipageHTML.runExamples();
+        PDFToHTMLWithFontSubstitution.runExamples();
         ValidatePDFUAStandards.runExamples();
 
         // DocumentObject
         AddingJavaScriptDOM.runExamples();
+        AddLayersToPDFFile.runExamples();
     }
 
     private static File dir = null;
-
-    public static String getDataDir(String testID) {
-        return getSharedDataDir() + testID;
-    }
-
-    public static String getOutDir(String testID) {
-        return getSharedDataDir() + "../../../testout/" + testID;
-    }
 
     public static String getSharedDataDir() {
         if (dir == null) {
             dir = new File(dir, "src/main/resources/");
         }
         return dir.toString() + File.separator;
+    }
+
+    public static String getDataDir(String testID) {
+        return getSharedDataDir() + testID;
+    }
+
+    public static String getOutDir(String testID) {
+        // return getSharedDataDir() + "../../../testout/" + testID;
+        return "testout/" + testID;
     }
 }

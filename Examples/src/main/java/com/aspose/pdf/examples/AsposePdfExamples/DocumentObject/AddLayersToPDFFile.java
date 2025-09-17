@@ -3,12 +3,28 @@ package com.aspose.pdf.examples.AsposePdfExamples.DocumentObject;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Layer;
 import com.aspose.pdf.Page;
+import com.aspose.pdf.examples.Utils;
 
 import java.util.ArrayList;
 
 public class AddLayersToPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/AddLayersToPDFFile/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addLayersToPDFFile start");
+        addLayersToPDFFile(outputDir);
+        System.out.println("Example addLayersToPDFFile end");
+    }
+
+    public static void addLayersToPDFFile(String outputDir) {
         Document doc = new Document();
         try {
             Page page = doc.getPages().add();
@@ -31,7 +47,7 @@ public class AddLayersToPDFFile {
             layer.getContents().add(new com.aspose.pdf.operators.LineTo(400, 800));
             layer.getContents().add(new com.aspose.pdf.operators.Stroke());
             page.getLayers().add(layer);
-            doc.save("output.pdf");
+            doc.save(outputDir + "output.pdf");
         } finally {
             if (doc != null)
                 doc.close();
