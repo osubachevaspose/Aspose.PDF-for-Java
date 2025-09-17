@@ -15,7 +15,7 @@ public class ValidatePDFUAStandards {
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example validatePDFUAStandards start");
         validatePDFUAStandards(dataDir, outputDir);
         System.out.println("Example validatePDFUAStandards end");

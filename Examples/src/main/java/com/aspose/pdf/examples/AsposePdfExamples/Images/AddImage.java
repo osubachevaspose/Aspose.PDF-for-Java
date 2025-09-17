@@ -17,7 +17,7 @@ public class AddImage {
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example AddDicomImage start");
         AddDicomImage(dataDir, outputDir);
         System.out.println("Example AddDicomImage end");

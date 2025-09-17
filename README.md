@@ -13,7 +13,18 @@ Directory | Description
   </a>
 </p>
 
-## `aspose.pdf` Package Features
+## `com.aspose.pdf` Package Features
+
+- Supports 14 core fonts.
+- Support for `Type 1`, `TrueType`, `Type 3`, `CJK` fonts.
+- `Unicode` support is available.
+- Add, search, extract and replace text in PDF files.
+- Add/delete, extract and replace images.
+- Insert, delete, split PDF pages.
+- Support for Linearization (optimization for the web).
+- Set and get XMP metadata.
+- Validate (`PDF/A-1a`, `PDF/A-1b`).
+- Work with bookmarks, annotations, PDF forms, stamps, watermarks and more.
 
 ### PDF Document Features
 
@@ -37,22 +48,7 @@ Directory | Description
 - Convert conventional Image formats into PDF file.
 - Convert `PCL` files into PDF file.
 
-For a more comprehensive list of features, please visit [Features of `aspose.pdf` Package](https://docs.aspose.com/pdf/java/features-of-aspose-pdf-package/).
-
-## `com.aspose.pdf` Package Features
-
-- Supports 14 core fonts.
-- Support for `Type 1`, `TrueType`, `Type 3`, `CJK` fonts.
-- `Unicode` support is available.
-- Add, search, extract and replace text in PDF files.
-- Add/delete, extract and replace images.
-- Insert, delete, split PDF pages.
-- Support for Linearization (optimization for the web).
-- Set and get XMP metadata.
-- Validate (`PDF/A-1a`, `PDF/A-1b`).
-- Work with bookmarks, annotations, PDF forms, stamps, watermarks and more.
-
-For a more comprehensive list of features, please visit [Features of `com.aspose.pdf` Package](https://docs.aspose.com/pdf/java/features-of-com-aspose-pdf-package/).
+For a more comprehensive list of features, please visit [Features of `com.aspose.pdf` Package](https://docs.aspose.com/pdf/java/key-features/).
 
 ## `com.aspose.pdf.facades` Package Features
 
@@ -64,7 +60,7 @@ For a more comprehensive list of features, please visit [Features of `com.aspose
 - Print PDF to default, specified, physical, or virtual printer.
 - Print PDF to `XPS` file or XPS printer.
 
-For a more comprehensive list of features, please visit [Features of `com.aspose.pdf.facades` Package](https://docs.aspose.com/pdf/java/features-of-com-aspose-pdf-facades-package/).
+For a more comprehensive list of features, please visit [Features of `com.aspose.pdf.facades` Package](https://docs.aspose.com/pdf/java/working-with-facades/).
 
 ## Read & Write PDF & Other Formats
 
@@ -119,4 +115,4 @@ writer.write(extractedText);
 writer.close();
 ```
 
-[Product Page](https://products.aspose.com/pdf/java) | [Docs](https://docs.aspose.com/pdf/java/) | [Demos](https://products.aspose.app/pdf/family) | [API Reference](https://apireference.aspose.com/pdf/java) | [Examples](https://github.com/aspose-pdf/Aspose.PDF-for-Java/tree/master/Examples) | [Blog](https://blog.aspose.com/category/pdf/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/pdf) | [Temporary License](https://purchase.aspose.com/temporary-license)
+[Product Page](https://products.aspose.com/pdf/java) | [Docs](https://docs.aspose.com/pdf/java/) | [Demos](https://products.aspose.app/pdf/family) | [API Reference](https://apireference.aspose.com/pdf/java) | [Examples](https://github.com/aspose-pdf/Aspose.PDF-for-Java/tree/master/Examples) | [Blog](https://blog.aspose.com/categories/aspose.pdf-product-family/) | [Search](https://search.aspose.com/) | [Free Support](https://forum.aspose.com/c/pdf) | [Temporary License](https://purchase.aspose.com/temporary-license)

@@ -18,7 +18,7 @@ public class UseLatexScript3 {
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example useLatexScript3 start");
         useLatexScript3(dataDir, outputDir);
         System.out.println("Example useLatexScript3 end");

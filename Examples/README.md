@@ -10,7 +10,7 @@ This package contains Java Example Project for [Aspose.PDF for Java](http://prod
 
 ## How to Run the Examples?
 
-All the examples are arranged in src folder and any modern IDE like IntelliJ IDEA, Eclipse, Netbeans etc can import the source folder easily. Visit our [documentation website](https://docs.aspose.com/display/pdfjava/How+to+Run+the+Examples) for more details.
+All the examples are arranged in src folder and any modern IDE like IntelliJ IDEA, Eclipse, Netbeans etc can import the source folder easily. Visit our [documentation website](https://docs.aspose.com/pdf/java/how-to-run-other-examples/) for more details.
 
 ## Install and Configure Maven
 

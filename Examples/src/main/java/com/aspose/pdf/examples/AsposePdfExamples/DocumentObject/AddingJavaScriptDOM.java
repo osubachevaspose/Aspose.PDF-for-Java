@@ -19,7 +19,7 @@ public class AddingJavaScriptDOM {
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example addingJavaScriptDOM start");
         addingJavaScriptDOM(dataDir, outputDir);
         System.out.println("Example addingJavaScriptDOM end");

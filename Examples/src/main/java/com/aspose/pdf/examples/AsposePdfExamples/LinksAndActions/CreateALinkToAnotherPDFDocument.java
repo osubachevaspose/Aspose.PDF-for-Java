@@ -17,7 +17,7 @@ public class CreateALinkToAnotherPDFDocument {
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example createALinkToAnotherPDFDocument start");
         createALinkToAnotherPDFDocument(dataDir, outputDir);
         System.out.println("Example createALinkToAnotherPDFDocument end");

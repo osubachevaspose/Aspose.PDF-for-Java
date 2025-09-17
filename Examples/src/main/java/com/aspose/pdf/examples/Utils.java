@@ -30,7 +30,9 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFTo
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToSVGFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToXML;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertSVGFileToPDFFormat;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertTextFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXMLFileToPDF;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXPSFileToPDFFormat;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXSLFOToPDF;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.CreatePDFwithTaggedText;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToEMF;
@@ -86,7 +88,9 @@ public class Utils {
         ConvertPDFToSVGFormat.runExamples();
         ConvertPDFToXML.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();
+        ConvertTextFileToPDFFormat.runExamples();
         ConvertXMLFileToPDF.runExamples();
+        ConvertXPSFileToPDFFormat.runExamples();
         ConvertXSLFOToPDF.runExamples();
         CreatePDFwithTaggedText.runExamples();
         PDFToEMF.runExamples();

@@ -18,7 +18,7 @@ public class ExtractTextFromStampAnnotation {
         String testID = "com/aspose/pdf/examples/AsposePdf/Stamps-Watermarks/";
         String dataDir = Utils.getDataDir(testID);
 
-        System.out.println("============================1");
+        System.out.println("============================");
         System.out.println("Example extractTextFromStampAnnotation start");
         extractTextFromStampAnnotation(dataDir);
         System.out.println("Example extractTextFromStampAnnotation end");
