@@ -17,9 +17,9 @@ public class ConvertXSLFOToPDF {
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
-        System.out.println("Example ConvertXSLFOToPDF start");
+        System.out.println("Example convertXSLFOToPDF start");
         convertXSLFOToPDF(dataDir, outputDir);
-        System.out.println("Example ConvertXSLFOToPDF end");
+        System.out.println("Example convertXSLFOToPDF end");
     }
 
     public static void convertXSLFOToPDF(String dataDir, String outputDir) {

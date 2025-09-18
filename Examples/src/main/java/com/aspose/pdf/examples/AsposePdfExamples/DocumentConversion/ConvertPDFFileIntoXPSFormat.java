@@ -17,17 +17,17 @@ public class ConvertPDFFileIntoXPSFormat {
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
-        System.out.println("Example KeepingTextSelectableInConvertedXPS start");
-        KeepingTextSelectableInConvertedXPS(dataDir, outputDir);
-        System.out.println("Example KeepingTextSelectableInConvertedXPS end");
+        System.out.println("Example keepingTextSelectableInConvertedXPS start");
+        keepingTextSelectableInConvertedXPS(dataDir, outputDir);
+        System.out.println("Example keepingTextSelectableInConvertedXPS end");
 
         System.out.println("============================");
-        System.out.println("Example ConvertPDFtoXPS start");
-        ConvertPDFtoXPS(dataDir, outputDir);
-        System.out.println("Example ConvertPDFtoXPS end");
+        System.out.println("Example convertPDFtoXPS start");
+        convertPDFtoXPS(dataDir, outputDir);
+        System.out.println("Example convertPDFtoXPS end");
     }
 
-    public static void ConvertPDFtoXPS(String dataDir, String outputDir) {
+    public static void convertPDFtoXPS(String dataDir, String outputDir) {
         // Load PDF document
         Document doc = new Document(dataDir + "input.pdf");
         try {
@@ -41,7 +41,7 @@ public class ConvertPDFFileIntoXPSFormat {
         }
     }
 
-    public static void KeepingTextSelectableInConvertedXPS(String dataDir, String outputDir) {
+    public static void keepingTextSelectableInConvertedXPS(String dataDir, String outputDir) {
         // load PDF document
         Document doc = new Document(dataDir + "Input.pdf");
         try {

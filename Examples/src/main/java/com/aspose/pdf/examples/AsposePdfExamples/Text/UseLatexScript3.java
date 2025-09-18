@@ -4,7 +4,6 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.LatexFragment;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
-import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.AddImageStampAsBackgroundInFloatingBox;
 
 public class UseLatexScript3 {
 

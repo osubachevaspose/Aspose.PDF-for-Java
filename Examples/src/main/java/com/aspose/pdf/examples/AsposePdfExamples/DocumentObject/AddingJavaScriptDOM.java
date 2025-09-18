@@ -15,26 +15,24 @@ public class AddingJavaScriptDOM {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/AddingJavaScriptDOM/";
-        String dataDir = Utils.getDataDir(testID);
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddingJavaScriptDOM/";
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example addingJavaScriptDOM start");
-        addingJavaScriptDOM(dataDir, outputDir);
+        addingJavaScriptDOM(outputDir);
         System.out.println("Example addingJavaScriptDOM end");
 
         System.out.println("Example afterPrintingAndSaving start");
-        afterPrintingAndSaving(dataDir, outputDir);
+        afterPrintingAndSaving(outputDir);
         System.out.println("Example afterPrintingAndSaving end");
 
         System.out.println("Example addFormattingCodeAndValueValidation start");
-        addFormattingCodeAndValueValidation(dataDir, outputDir);
+        addFormattingCodeAndValueValidation(outputDir);
         System.out.println("Example addFormattingCodeAndValueValidation end");
     }
 
-    public static void addingJavaScriptDOM(String dataDir, String outputDir) {
-        // Open a PDF Document
+    public static void addingJavaScriptDOM(String outputDir) {
         Document doc = new Document();
         try {
             doc.getPages().add();
@@ -50,14 +48,14 @@ public class AddingJavaScriptDOM {
             doc.getPages().get_Item(2).getActions().setOnOpen(new JavascriptAction("app.alert('page 2 is opened')"));
             doc.getPages().get_Item(2).getActions().setOnClose(new JavascriptAction("app.alert('page 2 is closed')"));
             // Save PDF Document
-            doc.save(dataDir + "out/addingJavaScriptDOM.pdf");
+            doc.save(outputDir + "addingJavaScriptDOM.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void addFormattingCodeAndValueValidation(String dataDir, String outputDir) {
+    public static void addFormattingCodeAndValueValidation(String outputDir) {
         Document doc = new Document();
         try {
             Page page = doc.getPages().add();
@@ -77,8 +75,7 @@ public class AddingJavaScriptDOM {
         }
     }
 
-    public static void afterPrintingAndSaving(String dataDir, String outputDir) {
-        // Open a PDF Document
+    public static void afterPrintingAndSaving(String outputDir) {
         Document doc = new Document();
         try {
             doc.getPages().add();

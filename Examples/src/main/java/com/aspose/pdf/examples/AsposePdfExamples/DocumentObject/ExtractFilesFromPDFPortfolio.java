@@ -1,64 +1,84 @@
 package com.aspose.pdf.examples.AsposePdfExamples.DocumentObject;
 
 import java.io.File;
+import java.io.FileOutputStream;
 import java.io.IOException;
 import java.io.InputStream;
 
 import com.aspose.pdf.Document;
 import com.aspose.pdf.EmbeddedFileCollection;
+import com.aspose.pdf.FileSpecification;
+import com.aspose.pdf.examples.Utils;
 
 public class ExtractFilesFromPDFPortfolio {
 
-	public static void main(String[] args) {
-		extractFilesFromPDFPortfolio();
-		toDeletePDFPortfolioFile();
-	}
+    public static void main(String[] args) {
+        runExamples();
+    }
 
-	public static void extractFilesFromPDFPortfolio() {
-		// load source PDF Portfolio
-		Document doc = new Document("Portfolio_output.pdf");
-		try {
-			// get collection of embedded files
-			EmbeddedFileCollection embeddedFiles = doc.getEmbeddedFiles();
-			// iterate through individual file of Portfolio
-			for (int counter = 1; counter <= doc.getEmbeddedFiles().size(); counter++) {
-				com.aspose.pdf.FileSpecification fileSpecification = embeddedFiles.get_Item(counter);
-				try {
-					InputStream input = fileSpecification.getContents();
-					File file = new File(fileSpecification.getName());
-					// create path for file from pdf
-					file.getParentFile().mkdirs();
-					// create and extract file from pdf
-					java.io.FileOutputStream output = new java.io.FileOutputStream(fileSpecification.getName(), true);
-					byte[] buffer = new byte[4096];
-					int n = 0;
-					while (-1 != (n = input.read(buffer)))
-						output.write(buffer, 0, n);
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/ExtractFilesFromPDFPortfolio/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
 
-					// close InputStream object
-					input.close();
-					output.close();
-				} catch (IOException e) {
-					e.printStackTrace();
-				}
-			}
-		} finally {
-			if (doc != null)
-				doc.close();
-		}
-	}
+        System.out.println("============================");
+        System.out.println("Example deletePDFPortfolioFile start");
+        deletePDFPortfolioFile(dataDir, outputDir);
+        System.out.println("Example deletePDFPortfolioFile end");
 
-	public static void toDeletePDFPortfolioFile() {
-		// load source PDF Portfolio
-		Document doc = new Document("Portfolio_output.pdf");
-		try {
-			// delete all files from Embedded files collection
-			doc.getEmbeddedFiles().delete();
-			// save updated document
-			doc.save("NotFolio.pdf");
-		} finally {
-			if (doc != null)
-				doc.close();
-		}
-	}
+        System.out.println("Example extractFilesFromPDFPortfolio start");
+        extractFilesFromPDFPortfolio(dataDir, outputDir);
+        System.out.println("Example extractFilesFromPDFPortfolio end");
+    }
+
+    public static void deletePDFPortfolioFile(String dataDir, String outputDir) {
+        // load source PDF Portfolio
+        Document doc = new Document(dataDir + "Portfolio_output.pdf");
+        try {
+            // delete all files from Embedded files collection
+            doc.getEmbeddedFiles().delete();
+            // save updated document
+            doc.save(outputDir + "NotFolio.pdf");
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
+
+    public static void extractFilesFromPDFPortfolio(String dataDir, String outputDir) {
+        // load source PDF Portfolio
+        Document doc = new Document(dataDir + "Portfolio_output.pdf");
+        try {
+            // get collection of embedded files
+            EmbeddedFileCollection embeddedFiles = doc.getEmbeddedFiles();
+            // iterate through individual file of Portfolio
+            for (int counter = 1; counter <= doc.getEmbeddedFiles().size(); counter++) {
+                FileSpecification fileSpecification = embeddedFiles.get_Item(counter);
+                try {
+                    InputStream input = fileSpecification.getContents();
+                    File file = new File(fileSpecification.getName());
+                    File parentFile = file.getParentFile();
+                    if (parentFile != null) {
+                        // create path for file from pdf
+                        parentFile.mkdirs();
+                    }
+                    // create and extract file from pdf
+                    FileOutputStream output = new FileOutputStream(outputDir + fileSpecification.getName(), true);
+                    byte[] buffer = new byte[4096];
+                    int n = 0;
+                    while (-1 != (n = input.read(buffer))) {
+                        output.write(buffer, 0, n);
+                    }
+                    output.close();
+                    input.close();
+                } catch (IOException e) {
+                    e.printStackTrace();
+                }
+            }
+        } finally {
+            if (doc != null)
+                doc.close();
+        }
+    }
 }

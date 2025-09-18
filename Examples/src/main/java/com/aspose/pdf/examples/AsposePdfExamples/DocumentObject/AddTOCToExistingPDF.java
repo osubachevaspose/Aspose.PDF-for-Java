@@ -7,12 +7,29 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.TextSegment;
 import com.aspose.pdf.TocInfo;
+import com.aspose.pdf.examples.Utils;
 
 public class AddTOCToExistingPDF {
 
     public static void main(String[] args) {
-        // Load an existing PDF files
-        Document doc = new Document("source.pdf");
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddTOCToExistingPDF/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addTOCToExistingPDF start");
+        addTOCToExistingPDF(dataDir, outputDir);
+        System.out.println("Example addTOCToExistingPDF end");
+    }
+
+    public static void addTOCToExistingPDF(String dataDir, String outputDir) {
+        // Load an existing PDF file
+        Document doc = new Document(dataDir + "source.pdf");
         try {
             // Get access to first page of PDF file
             Page tocPage = doc.getPages().insert(1);
@@ -25,12 +42,10 @@ public class AddTOCToExistingPDF {
             tocInfo.setTitle(title);
             tocPage.setTocInfo(tocInfo);
             // Create string objects which will be used as TOC elements
-            String[] titles = new String[4];
+            String[] titles = new String[2];
             titles[0] = "First page";
             titles[1] = "Second page";
-            titles[2] = "Third page";
-            titles[3] = "Fourth page";
-            for (int i = 0; i < 4; i++) {
+            for (int i = 0; i < 2; i++) {
                 // Create Heading object
                 Heading heading2 = new Heading(1);
                 TextSegment segment2 = new TextSegment();
@@ -46,7 +61,7 @@ public class AddTOCToExistingPDF {
                 tocPage.getParagraphs().add(heading2);
             }
             // Save the updated document
-            doc.save("TOC_Output_Java.pdf");
+            doc.save(outputDir + "TOC_Output_Java.pdf");
         } finally {
             if (doc != null)
                 doc.close();

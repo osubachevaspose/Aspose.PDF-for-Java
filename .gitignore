@@ -38,6 +38,7 @@ Out*/
 *.lic
 Data/*Out*
 *out*
+*.jar
 
 # Visual Studio Code files
 .vscode

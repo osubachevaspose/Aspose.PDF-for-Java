@@ -53,7 +53,13 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLWit
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFtoHTMLExcludeFontResources;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ValidatePDFUAStandards;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddingJavaScriptDOM;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ConvertPDFFromRGBColorspaceToGrayscale;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsInExistingPDFFile;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsWhileCreatingPDF;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ExtractFilesFromPDFPortfolio;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddLayersToPDFFile;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddTOCToExistingPDF;
+import com.aspose.pdf.examples.AsposePdfExamples.Forms.GetFormFieldsFromSpecificRegionOfPDFFile;
 
 import java.io.File;
 
@@ -125,6 +131,16 @@ public class Utils {
         // DocumentObject
         AddingJavaScriptDOM.runExamples();
         AddLayersToPDFFile.runExamples();
+        AddTOCToExistingPDF.runExamples();
+        // requires tesseract
+        // ConvertingNonSearchablePDFToSearchablePDFDocument.runExamples();
+        ConvertPDFFromRGBColorspaceToGrayscale.runExamples();
+        EmbeddingFontsInExistingPDFFile.runExamples();
+        EmbeddingFontsWhileCreatingPDF.runExamples();
+        ExtractFilesFromPDFPortfolio.runExamples();
+
+        // Forms
+        GetFormFieldsFromSpecificRegionOfPDFFile.runExamples();
     }
 
     private static File dir = null;

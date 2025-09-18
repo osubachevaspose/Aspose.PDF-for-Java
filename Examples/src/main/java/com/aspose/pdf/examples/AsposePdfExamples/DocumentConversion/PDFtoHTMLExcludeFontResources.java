@@ -18,16 +18,16 @@ public class PDFtoHTMLExcludeFontResources {
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
-        System.out.println("Example PDFtoHTMLExcludingFontResources start");
-        PDFtoHTMLExcludingFontResources(dataDir, outputDir);
-        System.out.println("Example PDFtoHTMLExcludingFontResources end");
+        System.out.println("Example pdfToHTMLExcludingFontResources start");
+        pdfToHTMLExcludingFontResources(dataDir, outputDir);
+        System.out.println("Example pdfToHTMLExcludingFontResources end");
 
-        System.out.println("Example PDFtoHTMLExcludeFontResourcesWithAdditionalOptions start");
-        PDFtoHTMLExcludeFontResourcesWithAdditionalOptions(dataDir, outputDir);
-        System.out.println("Example PDFtoHTMLExcludeFontResourcesWithAdditionalOptions end");
+        System.out.println("Example pdfToHTMLExcludeFontResourcesWithAdditionalOptions start");
+        pdfToHTMLExcludeFontResourcesWithAdditionalOptions(dataDir, outputDir);
+        System.out.println("Example pdfToHTMLExcludeFontResourcesWithAdditionalOptions end");
     }
 
-    private static void PDFtoHTMLExcludingFontResources(String dataDir, String outputDir) {
+    private static void pdfToHTMLExcludingFontResources(String dataDir, String outputDir) {
         String inFile = dataDir + "ExcludeFont.pdf";
         String outMainHtmlFile = outputDir + "ExcludeFontResources.html";
         // Initialize htmlOptions
@@ -53,7 +53,7 @@ public class PDFtoHTMLExcludeFontResources {
     // In this example, Aspose.PDF tried to replace embedded fonts from PDF
     // 'LJMWCD+ArialMT', 'KPACHB+SymbolMT' with system fonts 'ArialMT', 'SymbolMT'
     // and specify them in HTML.
-    private static void PDFtoHTMLExcludeFontResourcesWithAdditionalOptions(String dataDir, String outputDir) {
+    private static void pdfToHTMLExcludeFontResourcesWithAdditionalOptions(String dataDir, String outputDir) {
         HtmlSaveOptions htmlOptions = new HtmlSaveOptions();
         htmlOptions.setExplicitListOfSavedPages(new int[] { 1 });
         htmlOptions.setFixedLayout(true);
@@ -64,9 +64,11 @@ public class PDFtoHTMLExcludeFontResources {
         // htmlOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.DontSave);
         htmlOptions.setDefaultFontName("Comic Sans MS");
         htmlOptions.setUseZOrder(true);
-        htmlOptions.setLettersPositioningMethod(LettersPositioningMethods.UseEmUnitsAndCompensationOfRoundingErrorsInCss);
+        htmlOptions
+                .setLettersPositioningMethod(LettersPositioningMethods.UseEmUnitsAndCompensationOfRoundingErrorsInCss);
         htmlOptions.setPartsEmbeddingMode(HtmlSaveOptions.PartsEmbeddingModes.NoEmbedding);
-        htmlOptions.setRasterImagesSavingMode(HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground);
+        htmlOptions
+                .setRasterImagesSavingMode(HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground);
         htmlOptions.setSplitIntoPages(false);
         Document doc = new Document(dataDir + "ExcludeFontResourcesWithAdditionalOptions.pdf");
         try {

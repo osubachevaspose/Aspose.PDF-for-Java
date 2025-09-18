@@ -18,9 +18,9 @@ public class ConvertXPSFileToPDFFormat {
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
-        System.out.println("Example ConvertXPSFileToPDFFormat start");
+        System.out.println("Example convertXPSFileToPDFFormat start");
         convertXPSFileToPDFFormat(dataDir, outputDir);
-        System.out.println("Example ConvertXPSFileToPDFFormat end");
+        System.out.println("Example convertXPSFileToPDFFormat end");
     }
 
     public static void convertXPSFileToPDFFormat(String dataDir, String outputDir) {

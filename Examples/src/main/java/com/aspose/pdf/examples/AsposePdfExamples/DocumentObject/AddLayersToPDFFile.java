@@ -15,7 +15,7 @@ public class AddLayersToPDFFile {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/AddLayersToPDFFile/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddLayersToPDFFile/";
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
@@ -47,7 +47,7 @@ public class AddLayersToPDFFile {
             layer.getContents().add(new com.aspose.pdf.operators.LineTo(400, 800));
             layer.getContents().add(new com.aspose.pdf.operators.Stroke());
             page.getLayers().add(layer);
-            doc.save(outputDir + "output.pdf");
+            doc.save(outputDir + "addLayersToPDFFile.pdf");
         } finally {
             if (doc != null)
                 doc.close();
