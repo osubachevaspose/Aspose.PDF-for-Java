@@ -9,6 +9,7 @@ import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 
 public class AccessChildrenElements {
 
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         String path = Utils.getDataDir() + "TaggedPDFs\\";
         // Open Pdf Document

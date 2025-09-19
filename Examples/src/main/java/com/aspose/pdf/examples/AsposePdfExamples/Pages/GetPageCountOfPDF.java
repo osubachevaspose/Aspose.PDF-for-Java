@@ -16,7 +16,7 @@ public class GetPageCountOfPDF {
         Document doc = new Document("input.pdf");
         try {
             // Get page count
-            System.out.printf("Page Count :- " + doc.getPages().size());
+            System.out.println("Page Count :- " + doc.getPages().size());
         } finally {
             if (doc != null)
                 doc.close();

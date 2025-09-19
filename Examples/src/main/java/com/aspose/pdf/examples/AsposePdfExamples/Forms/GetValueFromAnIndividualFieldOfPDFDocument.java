@@ -12,9 +12,9 @@ public class GetValueFromAnIndividualFieldOfPDFDocument {
 			// Get a field
 			TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");
 			// Get the field name
-			System.out.printf("PartialName :-" + textBoxField.getPartialName());
+			System.out.println("PartialName :-" + textBoxField.getPartialName());
 			// Get the field value
-			System.out.printf("Value :-" + textBoxField.getValue());
+			System.out.println("Value :-" + textBoxField.getValue());
 		} finally {
 			if (doc != null)
 				doc.close();

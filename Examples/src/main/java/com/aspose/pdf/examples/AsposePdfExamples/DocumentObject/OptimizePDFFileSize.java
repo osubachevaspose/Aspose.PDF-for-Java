@@ -12,7 +12,7 @@ public class OptimizePDFFileSize {
 
 	public static void runExamples() {
 		// The paths to resources and output directories.
-		String testID = "com/aspose/pdf/examples/AsposePdf/Document/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/OptimizePDFFileSize/";
 		String dataDir = Utils.getDataDir(testID);
 		String outputDir = Utils.getOutDir(testID);
 

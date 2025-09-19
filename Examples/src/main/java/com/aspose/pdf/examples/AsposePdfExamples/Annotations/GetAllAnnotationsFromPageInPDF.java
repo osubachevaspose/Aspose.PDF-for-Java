@@ -29,11 +29,11 @@ public class GetAllAnnotationsFromPageInPDF {
             for (int Annot_counter = 1; Annot_counter <= doc.getPages().get_Item(1).getAnnotations()
                     .size(); Annot_counter++) {
                 // Get annotation properties
-                System.out.printf("Full Name :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                System.out.println("Full Name :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
                         .get_Item(Annot_counter).getFullName());
-                System.out.printf("Page Number :-  " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                System.out.println("Page Number :-  " + doc.getPages().get_Item(Annot_counter).getAnnotations()
                         .get_Item(Annot_counter).getPageIndex());
-                System.out.printf("Contents :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
+                System.out.println("Contents :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
                         .get_Item(Annot_counter).getContents());
             }
         } finally {

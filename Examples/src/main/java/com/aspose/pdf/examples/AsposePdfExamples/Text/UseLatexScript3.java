@@ -23,6 +23,7 @@ public class UseLatexScript3 {
         System.out.println("Example useLatexScript3 end");
     }
 
+    @SuppressWarnings("deprecation")
     public static void useLatexScript3(String dataDir, String outputDir) {
         String s = "\\usepackage{amsmath,amsthm}" +
                 "\\begin{document}" +

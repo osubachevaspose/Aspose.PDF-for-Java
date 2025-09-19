@@ -57,6 +57,14 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ConvertPDFFromRG
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsInExistingPDFFile;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsWhileCreatingPDF;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ExtractFilesFromPDFPortfolio;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetAllFonts;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetDocumentWindowAndPageDisplayProperties;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetPDFFileInformation;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetSetZoomFactorOfPDFFile;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetXMPMetadataFromPDFFile;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.HelloWorld;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFDocumentForWeb;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFFileSize;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddLayersToPDFFile;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddTOCToExistingPDF;
 import com.aspose.pdf.examples.AsposePdfExamples.Forms.GetFormFieldsFromSpecificRegionOfPDFFile;
@@ -138,6 +146,14 @@ public class Utils {
         EmbeddingFontsInExistingPDFFile.runExamples();
         EmbeddingFontsWhileCreatingPDF.runExamples();
         ExtractFilesFromPDFPortfolio.runExamples();
+        GetAllFonts.runExamples();
+        GetDocumentWindowAndPageDisplayProperties.runExamples();
+        GetPDFFileInformation.runExamples();
+        GetSetZoomFactorOfPDFFile.runExamples();
+        GetXMPMetadataFromPDFFile.runExamples();
+        HelloWorld.runExamples();
+        OptimizePDFDocumentForWeb.runExamples();
+        OptimizePDFFileSize.runExamples();
 
         // Forms
         GetFormFieldsFromSpecificRegionOfPDFFile.runExamples();

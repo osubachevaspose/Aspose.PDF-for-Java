@@ -1,16 +1,14 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.StructTreeRootElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 
 public class RootStructure {
     
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
         // Create Pdf Document
         Document doc = new Document();
         try {

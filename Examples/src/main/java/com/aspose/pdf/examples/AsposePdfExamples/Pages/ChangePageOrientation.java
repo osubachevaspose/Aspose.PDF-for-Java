@@ -39,7 +39,8 @@ public class ChangePageOrientation {
 		}
 	}
 
-	public static void fittingThePageContentToNewPageOrientation() {
+	@SuppressWarnings("unused")
+    public static void fittingThePageContentToNewPageOrientation() {
 		Document doc = new Document("Input.pdf");
 		try {
 			Rectangle r = doc.getPages().get_Item(0).getMediaBox();

@@ -2,22 +2,38 @@ package com.aspose.pdf.examples.AsposePdfExamples.DocumentObject;
 
 import com.aspose.pdf.Document;
 import com.aspose.pdf.DocumentInfo;
+import com.aspose.pdf.examples.Utils;
 
 public class GetPDFFileInformation {
 
 	public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/GetPDFFileInformation/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getPDFFileInformation start");
+        getPDFFileInformation(dataDir);
+        System.out.println("Example getPDFFileInformation end");
+    }
+
+    public static void getPDFFileInformation(String dataDir) {
 		// Open document
-		Document doc = new Document("Original.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
 		try {
 			// Get document information
-			DocumentInfo docInfo = doc.getInfo();
+			DocumentInfo documentInfo = doc.getInfo();
 			// Show document information
-			System.out.printf("Author:-" + docInfo.getAuthor());
-			System.out.printf("\n Creation Date:-" + docInfo.getCreationDate());
-			System.out.printf("\n Keywords:-" + docInfo.getKeywords());
-			System.out.printf("\n Modify Date:-" + docInfo.getModDate());
-			System.out.printf("\n Subject:-" + docInfo.getSubject());
-			System.out.printf("\n Title:-" + docInfo.getTitle());
+			System.out.println("Author: " + documentInfo.getAuthor());
+			System.out.println("Creation Date: " + documentInfo.getCreationDate());
+			System.out.println("Keywords: " + documentInfo.getKeywords());
+			System.out.println("Modify Date: " + documentInfo.getModDate());
+			System.out.println("Subject: " + documentInfo.getSubject());
+			System.out.println("Title: " + documentInfo.getTitle());
 		} finally {
 			if (doc != null)
 				doc.close();

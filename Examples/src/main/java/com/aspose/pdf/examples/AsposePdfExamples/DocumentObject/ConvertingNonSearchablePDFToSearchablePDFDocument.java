@@ -18,6 +18,7 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
         // We have used free google tesseract
         // OCR(http://en.wikipedia.org/wiki/Tesseract_%28software%29)
         CallBackGetHocr cbgh = new CallBackGetHocr() {
+            @SuppressWarnings("deprecation")
             @Override
             public String invoke(java.awt.image.BufferedImage img) {
                 File outputfile = new File(myDir + "test.jpg");

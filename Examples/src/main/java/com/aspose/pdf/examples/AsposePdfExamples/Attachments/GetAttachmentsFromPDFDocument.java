@@ -32,13 +32,13 @@ public class GetAttachmentsFromPDFDocument {
             // Get particular embedded file
             FileSpecification fileSpecification = doc.getEmbeddedFiles().get_Item(1);
             // Get the file properties
-            System.out.printf("Name: - " + fileSpecification.getName());
-            System.out.printf("\nDescription: - " + fileSpecification.getDescription());
-            System.out.printf("\nMime Type: - " + fileSpecification.getMIMEType());
+            System.out.println("Name: - " + fileSpecification.getName());
+            System.out.println("\nDescription: - " + fileSpecification.getDescription());
+            System.out.println("\nMime Type: - " + fileSpecification.getMIMEType());
             // Get attachment form PDF file
             try {
                 InputStream input = fileSpecification.getContents();
-                System.out.printf("\nSize: - " + input.available());
+                System.out.println("\nSize: - " + input.available());
 
                 // or extract attachment into path placed in fileSpecification.getName():
                 /*

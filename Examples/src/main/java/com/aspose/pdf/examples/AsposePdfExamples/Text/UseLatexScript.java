@@ -4,6 +4,7 @@ import com.aspose.pdf.*;
 
 public class UseLatexScript {
 
+    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
         // Create a new Document Object
         Document doc = new Document();

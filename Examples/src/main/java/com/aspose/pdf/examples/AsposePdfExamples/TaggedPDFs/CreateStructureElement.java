@@ -15,6 +15,7 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.*;
 
 public class CreateStructureElement {
 
+    @SuppressWarnings("unused")
     public static void main(String[] args) {
         // The path to the documents directory.
         String path = Utils.getDataDir() + "TaggedPDFs\\";

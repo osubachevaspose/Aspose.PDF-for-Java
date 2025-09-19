@@ -29,9 +29,9 @@ public class GetParticularAnnotationFromPDF {
             // Get particular annotation
             TextAnnotation textAnnotation = (TextAnnotation) doc.getPages().get_Item(1).getAnnotations().get_Item(1);
             // Get annotation properties
-            System.out.printf("Title :- " + textAnnotation.getTitle());
-            System.out.printf("Subject :-  " + textAnnotation.getSubject());
-            System.out.printf("Contents :- " + textAnnotation.getContents());
+            System.out.println("Title :- " + textAnnotation.getTitle());
+            System.out.println("Subject :-  " + textAnnotation.getSubject());
+            System.out.println("Contents :- " + textAnnotation.getContents());
         } finally {
             if (doc != null)
                 doc.close();
