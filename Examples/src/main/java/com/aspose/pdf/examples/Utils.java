@@ -65,6 +65,13 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetXMPMetadataFr
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.HelloWorld;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFDocumentForWeb;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFFileSize;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.RemoveMetadataFromPDF;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetDefaultFont;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetDocumentWindowAndPageDisplayProperties;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetPDFExpiration;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetPDFFileInformation;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.TrimWhiteSpaceAroundPage;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ValidatePDFDocumentForPDFAStandard;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddLayersToPDFFile;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddTOCToExistingPDF;
 import com.aspose.pdf.examples.AsposePdfExamples.Forms.GetFormFieldsFromSpecificRegionOfPDFFile;
@@ -154,6 +161,13 @@ public class Utils {
         HelloWorld.runExamples();
         OptimizePDFDocumentForWeb.runExamples();
         OptimizePDFFileSize.runExamples();
+        RemoveMetadataFromPDF.runExamples();
+        SetDefaultFont.runExamples();
+        SetDocumentWindowAndPageDisplayProperties.runExamples();
+        SetPDFExpiration.runExamples();
+        SetPDFFileInformation.runExamples();
+        TrimWhiteSpaceAroundPage.runExamples();
+        ValidatePDFDocumentForPDFAStandard.runExamples();
 
         // Forms
         GetFormFieldsFromSpecificRegionOfPDFFile.runExamples();

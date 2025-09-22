@@ -3,6 +3,7 @@ package com.aspose.pdf.examples.AsposePdfExamples.Images;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
+import java.io.FileInputStream;
 import java.io.IOException;
 
 import javax.imageio.ImageIO;
@@ -26,7 +27,7 @@ public class ConvertAnImageToPDF {
 			// Add a page to pages collection of document
 			Page page = doc.getPages().add();
 			// Load the source image file to Stream object
-			java.io.FileInputStream fs = new java.io.FileInputStream("source.tif");
+			FileInputStream fs = new FileInputStream("source.tif");
 			// Set margins so image will fit, etc.
 			page.getPageInfo().getMargin().setBottom(0);
 			page.getPageInfo().getMargin().setTop(0);
@@ -41,6 +42,7 @@ public class ConvertAnImageToPDF {
 			image1.setImageStream(fs);
 			// Save resultant PDF file
 			doc.save("Image2PDF_DOM.pdf");
+            fs.close();
 		} finally {
 			if (doc != null)
 				doc.close();

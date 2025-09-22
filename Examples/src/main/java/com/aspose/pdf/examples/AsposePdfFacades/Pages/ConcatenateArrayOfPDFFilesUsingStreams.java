@@ -19,5 +19,6 @@ public class ConcatenateArrayOfPDFFilesUsingStreams {
         inputStream[1] = new FileInputStream("inFile2");
         // concatenate file
         fileEditor.concatenate(inputStream, outStream);
+        outStream.close();
     }
 }

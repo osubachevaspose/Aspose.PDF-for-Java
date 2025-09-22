@@ -1,8 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Bookmarks;
 
-import java.io.FileInputStream;
 import java.io.IOException;
-import java.io.InputStream;
 
 import com.aspose.pdf.facades.PdfBookmarkEditor;
 
@@ -35,8 +33,7 @@ public class ImportBookmarksFromXMLToAnExistingPDFFile {
         try {
             // Open PDF file
             bookmarkEditor.bindPdf("Input.pdf");
-            InputStream is = new FileInputStream("bookmark.xml");
-            bookmarkEditor.importBookmarksWithXML(is);
+            bookmarkEditor.importBookmarksWithXML("bookmark.xml");
             bookmarkEditor.save("output.pdf");
         } finally {
             if (bookmarkEditor != null)

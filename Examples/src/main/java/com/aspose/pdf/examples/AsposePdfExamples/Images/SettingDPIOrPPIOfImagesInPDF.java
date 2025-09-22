@@ -2,10 +2,8 @@ package com.aspose.pdf.examples.AsposePdfExamples.Images;
 
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
-import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
-import java.io.FileOutputStream;
 
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Image;
@@ -16,10 +14,7 @@ public class SettingDPIOrPPIOfImagesInPDF {
 
     public static void main(String[] args) throws FileNotFoundException {
         String myDir = "pathTodir";
-        File fileIn = new File(myDir + "image.jpg");
-        FileInputStream in = new FileInputStream(fileIn);
-        File fileOut = new File(myDir + "image.pdf");
-        FileOutputStream out = new FileOutputStream(fileOut);
+        FileInputStream in = new FileInputStream(myDir + "image.jpg");
         // Test PDF creation
         Document doc = new Document();
         try {
@@ -33,7 +28,7 @@ public class SettingDPIOrPPIOfImagesInPDF {
             page.getPageInfo().getMargin().setRight(0);
             page.getPageInfo().getMargin().setTop(0);
             page.getPageInfo().getMargin().setBottom(0);
-            doc.save(out);
+            doc.save(myDir + "image.pdf");
         } finally {
             if (doc != null)
                 doc.close();

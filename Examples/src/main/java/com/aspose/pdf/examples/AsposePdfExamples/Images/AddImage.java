@@ -1,9 +1,12 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Images;
 
-import java.io.FileNotFoundException;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.ImageFileType;
 import com.aspose.pdf.examples.Utils;
+
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
 
 public class AddImage {
 
@@ -24,10 +27,9 @@ public class AddImage {
     }
 
     public static void AddDicomImage(String dataDir, String outputDir) {
-        // Load image into stream
-        java.io.FileInputStream imageStream = null;
         try {
-            imageStream = new java.io.FileInputStream(new java.io.File(dataDir + "0002.dcm"));
+            // Load image into stream
+            FileInputStream imageStream = new FileInputStream(new File(dataDir + "0002.dcm"));
             Document doc = new Document();
             try {
                 doc.getPages().add();

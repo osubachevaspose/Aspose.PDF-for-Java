@@ -1,8 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Bookmarks;
 
-import java.io.FileOutputStream;
 import java.io.IOException;
-import java.io.OutputStream;
 
 import com.aspose.pdf.facades.PdfBookmarkEditor;
 
@@ -33,8 +31,7 @@ public class ExportBookmarksToXMLFromAnExistingPDFFile {
         try {
             // Open PDF file
             bookmarkEditor.bindPdf("Input.pdf");
-            OutputStream os = new FileOutputStream("bookmark.xml");
-            bookmarkEditor.exportBookmarksToXML(os);
+            bookmarkEditor.exportBookmarksToXML("bookmark.xml");
         } finally {
             if (bookmarkEditor != null)
                 bookmarkEditor.close();
