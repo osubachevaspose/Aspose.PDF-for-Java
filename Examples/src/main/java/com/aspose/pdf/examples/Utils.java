@@ -1,80 +1,11 @@
 package com.aspose.pdf.examples;
 
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.AddAnnotationToPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.DeleteAllAnnotationsFromPageOfPDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.DeleteParticularAnnotationFromThePDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.GetAllAnnotationsFromPageInPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.GetParticularAnnotationFromPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.RedactCertainPageRegionWithRedactionAnnotation;
-import com.aspose.pdf.examples.AsposePdfExamples.Annotations.StrikeOutWordsUsingStrikeOutAnnotation;
-import com.aspose.pdf.examples.AsposePdfExamples.Attachments.AddAttachmentToPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Attachments.DeleteAllAttachmentsFromPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Attachments.DisableFilesCompressionWhenAddingAsEmbeddedResources;
-import com.aspose.pdf.examples.AsposePdfExamples.Attachments.GetAttachmentInformation;
-import com.aspose.pdf.examples.AsposePdfExamples.Attachments.GetAttachmentsFromPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.AddBookmarkToPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.AddChildBookmarkToPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.BookmarkShouldPointToStartOfPage;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.DeleteBookmarksFromPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.ExpandedBookmarksWhenViewingDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.GetBookmarksFromPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.UpdateBookmarksInPDFDocument;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertEPUBFileToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertHTMLToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPCLToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFFileIntoXPSFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToDOCOrDOCXFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToEPUBFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToExcelWorkbook;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToMobiXML;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToPDFAFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToPPTX;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToSVGFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFToXML;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPDFtoXLSX;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertPostScriptFileToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertSVGFileToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertTextFileToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXMLFileToPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXPSFileToPDFFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ConvertXSLFOToPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.CreatePDFwithTaggedImage;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.CreatePDFwithTaggedText;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.EscapeHTMLTagsAndSpecialCharacters;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToEMF;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLAllResourceEmbeddedInSingleResultantStream;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLAvoidSavingImagesInSVGFormat;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLGetWarningForFontSubstitution;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLRenderPDFDataLayersAsSeparateHTMLLayerElement;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSingleHTMLWithAllResourcesEmbedded;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSpecifyImagesFolder;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLSplittingOutputToMultipageHTML;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFToHTMLWithFontSubstitution;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.PDFtoHTMLExcludeFontResources;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.ValidatePDFUAStandards;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddingJavaScriptDOM;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ConvertPDFFromRGBColorspaceToGrayscale;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsInExistingPDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.EmbeddingFontsWhileCreatingPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ExtractFilesFromPDFPortfolio;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetAllFonts;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetDocumentWindowAndPageDisplayProperties;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetPDFFileInformation;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetSetZoomFactorOfPDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.GetXMPMetadataFromPDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.HelloWorld;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFDocumentForWeb;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.OptimizePDFFileSize;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.RemoveMetadataFromPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetDefaultFont;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetDocumentWindowAndPageDisplayProperties;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetPDFExpiration;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.SetPDFFileInformation;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.TrimWhiteSpaceAroundPage;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.ValidatePDFDocumentForPDFAStandard;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddLayersToPDFFile;
-import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.AddTOCToExistingPDF;
-import com.aspose.pdf.examples.AsposePdfExamples.Forms.GetFormFieldsFromSpecificRegionOfPDFFile;
+import com.aspose.pdf.examples.AsposePdfExamples.Annotations.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Attachments.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.*;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.*;
+import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Forms.*;
 
 import java.io.File;
 
@@ -108,7 +39,7 @@ public class Utils {
         GetBookmarksFromPDFDocument.runExamples();
         UpdateBookmarksInPDFDocument.runExamples();
 
-        // DocumentConversion
+        // AsposePdfExamples.DocumentConversion
         ConvertEPUBFileToPDFFormat.runExamples();
         ConvertHTMLToPDFFormat.runExamples();
         ConvertPCLToPDFFormat.runExamples();
@@ -143,7 +74,7 @@ public class Utils {
         PDFToHTMLWithFontSubstitution.runExamples();
         ValidatePDFUAStandards.runExamples();
 
-        // DocumentObject
+        // AsposePdfExamples.DocumentObject
         AddingJavaScriptDOM.runExamples();
         AddLayersToPDFFile.runExamples();
         AddTOCToExistingPDF.runExamples();
@@ -169,8 +100,19 @@ public class Utils {
         TrimWhiteSpaceAroundPage.runExamples();
         ValidatePDFDocumentForPDFAStandard.runExamples();
 
-        // Forms
+        // AsposePdfExamples.Forms
+        AddFormFieldInPDFDocument.runExamples();
+        AddTooltipToFormField.runExamples();
+        ConvertDynamicXFAFormToStandardAcroForm.runExamples();
+        DeleteParticularFormFieldFromPDFDocument.runExamples();
+        FillFormFieldInPDFDocument.runExamples();
         GetFormFieldsFromSpecificRegionOfPDFFile.runExamples();
+        GetValueFromAnIndividualFieldOfPDFDocument.runExamples();
+        GetValuesFromAllFieldsInPDFDocument.runExamples();
+        HowToAddGroupedCheckBoxes.runExamples();
+        ModifyFormFieldInPDFDocument.runExamples();
+        MoveFormFieldToNewLocationInPDFFile.runExamples();
+        SetCustomFormFieldFont.runExamples();
     }
 
     private static File dir = null;
@@ -187,7 +129,6 @@ public class Utils {
     }
 
     public static String getOutDir(String testID) {
-        // return getSharedDataDir() + "../../../testout/" + testID;
         return "testout/" + testID;
     }
 }
