@@ -18,7 +18,7 @@ public class BookmarkShouldPointToStartOfPage {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/bookmarkShouldPointToStartOfPage/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/BookmarkShouldPointToStartOfPage/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -39,7 +39,7 @@ public class BookmarkShouldPointToStartOfPage {
     }
 
     public static void bookmarkShouldPointToStartOfPage(String dataDir, String outputDir) {
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithBookmark.pdf");
         try {
             // Editing existing bookmark
             OutlineItemCollection pdfOutline = doc.getOutlines().get_Item(1);
@@ -57,7 +57,7 @@ public class BookmarkShouldPointToStartOfPage {
     }
 
     public static void setDestinationWhileCreatingPDF(String dataDir, String outputDir) {
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithBookmark.pdf");
         try {
             OutlineItemCollection pdfOutline_new = new OutlineItemCollection(doc.getOutlines());
             pdfOutline_new.setTitle("Test bookmark");
@@ -77,7 +77,7 @@ public class BookmarkShouldPointToStartOfPage {
     public static void settingViewerPreferences(String dataDir, String outputDir) {
         PdfContentEditor contentEditor = new PdfContentEditor();
         try {
-            contentEditor.bindPdf(dataDir + "input.pdf");
+            contentEditor.bindPdf(dataDir + "PdfWithBookmark.pdf");
             contentEditor.changeViewerPreference(ViewerPreference.PAGE_LAYOUT_SINGLE_PAGE);
             contentEditor.save(outputDir + "settingViewerPreferences.pdf");
         } finally {

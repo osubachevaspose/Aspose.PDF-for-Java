@@ -29,7 +29,7 @@ public class SetCustomFormFieldFont {
 
     public static void setCustomFormFieldFont(String dataDir, String outputDir) {
         // Open document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "TextBoxField.pdf");
         try {
             // Get a field
             TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");

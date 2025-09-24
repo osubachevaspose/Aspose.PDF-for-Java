@@ -12,26 +12,25 @@ public class GetParticularAnnotationFromPDF {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/getparticularannotation/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/GetParticularAnnotationFromPDF/";
         String dataDir = Utils.getDataDir(testID);
-        String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example getParticularAnnotationFromPDF start");
-        getParticularAnnotationFromPDF(dataDir, outputDir);
-        System.out.println("\r\nExample getParticularAnnotationFromPDF end");
+        getParticularAnnotationFromPDF(dataDir);
+        System.out.println("Example getParticularAnnotationFromPDF end");
     }
 
-    private static void getParticularAnnotationFromPDF(String dataDir, String outputDir) {
+    private static void getParticularAnnotationFromPDF(String dataDir) {
         // Open source PDF document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithAnnotation.pdf");
         try {
             // Get particular annotation
             TextAnnotation textAnnotation = (TextAnnotation) doc.getPages().get_Item(1).getAnnotations().get_Item(1);
             // Get annotation properties
-            System.out.println("Title :- " + textAnnotation.getTitle());
-            System.out.println("Subject :-  " + textAnnotation.getSubject());
-            System.out.println("Contents :- " + textAnnotation.getContents());
+            System.out.println("Title: " + textAnnotation.getTitle());
+            System.out.println("Subject:  " + textAnnotation.getSubject());
+            System.out.println("Contents: " + textAnnotation.getContents());
         } finally {
             if (doc != null)
                 doc.close();

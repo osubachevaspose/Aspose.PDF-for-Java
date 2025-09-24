@@ -25,7 +25,7 @@ public class MoveFormFieldToNewLocationInPDFFile {
 
     public static void moveFormFieldToNewLocationInPDFFile(String dataDir, String outputDir) {
         // Open a document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "TextBoxField.pdf");
         try {
             // Get a field
             TextBoxField textBoxField = (TextBoxField) doc.getForm().get("textbox1");

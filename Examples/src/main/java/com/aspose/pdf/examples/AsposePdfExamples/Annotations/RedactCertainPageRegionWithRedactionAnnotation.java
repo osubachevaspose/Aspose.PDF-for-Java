@@ -16,7 +16,7 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/redactCertainPageRegionWithRedactionAnnotation/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/RedactCertainPageRegionWithRedactionAnnotation/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -25,7 +25,6 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
         redactCertainPageRegionWithRedactionAnnotation(dataDir, outputDir);
         System.out.println("Example redactCertainPageRegionWithRedactionAnnotation end");
 
-        System.out.println("============================");
         System.out.println("Example facadesApproach start");
         facadesApproach(dataDir, outputDir);
         System.out.println("Example facadesApproach end");
@@ -56,8 +55,8 @@ public class RedactCertainPageRegionWithRedactionAnnotation {
         try {
             annotationEditor.bindPdf(dataDir + "input.pdf");
             // redact certain page region
-            annotationEditor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.WHITE);
-            annotationEditor.save(outputDir + "Redaction_out.pdf");
+            annotationEditor.redactArea(1, new Rectangle(100, 100, 20, 70), java.awt.Color.RED);
+            annotationEditor.save(outputDir + "Redaction_out_facades.pdf");
         } finally {
             if (annotationEditor != null)
                 annotationEditor.close();

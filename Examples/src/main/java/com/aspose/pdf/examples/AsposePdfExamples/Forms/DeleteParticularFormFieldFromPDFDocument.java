@@ -23,7 +23,7 @@ public class DeleteParticularFormFieldFromPDFDocument {
 
     public static void deleteParticularFormFieldFromPDFDocument(String dataDir, String outputDir) {
         // Open a document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "TextBoxField.pdf");
         try {
             // Delete a named field by name
             doc.getForm().delete("textbox1");

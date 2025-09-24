@@ -11,7 +11,7 @@ public class DeleteAllAttachmentsFromPDF {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Attachments/deleteallattachments/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Attachments/DeleteAllAttachmentsFromPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -23,7 +23,7 @@ public class DeleteAllAttachmentsFromPDF {
 
     private static void deleteAllAttachmentsFromPDF(String dataDir, String outputDir) {
         // Open a document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithAttachments.pdf");
         try {
             // Delete all attachments
             doc.getEmbeddedFiles().delete();

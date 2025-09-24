@@ -9,17 +9,17 @@ public class GetPDFFilenformation {
         PdfFileInfo fileInfo = new PdfFileInfo("input.pdf");
         try {
             // get PDF information
-            System.out.println("Subject :-" + fileInfo.getSubject());
-            System.out.println("Title :-" + fileInfo.getTitle());
-            System.out.println("Keywords :-" + fileInfo.getKeywords());
-            System.out.println("Creator :-" + fileInfo.getCreator());
-            System.out.println("Creation Date :-" + fileInfo.getCreationDate());
-            System.out.println("Modification Date :-" + fileInfo.getModDate());
+            System.out.println("Subject : " + fileInfo.getSubject());
+            System.out.println("Title : " + fileInfo.getTitle());
+            System.out.println("Keywords : " + fileInfo.getKeywords());
+            System.out.println("Creator : " + fileInfo.getCreator());
+            System.out.println("Creation Date : " + fileInfo.getCreationDate());
+            System.out.println("Modification Date : " + fileInfo.getModDate());
             // find whether is it valid PDF and it is encrypted as well
-            System.out.println("Is Valid PDF :-" + fileInfo.isPdfFile());
+            System.out.println("Is Valid PDF : " + fileInfo.isPdfFile());
             // in case the file is encrypted, you need to provide file opening password
             // as second argument to PdfFileInfo constructor
-            System.out.println("Is Encrypted :-" + fileInfo.isEncrypted());
+            System.out.println("Is Encrypted : " + fileInfo.isEncrypted());
         } finally {
             if (fileInfo != null)
                 fileInfo.close();

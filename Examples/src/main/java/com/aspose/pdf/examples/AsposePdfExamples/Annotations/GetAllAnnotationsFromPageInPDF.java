@@ -11,30 +11,28 @@ public class GetAllAnnotationsFromPageInPDF {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/getallannotations/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/GetAllAnnotationsFromPageInPDF/";
         String dataDir = Utils.getDataDir(testID);
-        String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example getAllAnnotationsFromPageInPDF start");
-        getAllAnnotationsFromPageInPDF(dataDir, outputDir);
-        System.out.println("\r\nExample getAllAnnotationsFromPageInPDF end");
+        getAllAnnotationsFromPageInPDF(dataDir);
+        System.out.println("Example getAllAnnotationsFromPageInPDF end");
     }
 
-    private static void getAllAnnotationsFromPageInPDF(String dataDir, String outputDir) {
+    private static void getAllAnnotationsFromPageInPDF(String dataDir) {
         // Open source PDF document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithAnnotation.pdf");
         try {
             // Loop through all the annotations
-            for (int Annot_counter = 1; Annot_counter <= doc.getPages().get_Item(1).getAnnotations()
-                    .size(); Annot_counter++) {
+            for (int counter = 1; counter <= doc.getPages().get_Item(1).getAnnotations().size(); counter++) {
                 // Get annotation properties
-                System.out.println("Full Name :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
-                        .get_Item(Annot_counter).getFullName());
-                System.out.println("Page Number :-  " + doc.getPages().get_Item(Annot_counter).getAnnotations()
-                        .get_Item(Annot_counter).getPageIndex());
-                System.out.println("Contents :- " + doc.getPages().get_Item(Annot_counter).getAnnotations()
-                        .get_Item(Annot_counter).getContents());
+                System.out.println("Full Name: "
+                        + doc.getPages().get_Item(counter).getAnnotations().get_Item(counter).getFullName());
+                System.out.println("Page Number: "
+                        + doc.getPages().get_Item(counter).getAnnotations().get_Item(counter).getPageIndex());
+                System.out.println("Contents: "
+                        + doc.getPages().get_Item(counter).getAnnotations().get_Item(counter).getContents());
             }
         } finally {
             if (doc != null)

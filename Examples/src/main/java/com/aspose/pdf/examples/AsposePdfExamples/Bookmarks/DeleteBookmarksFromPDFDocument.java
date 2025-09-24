@@ -11,7 +11,7 @@ public class DeleteBookmarksFromPDFDocument {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/deleteallbookmarks/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/DeleteBookmarksFromPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -20,7 +20,6 @@ public class DeleteBookmarksFromPDFDocument {
         deleteBookmarksFromPDFDocument(dataDir, outputDir);
         System.out.println("Example deleteBookmarksFromPDFDocument end");
 
-        System.out.println("============================");
         System.out.println("Example deleteParticularBookmark start");
         deleteParticularBookmark(dataDir, outputDir);
         System.out.println("Example deleteParticularBookmark end");
@@ -28,7 +27,7 @@ public class DeleteBookmarksFromPDFDocument {
 
     public static void deleteBookmarksFromPDFDocument(String dataDir, String outputDir) {
         // Open a document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithBookmark.pdf");
         try {
             // Delete all bookmarks
             doc.getOutlines().delete();
@@ -42,7 +41,7 @@ public class DeleteBookmarksFromPDFDocument {
 
     public static void deleteParticularBookmark(String dataDir, String outputDir) {
         // Open a document
-        Document doc = new Document(dataDir + "source.pdf");
+        Document doc = new Document(dataDir + "PdfWithChildBookmark.pdf");
         try {
             // Delete a specific bookmarks
             doc.getOutlines().delete("Child Outline");

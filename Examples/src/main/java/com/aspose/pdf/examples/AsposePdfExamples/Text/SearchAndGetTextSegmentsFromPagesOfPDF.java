@@ -22,16 +22,16 @@ public class SearchAndGetTextSegmentsFromPagesOfPDF {
             for (TextFragment textFragment : (Iterable<TextFragment>) textFragmentCollection) {
                 // Iterate through text segments
                 for (TextSegment textSegment : (Iterable<TextSegment>) textFragment.getSegments()) {
-                    System.out.println("Text :- " + textSegment.getText());
-                    System.out.println("Position :- " + textSegment.getPosition());
-                    System.out.println("XIndent :- " + textSegment.getPosition().getXIndent());
-                    System.out.println("YIndent :- " + textSegment.getPosition().getYIndent());
-                    System.out.println("Font - Name :- " + textSegment.getTextState().getFont().getFontName());
-                    System.out.println("Font - IsAccessible :- " + textSegment.getTextState().getFont().isAccessible());
+                    System.out.println("Text: " + textSegment.getText());
+                    System.out.println("Position: " + textSegment.getPosition());
+                    System.out.println("XIndent: " + textSegment.getPosition().getXIndent());
+                    System.out.println("YIndent: " + textSegment.getPosition().getYIndent());
+                    System.out.println("Font - Name: " + textSegment.getTextState().getFont().getFontName());
+                    System.out.println("Font - IsAccessible: " + textSegment.getTextState().getFont().isAccessible());
                     System.out.println("Font - IsEmbedded - " + textSegment.getTextState().getFont().isEmbedded());
-                    System.out.println("Font - IsSubset :- " + textSegment.getTextState().getFont().isSubset());
-                    System.out.println("Font Size :- " + textSegment.getTextState().getFontSize());
-                    System.out.println("Foreground Color :- " + textSegment.getTextState().getForegroundColor());
+                    System.out.println("Font - IsSubset: " + textSegment.getTextState().getFont().isSubset());
+                    System.out.println("Font Size: " + textSegment.getTextState().getFontSize());
+                    System.out.println("Foreground Color: " + textSegment.getTextState().getForegroundColor());
                 }
             }
         } finally {

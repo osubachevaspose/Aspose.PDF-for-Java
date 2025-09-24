@@ -39,8 +39,8 @@ public class GetPageProperties {
                     "Rect : Height = " + pdfPage.getRect().getHeight() + ", Width = " + pdfPage.getRect().getWidth()
                             + ", LLX = " + pdfPage.getRect().getLLX() + ", LLY = " + pdfPage.getRect().getLLY()
                             + ", URX = " + pdfPage.getRect().getURX() + ", URY = " + pdfPage.getRect().getURY());
-            System.out.println("Page Number :- " + pdfPage.getNumber());
-            System.out.println("Rotate :-" + pdfPage.getRotate());
+            System.out.println("Page Number: " + pdfPage.getNumber());
+            System.out.println("Rotate : " + pdfPage.getRotate());
         } finally {
             if (doc != null)
                 doc.close();

@@ -36,10 +36,10 @@ public class GetBookmarksFromPDFDocument {
         try {
             // Loop through all the bookmarks
             for (OutlineItemCollection outlineItem : doc.getOutlines()) {
-                System.out.println("Title :- " + outlineItem.getTitle());
-                System.out.println("Is Italic :- " + outlineItem.getItalic());
-                System.out.println("Is Bold :- " + outlineItem.getBold());
-                System.out.println("Color :- " + outlineItem.getColor());
+                System.out.println("Title: " + outlineItem.getTitle());
+                System.out.println("Is Italic: " + outlineItem.getItalic());
+                System.out.println("Is Bold: " + outlineItem.getBold());
+                System.out.println("Color: " + outlineItem.getColor());
             }
         } finally {
             if (doc != null)
@@ -60,9 +60,9 @@ public class GetBookmarksFromPDFDocument {
                 for (int i = 1; i < bookmark.getLevel(); i++) {
                     strLevelSeprator += "---- ";
                 }
-                System.out.println("Title :- " + strLevelSeprator + bookmark.getTitle());
-                System.out.println("Page Number :- " + strLevelSeprator + bookmark.getPageNumber());
-                System.out.println("Page Action :- " + strLevelSeprator + bookmark.getAction());
+                System.out.println("Title: " + strLevelSeprator + bookmark.getTitle());
+                System.out.println("Page Number: " + strLevelSeprator + bookmark.getPageNumber());
+                System.out.println("Page Action: " + strLevelSeprator + bookmark.getAction());
             }
         } finally {
             if (bookmarkEditor != null)

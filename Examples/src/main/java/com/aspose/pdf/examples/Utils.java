@@ -6,6 +6,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.*;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.*;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Forms.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Graphs.*;
 
 import java.io.File;
 
@@ -113,6 +114,9 @@ public class Utils {
         ModifyFormFieldInPDFDocument.runExamples();
         MoveFormFieldToNewLocationInPDFFile.runExamples();
         SetCustomFormFieldFont.runExamples();
+
+        // AsposePdfExamples.Graphs
+        AddLineObjectToPDF.runExamples();
     }
 
     private static File dir = null;
