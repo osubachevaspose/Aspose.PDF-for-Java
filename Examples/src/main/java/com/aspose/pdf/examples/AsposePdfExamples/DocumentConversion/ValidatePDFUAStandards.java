@@ -11,7 +11,7 @@ public class ValidatePDFUAStandards {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFUAStandards/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ValidatePDFUAStandards/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 

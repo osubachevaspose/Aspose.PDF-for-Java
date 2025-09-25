@@ -12,7 +12,7 @@ public class ConvertPDFToSVGFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftosvg/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToSVGFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -24,14 +24,14 @@ public class ConvertPDFToSVGFormat {
 
     private static void convertPDFToSVGFormat(String dataDir, String outputDir) {
         // load PDF document
-        Document doc = new Document(dataDir + "Input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // instantiate an object of SvgSaveOptions
             SvgSaveOptions saveOptions = new SvgSaveOptions();
             // do not compress SVG image to Zip archive
             saveOptions.setCompressOutputToZipArchive(false);
             // resultant file name
-            String outFileName = outputDir + "Output.svg";
+            String outFileName = outputDir + "output.svg";
             // save the output in SVG files
             doc.save(outFileName, saveOptions);
         } finally {

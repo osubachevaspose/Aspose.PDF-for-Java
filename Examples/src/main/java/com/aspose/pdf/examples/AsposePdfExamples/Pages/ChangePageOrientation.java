@@ -13,7 +13,7 @@ public class ChangePageOrientation {
 	}
 
 	public static void changePageOrientation() {
-		Document doc = new Document("Input.pdf");
+		Document doc = new Document("input.pdf");
 		try {
 			int pageCount = doc.getPages().size();
 			for (int i = 1; i <= pageCount; i++) {
@@ -32,7 +32,7 @@ public class ChangePageOrientation {
 				// Setting Rotation angle of page
 				p.setRotate(Rotation.on90);
 			}
-			doc.save("Output.pdf");
+			doc.save("output.pdf");
 		} finally {
 			if (doc != null)
 				doc.close();
@@ -41,7 +41,7 @@ public class ChangePageOrientation {
 
 	@SuppressWarnings("unused")
     public static void fittingThePageContentToNewPageOrientation() {
-		Document doc = new Document("Input.pdf");
+		Document doc = new Document("input.pdf");
 		try {
 			Rectangle r = doc.getPages().get_Item(0).getMediaBox();
 			// New height the same

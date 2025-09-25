@@ -12,7 +12,7 @@ public class ConvertXMLFileToPDF {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/xmltopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertXMLFileToPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -27,7 +27,7 @@ public class ConvertXMLFileToPDF {
         Document doc = new Document();
         try {
             // bind source XML file
-            doc.bindXml(dataDir + "Source.xml");
+            doc.bindXml(dataDir + "source.xml");
             // get reference of first TextSegment with ID boldHtml
             TextSegment segment = (TextSegment) doc.getObjectById("boldHtml");
             // get reference of second TextSegment with ID strongHtml
@@ -35,7 +35,7 @@ public class ConvertXMLFileToPDF {
             // update TextSegement text
             segment.setText("TestSegment");
             // save resultant PDF file
-            doc.save(outputDir + "Resultant.pdf");
+            doc.save(outputDir + "resultant.pdf");
         } finally {
             if (doc != null)
                 doc.close();

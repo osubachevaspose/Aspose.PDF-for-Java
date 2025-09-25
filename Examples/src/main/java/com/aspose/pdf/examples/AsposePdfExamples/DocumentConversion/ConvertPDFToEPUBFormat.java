@@ -12,7 +12,7 @@ public class ConvertPDFToEPUBFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoepub/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToEPUBFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 

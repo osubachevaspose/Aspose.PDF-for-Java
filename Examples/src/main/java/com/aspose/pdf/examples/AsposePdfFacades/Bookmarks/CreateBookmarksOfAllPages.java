@@ -8,11 +8,11 @@ public class CreateBookmarksOfAllPages {
 		PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
 		try {
 			// open document
-			bookmarkEditor.bindPdf("Input.pdf");
+			bookmarkEditor.bindPdf("input.pdf");
 			// create bookmark of all pages
 			bookmarkEditor.createBookmarks();
 			// save updated PDF file
-			bookmarkEditor.save("Output.pdf");
+			bookmarkEditor.save("output.pdf");
 		} finally {
 			if (bookmarkEditor != null)
 				bookmarkEditor.close();

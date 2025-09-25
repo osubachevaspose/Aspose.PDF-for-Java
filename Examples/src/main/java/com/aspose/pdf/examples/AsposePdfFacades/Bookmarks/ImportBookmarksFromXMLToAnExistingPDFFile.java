@@ -16,7 +16,7 @@ public class ImportBookmarksFromXMLToAnExistingPDFFile {
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            bookmarkEditor.bindPdf("Input.pdf");
+            bookmarkEditor.bindPdf("input.pdf");
             // Import bookmarks
             bookmarkEditor.importBookmarksWithXML("bookmarks.xml");
             // Save updated PDF file
@@ -32,7 +32,7 @@ public class ImportBookmarksFromXMLToAnExistingPDFFile {
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            bookmarkEditor.bindPdf("Input.pdf");
+            bookmarkEditor.bindPdf("input.pdf");
             bookmarkEditor.importBookmarksWithXML("bookmark.xml");
             bookmarkEditor.save("output.pdf");
         } finally {

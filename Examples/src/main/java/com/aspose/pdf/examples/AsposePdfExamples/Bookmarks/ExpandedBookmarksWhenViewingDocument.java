@@ -12,7 +12,7 @@ public class ExpandedBookmarksWhenViewingDocument {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/expandedBookmarksWhenViewingDocument/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/ExpandedBookmarksWhenViewingDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -24,16 +24,16 @@ public class ExpandedBookmarksWhenViewingDocument {
 
     private static void expandedBookmarksWhenViewingDocument(String dataDir, String outputDir) {
         // create Document instance
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithChildBookmark.pdf");
         try {
             // set page view mode i.e. show thumbnails, full-screen, show attachment panel
             doc.setPageMode(PageMode.UseOutlines);
             // print total count of Bookmarks in PDF file
-            System.out.println(doc.getOutlines().size());
+            System.out.println("count of Bookmarks: " + doc.getOutlines().size());
             // traverse through each Outline item in outlines collection of PDF file
-            for (int counter = 1; counter <= doc.getOutlines().size(); counter++) {
+            for (int i = 1; i <= doc.getOutlines().size(); i++) {
                 // set open status for outline item
-                doc.getOutlines().get_Item(counter).setOpen(true);
+                doc.getOutlines().get_Item(i).setOpen(true);
             }
             // save the PDF file
             doc.save(outputDir + "Bookmarks_Expanded.pdf");

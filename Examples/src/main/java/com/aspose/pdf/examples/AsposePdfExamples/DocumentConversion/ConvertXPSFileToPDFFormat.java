@@ -13,7 +13,7 @@ public class ConvertXPSFileToPDFFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/xpstopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertXPSFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 

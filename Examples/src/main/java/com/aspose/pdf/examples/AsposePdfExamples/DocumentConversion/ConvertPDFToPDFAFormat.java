@@ -14,7 +14,7 @@ public class ConvertPDFToPDFAFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftopdfa/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToPDFAFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -23,22 +23,18 @@ public class ConvertPDFToPDFAFormat {
         pdfTopdfA1bConversion(dataDir, outputDir);
         System.out.println("Example pdfTopdfA1bConversion end");
 
-        System.out.println("============================");
         System.out.println("Example pdfTopdfA3bConversion start");
         pdfTopdfA3bConversion(dataDir, outputDir);
         System.out.println("Example pdfTopdfA3bConversion end");
 
-        System.out.println("============================");
         System.out.println("Example pdfTopdfA3aConversion start");
         pdfTopdfA3aConversion(dataDir, outputDir);
         System.out.println("Example pdfTopdfA3aConversion end");
 
-        System.out.println("============================");
         System.out.println("Example pdfTopdfA2aConversion start");
         pdfTopdfA2aConversion(dataDir, outputDir);
         System.out.println("Example pdfTopdfA2aConversion end");
 
-        System.out.println("============================");
         System.out.println("Example createPDFA3AndAttachXMLFile start");
         createPDFA3AndAttachXMLFile(dataDir, outputDir);
         System.out.println("Example createPDFA3AndAttachXMLFile end");
@@ -113,7 +109,7 @@ public class ConvertPDFToPDFAFormat {
             // Add attachment to document's attachment collection
             doc.getEmbeddedFiles().add(fileSpecification);
             // perform PDF/A_3a conversion
-            doc.convert(outputDir + "createPDFA3AndAttachXMLFile.xml", PdfFormat.PDF_A_3A/* or PDF_A_3B */,
+            doc.convert(outputDir + "createPDFA3AndAttachXMLFile.xml", PdfFormat.PDF_A_3A /* or PDF_A_3B */,
                     ConvertErrorAction.Delete);
             // save final PDF file
             doc.save(outputDir + "createPDFA3AndAttachXMLFile.pdf");

@@ -16,7 +16,7 @@ public class PDFToHTMLGetWarningForFontSubstitution {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToHTML/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -41,9 +41,9 @@ public class PDFToHTMLGetWarningForFontSubstitution {
                 }
             });
             // instantiate HTMLSave option to save output in HTML
-            HtmlSaveOptions htmlSaveOps = new HtmlSaveOptions();
+            HtmlSaveOptions options = new HtmlSaveOptions();
             // save resultant file
-            doc.save(outputDir + "getWarningForFontSubstitution.html", htmlSaveOps);
+            doc.save(outputDir + "getWarningForFontSubstitution.html", options);
         } finally {
             if (doc != null)
                 doc.close();

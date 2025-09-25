@@ -12,11 +12,11 @@ public class CreateBookmarksOfAllPagesWithProperties {
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // open document
-            bookmarkEditor.bindPdf("Input.pdf");
+            bookmarkEditor.bindPdf("input.pdf");
             // create bookmark of all pages
             bookmarkEditor.createBookmarks(Color.GREEN, true, true);
             // save updated PDF file
-            bookmarkEditor.save(myDir + "Output.pdf");
+            bookmarkEditor.save(myDir + "output.pdf");
         } finally {
             if (bookmarkEditor != null)
                 bookmarkEditor.close();

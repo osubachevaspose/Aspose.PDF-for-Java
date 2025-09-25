@@ -9,7 +9,7 @@ public class ResizePageContentsOfSpecificPagesInAPDFFile {
 		// Create PdfFileEditor Object
 		PdfFileEditor fileEditor = new PdfFileEditor();
 		// Open PDF Document
-		Document doc = new Document("Input.pdf");
+		Document doc = new Document("input.pdf");
 		// Specify Parameter to be used for resizing
 		PdfFileEditor.ContentsResizeParameters parameters = new PdfFileEditor.ContentsResizeParameters(
 		// left margin = 10% of page width

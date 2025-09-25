@@ -13,7 +13,7 @@ public class UpdateBookmarksInPDFDocument {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/updatebookmarks/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/UpdateBookmarksInPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -25,7 +25,7 @@ public class UpdateBookmarksInPDFDocument {
 
     private static void updateBookmarksInPDFDocument(String dataDir, String outputDir) {
         // Open document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithChildBookmark.pdf");
         try {
             // Get a bookmark object
             OutlineItemCollection pdfOutline = doc.getOutlines().get_Item(1);

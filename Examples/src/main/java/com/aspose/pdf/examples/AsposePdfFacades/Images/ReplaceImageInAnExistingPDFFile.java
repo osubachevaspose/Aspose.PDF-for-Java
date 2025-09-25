@@ -8,11 +8,11 @@ public class ReplaceImageInAnExistingPDFFile {
         PdfContentEditor contentEditor = new PdfContentEditor();
         try {
             // open input PDF
-            contentEditor.bindPdf("Input.pdf");
+            contentEditor.bindPdf("input.pdf");
             // replace image on a particular page
             contentEditor.replaceImage(1, 1, "Aspose-logo.bmp");
             // save output PDF
-            contentEditor.save("Output.pdf");
+            contentEditor.save("output.pdf");
         } finally {
             if (contentEditor != null)
                 contentEditor.close();

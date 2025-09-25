@@ -13,7 +13,7 @@ public class ConvertHTMLToPDFFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/htmltopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertHTMLToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -38,11 +38,11 @@ public class ConvertHTMLToPDFFormat {
     public static void convertHTMLFileToPDF(String dataDir, String outputDir) {
         // Specify the The base path/url for the html file which serves as images
         // database
-        HtmlLoadOptions htmloptions = new HtmlLoadOptions(dataDir);
+        HtmlLoadOptions options = new HtmlLoadOptions(dataDir);
         // Load HTML file
-        Document doc = new Document(dataDir + "EmailDemo_updated.html", htmloptions);
+        Document doc = new Document(dataDir + "EmailDemo_updated.html", options);
         try {
-            // Save HTML file
+            // Save PDF file
             doc.save(outputDir + "Web+URL_output.pdf");
         } finally {
             if (doc != null)

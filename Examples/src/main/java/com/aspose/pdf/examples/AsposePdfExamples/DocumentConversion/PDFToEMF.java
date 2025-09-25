@@ -13,7 +13,7 @@ public class PDFToEMF {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoemf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToEMF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -27,7 +27,7 @@ public class PDFToEMF {
         // instantiate EmfDevice object
         EmfDevice device = new EmfDevice(new Resolution(96));
         // load existing PDF file
-        Document doc = new Document(dataDir + "Input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // save first page of PDF file as Emf image
             device.process(doc.getPages().get_Item(1), outputDir + "output.emf");

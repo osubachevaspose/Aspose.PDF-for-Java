@@ -15,7 +15,7 @@ public class PDFToHTMLWithFontSubstitution {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToHTML/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -39,8 +39,8 @@ public class PDFToHTMLWithFontSubstitution {
                             + newFont.getFontName());
                 }
             });
-            HtmlSaveOptions htmlSaveOps = new HtmlSaveOptions();
-            doc.save(outputDir + "pdfToHTMLWithFontSubstitution.html", htmlSaveOps);
+            HtmlSaveOptions options = new HtmlSaveOptions();
+            doc.save(outputDir + "pdfToHTMLWithFontSubstitution.html", options);
         } finally {
             if (doc != null)
                 doc.close();

@@ -22,7 +22,7 @@ public class ConvertTextFileToPDFFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/texttopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertTextFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -44,7 +44,7 @@ public class ConvertTextFileToPDFFormat {
                     bos.write(buf, 0, readNum); // no doubt here is 0
                     // Writes len bytes from the specified byte array starting at offset off to this
                     // byte array output stream.
-                    System.out.println("read " + readNum + " bytes,");
+                    System.out.println("read " + readNum + " bytes");
                 }
                 byte[] bytes = bos.toByteArray();
                 ByteArrayInputStream srcStream = new ByteArrayInputStream(bytes);
@@ -70,7 +70,7 @@ public class ConvertTextFileToPDFFormat {
                         // Add a new text paragraph in paragraphs collection and pass the TextFragment object
                         page.getParagraphs().add(text);
                         // Save resultant PDF file
-                        doc.save(outputDir + "TExtFile_TexttoPDF.pdf");
+                        doc.save(outputDir + "textToPdf.pdf");
                     } finally {
                         if (doc != null)
                             doc.close();

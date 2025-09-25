@@ -12,19 +12,18 @@ public class EscapeHTMLTagsAndSpecialCharacters {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdfGenerator/escapeHTMLTagsAndSpecialCharacters/";
-        String dataDir = Utils.getDataDir(testID);
+        String testID = "com/aspose/pdf/examples/AsposePdfGenerator/EscapeHTMLTagsAndSpecialCharacters/";
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example escapeHTMLTagsAndSpecialCharacters start");
-        escapeHTMLTagsAndSpecialCharacters(dataDir, outputDir);
+        escapeHTMLTagsAndSpecialCharacters(outputDir);
         System.out.println("Example escapeHTMLTagsAndSpecialCharacters end");
     }
 
-    public static void escapeHTMLTagsAndSpecialCharacters(String dataDir, String outputDir) {
+    public static void escapeHTMLTagsAndSpecialCharacters(String outputDir) {
         // input HTML
-        String HTML = "< b >BIG TEXT< /b>< ol>SOME VALUE< /ol>< li >item1< /li >< li >item2 & 3 < /li >< /ol >";
+        String HTML = "<ol><b>BIG TEXT</b><ol>SOME VALUE</ol><li>item1</li><li>item2 & 3</li></ol>";
         // CSS for input HTML contents
         String CSS = " *{font-weight : normal !important ; margin :0 !important ; padding:0 !important ; list-style-type:none !important}";
         // instantiate Document instance

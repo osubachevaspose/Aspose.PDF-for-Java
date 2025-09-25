@@ -15,24 +15,22 @@ public class GetBookmarksFromPDFDocument {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/getchildbookmarks/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/GetBookmarksFromPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
-        String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example gettingBookmarks start");
-        gettingBookmarks(dataDir, outputDir);
+        gettingBookmarks(dataDir);
         System.out.println("Example gettingBookmarks end");
 
-        System.out.println("============================");
         System.out.println("Example gettingBookmarksPageNumber start");
-        gettingBookmarksPageNumber(dataDir, outputDir);
+        gettingBookmarksPageNumber(dataDir);
         System.out.println("Example gettingBookmarksPageNumber end");
     }
 
-    public static void gettingBookmarks(String dataDir, String outputDir) {
+    public static void gettingBookmarks(String dataDir) {
         // Open document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "PdfWithChildBookmark.pdf");
         try {
             // Loop through all the bookmarks
             for (OutlineItemCollection outlineItem : doc.getOutlines()) {
@@ -47,12 +45,12 @@ public class GetBookmarksFromPDFDocument {
         }
     }
 
-    public static void gettingBookmarksPageNumber(String dataDir, String outputDir) {
+    public static void gettingBookmarksPageNumber(String dataDir) {
         // Create PdfBookmarkEditor
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            bookmarkEditor.bindPdf(dataDir + "input.pdf");
+            bookmarkEditor.bindPdf(dataDir + "PdfWithChildBookmark.pdf");
             // Extract bookmarks
             Bookmarks bookmarks = bookmarkEditor.extractBookmarks();
             for (Bookmark bookmark : bookmarks) {

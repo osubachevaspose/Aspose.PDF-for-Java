@@ -12,7 +12,7 @@ public class ConvertParticularPageRegionToImage {
 
     public static void main(String[] args) {
         // open document
-        Document doc1 = new Document("Input.pdf");
+        Document doc1 = new Document("input.pdf");
         try {
             // Get rectangle of particular page region
             Rectangle pageRect = new Rectangle(20, 671, 693, 1125);
@@ -29,7 +29,7 @@ public class ConvertParticularPageRegionToImage {
                 // Create BMP device with specified attributes
                 BmpDevice bmpDevice = new BmpDevice(resolution);
                 // Convert a particular page and save the image to stream
-                bmpDevice.process(doc2.getPages().get_Item(1), "Output.bmp");
+                bmpDevice.process(doc2.getPages().get_Item(1), "output.bmp");
             } finally {
                 if (doc2 != null)
                     doc2.close();

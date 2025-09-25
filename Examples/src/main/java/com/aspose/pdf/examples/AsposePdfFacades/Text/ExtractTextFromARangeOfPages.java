@@ -8,14 +8,14 @@ public class ExtractTextFromARangeOfPages {
 		PdfExtractor extractor = new PdfExtractor();
 		try {
 			// open input PDF
-			extractor.bindPdf("Input.pdf");
+			extractor.bindPdf("input.pdf");
 			// specify start and end pages
 			extractor.setStartPage(2);
 			extractor.setEndPage(3);
 			// use parameterless ExtractText method
 			extractor.extractText();
 			// Save the extracted text to a text file
-			extractor.getText("Output.txt");
+			extractor.getText("output.txt");
 		} finally {
 			if (extractor != null)
 				extractor.close();

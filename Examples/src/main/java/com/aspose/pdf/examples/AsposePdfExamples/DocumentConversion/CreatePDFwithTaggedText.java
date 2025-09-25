@@ -15,26 +15,23 @@ public class CreatePDFwithTaggedText {
     public static void runExamples() {
         // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfGenerator/CreatePDFwithTaggedText/";
-        String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example createPDFwithTaggedText start");
-        createPDFwithTaggedText(dataDir, outputDir);
+        createPDFwithTaggedText(outputDir);
         System.out.println("Example createPDFwithTaggedText end");
     }
 
-    public static void createPDFwithTaggedText(String dataDir, String outputDir) {
+    public static void createPDFwithTaggedText(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
             // Get Content for work with TaggedPdf
             ITaggedContent taggedContent = doc.getTaggedContent();
-
             // Set Title and Language for Documnet
             taggedContent.setTitle("Tagged Pdf Document");
             taggedContent.setLanguage("en-US");
-
             // Create Text Block-Level Structure Elements
             HeaderElement headerElement = taggedContent.createHeaderElement();
             headerElement.setActualText("Heading 1");

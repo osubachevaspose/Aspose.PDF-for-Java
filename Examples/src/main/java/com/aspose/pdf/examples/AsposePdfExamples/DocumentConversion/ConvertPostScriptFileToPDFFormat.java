@@ -1,6 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion;
 
 import com.aspose.pdf.Document;
+import com.aspose.pdf.PsLoadOptions;
 import com.aspose.pdf.examples.Utils;
 
 public class ConvertPostScriptFileToPDFFormat {
@@ -11,7 +12,7 @@ public class ConvertPostScriptFileToPDFFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pstopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPostScriptFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -23,12 +24,12 @@ public class ConvertPostScriptFileToPDFFormat {
 
     private static void convertPostScriptFileToPDFFormat(String dataDir, String outputDir) {
         // Create a new instance of PsLoadOptions
-        com.aspose.pdf.LoadOptions options = new com.aspose.pdf.PsLoadOptions();
+        PsLoadOptions options = new PsLoadOptions();
         // Open .ps document with created load options
         Document doc = new Document(dataDir + "input.ps", options);
         try {
             // Save document
-            doc.save(dataDir + "/outPSToPDF_out.pdf");
+            doc.save(outputDir + "outPSToPDF_out.pdf");
         } finally {
             if (doc != null)
                 doc.close();

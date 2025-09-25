@@ -14,7 +14,7 @@ public class AddTextInAnExistingPDFFile {
 		// create PdfFileMend object to add text
 		PdfFileMend mender = new PdfFileMend();
 		try {
-			mender.bindPdf("Input.pdf");
+			mender.bindPdf("input.pdf");
 			// create formatted text
 			FormattedText text = new FormattedText("Aspose - Your File Format Experts!", Color.BLUE, Color.GRAY,
 					FontStyle.Courier, EncodingType.Winansi, true, 14);
@@ -24,7 +24,7 @@ public class AddTextInAnExistingPDFFile {
 			// add text in the PDF file
 			mender.addText(text, 1, 100, 200, 200, 400);
 			// save output PDF
-			mender.save("Output.pdf");
+			mender.save("output.pdf");
 		} finally {
 			if (mender != null)
 				mender.close();

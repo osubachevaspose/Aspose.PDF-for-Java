@@ -8,7 +8,7 @@ public class ExtractTextFromIndividualPagesOfAPDF {
 		// open input PDF
 		PdfExtractor extractor = new PdfExtractor();
 		try {
-			extractor.bindPdf("Input.pdf");
+			extractor.bindPdf("input.pdf");
 			// use parameterless ExtractText method
 			extractor.extractText();
 			int pageNumber = 1;

@@ -8,11 +8,11 @@ public class ExtractTextFromTheWholePDFFile {
 		// open input PDF
 		PdfExtractor extractor = new PdfExtractor();
 		try {
-			extractor.bindPdf("Input.pdf");
+			extractor.bindPdf("input.pdf");
 			// use parameterless ExtractText method
 			extractor.extractText();
 			// Save the extracted text to a text file
-			extractor.getText("Output.txt");
+			extractor.getText("output.txt");
 		} finally {
 			if (extractor != null)
 				extractor.close();

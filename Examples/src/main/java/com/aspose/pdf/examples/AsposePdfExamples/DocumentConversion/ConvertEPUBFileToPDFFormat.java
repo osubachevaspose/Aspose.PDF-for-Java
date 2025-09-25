@@ -12,7 +12,7 @@ public class ConvertEPUBFileToPDFFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/epubtopdf/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertEPUBFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -23,10 +23,10 @@ public class ConvertEPUBFileToPDFFormat {
     }
 
     private static void convertEPUBFileToPDFFormat(String dataDir, String outputDir) {
-        // Instantiate LoadOption object using EPUB load option
-        EpubLoadOptions optionsEpub = new EpubLoadOptions();
+        // Instantiate load options object using EPUB load options
+        EpubLoadOptions options = new EpubLoadOptions();
         // Create Document object
-        Document doc = new Document(dataDir + "Sample.epub", optionsEpub);
+        Document doc = new Document(dataDir + "Sample.epub", options);
         try {
             // Save the resultant PDF document
             doc.save(outputDir + "wasteland.pdf");

@@ -19,7 +19,7 @@ public class PDFToHTMLAllResourceEmbeddedInSingleResultantStream {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToHTML/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -63,7 +63,8 @@ public class PDFToHTMLAllResourceEmbeddedInSingleResultantStream {
                     }
                 }
             });
-            // we can use some non-existing file name all real saving will be done in CustomHtmlSavingStrategy
+            // we can use some non-existing file name all real saving will be done in
+            // CustomHtmlSavingStrategy
             String outHtmlFile = outputDir + "ThisFileWillNotAppearOnDisk.html";
             doc.save(outHtmlFile, newOptions);
         } finally {

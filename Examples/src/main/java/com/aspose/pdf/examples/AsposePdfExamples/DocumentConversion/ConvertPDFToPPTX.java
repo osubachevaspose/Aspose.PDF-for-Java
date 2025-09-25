@@ -12,7 +12,7 @@ public class ConvertPDFToPPTX {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftopptx/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToPPTX/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -27,9 +27,9 @@ public class ConvertPDFToPPTX {
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Instantiate PptxSaveOptions instance
-            PptxSaveOptions pptx_save = new PptxSaveOptions();
+            PptxSaveOptions options = new PptxSaveOptions();
             // Save the output in PPTX format
-            doc.save(outputDir + "output.pptx", pptx_save);
+            doc.save(outputDir + "output.pptx", options);
         } finally {
             if (doc != null)
                 doc.close();

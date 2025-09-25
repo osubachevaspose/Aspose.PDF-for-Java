@@ -4,7 +4,7 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.ExcelSaveOptions;
 import com.aspose.pdf.examples.Utils;
 
-public class ConvertPDFtoXLSX {
+public class ConvertPDFToXLSX {
 
     public static void main(String[] args) {
         runExamples();
@@ -12,7 +12,7 @@ public class ConvertPDFtoXLSX {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftoxlsx/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToXLSX/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 

@@ -8,7 +8,7 @@ public class ExtractImagesFromTheWholePDFToFiles {
         // open input PDF
         PdfExtractor extractor = new PdfExtractor();
         try {
-            extractor.bindPdf("Input.pdf");
+            extractor.bindPdf("input.pdf");
             // extract all the images
             extractor.extractImage();
             int imageCount = 1;

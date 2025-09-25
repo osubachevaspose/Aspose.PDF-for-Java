@@ -13,7 +13,7 @@ public class ConvertPDFToDOCOrDOCXFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftodoc/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToDOCOrDOCXFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -22,12 +22,10 @@ public class ConvertPDFToDOCOrDOCXFormat {
         savingToDoc(dataDir, outputDir);
         System.out.println("Example savingToDoc end");
 
-        System.out.println("============================");
         System.out.println("Example savingToDOCX start");
         savingToDOCX(dataDir, outputDir);
         System.out.println("Example savingToDOCX end");
 
-        System.out.println("============================");
         System.out.println("Example usingTheDocSaveOptionsClass start");
         usingTheDocSaveOptionsClass(dataDir, outputDir);
         System.out.println("Example usingTheDocSaveOptionsClass end");
@@ -50,11 +48,11 @@ public class ConvertPDFToDOCOrDOCXFormat {
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Instantiate Doc SaveOptions instance
-            DocSaveOptions saveOptions = new DocSaveOptions();
+            DocSaveOptions options = new DocSaveOptions();
             // Set output file format as DOCX
-            saveOptions.setFormat(DocSaveOptions.DocFormat.DocX);
+            options.setFormat(DocSaveOptions.DocFormat.DocX);
             // Save resultant DOCX file
-            doc.save(outputDir + "savingToDOCX.docx", saveOptions);
+            doc.save(outputDir + "savingToDOCX.docx", options);
         } finally {
             if (doc != null)
                 doc.close();
@@ -69,15 +67,15 @@ public class ConvertPDFToDOCOrDOCXFormat {
         Document doc = new Document(filePath);
         try {
             // Create DocSaveOptions object
-            DocSaveOptions saveOptions = new DocSaveOptions();
+            DocSaveOptions options = new DocSaveOptions();
             // Set the recognition mode as Flow
-            saveOptions.setMode(DocSaveOptions.RecognitionMode.Flow);
+            options.setMode(DocSaveOptions.RecognitionMode.Flow);
             // Set the Horizontal proximity as 2.5
-            saveOptions.setRelativeHorizontalProximity(2.5f);
+            options.setRelativeHorizontalProximity(2.5f);
             // Enable the value to recognize bullets during conversion process
-            saveOptions.setRecognizeBullets(true);
+            options.setRecognizeBullets(true);
             // Save the resultant DOC file
-            doc.save(outputDir + "usingTheDocSaveOptionsClass.doc", saveOptions);
+            doc.save(outputDir + "usingTheDocSaveOptionsClass.doc", options);
         } finally {
             if (doc != null)
                 doc.close();

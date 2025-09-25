@@ -8,7 +8,7 @@ public class ReplaceTextInAnExistingPDFFile {
 		PdfContentEditor contentEditor = new PdfContentEditor();
 		try {
 			// open input PDF
-			contentEditor.bindPdf("Input.pdf");
+			contentEditor.bindPdf("input.pdf");
 			// replace text on all pages
 			contentEditor.replaceText("Hello", "World");
 			// save output PDF

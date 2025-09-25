@@ -16,7 +16,7 @@ public class ExportBookmarksToXMLFromAnExistingPDFFile {
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            bookmarkEditor.bindPdf("Input.pdf");
+            bookmarkEditor.bindPdf("input.pdf");
             // Export bookmarks
             bookmarkEditor.exportBookmarksToXML("bookmarks.xml");
         } finally {
@@ -30,7 +30,7 @@ public class ExportBookmarksToXMLFromAnExistingPDFFile {
         PdfBookmarkEditor bookmarkEditor = new PdfBookmarkEditor();
         try {
             // Open PDF file
-            bookmarkEditor.bindPdf("Input.pdf");
+            bookmarkEditor.bindPdf("input.pdf");
             bookmarkEditor.exportBookmarksToXML("bookmark.xml");
         } finally {
             if (bookmarkEditor != null)

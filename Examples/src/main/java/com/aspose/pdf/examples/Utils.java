@@ -44,7 +44,7 @@ public class Utils {
         ConvertEPUBFileToPDFFormat.runExamples();
         ConvertHTMLToPDFFormat.runExamples();
         ConvertPCLToPDFFormat.runExamples();
-        ConvertPDFFileIntoXPSFormat.runExamples();
+        ConvertPDFFileToXPSFormat.runExamples();
         ConvertPDFToDOCOrDOCXFormat.runExamples();
         ConvertPDFToEPUBFormat.runExamples();
         ConvertPDFToExcelWorkbook.runExamples();
@@ -52,7 +52,7 @@ public class Utils {
         ConvertPDFToPDFAFormat.runExamples();
         ConvertPDFToPPTX.runExamples();
         ConvertPDFToSVGFormat.runExamples();
-        ConvertPDFtoXLSX.runExamples();
+        ConvertPDFToXLSX.runExamples();
         ConvertPDFToXML.runExamples();
         ConvertPostScriptFileToPDFFormat.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();

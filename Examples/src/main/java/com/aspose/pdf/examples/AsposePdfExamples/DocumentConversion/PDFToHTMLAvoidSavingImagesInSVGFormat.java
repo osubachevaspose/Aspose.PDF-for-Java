@@ -12,7 +12,7 @@ public class PDFToHTMLAvoidSavingImagesInSVGFormat {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/pdftohtml/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToHTML/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -26,15 +26,14 @@ public class PDFToHTMLAvoidSavingImagesInSVGFormat {
         // Open source PDF document
         Document doc = new Document(dataDir + "input.pdf");
         try {
-            String outHtmlFile = outputDir + "avoidSavingImagesInSVGFormat.html";
-            // Create HtmlSaveOption with tested feature
-            HtmlSaveOptions saveOptions = new HtmlSaveOptions();
-            saveOptions.setFixedLayout(true);
+            // Create HtmlSaveOptions with tested feature
+            HtmlSaveOptions options = new HtmlSaveOptions();
+            options.setFixedLayout(true);
             // save images in PNG format instead of SVG
-            saveOptions.setRasterImagesSavingMode(
+            options.setRasterImagesSavingMode(
                     HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground);
             // save output as HTML
-            doc.save(outHtmlFile, saveOptions);
+            doc.save(outputDir + "avoidSavingImagesInSVGFormat.html", options);
         } finally {
             if (doc != null)
                 doc.close();

@@ -8,7 +8,7 @@ public class ReplaceTextOnAParticularPageInAnExistingPDFFile {
 		PdfContentEditor contentEditor = new PdfContentEditor();
 		try {
 			// open input PDF
-			contentEditor.bindPdf("Input.pdf");
+			contentEditor.bindPdf("input.pdf");
 			// replace text on a particular page
 			contentEditor.replaceText("Content", 2, "World");
 			// save output PDF
