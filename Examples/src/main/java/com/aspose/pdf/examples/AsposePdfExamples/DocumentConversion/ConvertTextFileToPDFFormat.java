@@ -80,8 +80,6 @@ public class ConvertTextFileToPDFFormat {
                 if (fis != null)
                     fis.close();
             }
-        } catch (FileNotFoundException e) {
-            e.printStackTrace();
         } catch (IOException e) {
             e.printStackTrace();
         }

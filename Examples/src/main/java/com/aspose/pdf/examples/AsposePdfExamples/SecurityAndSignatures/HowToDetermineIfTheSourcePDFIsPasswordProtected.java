@@ -78,12 +78,8 @@ public class HowToDetermineIfTheSourcePDFIsPasswordProtected {
             // Document has open password enable
             System.out.println("Document has open password enabled = " +
                     fileInfo3.hasOpenPassword());
-            try {
-                boolean hasOwnerPassword = fileInfo3.hasEditPassword();
-                System.out.println("When PasswordType is Inaccessible we can't read HasEditPassword property.");
-            } catch (Exception e) {
-                // write what we expect
-            }
+            boolean hasOwnerPassword = fileInfo3.hasEditPassword();
+            System.out.println("When PasswordType is Inaccessible we can't read HasEditPassword property.");
         } finally {
             if (fileInfo3 != null)
                 fileInfo3.close();

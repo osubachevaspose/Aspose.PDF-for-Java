@@ -55,27 +55,25 @@ public class ExtractFilesFromPDFPortfolio {
             // iterate through individual file of Portfolio
             for (int counter = 1; counter <= doc.getEmbeddedFiles().size(); counter++) {
                 FileSpecification fileSpecification = embeddedFiles.get_Item(counter);
-                try {
-                    InputStream input = fileSpecification.getContents();
-                    File file = new File(fileSpecification.getName());
-                    File parentFile = file.getParentFile();
-                    if (parentFile != null) {
-                        // create path for file from pdf
-                        parentFile.mkdirs();
-                    }
-                    // create and extract file from pdf
-                    FileOutputStream output = new FileOutputStream(outputDir + fileSpecification.getName(), true);
-                    byte[] buffer = new byte[4096];
-                    int n = 0;
-                    while (-1 != (n = input.read(buffer))) {
-                        output.write(buffer, 0, n);
-                    }
-                    output.close();
-                    input.close();
-                } catch (IOException e) {
-                    e.printStackTrace();
+                InputStream input = fileSpecification.getContents();
+                File file = new File(fileSpecification.getName());
+                File parentFile = file.getParentFile();
+                if (parentFile != null) {
+                    // create path for file from pdf
+                    parentFile.mkdirs();
                 }
+                // create and extract file from pdf
+                FileOutputStream output = new FileOutputStream(outputDir + fileSpecification.getName(), true);
+                byte[] buffer = new byte[4096];
+                int n = 0;
+                while (-1 != (n = input.read(buffer))) {
+                    output.write(buffer, 0, n);
+                }
+                output.close();
+                input.close();
             }
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             if (doc != null)
                 doc.close();

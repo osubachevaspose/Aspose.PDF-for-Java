@@ -7,6 +7,8 @@ import com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion.*;
 import com.aspose.pdf.examples.AsposePdfExamples.DocumentObject.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Forms.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Graphs.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Headings.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Images.*;
 
 import java.io.File;
 
@@ -117,6 +119,21 @@ public class Utils {
 
         // AsposePdfExamples.Graphs
         AddLineObjectToPDF.runExamples();
+        ControllingZOrderOfRectangle.runExamples();
+        CreateFilledRectangleObject.runExamples();
+        DrawingLineAcrossThePage.runExamples();
+
+        // AsposePdfExamples.Headings
+        ApplyNumberingStyleInHeading.runExamples();
+
+        // AsposePdfExamples.Images
+        AddImage.runExamples();
+        AddImageToExistingPDFFile.runExamples();
+        ConvertAnImageToPDF.runExamples();
+        ConvertParticularPageRegionToImage.runExamples();
+        ConvertPDFPagesToBMPImage.runExamples();
+        ConvertPDFPagesToJPEGImage.runExamples();
+        ConvertPDFPagesToPNGImages.runExamples();
     }
 
     private static File dir = null;

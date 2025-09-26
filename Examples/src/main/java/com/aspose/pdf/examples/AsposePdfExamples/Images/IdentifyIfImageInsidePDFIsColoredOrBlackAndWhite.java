@@ -12,28 +12,26 @@ public class IdentifyIfImageInsidePDFIsColoredOrBlackAndWhite {
         // read source PDF file
         Document doc = new Document("test4.pdf");
         try {
-            try {
-                // iterate through all pages of PDF file
-                for (Page page : (Iterable<Page>) doc.getPages()) {
-                    // create Image Placement Absorber instance
-                    ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
-                    page.accept(abs);
-                    for (ImagePlacement ia : (Iterable<ImagePlacement>) abs.getImagePlacements()) {
-                        /* ColorType */
-                        int colorType = ia.getImage().getColorType();
-                        switch (colorType) {
-                            case ColorType.Grayscale:
-                                System.out.println("Grayscale Image");
-                                break;
-                            case ColorType.Rgb:
-                                System.out.println("Colored Image");
-                                break;
-                        }
+            // iterate through all pages of PDF file
+            for (Page page : (Iterable<Page>) doc.getPages()) {
+                // create Image Placement Absorber instance
+                ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
+                page.accept(abs);
+                for (ImagePlacement ia : (Iterable<ImagePlacement>) abs.getImagePlacements()) {
+                    /* ColorType */
+                    int colorType = ia.getImage().getColorType();
+                    switch (colorType) {
+                        case ColorType.Grayscale:
+                            System.out.println("Grayscale Image");
+                            break;
+                        case ColorType.Rgb:
+                            System.out.println("Colored Image");
+                            break;
                     }
                 }
-            } catch (Exception ex) {
-                System.out.println("Error reading file = " + doc.getFileName());
             }
+        } catch (Exception ex) {
+            System.out.println("Error reading file = " + doc.getFileName());
         } finally {
             if (doc != null)
                 doc.close();

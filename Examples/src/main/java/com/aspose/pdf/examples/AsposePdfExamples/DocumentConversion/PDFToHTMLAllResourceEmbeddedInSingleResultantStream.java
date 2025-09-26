@@ -52,8 +52,6 @@ public class PDFToHTMLAllResourceEmbeddedInSingleResultantStream {
                             fos = new FileOutputStream(outputDir + "allResourceEmbeddedInSingleResultantStream.html");
                             fos.write(resultHtmlAsBytes);
                             fos.close();
-                        } catch (FileNotFoundException e) {
-                            e.printStackTrace();
                         } catch (IOException e) {
                             e.printStackTrace();
                         }

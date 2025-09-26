@@ -38,35 +38,33 @@ public class GetAttachmentsFromPDFDocument {
             System.out.println("Description: " + fileSpecification.getDescription());
             System.out.println("Mime Type: " + fileSpecification.getMIMEType());
             // Get attachment form PDF file
-            try {
-                InputStream input = fileSpecification.getContents();
-                System.out.println("Size: " + input.available());
+            InputStream input = fileSpecification.getContents();
+            System.out.println("Size: " + input.available());
 
-                // or extract attachment into path placed in fileSpecification.getName():
-                /*
-                 * File file = new File(fileSpecification.getName());
-                 * // Create path for file from pdf
-                 * file.getParentFile().mkdirs();
-                 * // Create and extract file from pdf
-                 * java.io.FileOutputStream output = new
-                 * java.io.FileOutputStream(fileSpecification.getName(), true);
-                 */
+            // or extract attachment into path placed in fileSpecification.getName():
+            /*
+             * File file = new File(fileSpecification.getName());
+             * // Create path for file from pdf
+             * file.getParentFile().mkdirs();
+             * // Create and extract file from pdf
+             * java.io.FileOutputStream output = new
+             * java.io.FileOutputStream(fileSpecification.getName(), true);
+             */
 
-                // extract attachment into selectable path:
-                File file = new File(outputDir);
-                file.mkdirs();
-                FileOutputStream output = new FileOutputStream(outputDir + "output.txt", true);
-                byte[] buffer = new byte[4096];
-                int n = 0;
-                while (-1 != (n = input.read(buffer))) {
-                    output.write(buffer, 0, n);
-                }
-                output.close();
-                // Close InputStream object
-                input.close();
-            } catch (IOException e) {
-                e.printStackTrace();
+            // Create output directory if not exists
+            new File(outputDir).mkdirs();
+            // extract attachment into selectable path:
+            FileOutputStream output = new FileOutputStream(outputDir + "output.txt", true);
+            byte[] buffer = new byte[4096];
+            int n = 0;
+            while (-1 != (n = input.read(buffer))) {
+                output.write(buffer, 0, n);
             }
+            output.close();
+            // Close InputStream object
+            input.close();
+        } catch (IOException e) {
+            e.printStackTrace();
         } finally {
             if (doc != null)
                 doc.close();

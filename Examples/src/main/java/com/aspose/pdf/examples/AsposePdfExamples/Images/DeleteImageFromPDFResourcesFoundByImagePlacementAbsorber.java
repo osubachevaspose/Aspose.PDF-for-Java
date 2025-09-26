@@ -21,8 +21,7 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
             java.util.List list = selector.getSelected();
             for (int listItem = 0; listItem < list.size(); listItem++) {
                 Annotation annotation = (Annotation) list.get(listItem);
-                // Create ImagePlacementAbsorber object to perform image placement
-                // search
+                // Create ImagePlacementAbsorber object to perform image placement search
                 ImagePlacementAbsorber abs = new ImagePlacementAbsorber();
                 // Accept the absorber for all the pages
                 doc.getPages().get_Item(1).accept(abs);
