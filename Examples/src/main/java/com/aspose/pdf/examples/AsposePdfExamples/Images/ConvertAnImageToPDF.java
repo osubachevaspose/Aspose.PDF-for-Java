@@ -76,7 +76,7 @@ public class ConvertAnImageToPDF {
             // add a page to pages collection of Pdf file
             Page page = doc.getPages().add();
             // create image instance
-            Image image1 = new Image();
+            Image image = new Image();
             // create BufferedImage instance
             BufferedImage bufferedImage = ImageIO.read(new File(dataDir + "source.gif"));
             ByteArrayOutputStream baos = new ByteArrayOutputStream();
@@ -85,9 +85,9 @@ public class ConvertAnImageToPDF {
             baos.flush();
             ByteArrayInputStream bais = new ByteArrayInputStream(baos.toByteArray());
             // add image to paragraphs collection of first page
-            page.getParagraphs().add(image1);
+            page.getParagraphs().add(image);
             // set image stream as OutputStream holding Buffered image
-            image1.setImageStream(bais);
+            image.setImageStream(bais);
             // save resultant PDF file
             doc.save(outputDir + "BufferedImage.pdf");
         } catch (IOException e) {

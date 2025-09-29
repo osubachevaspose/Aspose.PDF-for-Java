@@ -134,6 +134,16 @@ public class Utils {
         ConvertPDFPagesToBMPImage.runExamples();
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
+        ConvertPDFPagesToTIFFImage.runExamples();
+        // input file absents
+        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        DeleteImagesFromThePDFFile.runExamples();
+        ExtractImageProperties.runExamples();
+        ExtractImagesFromThePDFFile.runExamples();
+        GetNameOfImagesEmbeddedInPDFFile.runExamples();
+        IdentifyIfImageInsidePDFIsColoredOrBlackAndWhite.runExamples();
+        ReplaceImageInExistingPDFFile.runExamples();
+        SettingDPIOrPPIOfImagesInPDF.runExamples();
     }
 
     private static File dir = null;

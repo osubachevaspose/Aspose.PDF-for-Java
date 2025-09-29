@@ -45,15 +45,19 @@ public class AddImageToExistingPDFFile {
             // Get the page you want to add the image to
             Page page = doc.getPages().get_Item(1);
             // Load image into stream
-            FileInputStream imageStream = new FileInputStream(new File(dataDir + "aspose-logo.jpg"));
+            FileInputStream imageStream = new FileInputStream(new File(dataDir +
+                    "aspose-logo.jpg"));
             // Add an image to the Images collection of the page resources
             page.getResources().getImages().add(imageStream);
             // Using the GSave operator: this operator saves current graphics state
             page.getContents().add(new GSave());
             // Create Rectangle and Matrix objects
-            Rectangle rectangle = new Rectangle(lowerLeftX, lowerLeftY, upperRightX, upperRightY);
-            Matrix matrix = new Matrix(new double[] { rectangle.getURX() - rectangle.getLLX(), 0, 0,
-                    rectangle.getURY() - rectangle.getLLY(), rectangle.getLLX(), rectangle.getLLY() });
+            Rectangle rectangle = new Rectangle(lowerLeftX, lowerLeftY, upperRightX,
+                    upperRightY);
+            Matrix matrix = new Matrix(new double[] { rectangle.getURX() -
+                    rectangle.getLLX(), 0, 0,
+                    rectangle.getURY() - rectangle.getLLY(), rectangle.getLLX(),
+                    rectangle.getLLY() });
             // Using ConcatenateMatrix (concatenate matrix) operator: defines how
             // image must be placed
             page.getContents().add(new ConcatenateMatrix(matrix));

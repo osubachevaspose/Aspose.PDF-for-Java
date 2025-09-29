@@ -1,15 +1,31 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Images;
 
-import java.io.IOException;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.XImage;
+import com.aspose.pdf.examples.Utils;
 
 public class ExtractImageProperties {
 
-    public static void main(String[] args) throws IOException {
-        Document doc = new Document("page-0000000004.pdf");
+    public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Images/ExtractImageProperties/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example extractImageProperties start");
+        extractImageProperties(dataDir);
+        System.out.println("Example extractImageProperties end");
+    }
+
+    public static void extractImageProperties(String dataDir) {
+        Document doc = new Document(dataDir + "PdfWith2Images.pdf");
         try {
             for (XImage image : doc.getPages().get_Item(1).getResources().getImages()) {
+                System.out.println(image.toString());
                 XImage.RawParameters rawParameters = image.getRawParameters();
                 System.out.println(rawParameters.getType());
                 System.out.println(rawParameters.getName());
@@ -19,7 +35,6 @@ public class ExtractImageProperties {
                 System.out.println(rawParameters.getHeight());
                 System.out.println(rawParameters.getWidth());
                 System.out.println(rawParameters.getLength());
-                System.out.println(image.toString());
             }
         } finally {
             if (doc != null)
