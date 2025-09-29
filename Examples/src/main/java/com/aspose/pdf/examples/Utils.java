@@ -9,6 +9,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.Forms.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Graphs.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Headings.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Images.*;
+import com.aspose.pdf.examples.AsposePdfExamples.LinksAndActions.*;
 
 import java.io.File;
 
@@ -144,6 +145,13 @@ public class Utils {
         IdentifyIfImageInsidePDFIsColoredOrBlackAndWhite.runExamples();
         ReplaceImageInExistingPDFFile.runExamples();
         SettingDPIOrPPIOfImagesInPDF.runExamples();
+
+        // AsposePdfExamples.LinksAndActions
+        AddHyperlinkInPDFFile.runExamples();
+        CreateALinkToAnotherPDFDocument.runExamples();
+        // input file absents
+        // GetPDFHyperlinkDestination.runExamples();
+        RemoveDocumentOpenActionFromPDFFile.runExamples();
     }
 
     private static File dir = null;

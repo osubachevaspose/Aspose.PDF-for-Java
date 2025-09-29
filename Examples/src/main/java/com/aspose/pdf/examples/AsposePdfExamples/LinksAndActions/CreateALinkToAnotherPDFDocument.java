@@ -13,7 +13,7 @@ public class CreateALinkToAnotherPDFDocument {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/LinksAndActions/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/LinksAndActions/CreateALinkToAnotherPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -39,7 +39,7 @@ public class CreateALinkToAnotherPDFDocument {
             // Add link annotation to first page of PDF file
             doc.getPages().get_Item(1).getAnnotations().add(link);
             // Save the document with link
-            doc.save(outputDir + "Hyerplink_to_PDF.pdf");
+            doc.save(outputDir + "Hyperlink_to_PDF.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -1,18 +1,35 @@
 package com.aspose.pdf.examples.AsposePdfExamples.LinksAndActions;
 
-import java.util.List;
-
 import com.aspose.pdf.AnnotationSelector;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.GoToURIAction;
 import com.aspose.pdf.LinkAnnotation;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.Rectangle;
+import com.aspose.pdf.examples.Utils;
+
+import java.util.List;
 
 public class GetPDFHyperlinkDestination {
 
     public static void main(String[] args) {
-        Document doc = new Document("update_Service_Work_Order.pdf");
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/LinksAndActions/GetPDFHyperlinkDestination/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getPDFHyperlinkDestination start");
+        getPDFHyperlinkDestination(dataDir);
+        System.out.println("Example getPDFHyperlinkDestination end");
+    }
+
+    public static void getPDFHyperlinkDestination(String dataDir) {
+        // Document doc = new Document(dataDir + "update_Service_Work_Order.pdf");
+        Document doc = new Document(dataDir + "Hyperlink_to_PDF.pdf");
         try {
             // Extract actions
             Page page = doc.getPages().get_Item(1);
@@ -28,7 +45,7 @@ public class GetPDFHyperlinkDestination {
                     // Print the destination URL
                     System.out.println("<br />Destination: " + ((GoToURIAction) annot.getAction()).getURI() + "<br />");
                 }
-            } // end else
+            }
         } finally {
             if (doc != null)
                 doc.close();
