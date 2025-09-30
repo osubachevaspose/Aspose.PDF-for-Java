@@ -3,17 +3,32 @@ package com.aspose.pdf.examples.AsposePdfExamples.Pages;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.TextFragment;
+import com.aspose.pdf.examples.Utils;
 
 public class GetPageCountOfPDF {
 
     public static void main(String[] args) {
-        getPageCountOfPDF();
-        getPageCountWithoutSavingPDF();
+        runExamples();
     }
 
-    public static void getPageCountOfPDF() {
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Pages/GetPageCountOfPDF/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getPageCountOfPDF start");
+        getPageCountOfPDF(dataDir);
+        System.out.println("Example getPageCountOfPDF end");
+
+        System.out.println("Example getPageCountWithoutSavingPDF start");
+        getPageCountWithoutSavingPDF();
+        System.out.println("Example getPageCountWithoutSavingPDF end");
+    }
+
+    public static void getPageCountOfPDF(String dataDir) {
         // Open a document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Get page count
             System.out.println("Page Count: " + doc.getPages().size());

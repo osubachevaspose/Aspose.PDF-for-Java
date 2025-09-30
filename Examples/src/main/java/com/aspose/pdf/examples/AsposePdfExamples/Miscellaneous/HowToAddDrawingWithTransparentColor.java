@@ -8,10 +8,26 @@ import com.aspose.pdf.GraphInfo;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Rectangle;
+import com.aspose.pdf.examples.Utils;
 
 public class HowToAddDrawingWithTransparentColor {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Miscellaneous/HowToAddDrawingWithTransparentColor/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example howToAddDrawingWithTransparentColor start");
+        howToAddDrawingWithTransparentColor(outputDir);
+        System.out.println("Example howToAddDrawingWithTransparentColor end");
+    }
+
+    public static void howToAddDrawingWithTransparentColor(String outputDir) {
         int alpha = 10;
         int green = 0;
         int red = 100;
@@ -40,7 +56,7 @@ public class HowToAddDrawingWithTransparentColor {
             // add rectangle shape to shapes collection of graph object
             graph.getShapes().add(rectangle);
             // save PDF file
-            doc.save("TransparentColor.pdf");
+            doc.save(outputDir + "TransparentColor.pdf");
         } finally {
             if (doc != null)
                 doc.close();

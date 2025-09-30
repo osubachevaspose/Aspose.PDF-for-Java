@@ -12,7 +12,7 @@ public class EscapeHTMLTagsAndSpecialCharacters {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdfGenerator/EscapeHTMLTagsAndSpecialCharacters/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/EscapeHTMLTagsAndSpecialCharacters/";
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");

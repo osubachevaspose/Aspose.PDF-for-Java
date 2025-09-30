@@ -10,6 +10,8 @@ import com.aspose.pdf.examples.AsposePdfExamples.Graphs.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Headings.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Images.*;
 import com.aspose.pdf.examples.AsposePdfExamples.LinksAndActions.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Miscellaneous.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Pages.*;
 
 import java.io.File;
 
@@ -82,8 +84,7 @@ public class Utils {
         AddingJavaScriptDOM.runExamples();
         AddLayersToPDFFile.runExamples();
         AddTOCToExistingPDF.runExamples();
-        // requires tesseract
-        // ConvertingNonSearchablePDFToSearchablePDFDocument.runExamples();
+        // requires tesseract ConvertingNonSearchablePDFToSearchablePDFDocument.runExamples();
         ConvertPDFFromRGBColorspaceToGrayscale.runExamples();
         EmbeddingFontsInExistingPDFFile.runExamples();
         EmbeddingFontsWhileCreatingPDF.runExamples();
@@ -136,8 +137,7 @@ public class Utils {
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
         ConvertPDFPagesToTIFFImage.runExamples();
-        // input file absents
-        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        // input file absents DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
         DeleteImagesFromThePDFFile.runExamples();
         ExtractImageProperties.runExamples();
         ExtractImagesFromThePDFFile.runExamples();
@@ -149,9 +149,23 @@ public class Utils {
         // AsposePdfExamples.LinksAndActions
         AddHyperlinkInPDFFile.runExamples();
         CreateALinkToAnotherPDFDocument.runExamples();
-        // input file absents
-        // GetPDFHyperlinkDestination.runExamples();
+        // input file absents GetPDFHyperlinkDestination.runExamples();
         RemoveDocumentOpenActionFromPDFFile.runExamples();
+
+        // AsposePdfExamples.Miscellaneous
+        // input file absents ChangingColorSpaceOfPDFDocument.runExamples();
+        GettingProductAndBuildInformation.runExamples();
+        HowToAddDrawingWithTransparentColor.runExamples();
+
+        // AsposePdfExamples.Pages
+        AddImageAsPageBackground.runExamples();
+        ChangePageOrientation.runExamples();
+        ConcatenatePDFFiles.runExamples();
+        DeleteParticularPageFromThePDFFile.runExamples();
+        DeterminePageColor.runExamples();
+        GetPageCountOfPDF.runExamples();
+        GetPageProperties.runExamples();
+        GetParticularPageInPDFFile.runExamples();
     }
 
     private static File dir = null;

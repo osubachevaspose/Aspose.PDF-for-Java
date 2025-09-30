@@ -3,6 +3,7 @@ package com.aspose.pdf.examples.AsposePdfExamples.Miscellaneous;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Operator;
 import com.aspose.pdf.OperatorCollection;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.operators.SetCMYKColor;
 import com.aspose.pdf.operators.SetCMYKColorStroke;
 import com.aspose.pdf.operators.SetRGBColor;
@@ -11,7 +12,23 @@ import com.aspose.pdf.operators.SetRGBColorStroke;
 public class ChangingColorSpaceOfPDFDocument {
 
     public static void main(String[] args) {
-        Document doc1 = new Document("input_color.pdf");
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Miscellaneous/ChangingColorSpaceOfPDFDocument/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example changingColorSpaceOfPDFDocument start");
+        changingColorSpaceOfPDFDocument(dataDir, outputDir);
+        System.out.println("Example changingColorSpaceOfPDFDocument end");
+    }
+
+    public static void changingColorSpaceOfPDFDocument(String dataDir, String outputDir) {
+        Document doc1 = new Document(dataDir + "input_color.pdf");
         try {
             OperatorCollection contents = doc1.getPages().get_Item(1).getContents();
             System.out.println("Values of RGB color operators in the pdf document");
@@ -37,7 +54,7 @@ public class ChangingColorSpaceOfPDFDocument {
                     throw new java.lang.Throwable("Unsupported command");
                 }
             }
-            doc1.save("input_colorout.pdf");
+            doc1.save(outputDir + "input_colorout.pdf");
         } catch (Throwable e) {
             e.printStackTrace();
         } finally {
@@ -46,7 +63,7 @@ public class ChangingColorSpaceOfPDFDocument {
         }
         // Testing the result
         System.out.println("Values of converted CMYK color operators in the result pdf document");
-        Document doc2 = new Document("input_colorout.pdf");
+        Document doc2 = new Document(outputDir + "input_colorout.pdf");
         try {
             OperatorCollection contents = doc2.getPages().get_Item(1).getContents();
             for (int j = 1; j <= contents.size(); j++) {

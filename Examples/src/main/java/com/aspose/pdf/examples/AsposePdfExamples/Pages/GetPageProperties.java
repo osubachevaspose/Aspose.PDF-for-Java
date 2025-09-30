@@ -3,44 +3,60 @@ package com.aspose.pdf.examples.AsposePdfExamples.Pages;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.PageCollection;
+import com.aspose.pdf.examples.Utils;
 
 public class GetPageProperties {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Pages/GetPageProperties/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getPageProperties start");
+        getPageProperties(dataDir);
+        System.out.println("Example getPageProperties end");
+    }
+
+    public static void getPageProperties(String dataDir) {
         // Open a document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Get the page collection
             PageCollection pageCollection = doc.getPages();
             // Get a specific page
-            Page pdfPage = pageCollection.get_Item(1);
+            Page page = pageCollection.get_Item(1);
             // Get the page properties
-            System.out.println("ArtBox : Height = " + pdfPage.getArtBox().getHeight() + ", Width = "
-                    + pdfPage.getArtBox().getWidth() + ", LLX = " + pdfPage.getArtBox().getLLX() + ", LLY = "
-                    + pdfPage.getArtBox().getLLY() + ", URX = " + pdfPage.getArtBox().getURX() + ", URY = "
-                    + pdfPage.getArtBox().getURY());
-            System.out.println("BleedBox : Height = " + pdfPage.getBleedBox().getHeight() + ", Width = "
-                    + pdfPage.getBleedBox().getWidth() + ", LLX = " + pdfPage.getBleedBox().getLLX() + ", LLY = "
-                    + pdfPage.getBleedBox().getLLY() + ", URX = " + pdfPage.getBleedBox().getURX() + ", URY = "
-                    + pdfPage.getBleedBox().getURY());
-            System.out.println("CropBox : Height = " + pdfPage.getCropBox().getHeight() + ", Width = "
-                    + pdfPage.getCropBox().getWidth() + ", LLX = " + pdfPage.getCropBox().getLLX() + ", LLY = "
-                    + pdfPage.getCropBox().getLLY() + ", URX = " + pdfPage.getCropBox().getURX() + ", URY = "
-                    + pdfPage.getCropBox().getURY());
-            System.out.println("MediaBox : Height = " + pdfPage.getMediaBox().getHeight() + ", Width = "
-                    + pdfPage.getMediaBox().getWidth() + ", LLX = " + pdfPage.getMediaBox().getLLX() + ", LLY = "
-                    + pdfPage.getMediaBox().getLLY() + ", URX = " + pdfPage.getMediaBox().getURX() + ", URY = "
-                    + pdfPage.getMediaBox().getURY());
-            System.out.println("TrimBox : Height = " + pdfPage.getTrimBox().getHeight() + ", Width = "
-                    + pdfPage.getTrimBox().getWidth() + ", LLX = " + pdfPage.getTrimBox().getLLX() + ", LLY = "
-                    + pdfPage.getTrimBox().getLLY() + ", URX = " + pdfPage.getTrimBox().getURX() + ", URY = "
-                    + pdfPage.getTrimBox().getURY());
+            System.out.println("ArtBox : Height = " + page.getArtBox().getHeight() + ", Width = "
+                    + page.getArtBox().getWidth() + ", LLX = " + page.getArtBox().getLLX() + ", LLY = "
+                    + page.getArtBox().getLLY() + ", URX = " + page.getArtBox().getURX() + ", URY = "
+                    + page.getArtBox().getURY());
+            System.out.println("BleedBox : Height = " + page.getBleedBox().getHeight() + ", Width = "
+                    + page.getBleedBox().getWidth() + ", LLX = " + page.getBleedBox().getLLX() + ", LLY = "
+                    + page.getBleedBox().getLLY() + ", URX = " + page.getBleedBox().getURX() + ", URY = "
+                    + page.getBleedBox().getURY());
+            System.out.println("CropBox : Height = " + page.getCropBox().getHeight() + ", Width = "
+                    + page.getCropBox().getWidth() + ", LLX = " + page.getCropBox().getLLX() + ", LLY = "
+                    + page.getCropBox().getLLY() + ", URX = " + page.getCropBox().getURX() + ", URY = "
+                    + page.getCropBox().getURY());
+            System.out.println("MediaBox : Height = " + page.getMediaBox().getHeight() + ", Width = "
+                    + page.getMediaBox().getWidth() + ", LLX = " + page.getMediaBox().getLLX() + ", LLY = "
+                    + page.getMediaBox().getLLY() + ", URX = " + page.getMediaBox().getURX() + ", URY = "
+                    + page.getMediaBox().getURY());
+            System.out.println("TrimBox : Height = " + page.getTrimBox().getHeight() + ", Width = "
+                    + page.getTrimBox().getWidth() + ", LLX = " + page.getTrimBox().getLLX() + ", LLY = "
+                    + page.getTrimBox().getLLY() + ", URX = " + page.getTrimBox().getURX() + ", URY = "
+                    + page.getTrimBox().getURY());
             System.out.println(
-                    "Rect : Height = " + pdfPage.getRect().getHeight() + ", Width = " + pdfPage.getRect().getWidth()
-                            + ", LLX = " + pdfPage.getRect().getLLX() + ", LLY = " + pdfPage.getRect().getLLY()
-                            + ", URX = " + pdfPage.getRect().getURX() + ", URY = " + pdfPage.getRect().getURY());
-            System.out.println("Page Number: " + pdfPage.getNumber());
-            System.out.println("Rotate : " + pdfPage.getRotate());
+                    "Rect : Height = " + page.getRect().getHeight() + ", Width = " + page.getRect().getWidth()
+                            + ", LLX = " + page.getRect().getLLX() + ", LLY = " + page.getRect().getLLY()
+                            + ", URX = " + page.getRect().getURX() + ", URY = " + page.getRect().getURY());
+            System.out.println("Page Number: " + page.getNumber());
+            System.out.println("Rotate : " + page.getRotate());
         } finally {
             if (doc != null)
                 doc.close();

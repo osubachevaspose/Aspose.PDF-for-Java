@@ -2,6 +2,7 @@ package com.aspose.pdf.examples.AsposePdfExamples.DocumentObject;
 
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Document.CallBackGetHocr;
+import com.aspose.pdf.examples.Utils;
 
 import javax.imageio.ImageIO;
 import java.io.File;
@@ -12,6 +13,22 @@ import java.util.Scanner;
 public class ConvertingNonSearchablePDFToSearchablePDFDocument {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/ConvertingNonSearchablePDFToSearchablePDFDocument/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example convertingNonSearchablePDFToSearchablePDFDocument start");
+        convertingNonSearchablePDFToSearchablePDFDocument(dataDir, outputDir);
+        System.out.println("Example convertingNonSearchablePDFToSearchablePDFDocument end");
+    }
+
+    public static void convertingNonSearchablePDFToSearchablePDFDocument(String dataDir, String outputDir) {
         String myDir = "PathToDir";
         // Create callBack - logic recognize text for pdf images. Use outer OCR support
         // HOCR standard(http://en.wikipedia.org/wiki/HOCR).
