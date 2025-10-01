@@ -6,12 +6,29 @@ import com.aspose.pdf.FontRepository;
 import com.aspose.pdf.FontStyles;
 import com.aspose.pdf.Rotation;
 import com.aspose.pdf.TextStamp;
+import com.aspose.pdf.examples.Utils;
 
 public class AddingTextStampInPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/AddingTextStampInPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addingTextStampInPDFFile start");
+        addingTextStampInPDFFile(dataDir, outputDir);
+        System.out.println("Example addingTextStampInPDFFile end");
+    }
+
+    public static void addingTextStampInPDFFile(String dataDir, String outputDir) {
         // open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // create text stamp
             TextStamp textStamp = new TextStamp("Sample Stamp");
@@ -31,7 +48,7 @@ public class AddingTextStampInPDFFile {
             // add stamp to particular page
             doc.getPages().get_Item(1).addStamp(textStamp);
             // save output document
-            doc.save("TextStamp_output.pdf");
+            doc.save(outputDir + "TextStamp_output.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -4,9 +4,6 @@ import com.aspose.pdf.Document;
 
 public class ApplyMeteredLicense {
 
-    public static void main(String[] args) {
-    }
-
     @SuppressWarnings("static-access")
     public void Run() {
         String publicKey = "";

@@ -2,9 +2,6 @@ package com.aspose.pdf.examples.AsposePdfExamples.QuickStart;
 
 public class ValidateLicense {
 
-    public static void main(String[] args) throws Exception {
-    }
-
     public void Run() {
         com.aspose.pdf.License license = new com.aspose.pdf.License();
         try {

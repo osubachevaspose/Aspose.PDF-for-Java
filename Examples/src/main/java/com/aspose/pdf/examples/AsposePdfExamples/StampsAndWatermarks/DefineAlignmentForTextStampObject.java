@@ -4,13 +4,30 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.HorizontalAlignment;
 import com.aspose.pdf.TextStamp;
 import com.aspose.pdf.VerticalAlignment;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.FormattedText;
 
 public class DefineAlignmentForTextStampObject {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/DefineAlignmentForTextStampObject/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example defineAlignmentForTextStampObject start");
+        defineAlignmentForTextStampObject(dataDir, outputDir);
+        System.out.println("Example defineAlignmentForTextStampObject end");
+    }
+
+    public static void defineAlignmentForTextStampObject(String dataDir, String outputDir) {
         // open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // instantiate FormattedText object with sample string
             FormattedText text = new FormattedText("This");
@@ -32,7 +49,7 @@ public class DefineAlignmentForTextStampObject {
             // add stamp to all pages of PDF file
             doc.getPages().get_Item(1).addStamp(stamp);
             // save output document
-            doc.save("TextStamp_output.pdf");
+            doc.save(outputDir + "TextStamp_output.pdf");
         } finally {
             if (doc != null)
                 doc.close();

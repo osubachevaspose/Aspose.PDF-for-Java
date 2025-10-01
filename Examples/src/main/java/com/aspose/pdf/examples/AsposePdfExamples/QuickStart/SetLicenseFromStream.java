@@ -1,11 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.QuickStart;
 
-import java.io.FileNotFoundException;
-
 public class SetLicenseFromStream {
-
-    public static void main(String[] args) throws FileNotFoundException, Exception {
-    }
 
     public void Run() {
         // Initialize License Object

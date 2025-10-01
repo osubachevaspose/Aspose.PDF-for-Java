@@ -2,40 +2,56 @@ package com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks;
 
 import com.aspose.pdf.Document;
 import com.aspose.pdf.ImageStamp;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileStamp;
 import com.aspose.pdf.facades.Stamp;
 
 public class ControlImageQualityWhenAddingImageStamp {
 
     public static void main(String[] args) {
-        domApproach();
-        facadesApproach();
+        runExamples();
     }
 
-    public static void domApproach() {
-        Document doc = new Document("PdfWithText.pdf");
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/ControlImageQualityWhenAddingImageStamp/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example domApproach start");
+        domApproach(dataDir, outputDir);
+        System.out.println("Example domApproach end");
+
+        System.out.println("Example facadesApproach start");
+        facadesApproach(dataDir, outputDir);
+        System.out.println("Example facadesApproach end");
+    }
+
+    public static void domApproach(String dataDir, String outputDir) {
+        Document doc = new Document(dataDir + "PdfWithText.pdf");
         try {
-            ImageStamp stamp = new ImageStamp("butterfly.jpg");
+            ImageStamp stamp = new ImageStamp(dataDir + "butterfly.jpg");
             // Specify the quality of stamp image
             stamp.setQuality(10);
             doc.getPages().get_Item(1).addStamp(stamp);
             // Save updated document
-            doc.save("out.pdf");
+            doc.save(outputDir + "out.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void facadesApproach() {
+    public static void facadesApproach(String dataDir, String outputDir) {
         PdfFileStamp fileStamp = new PdfFileStamp();
         try {
-            fileStamp.bindPdf("PdfWithText.pdf");
-            Stamp stamp1 = new Stamp();
-            stamp1.bindImage("butterfly.jpg");
-            stamp1.setQuality(10);
-            fileStamp.addStamp(stamp1);
-            fileStamp.save("34959-1.pdf");
+            fileStamp.bindPdf(dataDir + "PdfWithText.pdf");
+            Stamp stamp = new Stamp();
+            stamp.bindImage(dataDir + "butterfly.jpg");
+            stamp.setQuality(10);
+            fileStamp.addStamp(stamp);
+            fileStamp.save(outputDir + "34959-1.pdf");
         } finally {
             if (fileStamp != null)
                 fileStamp.close();

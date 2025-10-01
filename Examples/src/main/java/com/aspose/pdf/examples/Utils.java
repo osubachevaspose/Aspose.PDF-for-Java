@@ -12,6 +12,8 @@ import com.aspose.pdf.examples.AsposePdfExamples.Images.*;
 import com.aspose.pdf.examples.AsposePdfExamples.LinksAndActions.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Miscellaneous.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Pages.*;
+import com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.*;
+import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
 
 import java.io.File;
 
@@ -84,7 +86,8 @@ public class Utils {
         AddingJavaScriptDOM.runExamples();
         AddLayersToPDFFile.runExamples();
         AddTOCToExistingPDF.runExamples();
-        // requires tesseract ConvertingNonSearchablePDFToSearchablePDFDocument.runExamples();
+        // requires tesseract
+        // ConvertingNonSearchablePDFToSearchablePDFDocument.runExamples();
         ConvertPDFFromRGBColorspaceToGrayscale.runExamples();
         EmbeddingFontsInExistingPDFFile.runExamples();
         EmbeddingFontsWhileCreatingPDF.runExamples();
@@ -137,7 +140,8 @@ public class Utils {
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
         ConvertPDFPagesToTIFFImage.runExamples();
-        // input file absents DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        // no input file
+        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
         DeleteImagesFromThePDFFile.runExamples();
         ExtractImageProperties.runExamples();
         ExtractImagesFromThePDFFile.runExamples();
@@ -149,11 +153,11 @@ public class Utils {
         // AsposePdfExamples.LinksAndActions
         AddHyperlinkInPDFFile.runExamples();
         CreateALinkToAnotherPDFDocument.runExamples();
-        // input file absents GetPDFHyperlinkDestination.runExamples();
+        // no input file GetPDFHyperlinkDestination.runExamples();
         RemoveDocumentOpenActionFromPDFFile.runExamples();
 
         // AsposePdfExamples.Miscellaneous
-        // input file absents ChangingColorSpaceOfPDFDocument.runExamples();
+        // no input file ChangingColorSpaceOfPDFDocument.runExamples();
         GettingProductAndBuildInformation.runExamples();
         HowToAddDrawingWithTransparentColor.runExamples();
 
@@ -166,13 +170,38 @@ public class Utils {
         GetPageCountOfPDF.runExamples();
         GetPageProperties.runExamples();
         GetParticularPageInPDFFile.runExamples();
+        InsertAnEmptyPageIntoPDFFile.runExamples();
+        SplitPDFFileIntoIndividualPages.runExamples();
+        UpdatePageDimensions.runExamples();
+
+        // AsposePdfExamples.SecurityAndSignatures
+        // no input file (pfx) AddDigitalSignatureToPDFFile.runExamples();
+        DecryptPDFFileUsingOwnerPassword.runExamples();
+        EncryptPDFDocumentUsingEncryptionTypes.runExamples();
+        // no input file (seems it needs output file from addDigitalSignatureToPDFFile)
+        // ExtractingImageFromSignatureField.runExamples();
+        HowToDetermineIfTheSourcePDFIsPasswordProtected.runExamples();
+        SetPrivilegesOnAnExistingPDFFile.runExamples();
+
+        // AsposePdfExamples.StampsAndWatermarks
+        AddImageStampAsBackgroundInFloatingBox.runExamples();
+        AddingDifferentHeadersInOnePDFFile.runExamples();
+        AddingImageStampInPDFFile.runExamples();
+        AddingPDFPageStampInThePDFFile.runExamples();
+        AddingTextInHeaderOrFooterOfPDFFile.runExamples();
+        AddingTextStampInPDFFile.runExamples();
+        AddPageNumberStampInPDF.runExamples();
+        ControlImageQualityWhenAddingImageStamp.runExamples();
+        DefineAlignmentForTextStampObject.runExamples();
+        // ExtractTextFromStampAnnotation.runExamples(); throws
+        // Exception in thread "main" class com.aspose.pdf.internal.ms.System.lh: Document context is null for license
     }
 
     private static File dir = null;
 
     public static String getSharedDataDir() {
         if (dir == null) {
-            dir = new File(dir, "src/main/resources/");
+            dir = new File("src/main/resources/");
         }
         return dir.toString() + File.separator;
     }

@@ -15,7 +15,7 @@ public class ExtractTextFromStampAnnotation {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Stamps-Watermarks/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/ExtractTextFromStampAnnotation/";
         String dataDir = Utils.getDataDir(testID);
 
         System.out.println("============================");
@@ -30,10 +30,10 @@ public class ExtractTextFromStampAnnotation {
             Annotation item = doc.getPages().get_Item(1).getAnnotations().get_Item(3);
             if (item instanceof StampAnnotation) {
                 StampAnnotation annot = (StampAnnotation) item;
-                TextAbsorber ta = new TextAbsorber();
+                TextAbsorber textAbsorber = new TextAbsorber();
                 XForm ap = annot.getNormalAppearance();
-                ta.visit(ap);
-                System.out.println(ta.getText());
+                textAbsorber.visit(ap);
+                System.out.println(textAbsorber.getText());
             }
         } finally {
             if (doc != null)
