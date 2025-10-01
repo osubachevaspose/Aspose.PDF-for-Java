@@ -1,3 +1,3 @@
-Start cmd /k mvn clean install -DskipTests=true -e  -Dmaven.compiler.showDeprecation=true
+Start cmd /k mvn clean install
 
 
