@@ -3,6 +3,7 @@ package com.aspose.pdf.examples.AsposePdfFacades.Annotations;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
+import com.aspose.pdf.AnnotationType;
 import com.aspose.pdf.facades.PdfAnnotationEditor;
 
 public class ExportAnnotationsFromPDFFileToXFDF {
@@ -13,7 +14,8 @@ public class ExportAnnotationsFromPDFFileToXFDF {
 		// open PDF document
 		AnnotationEditor.bindPdf("input.pdf");
 		// import annotations
-		int[] annotTypes = new int[] { com.aspose.pdf.AnnotationType.Text, com.aspose.pdf.AnnotationType.Highlight };
+        AnnotationType[] annotTypes = new AnnotationType[] {
+                com.aspose.pdf.AnnotationType.Text, com.aspose.pdf.AnnotationType.Highlight };
 		FileOutputStream fileStream = new FileOutputStream("annotations.xfdf");
 		AnnotationEditor.exportAnnotationsXfdf(fileStream, 1, 5, annotTypes);
 		// close objects

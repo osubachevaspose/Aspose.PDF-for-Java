@@ -44,7 +44,7 @@ public class AddAnnotationToPDF {
             textAnnotation.setTitle("Sample Annotation Title");
             // Set annotation subject
             textAnnotation.setSubject("Sample Subject");
-            textAnnotation.setState(com.aspose.pdf.AnnotationState.Accepted);
+            textAnnotation.setReviewState(com.aspose.pdf.AnnotationState.Accepted);
             // Specify the annotation contents
             textAnnotation.setContents("Sample contents for the annotation");
             textAnnotation.setOpen(true);

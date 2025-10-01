@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Pages;
 
+import com.aspose.pdf.ColorType;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 
@@ -27,18 +28,18 @@ public class DeterminePageColor {
             // Iterate through all the page of PDF file
             for (int i = 1; i <= doc.getPages().size(); i++) {
                 // Get the color type information for particular PDF page
-                int pageColorType = doc.getPages().get_Item(i).getColorType();
+                ColorType pageColorType = doc.getPages().get_Item(i).getColorType();
                 switch (pageColorType) {
-                    case 2:
+                    case BlackAndWhite:
                         System.out.println("Page # -" + i + " is Black and white..");
                         break;
-                    case 1:
+                    case Grayscale:
                         System.out.println("Page # -" + i + " is Gray Scale...");
                         break;
-                    case 0:
+                    case Rgb:
                         System.out.println("Page # -" + i + " is RGB..");
                         break;
-                    case 3:
+                    case Undefined:
                         System.out.println("Page # -" + i + " Color is undefined..");
                         break;
                 }

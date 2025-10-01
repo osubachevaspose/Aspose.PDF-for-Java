@@ -67,7 +67,7 @@ public class ControllingZOrderOfRectangle {
         // color of graph object
         rect.getGraphInfo().setColor(color);
         // add rectangle to shapes collection of graph instance
-        graph.getShapes().add(rect);
+        graph.getShapes().addItem(rect);
         // set Z-Index for rectangle object
         graph.setZIndex(zindex);
         // add graph to paragraphs collection of page object

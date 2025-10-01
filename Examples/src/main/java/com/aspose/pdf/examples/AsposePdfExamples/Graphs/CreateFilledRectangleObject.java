@@ -39,7 +39,7 @@ public class CreateFilledRectangleObject {
             // Specify fill color for Graph object
             rect.getGraphInfo().setFillColor(Color.getRed());
             // Add rectangle object to shapes collection of Graph object
-            graph.getShapes().add(rect);
+            graph.getShapes().addItem(rect);
             // save resultant PDF file
             doc.save(outputDir + "Filled_Rect.pdf");
         } finally {

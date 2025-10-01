@@ -57,8 +57,8 @@ public class Utils {
         ConvertPDFToPDFAFormat.runExamples();
         ConvertPDFToPPTX.runExamples();
         ConvertPDFToSVGFormat.runExamples();
-        ConvertPDFToXLSX.runExamples();
-        ConvertPDFToXML.runExamples();
+        ConvertPDFtoXLSX.runExamples();
+        //ConvertPDFToXML.runExamples(); Will be fixed in the version 25.10
         ConvertPostScriptFileToPDFFormat.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();
         ConvertTextFileToPDFFormat.runExamples();
