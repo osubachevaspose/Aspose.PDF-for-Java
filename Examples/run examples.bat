@@ -1,0 +1,1 @@
+java -cp "target/lib/*;target/pdf-java-examples-1.1-SNAPSHOT.jar" com.aspose.pdf.examples.Utils

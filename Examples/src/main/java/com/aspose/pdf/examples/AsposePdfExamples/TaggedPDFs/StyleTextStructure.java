@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
+import com.aspose.ms.System.Nullable;
 import com.aspose.pdf.Color;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.FontStyles;
@@ -23,7 +24,7 @@ public class StyleTextStructure {
             ParagraphElement p = taggedContent.createParagraphElement();
             taggedContent.getRootElement().appendChild(p);
             // Under Development
-            p.getStructureTextState().setFontSize(18F);
+            p.getStructureTextState().setFontSize(new Nullable<Float>(18F));
             p.getStructureTextState().setForegroundColor(Color.getRed());
             p.getStructureTextState().setFontStyle(FontStyles.Italic);
             p.setText("Red italic text.");

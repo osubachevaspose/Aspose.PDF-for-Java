@@ -4,7 +4,7 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.ExcelSaveOptions;
 import com.aspose.pdf.examples.Utils;
 
-public class ConvertPDFToXLSX {
+public class ConvertPDFtoXLSX {
 
     public static void main(String[] args) {
         runExamples();

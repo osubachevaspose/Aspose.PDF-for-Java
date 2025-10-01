@@ -40,12 +40,12 @@ public class DrawingLineAcrossThePage {
             Line line = new Line(new float[] { (float) page.getRect().getLLX(), 0,
                     (float) page.getPageInfo().getWidth(), (float) page.getRect().getURY() });
             // add line to shapes collection of Graph object
-            graph.getShapes().add(line);
+            graph.getShapes().addItem(line);
             // draw line from Top-Left corner of page to Bottom-Right corner of page
             Line line2 = new Line(new float[] { 0, (float) page.getRect().getURY(),
                     (float) page.getPageInfo().getWidth(), (float) page.getRect().getLLX() });
             // add line to shapes collection of Graph object
-            graph.getShapes().add(line2);
+            graph.getShapes().addItem(line2);
             // add Graph object to paragraphs collection of page
             page.getParagraphs().add(graph);
             // save resultant PDF file

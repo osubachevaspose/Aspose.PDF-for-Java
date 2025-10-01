@@ -54,7 +54,7 @@ public class HowToAddDrawingWithTransparentColor {
             // set fill color for GraphInfo
             graphInfo.setFillColor(alphaColor);
             // add rectangle shape to shapes collection of graph object
-            graph.getShapes().add(rectangle);
+            graph.getShapes().addItem(rectangle);
             // save PDF file
             doc.save(outputDir + "TransparentColor.pdf");
         } finally {

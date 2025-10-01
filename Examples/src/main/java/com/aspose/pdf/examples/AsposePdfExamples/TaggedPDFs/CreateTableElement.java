@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
+import com.aspose.ms.System.Nullable;
 import com.aspose.pdf.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
@@ -82,7 +83,7 @@ public class CreateTableElement {
                 TableTDElement tdElement = footTrElement.createTD();
                 tdElement.setText(String.format("Foot %s", colIndex));
                 tdElement.setAlignment(HorizontalAlignment.Center);
-                tdElement.getStructureTextState().setFontSize(7F);
+                tdElement.getStructureTextState().setFontSize(new Nullable<Float>(7f));
                 tdElement.getStructureTextState().setFontStyle(FontStyles.Bold);
             }
             StructureAttributes tableAttributes = tableElement.getAttributes()

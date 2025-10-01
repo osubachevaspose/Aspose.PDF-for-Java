@@ -26,7 +26,7 @@ public class HowToAddTransparentTextInPDF {
             // create color object from Alpha color channel
             rect.getGraphInfo().setFillColor(Color.fromArgb(alpha, red, green, blue));
             // add rectanlge to shapes collection of Graph object
-            canvas.getShapes().add(rect);
+            canvas.getShapes().addItem(rect);
             // add graph object to paragraphs collection of page object
             page.getParagraphs().add(canvas);
             // set value to not change position for graph object

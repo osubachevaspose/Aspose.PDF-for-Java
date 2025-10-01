@@ -39,7 +39,7 @@ public class AddLineObjectToPDF {
             line.getGraphInfo().setDashArray(new int[] { 0, 1, 0 });
             line.getGraphInfo().setDashPhase(1);
             // Add rectangle object to shapes collection of Graph object
-            graph.getShapes().add(line);
+            graph.getShapes().addItem(line);
             // Save PDF file
             doc.save(outputDir + "LineAdded.pdf");
         } finally {

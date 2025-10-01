@@ -50,7 +50,7 @@ public class OptimizePDFFileSize {
 		try {
 			OptimizationOptions opt = new OptimizationOptions();
 			opt.setRemoveUnusedObjects(false);
-			opt.setLinkDuplcateStreams(false);
+			opt.setLinkDuplicateStreams(false);
 			opt.setRemoveUnusedStreams(false);
 			// Enable image compression
 			opt.getImageCompressionOptions().setCompressImages(true);

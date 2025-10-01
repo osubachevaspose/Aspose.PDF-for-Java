@@ -35,12 +35,12 @@ public class IdentifyIfImageInsidePDFIsColoredOrBlackAndWhite {
                 page.accept(abs);
                 for (ImagePlacement ia : (Iterable<ImagePlacement>) abs.getImagePlacements()) {
                     /* ColorType */
-                    int colorType = ia.getImage().getColorType();
+                    ColorType colorType = ia.getImage().getColorType();
                     switch (colorType) {
-                        case ColorType.Grayscale:
+                        case Grayscale:
                             System.out.println("Grayscale Image");
                             break;
-                        case ColorType.Rgb:
+                        case Rgb:
                             System.out.println("Colored Image");
                             break;
                     }
