@@ -14,6 +14,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.Miscellaneous.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Pages.*;
 import com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.*;
 import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Tables.*;
 
 import java.io.File;
 
@@ -60,7 +61,7 @@ public class Utils {
         ConvertPDFToPPTX.runExamples();
         ConvertPDFToSVGFormat.runExamples();
         ConvertPDFtoXLSX.runExamples();
-        //ConvertPDFToXML.runExamples(); Will be fixed in the version 25.10
+        // ConvertPDFToXML.runExamples(); Will be fixed in the version 25.10
         ConvertPostScriptFileToPDFFormat.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();
         ConvertTextFileToPDFFormat.runExamples();
@@ -194,7 +195,16 @@ public class Utils {
         ControlImageQualityWhenAddingImageStamp.runExamples();
         DefineAlignmentForTextStampObject.runExamples();
         // ExtractTextFromStampAnnotation.runExamples(); throws
-        // Exception in thread "main" class com.aspose.pdf.internal.ms.System.lh: Document context is null for license
+        // Exception in thread "main" class com.aspose.pdf.internal.ms.System.lh:
+        // Document context is null for license
+
+        // AsposePdfExamples.Tables
+        AddTableInExistingPDFDocument.runExamples();
+        ForceTableRenderingOnNewPage.runExamples();
+        HideSpannedCellBorder.runExamples();
+        ManipulateTablesInExistingPDF.runExamples();
+        RemoveTablesFromExistingPDF.runExamples();
+        SetBorderStyleMarginsAndPaddingOfTable.runExamples();
     }
 
     private static File dir = null;

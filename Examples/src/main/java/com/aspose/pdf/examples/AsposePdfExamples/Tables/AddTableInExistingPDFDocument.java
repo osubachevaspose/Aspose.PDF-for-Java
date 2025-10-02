@@ -7,18 +7,30 @@ import com.aspose.pdf.ColumnAdjustment;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.Row;
+import com.aspose.pdf.MarginInfo;
 import com.aspose.pdf.Table;
 import com.aspose.pdf.examples.Utils;
 
 public class AddTableInExistingPDFDocument {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "AsposePdfExamples/Tables/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Tables/AddTableInExistingPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addTableInExistingPDFDocument start");
         addTableInExistingPDFDocument(dataDir, outputDir);
-        setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration(dataDir, outputDir);
+        System.out.println("Example addTableInExistingPDFDocument end");
+
+        System.out.println("Example setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration start");
+        setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration(outputDir);
+        System.out.println("Example setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration end");
     }
 
     public static void addTableInExistingPDFDocument(String dataDir, String outputDir) {
@@ -32,25 +44,25 @@ public class AddTableInExistingPDFDocument {
             // set the border for table cells
             table.setDefaultCellBorder(new BorderInfo(BorderSide.All, .5f, Color.getLightGray()));
             // create a loop to add 10 rows
-            for (int row_count = 1; row_count < 10; row_count++) {
+            for (int i = 1; i <= 10; i++) {
                 // add row to table
                 Row row = table.getRows().add();
                 // add table cells
-                row.getCells().add("Column (" + row_count + ", 1)");
-                row.getCells().add("Column (" + row_count + ", 2)");
-                row.getCells().add("Column (" + row_count + ", 3)");
+                row.getCells().add("Column (" + i + ", 1)");
+                row.getCells().add("Column (" + i + ", 2)");
+                row.getCells().add("Column (" + i + ", 3)");
             }
             // Add table object to first page of input document
             doc.getPages().get_Item(1).getParagraphs().add(table);
             // Save updated document containing table object
-            doc.save(dataDir + "document_with_table.pdf");
+            doc.save(outputDir + "document_with_table.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration(String dataDir, String outputDir) {
+    public static void setAutoFitToWindowPropertyInColumnAdjustmentTypeEnumeration(String outputDir) {
         // Instantiate the PDF object by calling its empty constructor
         Document doc = new Document();
         try {
@@ -68,7 +80,7 @@ public class AddTableInExistingPDFDocument {
             // Set table border using another customized BorderInfo object
             tab.setBorder(new com.aspose.pdf.BorderInfo(com.aspose.pdf.BorderSide.All, 1F));
             // Create MarginInfo object and set its left, bottom, right and top margins
-            com.aspose.pdf.MarginInfo margin = new com.aspose.pdf.MarginInfo();
+            MarginInfo margin = new MarginInfo();
             margin.setTop(5f);
             margin.setLeft(5f);
             margin.setRight(5f);
@@ -85,7 +97,7 @@ public class AddTableInExistingPDFDocument {
             row2.getCells().add("item2");
             row2.getCells().add("item3");
             // Save the PDF
-            doc.save(dataDir + "ResultantFile.pdf");
+            doc.save(outputDir + "ResultantFile.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -1,9 +1,9 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
-import com.aspose.ms.System.Nullable;
 import com.aspose.pdf.Color;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.FontStyles;
+import com.aspose.pdf.Nullable;
 import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;

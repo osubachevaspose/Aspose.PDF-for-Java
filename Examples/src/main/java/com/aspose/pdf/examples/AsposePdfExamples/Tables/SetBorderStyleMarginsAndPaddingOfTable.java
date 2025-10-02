@@ -6,10 +6,26 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.MarginInfo;
 import com.aspose.pdf.Row;
 import com.aspose.pdf.Table;
+import com.aspose.pdf.examples.Utils;
 
 public class SetBorderStyleMarginsAndPaddingOfTable {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Tables/SetBorderStyleMarginsAndPaddingOfTable/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example setBorderStyleMarginsAndPaddingOfTable start");
+        setBorderStyleMarginsAndPaddingOfTable(outputDir);
+        System.out.println("Example setBorderStyleMarginsAndPaddingOfTable end");
+    }
+
+    public static void setBorderStyleMarginsAndPaddingOfTable(String outputDir) {
         // Create Document instance
         Document doc = new Document();
         try {
@@ -43,7 +59,7 @@ public class SetBorderStyleMarginsAndPaddingOfTable {
             row2.getCells().add("item2");
             row2.getCells().add("item3");
             // Save the PDF document
-            doc.save("TableDOM_new.pdf");
+            doc.save(outputDir + "TableDOM_new.pdf");
         } finally {
             if (doc != null)
                 doc.close();

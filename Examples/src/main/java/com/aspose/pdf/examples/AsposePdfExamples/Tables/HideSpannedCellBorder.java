@@ -5,6 +5,9 @@ import com.aspose.pdf.BorderSide;
 import com.aspose.pdf.Cell;
 import com.aspose.pdf.Color;
 import com.aspose.pdf.Document;
+import com.aspose.pdf.Page;
+import com.aspose.pdf.Row;
+import com.aspose.pdf.Table;
 import com.aspose.pdf.TableBroken;
 import com.aspose.pdf.examples.Utils;
 
@@ -16,7 +19,7 @@ public class HideSpannedCellBorder {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/WorkingWithTables/";
+        String testID = "com/aspose/pdf/examples/AsposePdf/Tables/HideSpannedCellBorder/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
 
@@ -29,16 +32,16 @@ public class HideSpannedCellBorder {
     public static void hideSpannedCellBorder(String dataDir, String outputDir) {
         Document doc = new Document();
         try {
-            com.aspose.pdf.Page page = doc.getPages().add();
+            Page page = doc.getPages().add();
             // Instantiate a table object that will be nested inside outerTable that will
             // break inside the same page
-            com.aspose.pdf.Table mytable = new com.aspose.pdf.Table();
+            Table mytable = new Table();
             mytable.setBroken(TableBroken.Vertical);
             mytable.setDefaultCellBorder(new BorderInfo(BorderSide.All));
             mytable.setRepeatingColumnsCount(2);
             page.getParagraphs().add(mytable);
             // Add header Row
-            com.aspose.pdf.Row row = mytable.getRows().add();
+            Row row = mytable.getRows().add();
             Cell cell = row.getCells().add("header 1");
             cell.setColSpan(2);
             cell.setBackgroundColor(Color.getLightGray());
@@ -61,7 +64,7 @@ public class HideSpannedCellBorder {
             row.getCells().add("header 17");
             for (int rowCounter = 0; rowCounter < 1; rowCounter++) {
                 // Create rows in the table and then cells in the rows
-                com.aspose.pdf.Row row1 = mytable.getRows().add();
+                Row row1 = mytable.getRows().add();
                 row1.getCells().add("col " + rowCounter + ", 1");
                 row1.getCells().add("col " + rowCounter + ", 2");
                 row1.getCells().add("col " + rowCounter + ", 3");

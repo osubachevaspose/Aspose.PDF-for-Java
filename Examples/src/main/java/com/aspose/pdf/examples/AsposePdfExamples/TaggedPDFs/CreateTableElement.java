@@ -1,6 +1,5 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
-import com.aspose.ms.System.Nullable;
 import com.aspose.pdf.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;

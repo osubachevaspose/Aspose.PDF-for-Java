@@ -9,10 +9,26 @@ import com.aspose.pdf.Paragraphs;
 import com.aspose.pdf.Row;
 import com.aspose.pdf.Table;
 import com.aspose.pdf.TextFragment;
+import com.aspose.pdf.examples.Utils;
 
 public class ForceTableRenderingOnNewPage {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Tables/ForceTableRenderingOnNewPage/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example forceTableRenderingOnNewPage start");
+        forceTableRenderingOnNewPage(outputDir);
+        System.out.println("Example forceTableRenderingOnNewPage end");
+    }
+
+    public static void forceTableRenderingOnNewPage(String outputDir) {
         // Added document
         Document doc = new Document();
         try {
@@ -49,7 +65,7 @@ public class ForceTableRenderingOnNewPage {
             table1.setInNewPage(true);
             // I want to keep table 1 to next page please...
             paragraphs.add(table1);
-            doc.save("outFile.pdf");
+            doc.save(outputDir + "outFile.pdf");
         } finally {
             if (doc != null)
                 doc.close();
