@@ -7,12 +7,29 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.Position;
 import com.aspose.pdf.TextBuilder;
 import com.aspose.pdf.TextFragment;
+import com.aspose.pdf.examples.Utils;
 
 public class AddTextToAnExistingPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddTextToAnExistingPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addTextToAnExistingPDFFile start");
+        addTextToAnExistingPDFFile(dataDir, outputDir);
+        System.out.println("Example addTextToAnExistingPDFFile end");
+    }
+
+    public static void addTextToAnExistingPDFFile(String dataDir, String outputDir) {
         // open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // get particular page
             Page pdfPage = doc.getPages().get_Item(1);
@@ -29,7 +46,7 @@ public class AddTextToAnExistingPDFFile {
             // append the text fragment to the PDF page
             textBuilder.appendText(textFragment);
             // save updated PDF file
-            doc.save("Text_Added.pdf");
+            doc.save(outputDir + "Text_Added.pdf");
         } finally {
             if (doc != null)
                 doc.close();

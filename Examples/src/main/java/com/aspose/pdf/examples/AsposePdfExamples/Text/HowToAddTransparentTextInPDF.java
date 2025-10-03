@@ -6,10 +6,26 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Rectangle;
+import com.aspose.pdf.examples.Utils;
 
 public class HowToAddTransparentTextInPDF {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/HowToAddTransparentTextInPDF/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example howToAddTransparentTextInPDF start");
+        howToAddTransparentTextInPDF(outputDir);
+        System.out.println("Example howToAddTransparentTextInPDF end");
+    }
+
+    public static void howToAddTransparentTextInPDF(String outputDir) {
         int alpha = 10;
         int green = 0;
         int red = 100;
@@ -41,7 +57,7 @@ public class HowToAddTransparentTextInPDF {
             // add text to paragraphs collection of page instance
             page.getParagraphs().add(text);
             // save PDF file
-            doc.save("Transparent_Text.pdf");
+            doc.save(outputDir + "Transparent_Text.pdf");
         } finally {
             if (doc != null)
                 doc.close();

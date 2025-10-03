@@ -6,9 +6,20 @@ import com.aspose.pdf.tagged.logicalstructure.StructTreeRootElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 
 public class RootStructure {
-    
-    @SuppressWarnings("unused")
+
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        System.out.println("============================");
+        System.out.println("Example rootStructure start");
+        rootStructure();
+        System.out.println("Example rootStructure end");
+    }
+
+    // @SuppressWarnings("unused")
+    public static void rootStructure() {
         // Create Pdf Document
         Document doc = new Document();
         try {

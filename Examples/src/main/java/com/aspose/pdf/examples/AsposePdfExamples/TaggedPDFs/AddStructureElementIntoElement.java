@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
@@ -10,9 +10,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.SpanElement;
 public class AddStructureElementIntoElement {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
-        String outFile = dataDir + "AddStructureElementIntoElement_Output.pdf";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/AddStructureElementIntoElement/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addStructureElementIntoElement start");
+        addStructureElementIntoElement(outputDir);
+        System.out.println("Example addStructureElementIntoElement end");
+    }
+
+    public static void addStructureElementIntoElement(String outputDir) {
         // Creation document and getting Tagged Pdf Content
         Document doc = new Document();
         try {
@@ -65,7 +77,7 @@ public class AddStructureElementIntoElement {
             p4.appendChild(span42);
             p4.setText(".");
             // Save Tagged Pdf Document
-            doc.save(outFile);
+            doc.save(outputDir + "AddStructureElementIntoElement_Output.pdf");
         } finally {
             if (doc != null)
                 doc.close();

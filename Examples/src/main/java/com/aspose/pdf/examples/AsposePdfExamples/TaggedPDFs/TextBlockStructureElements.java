@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
@@ -10,8 +10,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 public class TextBlockStructureElements {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TextBlockStructureElements/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example textBlockStructureElements start");
+        textBlockStructureElements(outputDir);
+        System.out.println("Example textBlockStructureElements end");
+    }
+
+    public static void textBlockStructureElements(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -40,11 +53,12 @@ public class TextBlockStructureElements {
             rootElement.appendChild(h4);
             rootElement.appendChild(h5);
             rootElement.appendChild(h6);
-            ParagraphElement p = taggedContent.createParagraphElement();
-            p.setText("P. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec lectus ac sem faucibus imperdiet. Sed ut erat ac magna ullamcorper hendrerit. Cras pellentesque libero semper, gravida magna sed, luctus leo. Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
-            rootElement.appendChild(p);
+            ParagraphElement paragraphElement = taggedContent.createParagraphElement();
+            paragraphElement.setText(
+                    "P. Lorem ipsum dolor sit amet, consectetur adipiscing elit. Aenean nec lectus ac sem faucibus imperdiet. Sed ut erat ac magna ullamcorper hendrerit. Cras pellentesque libero semper, gravida magna sed, luctus leo. Fusce lectus odio, laoreet nec ullamcorper ut, molestie eu elit. Interdum et malesuada fames ac ante ipsum primis in faucibus. Aliquam lacinia sit amet elit ac consectetur. Donec cursus condimentum ligula, vitae volutpat sem tristique eget. Nulla in consectetur massa. Vestibulum vitae lobortis ante. Nulla ullamcorper pellentesque justo rhoncus accumsan. Mauris ornare eu odio non lacinia. Aliquam massa leo, rhoncus ac iaculis eget, tempus et magna. Sed non consectetur elit. Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
+            rootElement.appendChild(paragraphElement);
             // Save Tagged Pdf Document
-            doc.save(path + "TextBlockStructureElements.pdf");
+            doc.save(outputDir + "TextBlockStructureElements.pdf");
         } finally {
             if (doc != null)
                 doc.close();

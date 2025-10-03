@@ -4,15 +4,28 @@ import com.aspose.pdf.Color;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.FontStyles;
 import com.aspose.pdf.Nullable;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 
 public class StyleTextStructure {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTextStructure/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example styleTextStructure start");
+        styleTextStructure(outputDir);
+        System.out.println("Example styleTextStructure end");
+    }
+
+    public static void styleTextStructure(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -29,7 +42,7 @@ public class StyleTextStructure {
             p.getStructureTextState().setFontStyle(FontStyles.Italic);
             p.setText("Red italic text.");
             // Save Tagged Pdf Document
-            doc.save(path + "StyleTextStructure.pdf");
+            doc.save(outputDir + "StyleTextStructure.pdf");
         } finally {
             if (doc != null)
                 doc.close();

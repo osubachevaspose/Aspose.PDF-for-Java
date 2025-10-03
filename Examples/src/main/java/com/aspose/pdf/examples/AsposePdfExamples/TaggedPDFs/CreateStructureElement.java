@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.FigureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.FormElement;
@@ -15,10 +15,23 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.*;
 
 public class CreateStructureElement {
 
-    @SuppressWarnings("unused")
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElement/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createStructureElement start");
+        createStructureElement(outputDir);
+        System.out.println("Example createStructureElement end");
+    }
+
+    // @SuppressWarnings("unused")
+    public static void createStructureElement(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -62,7 +75,7 @@ public class CreateStructureElement {
             WarichuElement warichuElement = taggedContent.createWarichuElement();
             FormElement formElement = taggedContent.createFormElement();
             // Save Tagged Pdf Document
-            doc.save(path + "StructureElements.pdf");
+            doc.save(outputDir + "StructureElements.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -6,12 +6,29 @@ import com.aspose.pdf.FontRepository;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.TextFragmentAbsorber;
 import com.aspose.pdf.TextFragmentCollection;
+import com.aspose.pdf.examples.Utils;
 
 public class ReplaceOnlyFirstOccurrenceOfThePhrase {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceOnlyFirstOccurrenceOfThePhrase/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example replaceOnlyFirstOccurrenceOfThePhrase start");
+        replaceOnlyFirstOccurrenceOfThePhrase(dataDir, outputDir);
+        System.out.println("Example replaceOnlyFirstOccurrenceOfThePhrase end");
+    }
+
+    public static void replaceOnlyFirstOccurrenceOfThePhrase(String dataDir, String outputDir) {
         // open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // create TextAbsorber object to find all instances of the input search phrase
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("line");
@@ -28,7 +45,7 @@ public class ReplaceOnlyFirstOccurrenceOfThePhrase {
             textFragment.getTextState().setForegroundColor(Color.getBlue());
             textFragment.getTextState().setBackgroundColor(Color.getGray());
             // save updated PDF file
-            doc.save("Text_Updated.pdf");
+            doc.save(outputDir + "Text_Updated.pdf");
         } finally {
             if (doc != null)
                 doc.close();

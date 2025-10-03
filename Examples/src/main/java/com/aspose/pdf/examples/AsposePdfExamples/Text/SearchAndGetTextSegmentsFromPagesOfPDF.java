@@ -5,12 +5,28 @@ import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.TextFragmentAbsorber;
 import com.aspose.pdf.TextFragmentCollection;
 import com.aspose.pdf.TextSegment;
+import com.aspose.pdf.examples.Utils;
 
 public class SearchAndGetTextSegmentsFromPagesOfPDF {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/SearchAndGetTextSegmentsFromPagesOfPDF/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example searchAndGetTextSegmentsFromPagesOfPDF start");
+        searchAndGetTextSegmentsFromPagesOfPDF(dataDir);
+        System.out.println("Example searchAndGetTextSegmentsFromPagesOfPDF end");
+    }
+
+    public static void searchAndGetTextSegmentsFromPagesOfPDF(String dataDir) {
         // Open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create TextAbsorber object to find all instances of the input search phrase
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("sample");

@@ -9,19 +9,41 @@ import com.aspose.pdf.TextFragmentAbsorber;
 import com.aspose.pdf.TextFragmentCollection;
 import com.aspose.pdf.TextSearchOptions;
 import com.aspose.pdf.TextSegment;
+import com.aspose.pdf.examples.Utils;
 
 public class ReplaceTextInPagesOfPDFDocument {
 
     public static void main(String[] args) {
-        replaceTextOnAllPages();
-        replaceTextUsingRegularExpression();
-        useNonEnglishFontWhenReplacingText();
-        searchTextStringsAndRemoveTheContentsBetweenThem();
+        runExamples();
     }
 
-    public static void replaceTextOnAllPages() {
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceTextInPagesOfPDFDocument/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example replaceTextOnAllPages start");
+        replaceTextOnAllPages(dataDir, outputDir);
+        System.out.println("Example replaceTextOnAllPages end");
+
+        // System.out.println("Example replaceTextUsingRegularExpression start");
+        // no suitable input file replaceTextUsingRegularExpression(dataDir, outputDir);
+        // System.out.println("Example replaceTextUsingRegularExpression end");
+
+        // System.out.println("Example useNonEnglishFontWhenReplacingText start");
+        // no suitable input file useNonEnglishFontWhenReplacingText(dataDir, outputDir);
+        // System.out.println("Example useNonEnglishFontWhenReplacingText end");
+
+        // System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem start");
+        // no suitable input file searchTextStringsAndRemoveTheContentsBetweenThem(dataDir, outputDir);
+        // System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem end");
+    }
+
+    public static void replaceTextOnAllPages(String dataDir, String outputDir) {
         // Open document
-        Document doc = new Document("source.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create TextAbsorber object to find all instances of the input search phrase
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("sample");
@@ -39,19 +61,18 @@ public class ReplaceTextInPagesOfPDFDocument {
                 textFragment.getTextState().setBackgroundColor(Color.getGray());
             }
             // Save the updated PDF file
-            doc.save("Updated_Text.pdf");
+            doc.save(outputDir + "Updated_Text_all_pages.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void replaceTextUsingRegularExpression() {
+    public static void replaceTextUsingRegularExpression(String dataDir, String outputDir) {
         // Open document
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
-            // Create TextAbsorber object to find all instances of the input search
-            // phrase
+            // Create TextAbsorber object to find all instances of the input search phrase
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // like 1999-2000
             // Set text search option to specify regular expression usage
             TextSearchOptions textSearchOptions = new TextSearchOptions(true);
@@ -63,23 +84,23 @@ public class ReplaceTextInPagesOfPDFDocument {
             // Loop through the fragments
             for (TextFragment textFragment : (Iterable<TextFragment>) textFragmentCollection) {
                 // Update text and other properties
-                textFragment.setText("New Pharase");
+                textFragment.setText("New Phrase");
                 textFragment.getTextState().setFont(FontRepository.findFont("Verdana"));
                 textFragment.getTextState().setFontSize(22);
                 textFragment.getTextState().setForegroundColor(Color.getBlue());
                 textFragment.getTextState().setBackgroundColor(Color.getGray());
             }
             // Save the updated PDF file
-            doc.save("Updated_Text.pdf");
+            doc.save(outputDir + "Updated_Text_regex.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void useNonEnglishFontWhenReplacingText() {
+    public static void useNonEnglishFontWhenReplacingText(String dataDir, String outputDir) {
         // Instantiate Document object
-        Document doc = new Document("input.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Lets to change every of word "Page" to some Japan text with specific font
             // MSGothic that might be installed in the OS
@@ -107,17 +128,16 @@ public class ReplaceTextInPagesOfPDFDocument {
                 textFragment.getTextState().setFontSize(size);
             }
             // Save the updated document
-            doc.save("Japanese_Text.pdf");
+            doc.save(outputDir + "Japanese_Text.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void searchTextStringsAndRemoveTheContentsBetweenThem() {
-        String path = "PathToDir";
+    public static void searchTextStringsAndRemoveTheContentsBetweenThem(String dataDir, String outputDir) {
         // open document
-        Document doc = new Document(path + "testHeading (2).pdf");
+        Document doc = new Document(dataDir + "testHeading (2).pdf");
         try {
             // create TextAbsorber object to find all instances of the input search phrase
             String from = "this is heading of level 1";
@@ -140,7 +160,7 @@ public class ReplaceTextInPagesOfPDFDocument {
                                                          // fragments
                 }
             }
-            doc.save(path + "testHeading_out.pdf");
+            doc.save(outputDir + "testHeading_out.pdf");
         } finally {
             if (doc != null)
                 doc.close();

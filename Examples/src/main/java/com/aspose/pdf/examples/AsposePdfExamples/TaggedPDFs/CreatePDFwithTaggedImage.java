@@ -1,15 +1,29 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.IllustrationElement;
 
 public class CreatePDFwithTaggedImage {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreatePDFwithTaggedImage/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createPDFwithTaggedImage start");
+        createPDFwithTaggedImage(dataDir, outputDir);
+        System.out.println("Example createPDFwithTaggedImage end");
+    }
+
+    public static void createPDFwithTaggedImage(String dataDir, String outputDir) {
         Document doc = new Document();
         try {
             ITaggedContent taggedContent = doc.getTaggedContent();
@@ -23,7 +37,7 @@ public class CreatePDFwithTaggedImage {
             // Add image with resolution 300 DPI (by default)
             figure1.setImage(dataDir + "aspose-logo.jpg");
             // Save PDF Document
-            doc.save(dataDir + "PDFwithTaggedImage.pdf");
+            doc.save(outputDir + "PDFwithTaggedImage.pdf");
         } finally {
             if (doc != null)
                 doc.close();

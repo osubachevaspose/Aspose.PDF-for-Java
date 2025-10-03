@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.ArtElement;
@@ -11,8 +11,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.grouping.SectElement;
 public class CreateStructureElementTree {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElementTree/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createStructureElementTree start");
+        createStructureElementTree(outputDir);
+        System.out.println("Example createStructureElementTree end");
+    }
+
+    public static void createStructureElementTree(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -49,7 +62,7 @@ public class CreateStructureElementTree {
             DivElement div31 = taggedContent.createDivElement();
             sect3.appendChild(div31);
             // Save Tagged Pdf Document
-            doc.save(path + "StructureElementsTree.pdf");
+            doc.save(outputDir + "StructureElementsTree.pdf");
         } finally {
             if (doc != null)
                 doc.close();

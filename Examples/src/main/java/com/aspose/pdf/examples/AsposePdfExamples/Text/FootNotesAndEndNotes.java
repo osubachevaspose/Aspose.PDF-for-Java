@@ -6,17 +6,34 @@ import com.aspose.pdf.GraphInfo;
 import com.aspose.pdf.Note;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.TextFragment;
+import com.aspose.pdf.examples.Utils;
 
 public class FootNotesAndEndNotes {
 
     public static void main(String[] args) {
-        customLineStyleForFootNote();
-        customizeFootnoteLabel();
-        howToCreateEndNotes();
+        runExamples();
     }
 
-    public static void customLineStyleForFootNote() {
-        String myDir = "PathToDir";
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/FootNotesAndEndNotes/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example customLineStyleForFootNote start");
+        customLineStyleForFootNote(outputDir);
+        System.out.println("Example customLineStyleForFootNote end");
+
+        System.out.println("Example customizeFootnoteLabel start");
+        customizeFootnoteLabel(outputDir);
+        System.out.println("Example customizeFootnoteLabel end");
+
+        System.out.println("Example howToCreateEndNotes start");
+        howToCreateEndNotes(outputDir);
+        System.out.println("Example howToCreateEndNotes end");
+    }
+
+    public static void customLineStyleForFootNote(String outputDir) {
         // create Document instance
         Document doc = new Document();
         try {
@@ -47,15 +64,14 @@ public class FootNotesAndEndNotes {
             // add second text fragment to paragraphs collection of PDF file
             page.getParagraphs().add(text);
             // save the PDF file
-            doc.save(myDir + "CustomFootNote_Line.pdf");
+            doc.save(outputDir + "CustomFootNote_Line.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void customizeFootnoteLabel() {
-        String myDir = "PathToDir";
+    public static void customizeFootnoteLabel(String outputDir) {
         // create Document instance
         Document doc = new Document();
         try {
@@ -82,15 +98,14 @@ public class FootNotesAndEndNotes {
             // add TextFragment to paragraphs collection of first page of document
             page.getParagraphs().add(text);
             // save the PDF file
-            doc.save(myDir + "CustomFootNote_Line.pdf");
+            doc.save(outputDir + "CustomFootNote.pdf");
         } finally {
             if (doc != null)
                 doc.close();
         }
     }
 
-    public static void howToCreateEndNotes() {
-        String myDir = "PathToDir";
+    public static void howToCreateEndNotes(String outputDir) {
         // create Document instance
         Document doc = new Document();
         try {
@@ -105,7 +120,7 @@ public class FootNotesAndEndNotes {
             // add TextFragment to paragraphs collection of first page of document
             page.getParagraphs().add(text);
             // save the PDF file
-            doc.save(myDir + "EndNote.pdf");
+            doc.save(outputDir + "EndNote.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -5,7 +5,6 @@ import com.aspose.pdf.HtmlSaveOptions;
 import com.aspose.pdf.LettersPositioningMethods;
 import com.aspose.pdf.examples.Utils;
 
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.IOException;
 import java.util.logging.Level;

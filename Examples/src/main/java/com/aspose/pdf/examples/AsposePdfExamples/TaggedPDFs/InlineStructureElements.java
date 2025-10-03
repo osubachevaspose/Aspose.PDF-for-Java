@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
@@ -11,8 +11,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.SpanElement;
 public class InlineStructureElements {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/InlineStructureElements/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example inlineStructureElements start");
+        inlineStructureElements(outputDir);
+        System.out.println("Example inlineStructureElements end");
+    }
+
+    public static void inlineStructureElements(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -109,7 +122,7 @@ public class InlineStructureElements {
                     "Sed vulputate, quam sed lacinia luctus, ipsum nibh fringilla purus, vitae posuere risus odio id massa. Cras sed venenatis lacus.");
             p.appendChild(span10);
             // Save Tagged Pdf Document
-            doc.save(path + "InlineStructureElements.pdf");
+            doc.save(outputDir + "InlineStructureElements.pdf");
         } finally {
             if (doc != null)
                 doc.close();

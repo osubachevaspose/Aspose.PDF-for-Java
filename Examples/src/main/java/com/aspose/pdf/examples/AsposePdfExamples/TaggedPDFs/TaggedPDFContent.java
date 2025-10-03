@@ -1,14 +1,27 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 
 public class TaggedPDFContent {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TaggedPDFContent/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example taggedPDFContent start");
+        taggedPDFContent(outputDir);
+        System.out.println("Example taggedPDFContent end");
+    }
+
+    public static void taggedPDFContent(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -19,7 +32,7 @@ public class TaggedPDFContent {
             taggedContent.setTitle("Simple Tagged Pdf Document");
             taggedContent.setLanguage("en-US");
             // Save Tagged Pdf Document
-            doc.save(path + "TaggedPDFContent.pdf");
+            doc.save(outputDir + "TaggedPDFContent.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -4,10 +4,26 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.HtmlFragment;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.TextState;
+import com.aspose.pdf.examples.Utils;
 
 public class AddHTMLUsingDOMAndOverwrite {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddHTMLUsingDOMAndOverwrite/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addHTMLUsingDOMAndOverwrite start");
+        addHTMLUsingDOMAndOverwrite(outputDir);
+        System.out.println("Example addHTMLUsingDOMAndOverwrite end");
+    }
+
+    public static void addHTMLUsingDOMAndOverwrite(String outputDir) {
         // Instantiate Document object
         Document doc = new Document();
         try {
@@ -26,7 +42,7 @@ public class AddHTMLUsingDOMAndOverwrite {
             // Add HTML Fragment to paragraphs collection of page
             page.getParagraphs().add(title);
             // Save PDF file
-            doc.save("AddHTMLUsingDOMAndOverwrite_out.pdf");
+            doc.save(outputDir + "AddHTMLUsingDOMAndOverwrite_out.pdf");
         } finally {
             if (doc != null)
                 doc.close();

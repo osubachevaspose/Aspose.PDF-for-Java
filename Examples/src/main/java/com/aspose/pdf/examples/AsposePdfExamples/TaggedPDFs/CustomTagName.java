@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.SectElement;
@@ -10,8 +10,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.SpanElement;
 public class CustomTagName {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CustomTagName/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example customTagName start");
+        customTagName(outputDir);
+        System.out.println("Example customTagName end");
+    }
+
+    public static void customTagName(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -56,7 +69,7 @@ public class CustomTagName {
             p3.appendChild(span3);
             p4.appendChild(span4);
             // Save Tagged Pdf Document
-            doc.save(path + "CustomTag.pdf");
+            doc.save(outputDir + "CustomTag.pdf");
         } finally {
             if (doc != null)
                 doc.close();

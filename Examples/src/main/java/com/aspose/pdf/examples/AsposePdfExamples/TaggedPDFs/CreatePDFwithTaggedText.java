@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
@@ -9,8 +9,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 public class CreatePDFwithTaggedText {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreatePDFwithTaggedText/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createPDFwithTaggedText start");
+        createPDFwithTaggedText(outputDir);
+        System.out.println("Example createPDFwithTaggedText end");
+    }
+
+    public static void createPDFwithTaggedText(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -37,7 +50,7 @@ public class CreatePDFwithTaggedText {
             ParagraphElement paragraphElement7 = taggedContent.createParagraphElement();
             paragraphElement7.setActualText("test 7");
             // Save PDF Document
-            doc.save(dataDir + "PDFwithTaggedText.pdf");
+            doc.save(outputDir + "PDFwithTaggedText.pdf");
         } finally {
             if (doc != null)
                 doc.close();

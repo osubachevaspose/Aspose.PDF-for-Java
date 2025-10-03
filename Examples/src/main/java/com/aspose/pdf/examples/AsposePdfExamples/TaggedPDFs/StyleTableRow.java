@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.*;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
@@ -9,8 +9,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
 public class StyleTableRow {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTableRow/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example styleTableRow start");
+        styleTableRow(outputDir);
+        System.out.println("Example styleTableRow end");
+    }
+
+    public static void styleTableRow(String outputDir) {
         // Create document
         Document doc = new Document();
         try {
@@ -25,19 +38,15 @@ public class StyleTableRow {
             TableTHeadElement tableTHeadElement = tableElement.createTHead();
             TableTBodyElement tableTBodyElement = tableElement.createTBody();
             TableTFootElement tableTFootElement = tableElement.createTFoot();
-            int rowCount = 7;
-            int colCount = 3;
-            int rowIndex;
-            int colIndex;
             TableTRElement headTrElement = tableTHeadElement.createTR();
             headTrElement.setAlternativeText("Head Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (int col = 0; col < 3; col++) {
                 TableTHElement thElement = headTrElement.createTH();
-                thElement.setText(String.format("Head %s", colIndex));
+                thElement.setText(String.format("Head %s", col));
             }
-            for (rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+            for (int row = 0; row < 7; row++) {
                 TableTRElement trElement = tableTBodyElement.createTR();
-                trElement.setAlternativeText(String.format("Row %s", rowIndex));
+                trElement.setAlternativeText(String.format("Row %s", row));
                 trElement.setBackgroundColor(Color.getLightSeaGreen());
                 trElement.setBorder(new BorderInfo(BorderSide.All, 0.75F, Color.getDarkGray()));
                 trElement.setDefaultCellBorder(new BorderInfo(BorderSide.All, 0.50F, Color.getBlue()));
@@ -49,19 +58,19 @@ public class StyleTableRow {
                 trElement.setDefaultCellTextState(cellTextState);
                 trElement.setDefaultCellPadding(new MarginInfo(16.0, 2.0, 8.0, 2.0));
                 trElement.setVerticalAlignment(VerticalAlignment.Bottom);
-                for (colIndex = 0; colIndex < colCount; colIndex++) {
+                for (int col = 0; col < 3; col++) {
                     TableTDElement tdElement = trElement.createTD();
-                    tdElement.setText(String.format("Cell [{0}, {1}]", rowIndex, colIndex));
+                    tdElement.setText(String.format("Cell [{0}, {1}]", row, col));
                 }
             }
             TableTRElement footTrElement = tableTFootElement.createTR();
             footTrElement.setAlternativeText("Foot Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (int col = 0; col < 3; col++) {
                 TableTDElement tdElement = footTrElement.createTD();
-                tdElement.setText(String.format("Foot %s", colIndex));
+                tdElement.setText(String.format("Foot %s", col));
             }
             // Save Tagged Pdf Document
-            doc.save(path + "StyleTableRow.pdf");
+            doc.save(outputDir + "StyleTableRow.pdf");
         } finally {
             if (doc != null)
                 doc.close();

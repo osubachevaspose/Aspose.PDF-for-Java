@@ -13,19 +13,18 @@ public class UseLatexScript3 {
 
     public static void runExamples() {
         // The paths to resources and output directories.
-        String testID = "com/aspose/pdf/examples/AsposePdf/Text/";
-        String dataDir = Utils.getDataDir(testID);
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/UseLatexScript3/";
         String outputDir = Utils.getOutDir(testID);
 
         System.out.println("============================");
         System.out.println("Example useLatexScript3 start");
-        useLatexScript3(dataDir, outputDir);
+        useLatexScript3( outputDir);
         System.out.println("Example useLatexScript3 end");
     }
 
-    @SuppressWarnings("deprecation")
-    public static void useLatexScript3(String dataDir, String outputDir) {
-        String s = "\\usepackage{amsmath,amsthm}" +
+    // @SuppressWarnings("deprecation")
+    public static void useLatexScript3( String outputDir) {
+        String text = "\\usepackage{amsmath,amsthm}" +
                 "\\begin{document}" +
                 "\\begin{proof} The proof is a follows: " +
                 "\\begin{align}" +
@@ -38,7 +37,7 @@ public class UseLatexScript3 {
         Document doc = new Document();
         try {
             Page page = doc.getPages().add();
-            LatexFragment latex = new LatexFragment(s);
+            LatexFragment latex = new LatexFragment(text);
             page.getParagraphs().add(latex);
             doc.save(outputDir + "Script_out.pdf");
         } finally {

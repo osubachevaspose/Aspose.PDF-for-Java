@@ -15,6 +15,8 @@ import com.aspose.pdf.examples.AsposePdfExamples.Pages.*;
 import com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.*;
 import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Tables.*;
+import com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Text.*;
 
 import java.io.File;
 
@@ -68,8 +70,6 @@ public class Utils {
         ConvertXMLFileToPDF.runExamples();
         ConvertXPSFileToPDFFormat.runExamples();
         ConvertXSLFOToPDF.runExamples();
-        CreatePDFwithTaggedImage.runExamples();
-        CreatePDFwithTaggedText.runExamples();
         EscapeHTMLTagsAndSpecialCharacters.runExamples();
         PDFToEMF.runExamples();
         PDFToHTMLAllResourceEmbeddedInSingleResultantStream.runExamples();
@@ -80,7 +80,14 @@ public class Utils {
         PDFToHTMLSingleHTMLWithAllResourcesEmbedded.runExamples();
         PDFToHTMLSpecifyImagesFolder.runExamples();
         PDFToHTMLSplittingOutputToMultipageHTML.runExamples();
-        PDFToHTMLWithFontSubstitution.runExamples();
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        // PDFToHTMLWithFontSubstitution.runExamples();
+        // AddStructureElementIntoElement.runExamples(); throws
+        // Exception in thread "main" java.lang.NullPointerException: Cannot invoke
+        // "com.aspose.pdf.internal.l6n.le.l1p()" because "<parameter2>" is null
+        // at com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.AddStructureElementIntoElement
+        // .addStructureElementIntoElement(AddStructureElementIntoElement.java:80)
+        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ValidatePDFUAStandards.runExamples();
 
         // AsposePdfExamples.DocumentObject
@@ -194,9 +201,7 @@ public class Utils {
         AddPageNumberStampInPDF.runExamples();
         ControlImageQualityWhenAddingImageStamp.runExamples();
         DefineAlignmentForTextStampObject.runExamples();
-        // ExtractTextFromStampAnnotation.runExamples(); throws
-        // Exception in thread "main" class com.aspose.pdf.internal.ms.System.lh:
-        // Document context is null for license
+        ExtractTextFromStampAnnotation.runExamples();
 
         // AsposePdfExamples.Tables
         AddTableInExistingPDFDocument.runExamples();
@@ -205,6 +210,55 @@ public class Utils {
         ManipulateTablesInExistingPDF.runExamples();
         RemoveTablesFromExistingPDF.runExamples();
         SetBorderStyleMarginsAndPaddingOfTable.runExamples();
+
+        // AsposePdfExamples.TaggedPDFs
+        // native input file is wrong AccessChildrenElements.runExamples();
+        AddStructureElementIntoElement.runExamples();
+        CreateNoteStructureElement.runExamples();
+        CreatePDFwithTaggedImage.runExamples();
+        CreatePDFwithTaggedText.runExamples();
+        CreateStructureElement.runExamples();
+        CreateStructureElementTree.runExamples();
+        CreateTableElement.runExamples();
+        CustomTagName.runExamples();
+        IllustrationStructureElements.runExamples();
+        InlineStructureElements.runExamples();
+        RootStructure.runExamples();
+        StructureElementsProperties.runExamples();
+        StyleTableCell.runExamples();
+        StyleTableElement.runExamples();
+        StyleTableRow.runExamples();
+        StyleTextStructure.runExamples();
+        TaggedPDFContent.runExamples();
+        TextBlockStructureElements.runExamples();
+        TextStructureElements.runExamples();
+        ValidatePDF.runExamples();
+
+        // AsposePdfExamples.Text
+        AddHTMLOrderedListIntoDocuments.runExamples();
+        AddHTMLStringUsingDOM.runExamples();
+        AddHTMLUsingDOMAndOverwrite.runExamples();
+        AddRotatedTextInPDF.runExamples();
+        AddTextToAnExistingPDFFile.runExamples();
+        DetermineLineBreak.runExamples();
+        // no input file ExtractRotatedText.runExamples();
+        // no input file ExtractTextBasedOnColumns.runExamples();
+        ExtractTextFromAllThePagesOfPDFDocument.runExamples();
+        ExtractTextFromAnParticularPageRegion.runExamples();
+        ExtractTextFromPDFUsingTextDevice.runExamples();
+        FindAndReplaceTextByItsLocation.runExamples();
+        FootNotesAndEndNotes.runExamples();
+        HowToAddTransparentTextInPDF.runExamples();
+        ReplaceFontsInExistingPDFFile.runExamples();
+        // no input file ReplaceOnlyFirstOccurrenceOfThePhrase.runExamples();
+        ReplaceTextInPagesOfPDFDocument.runExamples(); // not all required input files are available
+        // no input file SearchAndGetTextFromPagesUsingRegularExpression.runExamples();
+        SearchAndGetTextFromThePagesOfPDFDocument.runExamples();
+        SearchAndGetTextSegmentsFromPagesOfPDF.runExamples();
+        // no input file
+        // TextReplacementShouldAutomaticallyRearrangePageContents.runExamples();
+        UseLatexScript.runExamples();
+        UseLatexScript3.runExamples();
     }
 
     private static File dir = null;

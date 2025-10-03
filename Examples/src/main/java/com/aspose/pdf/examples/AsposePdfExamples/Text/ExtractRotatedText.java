@@ -2,11 +2,27 @@ package com.aspose.pdf.examples.AsposePdfExamples.Text;
 
 import java.util.Iterator;
 import com.aspose.pdf.*;
+import com.aspose.pdf.examples.Utils;
 
 public class ExtractRotatedText {
 
     public static void main(String[] args) {
-        Document doc = new Document("PdfWithRotatedText.pdf");
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/ExtractRotatedText/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example extractRotatedText start");
+        extractRotatedText(dataDir);
+        System.out.println("Example extractRotatedText end");
+    }
+
+    public static void extractRotatedText(String dataDir) {
+        Document doc = new Document(dataDir + "PdfWithRotatedText.pdf");
         try {
             TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Ｒ");
             // Accept the absorber for 4th page of document
@@ -23,13 +39,12 @@ public class ExtractRotatedText {
                 Iterator<TextSegment> iterS = tf.getSegments().iterator(); // assume textFragmentCollection has 2
                                                                            // results
                 while (iterS.hasNext()) {
-                    TextSegment ts = iterS.next();
-                    System.out.println("Segment: " + ts.getText() + " " + ts.getRectangle());
-
-                    Iterator<CharInfo> iterC = ts.getCharacters().iterator();
+                    TextSegment textSegment = iterS.next();
+                    System.out.println("Segment: " + textSegment.getText() + " " + textSegment.getRectangle());
+                    Iterator<CharInfo> iterC = textSegment.getCharacters().iterator();
                     while (iterC.hasNext()) {
-                        CharInfo cI = iterC.next();
-                        System.out.println(cI.getPosition());
+                        CharInfo charInfo = iterC.next();
+                        System.out.println(charInfo.getPosition());
                     }
                 }
             }

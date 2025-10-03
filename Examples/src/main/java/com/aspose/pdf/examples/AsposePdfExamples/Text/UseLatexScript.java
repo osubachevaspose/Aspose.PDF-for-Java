@@ -1,11 +1,27 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Text;
 
 import com.aspose.pdf.*;
+import com.aspose.pdf.examples.Utils;
 
 public class UseLatexScript {
 
-    @SuppressWarnings("deprecation")
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/UseLatexScript/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example useLatexScript start");
+        useLatexScript(outputDir);
+        System.out.println("Example useLatexScript end");
+    }
+
+    // @SuppressWarnings("deprecation")
+    public static void useLatexScript(String outputDir) {
         // Create a new Document Object
         Document doc = new Document();
         try {
@@ -16,7 +32,7 @@ public class UseLatexScript {
             // Add a row into Table
             Row row = table.getRows().add();
             // Add Cell with Latex Script to add methematical expressions/formulae
-            String latexText1 = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
+            String text = "$123456789+\\sqrt{1}+\\int_a^b f(x)dx$";
             Cell cell = row.getCells().add();
             MarginInfo marginInfo = new MarginInfo();
             marginInfo.setLeft(20);
@@ -26,12 +42,12 @@ public class UseLatexScript {
             cell.setMargin(marginInfo);
             // Second LatexFragment constructor bool parameter provides LaTeX paragraph
             // indents elimination.
-            LatexFragment ltext1 = new LatexFragment(latexText1, true);
+            LatexFragment ltext1 = new LatexFragment(text, true);
             cell.getParagraphs().add(ltext1);
             // Add table inside page
             page.getParagraphs().add(table);
             // Save the document
-            doc.save("LatextScriptInPdf_out.pdf");
+            doc.save(outputDir + "LatextScriptInPdf_out.pdf");
         } finally {
             if (doc != null)
                 doc.close();

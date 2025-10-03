@@ -5,39 +5,60 @@ import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.TextAbsorber;
 import com.aspose.pdf.TextExtractionOptions;
 import com.aspose.pdf.TextReplaceOptions;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 
 public class FindAndReplaceTextByItsLocation {
 
     public static void main(String[] args) {
-        String path = "PathToDir";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/FindAndReplaceTextByItsLocation/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example findAndReplaceTextByItsLocation start");
+        findAndReplaceTextByItsLocation(dataDir);
+        System.out.println("Example findAndReplaceTextByItsLocation end");
+    }
+
+    public static void findAndReplaceTextByItsLocation(String dataDir) {
         // Open document
-        Document doc = new Document(path + "test (3).pdf");
-        // Text replace scenario
-        // Create PdfContentEditor object to replace text
-        PdfContentEditor contentEditor = new PdfContentEditor(doc);
+        Document doc = new Document(dataDir + "input.pdf");
         try {
-            // Limit text search area to the rectangle
-            contentEditor.getTextSearchOptions().setRectangle(new Rectangle(0, 0, 120, 200));
-            contentEditor.getTextReplaceOptions().setReplaceScope(TextReplaceOptions.Scope.REPLACE_ALL);
-            // Replace O with Z
-            contentEditor.replaceText("o", 1, "z");
+            Rectangle rect = new Rectangle(100, 200, 300, 700);
+            // Text replace scenario
+            // Create PdfContentEditor object to replace text
+            PdfContentEditor contentEditor = new PdfContentEditor(doc);
+            try {
+                // Limit text search area to the rectangle
+                contentEditor.getTextSearchOptions().setRectangle(rect);
+                contentEditor.getTextReplaceOptions().setReplaceScope(TextReplaceOptions.Scope.REPLACE_ALL);
+                // Replace O with Z
+                contentEditor.replaceText("o", 1, "z");
+            } finally {
+                if (contentEditor != null)
+                    contentEditor.close();
+            }
+            // Extract text scenario
+            // Create TextAbsorber object to extract text
+            TextAbsorber absorber = new TextAbsorber();
+            absorber.getExtractionOptions().setFormattingMode(TextExtractionOptions.TextFormattingMode.Pure);
+            // Limit text search area to page bounds
+            absorber.getTextSearchOptions().setLimitToPageBounds(true);
+            // Limit text search area to the same rectangle
+            absorber.getTextSearchOptions().setRectangle(rect);
+            // Accept the absorber for first page
+            doc.getPages().get_Item(1).accept(absorber);
+            // Get the extracted text
+            String extractedText = absorber.getText();
+            System.out.println(extractedText);
         } finally {
-            if (contentEditor != null)
-                contentEditor.close();
+            if (doc != null)
+                doc.close();
         }
-        // Extract text scenario
-        // Create TextAbsorber object to extract text
-        TextAbsorber absorber = new TextAbsorber();
-        absorber.getExtractionOptions().setFormattingMode(TextExtractionOptions.TextFormattingMode.Pure);
-        // Limit text search area to page bounds
-        absorber.getTextSearchOptions().setLimitToPageBounds(true);
-        // Limit text search area to the rectangle
-        absorber.getTextSearchOptions().setRectangle(new Rectangle(0, 0, 200, 200));
-        // Accept the absorber for first page
-        doc.getPages().get_Item(1).accept(absorber);
-        // Get the extracted text
-        String extractedText = absorber.getText();
-        System.out.println(extractedText);
     }
 }

@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.*;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
@@ -9,8 +9,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
 public class StyleTableCell {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTableCell/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example styleTableCell start");
+        styleTableCell(outputDir);
+        System.out.println("Example styleTableCell end");
+    }
+
+    public static void styleTableCell(String outputDir) {
         // Create document
         Document doc = new Document();
         try {
@@ -28,12 +41,12 @@ public class StyleTableCell {
             int rowCount = 4;
             int colCount = 4;
             int rowIndex;
-            int colIndex;
+            int i;
             TableTRElement headTrElement = tableTHeadElement.createTR();
             headTrElement.setAlternativeText("Head Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (i = 0; i < colCount; i++) {
                 TableTHElement thElement = headTrElement.createTH();
-                thElement.setText(String.format("Head %s", colIndex));
+                thElement.setText(String.format("Head %s", i));
                 thElement.setBackgroundColor(Color.getGreenYellow());
                 thElement.setBorder(new BorderInfo(BorderSide.All, 4.0F, Color.getGray()));
                 thElement.setNoBorder(false);
@@ -43,19 +56,19 @@ public class StyleTableCell {
             for (rowIndex = 0; rowIndex < rowCount; rowIndex++) {
                 TableTRElement trElement = tableTBodyElement.createTR();
                 trElement.setAlternativeText(String.format("Row %s", rowIndex));
-                for (colIndex = 0; colIndex < colCount; colIndex++) {
+                for (i = 0; i < colCount; i++) {
                     int colSpan = 1;
                     int rowSpan = 1;
-                    if (colIndex == 1 && rowIndex == 1) {
+                    if (i == 1 && rowIndex == 1) {
                         colSpan = 2;
                         rowSpan = 2;
-                    } else if (colIndex == 2 && (rowIndex == 1 || rowIndex == 2)) {
+                    } else if (i == 2 && (rowIndex == 1 || rowIndex == 2)) {
                         continue;
-                    } else if (rowIndex == 2 && (colIndex == 1 || colIndex == 2)) {
+                    } else if (rowIndex == 2 && (i == 1 || i == 2)) {
                         continue;
                     }
                     TableTDElement tdElement = trElement.createTD();
-                    tdElement.setText(String.format("Cell [%s, %s]", rowIndex, colIndex));
+                    tdElement.setText(String.format("Cell [%s, %s]", rowIndex, i));
                     tdElement.setBackgroundColor(Color.getYellow());
                     tdElement.setBorder(new BorderInfo(BorderSide.All, 4.0F, Color.getGray()));
                     tdElement.setNoBorder(false);
@@ -75,12 +88,12 @@ public class StyleTableCell {
             }
             TableTRElement footTrElement = tableTFootElement.createTR();
             footTrElement.setAlternativeText("Foot Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (i = 0; i < colCount; i++) {
                 TableTDElement tdElement = footTrElement.createTD();
-                tdElement.setText(String.format("Foot %s", colIndex));
+                tdElement.setText(String.format("Foot %s", i));
             }
             // Save Tagged Pdf Document
-            doc.save(path + "StyleTableCell.pdf");
+            doc.save(outputDir + "StyleTableCell.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -4,10 +4,26 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.HtmlFragment;
 import com.aspose.pdf.MarginInfo;
 import com.aspose.pdf.Page;
+import com.aspose.pdf.examples.Utils;
 
 public class AddHTMLStringUsingDOM {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddHTMLStringUsingDOM/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addHTMLStringUsingDOM start");
+        addHTMLStringUsingDOM(outputDir);
+        System.out.println("Example addHTMLStringUsingDOM end");
+    }
+
+    public static void addHTMLStringUsingDOM(String outputDir) {
         // Instantiate Document object
         Document doc = new Document();
         try {
@@ -24,7 +40,7 @@ public class AddHTMLStringUsingDOM {
             // Add HTML Fragment to paragraphs collection of page
             page.getParagraphs().add(titel);
             // Save PDF file
-            doc.save("output.pdf");
+            doc.save(outputDir + "output.pdf");
         } finally {
             if (doc != null)
                 doc.close();

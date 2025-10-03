@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.ils.NoteElement;
@@ -9,9 +9,23 @@ import com.aspose.pdf.tagged.logicalstructure.elements.ils.NoteElement;
 public class CreateNoteStructureElement {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateNoteStructureElement/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createNoteStructureElement start");
+        createNoteStructureElement(outputDir);
+        System.out.println("Example createNoteStructureElement end");
+    }
+
+    public static void createNoteStructureElement(String outputDir) {
         // The path to the documents directory.
-        String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
-        String outFile = dataDir + "CreateNoteStructureElement.pdf";
+        // String dataDir = Utils.getDataDir() + "TaggedPDFs\\";
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -36,7 +50,7 @@ public class CreateNoteStructureElement {
             note3.setText("Note with ID = 'note_003'. ");
             note3.setId("note_003");
             // Save Tagged Pdf Document
-            doc.save(outFile);
+            doc.save(outputDir + "CreateNoteStructureElement.pdf");
         } finally {
             if (doc != null)
                 doc.close();

@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.*;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.AttributeKey;
 import com.aspose.pdf.tagged.logicalstructure.AttributeOwnerStandard;
@@ -12,8 +12,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
 public class CreateTableElement {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateTableElement/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example createTableElement start");
+        createTableElement(outputDir);
+        System.out.println("Example createTableElement end");
+    }
+
+    public static void createTableElement(String outputDir) {
         // Create document
         Document doc = new Document();
         try {
@@ -91,7 +104,7 @@ public class CreateTableElement {
             summaryAttribute.setStringValue("The summary text for table");
             tableAttributes.setAttribute(summaryAttribute);
             // Save Tagged Pdf Document
-            doc.save(path + "CreateTableElement.pdf");
+            doc.save(outputDir + "CreateTableElement.pdf");
         } finally {
             if (doc != null)
                 doc.close();

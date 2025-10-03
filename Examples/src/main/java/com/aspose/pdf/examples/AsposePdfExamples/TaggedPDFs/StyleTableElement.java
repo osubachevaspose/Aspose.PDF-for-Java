@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.*;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
@@ -9,8 +9,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.*;
 public class StyleTableElement {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTableElement/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example styleTableElement start");
+        styleTableElement(outputDir);
+        System.out.println("Example styleTableElement end");
+    }
+
+    public static void styleTableElement(String outputDir) {
         // Create document
         Document doc = new Document();
         try {
@@ -45,32 +58,28 @@ public class StyleTableElement {
             TableTHeadElement tableTHeadElement = tableElement.createTHead();
             TableTBodyElement tableTBodyElement = tableElement.createTBody();
             TableTFootElement tableTFootElement = tableElement.createTFoot();
-            int rowCount = 10;
-            int colCount = 5;
-            int rowIndex;
-            int colIndex;
             TableTRElement headTrElement = tableTHeadElement.createTR();
             headTrElement.setAlternativeText("Head Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (int col = 0; col < 5; col++) {
                 TableTHElement thElement = headTrElement.createTH();
-                thElement.setText(String.format("Head %s", colIndex));
+                thElement.setText(String.format("Head %s", col));
             }
-            for (rowIndex = 0; rowIndex < rowCount; rowIndex++) {
+            for (int row = 0; row < 10; row++) {
                 TableTRElement trElement = tableTBodyElement.createTR();
-                trElement.setAlternativeText(String.format("Row %s", rowIndex));
-                for (colIndex = 0; colIndex < colCount; colIndex++) {
+                trElement.setAlternativeText(String.format("Row %s", row));
+                for (int col = 0; col < 5; col++) {
                     TableTDElement tdElement = trElement.createTD();
-                    tdElement.setText(String.format("Cell [%s, %s]", rowIndex, colIndex));
+                    tdElement.setText(String.format("Cell [%s, %s]", row, col));
                 }
             }
             TableTRElement footTrElement = tableTFootElement.createTR();
             footTrElement.setAlternativeText("Foot Row");
-            for (colIndex = 0; colIndex < colCount; colIndex++) {
+            for (int col = 0; col < 5; col++) {
                 TableTDElement tdElement = footTrElement.createTD();
-                tdElement.setText(String.format("Foot %s", colIndex));
+                tdElement.setText(String.format("Foot %s", col));
             }
             // Save Tagged Pdf Document
-            doc.save(path + "StyleTableElement.pdf");
+            doc.save(outputDir + "StyleTableElement.pdf");
         } finally {
             if (doc != null)
                 doc.close();

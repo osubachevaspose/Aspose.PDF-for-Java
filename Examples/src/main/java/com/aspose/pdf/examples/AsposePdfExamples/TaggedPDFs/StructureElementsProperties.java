@@ -1,7 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
@@ -10,8 +10,21 @@ import com.aspose.pdf.tagged.logicalstructure.elements.grouping.SectElement;
 public class StructureElementsProperties {
 
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StructureElementsProperties/";
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example structureElementsProperties start");
+        structureElementsProperties(outputDir);
+        System.out.println("Example structureElementsProperties end");
+    }
+
+    public static void structureElementsProperties(String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -33,7 +46,7 @@ public class StructureElementsProperties {
             h1.setExpansionText("Expansion Text");
             h1.setActualText("Actual Text");
             // Save Tagged Pdf Document
-            doc.save(path + "StructureElementsProperties.pdf");
+            doc.save(outputDir + "StructureElementsProperties.pdf");
         } finally {
             if (doc != null)
                 doc.close();

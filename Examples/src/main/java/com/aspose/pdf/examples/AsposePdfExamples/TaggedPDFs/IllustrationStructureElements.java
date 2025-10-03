@@ -1,15 +1,29 @@
 package com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs;
 
 import com.aspose.pdf.Document;
-import com.aspose.pdf.examples.AsposePdfExamples.Utilities.Utils;
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.IllustrationElement;
 
 public class IllustrationStructureElements {
-    
+
     public static void main(String[] args) {
-        // The path to the documents directory.
-        String path = Utils.getDataDir() + "TaggedPDFs\\";
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/IllustrationStructureElements/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example illustrationStructureElements start");
+        illustrationStructureElements(dataDir, outputDir);
+        System.out.println("Example illustrationStructureElements end");
+    }
+
+    public static void illustrationStructureElements(String dataDir, String outputDir) {
         // Create Pdf Document
         Document doc = new Document();
         try {
@@ -24,9 +38,9 @@ public class IllustrationStructureElements {
             figure1.setActualText("Figure One");
             figure1.setTitle("Image 1");
             figure1.setTag("Fig1");
-            figure1.setImage("image.png");
+            figure1.setImage(dataDir + "aspose-logo.jpg");
             // Save Tagged Pdf Document
-            doc.save(path + "IllustrationStructureElements.pdf");
+            doc.save(outputDir + "IllustrationStructureElements.pdf");
         } finally {
             if (doc != null)
                 doc.close();
