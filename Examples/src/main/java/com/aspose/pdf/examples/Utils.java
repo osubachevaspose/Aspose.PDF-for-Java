@@ -17,6 +17,8 @@ import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Tables.*;
 import com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Text.*;
+import com.aspose.pdf.examples.AsposePdfFacades.Annotations.*;
+import com.aspose.pdf.examples.AsposePdfFacades.Bookmarks.*;
 
 import java.io.File;
 
@@ -85,7 +87,8 @@ public class Utils {
         // AddStructureElementIntoElement.runExamples(); throws
         // Exception in thread "main" java.lang.NullPointerException: Cannot invoke
         // "com.aspose.pdf.internal.l6n.le.l1p()" because "<parameter2>" is null
-        // at com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.AddStructureElementIntoElement
+        // at
+        // com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.AddStructureElementIntoElement
         // .addStructureElementIntoElement(AddStructureElementIntoElement.java:80)
         // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
         ValidatePDFUAStandards.runExamples();
@@ -259,6 +262,17 @@ public class Utils {
         // TextReplacementShouldAutomaticallyRearrangePageContents.runExamples();
         UseLatexScript.runExamples();
         UseLatexScript3.runExamples();
+
+        // AsposePdfFacades.Annotations
+        AddAnnotationInAnExistingPDFFile.runExamples();
+        DeleteAllAnnotationsBySpecifiedType.runExamples();
+        ExportAnnotationsFromPDFFileToXFDF.runExamples();
+
+        // AsposePdfFacades.Bookmarks
+        CreateBookmarksOfAllPages.runExamples();
+        CreateBookmarksOfAllPagesWithProperties.runExamples();
+        ExportBookmarksToXMLFromAnExistingPDFFile.runExamples();
+        ImportBookmarksFromXMLToAnExistingPDFFile.runExamples();
     }
 
     private static File dir = null;
