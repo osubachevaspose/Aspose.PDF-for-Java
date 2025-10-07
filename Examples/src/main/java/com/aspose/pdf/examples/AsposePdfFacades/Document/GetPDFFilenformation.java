@@ -1,12 +1,28 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Document;
 
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileInfo;
 
 public class GetPDFFilenformation {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/GetPDFFilenformation/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getPDFFilenformation start");
+        getPDFFilenformation(dataDir);
+        System.out.println("Example getPDFFilenformation end");
+    }
+
+    public static void getPDFFilenformation(String dataDir) {
         // open document
-        PdfFileInfo fileInfo = new PdfFileInfo("input.pdf");
+        PdfFileInfo fileInfo = new PdfFileInfo(dataDir + "input.pdf");
         try {
             // get PDF information
             System.out.println("Subject : " + fileInfo.getSubject());

@@ -11,13 +11,13 @@ public class ConcatenatePDFFilesUsingFilePaths {
 
 	public static void concatenatePDFFilesUsingFilePaths() {
 		// create PdfFileEditor object
-		PdfFileEditor pdfEditor = new PdfFileEditor();
+		PdfFileEditor fileEditor = new PdfFileEditor();
 		// concatenate files
-		pdfEditor.concatenate("input1.pdf", "input2.pdf", "output.pdf");
+		fileEditor.concatenate("input1.pdf", "input2.pdf", "output.pdf");
 	}
 
 	public static void settingCopyOutlines() {
-		PdfFileEditor pfe = new PdfFileEditor();
-		pfe.setCopyOutlines(false);
+		PdfFileEditor fileEditor = new PdfFileEditor();
+		fileEditor.setCopyOutlines(false);
 	}
 }

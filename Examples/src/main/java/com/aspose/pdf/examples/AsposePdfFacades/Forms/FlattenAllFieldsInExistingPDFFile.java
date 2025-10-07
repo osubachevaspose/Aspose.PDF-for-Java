@@ -1,18 +1,35 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Forms;
 
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.Form;
 
 public class FlattenAllFieldsInExistingPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/Forms/FlattenAllFieldsInExistingPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example flattenAllFieldsInExistingPDFFile start");
+        flattenAllFieldsInExistingPDFFile(dataDir, outputDir);
+        System.out.println("Example flattenAllFieldsInExistingPDFFile end");
+    }
+
+    public static void flattenAllFieldsInExistingPDFFile(String dataDir, String outputDir) {
         Form form = new Form();
         try {
             // bind source PDF file
-            form.bindPdf("input.pdf");
+            form.bindPdf(dataDir + "FormDataXfa_in.pdf");
             // flatten fields
             form.flattenAllFields();
             // save output
-            form.save("output.pdf");
+            form.save(outputDir + "output.pdf");
         } finally {
             if (form != null)
                 form.close();

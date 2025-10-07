@@ -1,28 +1,44 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Document;
 
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.DefaultMetadataProperties;
 import com.aspose.pdf.facades.PdfXmpMetadata;
 
 public class GetXMPMetadataOfAnExistingPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/GetXMPMetadataOfAnExistingPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example getXMPMetadataOfAnExistingPDFFile start");
+        getXMPMetadataOfAnExistingPDFFile(dataDir);
+        System.out.println("Example getXMPMetadataOfAnExistingPDFFile end");
+    }
+
+    public static void getXMPMetadataOfAnExistingPDFFile(String dataDir) {
         // create PdfXmpMetadata object
-        PdfXmpMetadata xmpMetaData = new PdfXmpMetadata();
+        PdfXmpMetadata xmpMetadata = new PdfXmpMetadata();
         try {
             // bind PDF file to the object
-            xmpMetaData.bindPdf("TextAnnotation_output.pdf");
+            xmpMetadata.bindPdf(dataDir + "4pagesPdfA.pdf");
             // get XMP Meta Data properties
             System.out.println("Creation Date : "
-                    + xmpMetaData.getByDefaultMetadataProperties(DefaultMetadataProperties.CreateDate));
+                    + xmpMetadata.getByDefaultMetadataProperties(DefaultMetadataProperties.CreateDate));
             System.out.println("MetaData Date : "
-                    + xmpMetaData.getByDefaultMetadataProperties(DefaultMetadataProperties.MetadataDate));
+                    + xmpMetadata.getByDefaultMetadataProperties(DefaultMetadataProperties.MetadataDate));
             System.out.println("Creator Tool : "
-                    + xmpMetaData.getByDefaultMetadataProperties(DefaultMetadataProperties.CreatorTool));
+                    + xmpMetadata.getByDefaultMetadataProperties(DefaultMetadataProperties.CreatorTool));
             System.out
-                    .println("User Property Name : " + xmpMetaData.getXmpMetadata("customNamespace:UserPropertyName"));
+                    .println("User Property Name : " + xmpMetadata.getXmpMetadata("customNamespace:UserPropertyName"));
         } finally {
-            if (xmpMetaData != null)
-                xmpMetaData.close();
+            if (xmpMetadata != null)
+                xmpMetadata.close();
         }
     }
 }

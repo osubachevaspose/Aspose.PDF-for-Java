@@ -1,23 +1,41 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Document;
 
-import java.awt.Rectangle;
-
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
+
+import java.awt.Color;
+import java.awt.Rectangle;
 
 public class AddingJavascriptActionsToExistingPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/AddingJavascriptActionsToExistingPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example addingJavascriptActionsToExistingPDFFile start");
+        addingJavascriptActionsToExistingPDFFile(dataDir, outputDir);
+        System.out.println("Example addingJavascriptActionsToExistingPDFFile end");
+    }
+
+    public static void addingJavascriptActionsToExistingPDFFile(String dataDir, String outputDir) {
         // create PdfContentEditor object to manipulate contents
         PdfContentEditor contentEditor = new PdfContentEditor();
         try {
-            contentEditor.bindPdf("input.pdf");
+            contentEditor.bindPdf(dataDir + "input.pdf");
             // create Javascript link
-            Rectangle rect7 = new Rectangle(50, 50, 200, 200);
-            java.awt.Color clr4 = new java.awt.Color(0, 255, 0);
+            Rectangle rect = new Rectangle(50, 50, 200, 200);
+            Color clr = new Color(0, 255, 0);
             String code = "app.alert('welcome to aspose!');";
-            contentEditor.createJavaScriptLink(code, rect7, 1, clr4);
+            contentEditor.createJavaScriptLink(code, rect, 1, clr);
             // save the output file
-            contentEditor.save("JavaScriptAdded_output.pdf");
+            contentEditor.save(outputDir + "JavaScriptAdded_output.pdf");
         } finally {
             if (contentEditor != null)
                 contentEditor.close();

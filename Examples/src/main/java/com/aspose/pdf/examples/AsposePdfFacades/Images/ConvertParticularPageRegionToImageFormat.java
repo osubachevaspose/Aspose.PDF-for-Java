@@ -1,46 +1,60 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Images;
 
-import java.io.IOException;
-
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfConverter;
 import com.aspose.pdf.facades.PdfPageEditor;
 
 public class ConvertParticularPageRegionToImageFormat {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/Images/ConvertParticularPageRegionToImageFormat/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example convertParticularPageRegionToImageFormat start");
+        convertParticularPageRegionToImageFormat(dataDir, outputDir);
+        System.out.println("Example convertParticularPageRegionToImageFormat end");
+    }
+
+    public static void convertParticularPageRegionToImageFormat(String dataDir, String outputDir) {
         // instantiate PdfPageEditor class to get particular page region
         PdfPageEditor pageEditor = new PdfPageEditor();
         try {
             // bind the source PDF file
-            pageEditor.bindPdf("Exported.pdf");
+            pageEditor.bindPdf(dataDir + "SampleDataTable.pdf");
             // move the origin of PDF file to particular point
             pageEditor.movePosition(100, 200);
-            // create a memory stream object
-            java.io.FileOutputStream fout = new java.io.FileOutputStream("TempFile.pdf");
-            // save the updated document to stream object
-            pageEditor.save(fout);
-            // create PdfConverter object
-            PdfConverter objConverter = new PdfConverter();
-            // bind input pdf file
-            objConverter.bindPdf(new java.io.FileInputStream("TempFile.pdf"));
-            // set StartPage and EndPage properties to the page number to
-            // you want to convert images from
-            objConverter.setStartPage(1);
-            objConverter.setEndPage(1);
-            // Counter
-            int page = 1;
-            // initialize the converting process
-            objConverter.doConvert();
-            // check if pages exist and then convert to image one by one
-            while (objConverter.hasNextImage())
-                objConverter.getNextImage("Specific_Region-Image" + page++ + ".jpeg");
-            // close the PdfConverter object
-            objConverter.close();
-            // close MemoryStream object holding the updated document
-            fout.close();
+            pageEditor.save(outputDir + "TempFile.pdf");
         } finally {
             if (pageEditor != null)
                 pageEditor.close();
+        }
+        // create PdfConverter object
+        PdfConverter converter = new PdfConverter();
+        try {
+            // bind input pdf file
+            converter.bindPdf(outputDir + "TempFile.pdf");
+            // set StartPage and EndPage properties to the page number you want to convert images from
+            converter.setStartPage(1);
+            converter.setEndPage(2);
+            // Counter
+            int page = 1;
+            // initialize the converting process
+            converter.doConvert();
+            // check if pages exist and then convert to image one by one
+            while (converter.hasNextImage()) {
+                converter.getNextImage(outputDir + "Specific_Region-Image" + page + ".jpeg");
+                page++;
+            }
+        } finally {
+            if (converter != null)
+                converter.close();
         }
     }
 }
