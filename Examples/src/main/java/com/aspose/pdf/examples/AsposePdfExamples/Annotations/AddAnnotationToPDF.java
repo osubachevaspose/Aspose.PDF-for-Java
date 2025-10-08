@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Annotations;
 
+import com.aspose.pdf.AnnotationFlags;
 import com.aspose.pdf.Border;
 import com.aspose.pdf.Dash;
 import com.aspose.pdf.DefaultAppearance;
@@ -72,7 +73,7 @@ public class AddAnnotationToPDF {
                     new Rectangle(50, 600, 250, 650), new DefaultAppearance("Helvetica", 16, java.awt.Color.RED));
             annotation.setContents("ABCDEFG");
             annotation.getCharacteristics().setBorder(java.awt.Color.RED);
-            annotation.setFlags(com.aspose.pdf.AnnotationFlags.Print | com.aspose.pdf.AnnotationFlags.NoView);
+            annotation.setFlags(AnnotationFlags.Print | AnnotationFlags.NoView);
             doc.getPages().get_Item(1).getAnnotations().add(annotation);
             doc.save(outputDir + "Invisible_Annotation.pdf");
         } finally {

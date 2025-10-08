@@ -22,6 +22,9 @@ import com.aspose.pdf.examples.AsposePdfFacades.Bookmarks.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Document.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Forms.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Images.*;
+import com.aspose.pdf.examples.AsposePdfFacades.Pages.*;
+import com.aspose.pdf.examples.AsposePdfFacades.PDFPrinting.*;
+import com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures.*;
 
 import java.io.File;
 
@@ -195,7 +198,7 @@ public class Utils {
         // no input file (seems it needs output file from addDigitalSignatureToPDFFile)
         // ExtractingImageFromSignatureField.runExamples();
         HowToDetermineIfTheSourcePDFIsPasswordProtected.runExamples();
-        SetPrivilegesOnAnExistingPDFFile.runExamples();
+        com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.SetPrivilegesOnAnExistingPDFFile.runExamples();
 
         // AsposePdfExamples.StampsAndWatermarks
         AddImageStampAsBackgroundInFloatingBox.runExamples();
@@ -295,6 +298,21 @@ public class Utils {
         ConvertPDFPagesToDifferentImageFormats.runExamples();
         ExtractImagesFromTheWholePDFToFiles.runExamples();
         ReplaceImageInAnExistingPDFFile.runExamples();
+
+        // AsposePdfFacades.Pages
+        ConcatenateArrayOfPDFFilesUsingFilePaths.runExamples();
+        ConcatenateArrayOfPDFFilesUsingStreams.runExamples();
+        ConcatenatePDFFilesUsingFilePaths.runExamples();
+        ResizePageContentsOfSpecificPagesInAPDFFile.runExamples();
+
+        // AsposePdfFacades.PDFPrinting
+        PrintPDFFileToDefaultPrinter.runExamples();
+
+        // AsposePdfFacades.SecurityAndSignatures
+        // no input file (pfx) AddDigitalSignatureInAPDFFile.runExamples();
+        // no input file (pfx) ChangeLanguageInDigitalSignText.runExamples();
+        com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures.SetPrivilegesOnAnExistingPDFFile.runExamples();
+        // no input file (pfx) SuppressLocationAndReason.runExamples();
     }
 
     private static File dir = null;

@@ -1,11 +1,28 @@
 package com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures;
 
+import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.DocumentPrivilege;
 import com.aspose.pdf.facades.PdfFileSecurity;
 
 public class SetPrivilegesOnAnExistingPDFFile {
 
     public static void main(String[] args) {
+        runExamples();
+    }
+
+    public static void runExamples() {
+        // The paths to resources and output directories.
+        String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/SetPrivilegesOnAnExistingPDFFile/";
+        String dataDir = Utils.getDataDir(testID);
+        String outputDir = Utils.getOutDir(testID);
+
+        System.out.println("============================");
+        System.out.println("Example setPrivilegesOnAnExistingPDFFile start");
+        setPrivilegesOnAnExistingPDFFile(dataDir, outputDir);
+        System.out.println("Example setPrivilegesOnAnExistingPDFFile end");
+    }
+
+    public static void setPrivilegesOnAnExistingPDFFile(String dataDir, String outputDir) {
         // Create DocumentPrivileges object
         DocumentPrivilege privilege = DocumentPrivilege.getForbidAll();
         privilege.setChangeAllowLevel(1);
@@ -14,10 +31,10 @@ public class SetPrivilegesOnAnExistingPDFFile {
         PdfFileSecurity fileSecurity = new PdfFileSecurity();
         try {
             // Open PDF document
-            fileSecurity.bindPdf("input.pdf");
+            fileSecurity.bindPdf(dataDir + "input.pdf");
             // Set document privileges
             fileSecurity.setPrivilege(privilege);
-            fileSecurity.save("output.pdf");
+            fileSecurity.save(outputDir + "output.pdf");
         } finally {
             if (fileSecurity != null)
                 fileSecurity.close();
