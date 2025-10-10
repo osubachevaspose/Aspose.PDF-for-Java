@@ -4,6 +4,9 @@ import com.aspose.pdf.PKCS1;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileSignature;
 
+import java.awt.Rectangle;
+import java.io.File;
+
 public class AddDigitalSignatureInAPDFFile {
 
     public static void main(String[] args) {
@@ -15,6 +18,8 @@ public class AddDigitalSignatureInAPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/AddDigitalSignatureInAPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        // Create output directory if not exists
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addDigitalSignatureInAPDFFile start");
@@ -27,16 +32,15 @@ public class AddDigitalSignatureInAPDFFile {
         PdfFileSignature fileSignature = new PdfFileSignature();
         try {
             // bind input PDF file
-            fileSignature.bindPdf("input.pdf");
+            fileSignature.bindPdf(dataDir + "input.pdf");
             // create a rectangle for signature location
-            java.awt.Rectangle rect = new java.awt.Rectangle(100, 100, 200, 100);
+            Rectangle rect = new Rectangle(100, 100, 200, 100);
             // set signature appearance
-            fileSignature.setSignatureAppearance(dataDir + "imgLogoPdf1.png");
+            fileSignature.setSignatureAppearance(dataDir + "image.jpg");
             // create any of the three signature types
-            PKCS1 signature = new PKCS1(dataDir + "temp.pfx", "password");
-            // PKCS7 signature = new PKCS7(myDir + "temp.pfx", "password"); // PKCS#7 or
-            // PKCS7Detached signature = new PKCS7Detached("temp.pfx", "password"); //
-            // PKCS#7 detached
+            PKCS1 signature = new PKCS1(dataDir + "LocalTestCert.qwerty.pfx", "qwerty");
+            // PKCS7 signature = new PKCS7(myDir + "LocalTestCert.qwerty.pfx", "qwerty"); // PKCS#7 or
+            // PKCS7Detached signature = new PKCS7Detached("LocalTestCert.qwerty.pfx", "qwerty"); // PKCS#7 detached
             fileSignature.sign(1, "Signature Reason", "Contact", "Location", true, rect, signature);
             // save output PDF file
             fileSignature.save(outputDir + "output.pdf");

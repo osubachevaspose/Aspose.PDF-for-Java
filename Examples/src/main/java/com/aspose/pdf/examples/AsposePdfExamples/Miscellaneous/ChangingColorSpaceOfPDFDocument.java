@@ -34,13 +34,13 @@ public class ChangingColorSpaceOfPDFDocument {
         try {
             OperatorCollection contents = doc1.getPages().get_Item(1).getContents();
             System.out.println("Values of RGB color operators in the pdf document");
-            for (int j = 1; j <= contents.size(); j++) {
-                Operator oper = contents.get_Item(j);
+            for (int i = 1; i <= contents.size(); i++) {
+                Operator oper = contents.get_Item(i);
                 if (oper instanceof SetRGBColor || oper instanceof SetRGBColorStroke) {
                     // Converting RGB to CMYK color
                     System.out.println(oper.toString());
 
-                    double[] rgbFloatArray = new double[]{
+                    double[] rgbFloatArray = new double[] {
                             (double) ((SetColorOperator) oper).getColor().getRed(),
                             (double) ((SetColorOperator) oper).getColor().getGreen(),
                             (double) ((SetColorOperator) oper).getColor().getBlue(),
@@ -48,10 +48,10 @@ public class ChangingColorSpaceOfPDFDocument {
                     double[] cmyk = new double[4];
                     if (oper instanceof SetRGBColor) {
                         ((SetRGBColor) oper).getCMYKColor(rgbFloatArray, cmyk);
-                        contents.set_Item(j, new SetCMYKColor(cmyk[0], cmyk[1], cmyk[2], cmyk[3]));
+                        contents.set_Item(i, new SetCMYKColor(cmyk[0], cmyk[1], cmyk[2], cmyk[3]));
                     } else if (oper instanceof SetRGBColorStroke) {
                         ((SetRGBColorStroke) oper).getCMYKColor(rgbFloatArray, cmyk);
-                        contents.set_Item(j, new SetCMYKColorStroke(cmyk[0], cmyk[1], cmyk[2], cmyk[3]));
+                        contents.set_Item(i, new SetCMYKColorStroke(cmyk[0], cmyk[1], cmyk[2], cmyk[3]));
                     } else {
                         throw new PdfException("Unsupported command");
                     }
@@ -67,8 +67,8 @@ public class ChangingColorSpaceOfPDFDocument {
         Document doc2 = new Document(outputDir + "input_colorout.pdf");
         try {
             OperatorCollection contents = doc2.getPages().get_Item(1).getContents();
-            for (int j = 1; j <= contents.size(); j++) {
-                Operator oper = contents.get_Item(j);
+            for (int i = 1; i <= contents.size(); i++) {
+                Operator oper = contents.get_Item(i);
                 if (oper instanceof com.aspose.pdf.operators.SetCMYKColor
                         || oper instanceof com.aspose.pdf.operators.SetCMYKColorStroke) {
                     System.out.println(oper.toString());

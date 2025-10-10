@@ -14,7 +14,7 @@ import java.io.IOException;
 
 public class ExtractTextBasedOnColumns {
 
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
         runExamples();
     }
 

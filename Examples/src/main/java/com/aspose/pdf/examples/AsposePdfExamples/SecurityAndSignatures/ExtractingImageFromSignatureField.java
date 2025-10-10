@@ -32,14 +32,13 @@ public class ExtractingImageFromSignatureField {
 
     public static void extractingImageFromSignatureField(String dataDir, String outputDir) {
         // Load source PDF file
-        Document doc = new Document(dataDir + "test.pdf");
-        int i = 0;
+        Document doc = new Document(dataDir + "PdfWithDigitalSignature.pdf");
+        int i = 1;
         try {
             for (Field field : doc.getForm().getFields()) {
-                i++;
                 SignatureField sf = (SignatureField) field;
                 if (sf != null) {
-                    FileOutputStream output = new FileOutputStream(outputDir + "im" + i + ".jpeg");
+                    FileOutputStream output = new FileOutputStream(outputDir + "image." + i + ".jpeg");
                     try {
                         InputStream tempStream = sf.extractImage();
                         byte[] b = new byte[tempStream.available()];
@@ -50,6 +49,7 @@ public class ExtractingImageFromSignatureField {
                             output.close();
                     }
                 }
+                i++;
             }
         } catch (IOException e) {
             e.printStackTrace();

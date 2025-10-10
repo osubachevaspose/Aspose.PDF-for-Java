@@ -5,8 +5,6 @@ import com.aspose.pdf.FileEncoding;
 import com.aspose.pdf.FileSpecification;
 import com.aspose.pdf.examples.Utils;
 
-import java.io.IOException;
-
 public class DisableFilesCompressionWhenAddingAsEmbeddedResources {
 
     public static void main(String[] args) {
@@ -21,16 +19,11 @@ public class DisableFilesCompressionWhenAddingAsEmbeddedResources {
 
         System.out.println("============================");
         System.out.println("Example disableFilesCompressionWhenAddingAsEmbeddedResources start");
-        try {
-            disableFilesCompressionWhenAddingAsEmbeddedResources(dataDir, outputDir);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        disableFilesCompressionWhenAddingAsEmbeddedResources(dataDir, outputDir);
         System.out.println("Example disableFilesCompressionWhenAddingAsEmbeddedResources end");
     }
 
-    private static void disableFilesCompressionWhenAddingAsEmbeddedResources(String dataDir, String outputDir)
-            throws IOException {
+    private static void disableFilesCompressionWhenAddingAsEmbeddedResources(String dataDir, String outputDir) {
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // setup new file to be added as attachment

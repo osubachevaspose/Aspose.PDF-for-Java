@@ -5,6 +5,7 @@ import com.aspose.pdf.PKCS1;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileSignature;
 
+import java.awt.Rectangle;
 import java.io.ByteArrayInputStream;
 import java.io.ByteArrayOutputStream;
 import java.io.File;
@@ -39,20 +40,20 @@ public class AddDigitalSignatureToPDFFile {
             // Save document to Stream object
             doc.save(out);
             // Create PdfFileSignature instance
-            PdfFileSignature signSingle = new PdfFileSignature();
+            PdfFileSignature fileSignature = new PdfFileSignature();
             try {
                 // Bind the source PDF by reading contents of Stream
-                signSingle.bindPdf(new ByteArrayInputStream(out.toByteArray()));
+                fileSignature.bindPdf(new ByteArrayInputStream(out.toByteArray()));
                 // Sign the PDF file using PKCS1 object
-                signSingle.sign(1, true, new java.awt.Rectangle(100, 100, 150, 50),
-                        new PKCS1(dataDir + "VirtualCabinetPortal (1).pfx", "password"));
+                fileSignature.sign(1, true, new Rectangle(100, 100, 150, 50),
+                        new PKCS1(dataDir + "LocalTestCert.qwerty.pfx", "qwerty"));
                 // Set image for signature appearance
-                signSingle.setSignatureAppearance(dataDir + "im.jpg");
+                fileSignature.setSignatureAppearance(dataDir + "image.jpg");
                 // Save final output
-                signSingle.save(outputDir + "out_PDFNEWJAVA_33311.pdf");
+                fileSignature.save(outputDir + "PdfWithDigitalSignature_out.pdf");
             } finally {
-                if (signSingle != null)
-                    signSingle.close();
+                if (fileSignature != null)
+                    fileSignature.close();
             }
         } finally {
             if (doc != null)

@@ -1,7 +1,5 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Images;
 
-import java.io.File;
-
 import com.aspose.pdf.Annotation;
 import com.aspose.pdf.AnnotationSelector;
 import com.aspose.pdf.Document;
@@ -30,7 +28,8 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
     }
 
     public static void deleteImageFromPDFResourcesFoundByImagePlacementAbsorber(String dataDir, String outputDir) {
-        Document doc = new Document(dataDir + "mde1257231R.pdf");
+        // Document doc = new Document(dataDir + "mde1257231R.pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // Extract actions
             AnnotationSelector selector = new AnnotationSelector(
@@ -48,7 +47,8 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
                     // Determine if URY of Hyperlink and image are matching
                     if ((int) annotation.getRect().getURY() == (int) imagePlacement.getRectangle().getURY()) {
                         System.out.println("Image with Hyperlink...");
-                        imagePlacement.getImage().delete();// delete a particular image from resources
+                        // delete a particular image from resources
+                        imagePlacement.getImage().delete();
                     }
                 }
             }

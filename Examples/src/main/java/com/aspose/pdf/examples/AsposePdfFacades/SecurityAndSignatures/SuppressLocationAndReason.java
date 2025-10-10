@@ -4,7 +4,8 @@ import com.aspose.pdf.PKCS1;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileSignature;
 
-import java.awt.*;
+import java.awt.Rectangle;
+import java.io.File;
 
 public class SuppressLocationAndReason {
 
@@ -17,6 +18,8 @@ public class SuppressLocationAndReason {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/SuppressLocationAndReason/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        // Create output directory if not exists
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example suppressLocationAndReason start");
@@ -31,7 +34,7 @@ public class SuppressLocationAndReason {
             // create a rectangle for signature location
             Rectangle rect = new Rectangle(100, 100, 200, 100);
             // create any of the three signature types
-            PKCS1 signature = new PKCS1(dataDir + "certificate.pfx", "12345");
+            PKCS1 signature = new PKCS1(dataDir + "LocalTestCert.qwerty.pfx", "qwerty");
             // sign the PDF file
             fileSignature.sign(1, "", "Contact", "", true, rect, signature);
             // save output PDF file

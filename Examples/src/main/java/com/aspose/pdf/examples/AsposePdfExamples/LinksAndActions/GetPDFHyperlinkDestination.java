@@ -28,8 +28,7 @@ public class GetPDFHyperlinkDestination {
     }
 
     public static void getPDFHyperlinkDestination(String dataDir) {
-        // Document doc = new Document(dataDir + "update_Service_Work_Order.pdf");
-        Document doc = new Document(dataDir + "Hyperlink_to_PDF.pdf");
+        Document doc = new Document(dataDir + "PdfWithHyperlink.pdf");
         try {
             // Extract actions
             Page page = doc.getPages().get_Item(1);
@@ -38,12 +37,12 @@ public class GetPDFHyperlinkDestination {
             List list = selector.getSelected();
             // Iterate through individual item inside list
             if (list.size() == 0)
-                System.out.println("No Hyperlinks found..");
+                System.out.println("No Hyperlinks found.");
             else {
-                // Loop through all the bookmarks
-                for (LinkAnnotation annot : (Iterable<LinkAnnotation>) list) {
+                // Loop through all the annotations
+                for (LinkAnnotation link : (Iterable<LinkAnnotation>) list) {
                     // Print the destination URL
-                    System.out.println("<br />Destination: " + ((GoToURIAction) annot.getAction()).getURI() + "<br />");
+                    System.out.println("Destination: " + ((GoToURIAction) link.getAction()).getURI());
                 }
             }
         } finally {

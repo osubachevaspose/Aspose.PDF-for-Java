@@ -25,6 +25,8 @@ import com.aspose.pdf.examples.AsposePdfFacades.Images.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Pages.*;
 import com.aspose.pdf.examples.AsposePdfFacades.PDFPrinting.*;
 import com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures.*;
+import com.aspose.pdf.examples.AsposePdfFacades.StampsAndWatermarks.*;
+import com.aspose.pdf.examples.AsposePdfFacades.Text.*;
 
 import java.io.File;
 
@@ -170,7 +172,7 @@ public class Utils {
         // AsposePdfExamples.LinksAndActions
         AddHyperlinkInPDFFile.runExamples();
         CreateALinkToAnotherPDFDocument.runExamples();
-        // no input file GetPDFHyperlinkDestination.runExamples();
+        GetPDFHyperlinkDestination.runExamples();
         RemoveDocumentOpenActionFromPDFFile.runExamples();
 
         // AsposePdfExamples.Miscellaneous
@@ -192,11 +194,10 @@ public class Utils {
         UpdatePageDimensions.runExamples();
 
         // AsposePdfExamples.SecurityAndSignatures
-        // no input file (pfx) AddDigitalSignatureToPDFFile.runExamples();
+        AddDigitalSignatureToPDFFile.runExamples();
         DecryptPDFFileUsingOwnerPassword.runExamples();
         EncryptPDFDocumentUsingEncryptionTypes.runExamples();
-        // no input file (seems it needs output file from addDigitalSignatureToPDFFile)
-        // ExtractingImageFromSignatureField.runExamples();
+        ExtractingImageFromSignatureField.runExamples();
         HowToDetermineIfTheSourcePDFIsPasswordProtected.runExamples();
         com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.SetPrivilegesOnAnExistingPDFFile.runExamples();
 
@@ -309,10 +310,21 @@ public class Utils {
         PrintPDFFileToDefaultPrinter.runExamples();
 
         // AsposePdfFacades.SecurityAndSignatures
-        // no input file (pfx) AddDigitalSignatureInAPDFFile.runExamples();
-        // no input file (pfx) ChangeLanguageInDigitalSignText.runExamples();
+        AddDigitalSignatureInAPDFFile.runExamples();
+        ChangeLanguageInDigitalSignText.runExamples();
         com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures.SetPrivilegesOnAnExistingPDFFile.runExamples();
-        // no input file (pfx) SuppressLocationAndReason.runExamples();
+        SuppressLocationAndReason.runExamples();
+
+        // AsposePdfFacades.StampsAndWatermarks
+        AddPageNumberInAPDFFile.runExamples();
+
+        // AsposePdfFacades.Text
+        AddTextInAnExistingPDFFile.runExamples();
+        ExtractTextFromARangeOfPages.runExamples();
+        ExtractTextFromIndividualPagesOfAPDF.runExamples();
+        ExtractTextFromTheWholePDFFile.runExamples();
+        ReplaceTextInAnExistingPDFFile.runExamples();
+        ReplaceTextOnAParticularPageInAnExistingPDFFile.runExamples();
     }
 
     private static File dir = null;

@@ -50,7 +50,7 @@ public class AddImage {
             // Save output as PDF format
             doc.save(outputDir + "PdfWithDicomImage_out.pdf");
         } catch (FileNotFoundException e) {
-            throw new RuntimeException(e);
+            e.printStackTrace();
         } finally {
             if (doc != null)
                 doc.close();

@@ -58,7 +58,7 @@ public class AddHyperlinkInPDFFile {
             // Add FreeText annotation to annotations collection of first page of Document
             doc.getPages().get_Item(1).getAnnotations().add(textAnnotation);
             // Save updated document
-            doc.save(outputDir + "Annotation_output.pdf");
+            doc.save(outputDir + "LinkAnnotation_out.pdf");
         } finally {
             if (doc != null)
                 doc.close();

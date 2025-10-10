@@ -10,7 +10,7 @@ import java.io.IOException;
 
 public class ExtractImagesFromThePDFFile {
 
-    public static void main(String[] args) throws Exception {
+    public static void main(String[] args) {
         runExamples();
     }
 

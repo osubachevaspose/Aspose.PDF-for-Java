@@ -31,16 +31,16 @@ public class DeterminePageColor {
                 ColorType pageColorType = doc.getPages().get_Item(i).getColorType();
                 switch (pageColorType) {
                     case BlackAndWhite:
-                        System.out.println("Page # -" + i + " is Black and white..");
+                        System.out.println("Page # " + i + " is Black and white.");
                         break;
                     case Grayscale:
-                        System.out.println("Page # -" + i + " is Gray Scale...");
+                        System.out.println("Page # " + i + " is Gray Scale.");
                         break;
                     case Rgb:
-                        System.out.println("Page # -" + i + " is RGB..");
+                        System.out.println("Page # " + i + " is RGB.");
                         break;
                     case Undefined:
-                        System.out.println("Page # -" + i + " Color is undefined..");
+                        System.out.println("Page # " + i + " Color is undefined.");
                         break;
                 }
             }

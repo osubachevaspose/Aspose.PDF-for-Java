@@ -5,7 +5,8 @@ import com.aspose.pdf.SignatureCustomAppearance;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfFileSignature;
 
-import java.awt.*;
+import java.awt.Rectangle;
+import java.io.File;
 import java.util.Date;
 
 public class ChangeLanguageInDigitalSignText {
@@ -19,6 +20,8 @@ public class ChangeLanguageInDigitalSignText {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/ChangeLanguageInDigitalSignText/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        // Create output directory if not exists
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example changeLanguageInDigitalSignText start");
@@ -34,7 +37,7 @@ public class ChangeLanguageInDigitalSignText {
             // create a rectangle for signature location
             Rectangle rect = new Rectangle(310, 45, 200, 50);
             // create any of the three signature types
-            PKCS7 pkcs = new PKCS7(dataDir + "certificate.pfx", "12345");
+            PKCS7 pkcs = new PKCS7(dataDir + "LocalTestCert.qwerty.pfx", "qwerty");
             pkcs.setReason("Pruebas Firma");
             pkcs.setContactInfo("Contacto Pruebas");
             pkcs.setLocation("Población (Provincia)");
