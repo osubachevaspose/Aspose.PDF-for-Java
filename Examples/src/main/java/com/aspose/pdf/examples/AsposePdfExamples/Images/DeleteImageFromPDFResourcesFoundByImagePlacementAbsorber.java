@@ -9,6 +9,8 @@ import com.aspose.pdf.LinkAnnotation;
 import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.examples.Utils;
 
+import java.util.List;
+
 public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
 
     public static void main(String[] args) {
@@ -35,7 +37,7 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
             AnnotationSelector selector = new AnnotationSelector(
                     new LinkAnnotation(doc.getPages().get_Item(1), Rectangle.getTrivial()));
             doc.getPages().get_Item(1).accept(selector);
-            java.util.List list = selector.getSelected();
+            List list = selector.getSelected();
             for (int i = 0; i < list.size(); i++) {
                 Annotation annotation = (Annotation) list.get(i);
                 // Create ImagePlacementAbsorber object to perform image placement search

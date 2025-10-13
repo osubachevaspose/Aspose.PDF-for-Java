@@ -58,12 +58,12 @@ public class ChangePageOrientation {
     public static void fittingThePageContentToNewPageOrientation(String dataDir) {
         Document doc = new Document(dataDir + "input.pdf");
         try {
-            Rectangle r = doc.getPages().get_Item(1).getMediaBox();
+            Rectangle rect = doc.getPages().get_Item(1).getMediaBox();
             // New height the same
-            double newHeight = r.getHeight();
+            double newHeight = rect.getHeight();
             // New width is expanded proportionally to make orientation landscape
             // (we assume that previous orientation is portrait)
-            double newWidth = r.getHeight() * r.getHeight() / r.getWidth();
+            double newWidth = rect.getHeight() * rect.getHeight() / rect.getWidth();
         } finally {
             if (doc != null)
                 doc.close();

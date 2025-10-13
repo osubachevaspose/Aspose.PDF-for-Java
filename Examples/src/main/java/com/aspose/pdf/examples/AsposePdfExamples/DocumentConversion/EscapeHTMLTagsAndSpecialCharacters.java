@@ -25,7 +25,7 @@ public class EscapeHTMLTagsAndSpecialCharacters {
         // input HTML
         String HTML = "<ol><b>BIG TEXT</b><ol>SOME VALUE</ol><li>item1</li><li>item2 & 3</li></ol>";
         // CSS for input HTML contents
-        String CSS = " *{font-weight : normal !important ; margin :0 !important ; padding:0 !important ; list-style-type:none !important}";
+        String CSS = "<style>*{font-weight : normal !important ; margin :0 !important ; padding:0 !important ; list-style-type:none !important}</style>";
         // instantiate Document instance
         Document doc = new Document();
         try {

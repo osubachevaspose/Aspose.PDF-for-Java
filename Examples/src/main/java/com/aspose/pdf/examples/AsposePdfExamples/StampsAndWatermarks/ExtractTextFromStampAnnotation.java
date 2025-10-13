@@ -27,12 +27,12 @@ public class ExtractTextFromStampAnnotation {
     public static void extractTextFromStampAnnotation(String dataDir) {
         Document doc = new Document(dataDir + "test.pdf");
         try {
-            Annotation item = doc.getPages().get_Item(1).getAnnotations().get_Item(3);
-            if (item instanceof StampAnnotation) {
-                StampAnnotation annot = (StampAnnotation) item;
+            Annotation annotation = doc.getPages().get_Item(1).getAnnotations().get_Item(3);
+            if (annotation instanceof StampAnnotation) {
+                StampAnnotation stampAnnotation = (StampAnnotation) annotation;
                 TextAbsorber textAbsorber = new TextAbsorber();
-                XForm ap = annot.getNormalAppearance();
-                textAbsorber.visit(ap);
+                XForm normalAppearance = stampAnnotation.getNormalAppearance();
+                textAbsorber.visit(normalAppearance);
                 System.out.println(textAbsorber.getText());
             }
         } finally {
