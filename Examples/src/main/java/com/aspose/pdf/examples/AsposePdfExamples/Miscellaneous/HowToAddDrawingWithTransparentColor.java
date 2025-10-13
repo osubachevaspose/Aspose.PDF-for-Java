@@ -28,12 +28,6 @@ public class HowToAddDrawingWithTransparentColor {
     }
 
     public static void howToAddDrawingWithTransparentColor(String outputDir) {
-        int alpha = 10;
-        int green = 0;
-        int red = 100;
-        int blue = 0;
-        // create Color object using Alpha RGB
-        Color alphaColor = Color.fromArgb(alpha, red, green, blue); // provide alpha channel
         // instantiate Document object
         Document doc = new Document();
         try {
@@ -46,15 +40,33 @@ public class HowToAddDrawingWithTransparentColor {
             // add graph object to paragraphs collection of Page instance
             page.getParagraphs().add(graph);
             // create Rectangle object with certain dimensions
-            Rectangle rectangle = new Rectangle(0, 0, 100, 50);
+            Rectangle rect1 = new Rectangle(0, 0, 100, 50);
             // create graphInfo object for Rectangle instance
-            GraphInfo graphInfo = rectangle.getGraphInfo();
+            GraphInfo graphInfo1 = rect1.getGraphInfo();
             // set color information for GraphInfo instance
-            graphInfo.setColor(Color.getRed());
+            graphInfo1.setColor(Color.getRed());
+            // create Color object using Alpha RGB
+            Color alphaRed = Color.fromArgb(50, 100, 0, 0); // provide alpha channel
             // set fill color for GraphInfo
-            graphInfo.setFillColor(alphaColor);
+            graphInfo1.setFillColor(alphaRed);
             // add rectangle shape to shapes collection of graph object
-            graph.getShapes().addItem(rectangle);
+            graph.getShapes().addItem(rect1);
+
+            // set border for Drawing object
+            graph.setBorder(new BorderInfo(BorderSide.All, Color.getBlack()));
+            // create Rectangle object with certain dimensions
+            Rectangle rect2 = new Rectangle(50, 25, 100, 50);
+            // create graphInfo object for Rectangle instance
+            GraphInfo graphInfo2 = rect2.getGraphInfo();
+            // set color information for GraphInfo instance
+            graphInfo2.setColor(Color.getRed());
+            // create Color object using Alpha RGB
+            Color alphaBlue = Color.fromArgb(50, 0, 0, 100); // provide alpha channel
+            // set fill color for GraphInfo
+            graphInfo2.setFillColor(alphaBlue);
+            // add rectangle shape to shapes collection of graph object
+            graph.getShapes().addItem(rect2);
+
             // save PDF file
             doc.save(outputDir + "TransparentColor.pdf");
         } finally {

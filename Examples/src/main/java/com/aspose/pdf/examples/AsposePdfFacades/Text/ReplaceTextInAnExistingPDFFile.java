@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples.AsposePdfFacades.Text;
 
+import com.aspose.pdf.TextReplaceOptions;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 
@@ -27,6 +28,7 @@ public class ReplaceTextInAnExistingPDFFile {
             // open input PDF
             contentEditor.bindPdf(dataDir + "4pages.pdf");
             // replace text on all pages
+            contentEditor.getTextReplaceOptions().setReplaceScope(TextReplaceOptions.Scope.REPLACE_ALL);
             contentEditor.replaceText("Page", "p.");
             // save output PDF
             contentEditor.save(outputDir + "ReplaceTextOnAllPages.pdf");

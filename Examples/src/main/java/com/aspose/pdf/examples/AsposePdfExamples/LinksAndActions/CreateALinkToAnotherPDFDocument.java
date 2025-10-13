@@ -5,6 +5,11 @@ import com.aspose.pdf.GoToRemoteAction;
 import com.aspose.pdf.LinkAnnotation;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+import java.io.IOException;
+import java.nio.file.Files;
+import java.nio.file.Path;
+
 public class CreateALinkToAnotherPDFDocument {
 
     public static void main(String[] args) {
@@ -24,6 +29,13 @@ public class CreateALinkToAnotherPDFDocument {
     }
 
     public static void createALinkToAnotherPDFDocument(String dataDir, String outputDir) {
+        try {
+            Path source = new File(dataDir + "SampleDataTable.pdf").toPath();
+            Path target = new File(outputDir + "SampleDataTable.pdf").toPath();
+            Files.copy(source, target);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
         // Open document
         Document doc = new Document();
         try {
@@ -35,7 +47,7 @@ public class CreateALinkToAnotherPDFDocument {
             // Set color for Annotation object
             link.setColor(com.aspose.pdf.Color.fromRgb(java.awt.Color.green));
             // Specify the target PDF file and set page number
-            link.setAction(new GoToRemoteAction(dataDir + "SampleDataTable.pdf", 1));
+            link.setAction(new GoToRemoteAction("SampleDataTable.pdf", 1));
             // Add link annotation to first page of PDF file
             doc.getPages().get_Item(1).getAnnotations().add(link);
             // Save the document with link
