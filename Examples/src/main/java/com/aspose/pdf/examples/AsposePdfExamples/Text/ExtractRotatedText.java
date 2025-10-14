@@ -11,7 +11,6 @@ public class ExtractRotatedText {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ExtractRotatedText/";
         String dataDir = Utils.getDataDir(testID);
 

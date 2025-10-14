@@ -159,8 +159,7 @@ public class Utils {
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
         ConvertPDFPagesToTIFFImage.runExamples();
-        // no input file
-        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        // no input file DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
         DeleteImagesFromThePDFFile.runExamples();
         ExtractImageProperties.runExamples();
         ExtractImagesFromThePDFFile.runExamples();
@@ -222,7 +221,7 @@ public class Utils {
         SetBorderStyleMarginsAndPaddingOfTable.runExamples();
 
         // AsposePdfExamples.TaggedPDFs
-        // native input file is wrong AccessChildrenElements.runExamples();
+        AccessChildrenElements.runExamples();
         AddStructureElementIntoElement.runExamples();
         CreateNoteStructureElement.runExamples();
         CreatePDFwithTaggedImage.runExamples();
@@ -260,13 +259,12 @@ public class Utils {
         FootNotesAndEndNotes.runExamples();
         HowToAddTransparentTextInPDF.runExamples();
         ReplaceFontsInExistingPDFFile.runExamples();
-        // no input file ReplaceOnlyFirstOccurrenceOfThePhrase.runExamples();
-        ReplaceTextInPagesOfPDFDocument.runExamples(); // not all required input files are available
-        // no input file SearchAndGetTextFromPagesUsingRegularExpression.runExamples();
+        ReplaceOnlyFirstOccurrenceOfThePhrase.runExamples();
+        ReplaceTextInPagesOfPDFDocument.runExamples();
+        SearchAndGetTextFromPagesUsingRegularExpression.runExamples();
         SearchAndGetTextFromThePagesOfPDFDocument.runExamples();
         SearchAndGetTextSegmentsFromPagesOfPDF.runExamples();
-        // no input file
-        // TextReplacementShouldAutomaticallyRearrangePageContents.runExamples();
+        TextReplacementShouldAutomaticallyRearrangePageContents.runExamples();
         UseLatexScript.runExamples();
         UseLatexScript3.runExamples();
 
@@ -288,6 +286,7 @@ public class Utils {
         ResizePDFPageContents.runExamples();
         com.aspose.pdf.examples.AsposePdfFacades.Document.SetPDFFileInformation.runExamples();
         SetViewerPreferenceOfAnExistingPDFFile.runExamples();
+        SetXMPMetadataOfAnExistingPDF.runExamples();
 
         // AsposePdfFacades.Forms
         ExportDataToFDFFromAPDFFile.runExamples();

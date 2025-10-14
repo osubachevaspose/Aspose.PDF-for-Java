@@ -14,7 +14,6 @@ public class TextBlockStructureElements {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TextBlockStructureElements/";
         String outputDir = Utils.getOutDir(testID);
 

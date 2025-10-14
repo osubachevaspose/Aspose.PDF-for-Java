@@ -13,7 +13,6 @@ public class PrintPDFFileToDefaultPrinter {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/PDFPrinting/PrintPDFFileToDefaultPrinter/";
         String dataDir = Utils.getDataDir(testID);
 

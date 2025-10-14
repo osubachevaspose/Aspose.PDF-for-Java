@@ -12,7 +12,6 @@ public class GetPageProperties {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Pages/GetPageProperties/";
         String dataDir = Utils.getDataDir(testID);
 

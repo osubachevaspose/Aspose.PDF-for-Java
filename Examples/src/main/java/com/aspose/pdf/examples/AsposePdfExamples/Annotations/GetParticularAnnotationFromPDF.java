@@ -11,7 +11,6 @@ public class GetParticularAnnotationFromPDF {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/GetParticularAnnotationFromPDF/";
         String dataDir = Utils.getDataDir(testID);
 

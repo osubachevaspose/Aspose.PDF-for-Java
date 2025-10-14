@@ -1,6 +1,7 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Text;
 
 import com.aspose.pdf.Document;
+import com.aspose.pdf.Page;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 
@@ -11,7 +12,6 @@ public class DetermineLineBreak {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/DetermineLineBreak/";
         String outputDir = Utils.getOutDir(testID);
 
@@ -22,10 +22,9 @@ public class DetermineLineBreak {
     }
 
     public static void determineLineBreak(String outputDir) {
-        // Load source PDF file
         Document doc = new Document();
         try {
-            com.aspose.pdf.Page page = doc.getPages().add();
+            Page page = doc.getPages().add();
             for (int i = 0; i < 4; i++) {
                 TextFragment text = new TextFragment(
                         "Lorem ipsum \r\ndolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.");

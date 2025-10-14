@@ -20,7 +20,6 @@ public class CreateStructureElement {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElement/";
         String outputDir = Utils.getOutDir(testID);
 
@@ -30,9 +29,8 @@ public class CreateStructureElement {
         System.out.println("Example createStructureElement end");
     }
 
-    // @SuppressWarnings("unused")
+    @SuppressWarnings("unused")
     public static void createStructureElement(String outputDir) {
-        // Create Pdf Document
         Document doc = new Document();
         try {
             // Get Content for work with TaggedPdf

@@ -14,7 +14,6 @@ public class AccessChildrenElements {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/AccessChildrenElements/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -26,29 +25,28 @@ public class AccessChildrenElements {
     }
 
     public static void accessChildrenElements(String dataDir, String outputDir) {
-        // String path = Utils.getDataDir() + "TaggedPDFs\\";
         // Open Pdf Document
-        // Document doc = new Document(path + "StructureElements.pdf");
-        Document doc = new Document(dataDir + "StructureElements.pdf");
+        Document doc = new Document(dataDir + "StructureElementsTree.pdf");
         try {
             // Get Content for work with TaggedPdf
             ITaggedContent taggedContent = doc.getTaggedContent();
             // Access to root element(s)
-            ElementList elementList = taggedContent.getStructTreeRootElement().getChildElements();
-            for (Element element : elementList) {
+            ElementList rootChildElements = taggedContent.getRootElement().getChildElements();
+            System.out.println(rootChildElements.getCount());
+            for (Element element : rootChildElements)
                 if (element instanceof StructureElement) {
                     StructureElement structureElement = (StructureElement) element;
                     // Get properties
-                    String title = structureElement.getTitle();
-                    String language = structureElement.getLanguage();
-                    String actualText = structureElement.getActualText();
-                    String expansionText = structureElement.getExpansionText();
-                    String alternativeText = structureElement.getAlternativeText();
+                    System.out.println("Title: " + structureElement.getTitle());
+                    System.out.println("Language: " + structureElement.getLanguage());
+                    System.out.println("ActualText: " + structureElement.getActualText());
+                    System.out.println("ExpansionText: " + structureElement.getExpansionText());
+                    System.out.println("AlternativeText: " + structureElement.getAlternativeText());
                 }
-            }
             // Access to children elements of first element in root element
-            elementList = taggedContent.getRootElement().getChildElements().get_Item(1).getChildElements();
-            for (Element element : elementList)
+            ElementList childElements = taggedContent.getRootElement().getChildElements().get_Item(1)
+                    .getChildElements();
+            for (Element element : childElements)
                 if (element instanceof StructureElement) {
                     StructureElement structureElement = (StructureElement) element;
                     // Set properties

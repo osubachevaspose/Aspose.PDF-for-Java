@@ -14,7 +14,6 @@ public class TextReplacementShouldAutomaticallyRearrangePageContents {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/TextReplacementShouldAutomaticallyRearrangePageContents/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -26,11 +25,10 @@ public class TextReplacementShouldAutomaticallyRearrangePageContents {
     }
 
     public static void textReplacementShouldAutomaticallyRearrangePageContents(String dataDir, String outputDir) {
-        // Load source PDF file
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create TextFragment Absorber object with regular expression
-            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("[Cname,companyname,Textbox,50]");
+            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("This is");
             doc.getPages().accept(textFragmentAbsorber);
             // Replace each TextFragment
             for (TextFragment textFragment : (Iterable<TextFragment>) textFragmentAbsorber.getTextFragments()) {
@@ -40,7 +38,7 @@ public class TextReplacementShouldAutomaticallyRearrangePageContents {
                 textFragment.getTextState().setFontSize(12);
                 textFragment.getTextState().setForegroundColor(Color.getNavy());
                 // Replace the text with larger string than placeholder
-                textFragment.setText("This is a Lerger String to Testing of this issue");
+                textFragment.setText("This is a much larger string than the placeholder to test this issue");
             }
             // Save resultant PDF
             doc.save(outputDir + "29860_out_large_NoHyphenation_1020.pdf");

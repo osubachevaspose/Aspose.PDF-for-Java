@@ -10,7 +10,6 @@ public class SetXMPMetadataOfAnExistingPDF {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/SetXMPMetadataOfAnExistingPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -22,10 +21,9 @@ public class SetXMPMetadataOfAnExistingPDF {
     }
 
     public static void setXMPMetadataOfAnExistingPDF(String dataDir, String outputDir) {
-        // create PdfXmpMetadata object
         PdfXmpMetadata xmpMetadata = new PdfXmpMetadata();
         try {
-            // bind pdf file to the object
+            // bind pdf file
             xmpMetadata.bindPdf(dataDir + "input.pdf");
             // step #1: register namespace prefix and URI
             xmpMetadata.registerNamespaceURI("customNamespace", "http://www.customNameSpaces.com/ns/");

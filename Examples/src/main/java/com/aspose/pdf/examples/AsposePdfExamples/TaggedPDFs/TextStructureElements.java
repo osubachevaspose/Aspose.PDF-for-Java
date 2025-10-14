@@ -13,7 +13,6 @@ public class TextStructureElements {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TextStructureElements/";
         String outputDir = Utils.getOutDir(testID);
 

@@ -12,7 +12,6 @@ public class ConcatenatePDFFilesUsingFilePaths {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Pages/ConcatenatePDFFilesUsingFilePaths/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);

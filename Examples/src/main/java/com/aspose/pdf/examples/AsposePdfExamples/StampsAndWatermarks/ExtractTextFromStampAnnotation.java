@@ -14,7 +14,6 @@ public class ExtractTextFromStampAnnotation {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/ExtractTextFromStampAnnotation/";
         String dataDir = Utils.getDataDir(testID);
 

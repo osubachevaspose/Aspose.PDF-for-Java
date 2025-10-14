@@ -13,7 +13,6 @@ public class HowToDetermineIfTheSourcePDFIsPasswordProtected {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/SecurityAndSignatures/HowToDetermineIfTheSourcePDFIsPasswordProtected/";
         String dataDir = Utils.getDataDir(testID);
 

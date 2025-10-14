@@ -18,7 +18,6 @@ public class ChangingColorSpaceOfPDFDocument {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Miscellaneous/ChangingColorSpaceOfPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -39,7 +38,6 @@ public class ChangingColorSpaceOfPDFDocument {
                 if (oper instanceof SetRGBColor || oper instanceof SetRGBColorStroke) {
                     // Converting RGB to CMYK color
                     System.out.println(oper.toString());
-
                     double[] rgbFloatArray = new double[] {
                             (double) ((SetColorOperator) oper).getColor().getRed(),
                             (double) ((SetColorOperator) oper).getColor().getGreen(),

@@ -19,7 +19,6 @@ public class ExtractTextBasedOnColumns {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ExtractTextBasedOnColumns/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -35,7 +34,6 @@ public class ExtractTextBasedOnColumns {
     }
 
     public static void extractTextBasedOnColumns(String dataDir, String outputDir) {
-        // instantiate Document instance with path of input file as argument
         Document doc = new Document(dataDir + "net_New-age NED's.pdf");
         try {
             // create TextFragment Absorber instance
@@ -79,10 +77,11 @@ public class ExtractTextBasedOnColumns {
             TextAbsorber textAbsorber = new TextAbsorber();
             textAbsorber.setExtractionOptions(new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure));
             // Setting scale factor to 0.5 is enough to split columns in the majority of documents
-            // Setting of zero allows to algorithm choose scale factor automatically
+            // Setting to zero allows to choose scale factor automatically
             textAbsorber.getExtractionOptions().setScaleFactor((double) 0.5);
             doc.getPages().accept(textAbsorber);
             String extractedText = textAbsorber.getText();
+            System.out.println(extractedText);
         } finally {
             if (doc != null)
                 doc.close();

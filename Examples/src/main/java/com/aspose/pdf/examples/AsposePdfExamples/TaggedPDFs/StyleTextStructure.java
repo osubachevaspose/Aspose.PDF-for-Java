@@ -15,7 +15,6 @@ public class StyleTextStructure {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTextStructure/";
         String outputDir = Utils.getOutDir(testID);
 

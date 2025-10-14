@@ -15,7 +15,6 @@ public class CreateStructureElementTree {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElementTree/";
         String outputDir = Utils.getOutDir(testID);
 
@@ -38,8 +37,15 @@ public class CreateStructureElementTree {
             StructureElement rootElement = taggedContent.getRootElement();
             // Create Logical Structure
             SectElement sect1 = taggedContent.createSectElement();
+            sect1.setTitle("Section 1");
+            sect1.setLanguage("en-US");
+            sect1.setActualText("Section 1 Actual Text");
+            sect1.setExpansionText("Section 1 Expansion Text");
             rootElement.appendChild(sect1);
             SectElement sect2 = taggedContent.createSectElement();
+            sect2.setTitle("Section 2");
+            sect2.setActualText("Section 2 Actual Text");
+            sect2.setAlternativeText("Section 2 Alternative Text");
             rootElement.appendChild(sect2);
             DivElement div11 = taggedContent.createDivElement();
             sect1.appendChild(div11);
@@ -58,6 +64,7 @@ public class CreateStructureElementTree {
             DivElement div222 = taggedContent.createDivElement();
             art22.appendChild(div222);
             SectElement sect3 = taggedContent.createSectElement();
+            sect3.setTitle("Section 3");
             rootElement.appendChild(sect3);
             DivElement div31 = taggedContent.createDivElement();
             sect3.appendChild(div31);

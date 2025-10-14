@@ -11,7 +11,6 @@ public class GetValuesFromAllFieldsInPDFDocument {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Forms/GetValuesFromAllFieldsInPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
 

@@ -15,7 +15,6 @@ public class ReplaceOnlyFirstOccurrenceOfThePhrase {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceOnlyFirstOccurrenceOfThePhrase/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -27,11 +26,10 @@ public class ReplaceOnlyFirstOccurrenceOfThePhrase {
     }
 
     public static void replaceOnlyFirstOccurrenceOfThePhrase(String dataDir, String outputDir) {
-        // open document
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // create TextAbsorber object to find all instances of the input search phrase
-            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("line");
+            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("Sample");
             // accept the absorber for first page of document
             doc.getPages().get_Item(1).accept(textFragmentAbsorber);
             // get the extracted text fragments into collection

@@ -11,7 +11,6 @@ public class ConvertPDFToExcelWorkbook {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToExcelWorkbook/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -29,7 +28,7 @@ public class ConvertPDFToExcelWorkbook {
             // Instantiate ExcelSaveOptions object
             ExcelSaveOptions options = new ExcelSaveOptions();
             // Save the output to XLS format
-            doc.save(outputDir + "ConvertedFile.xls", options);
+            doc.save(outputDir + "ConvertedFile.xlsx", options);
         } finally {
             if (doc != null)
                 doc.close();

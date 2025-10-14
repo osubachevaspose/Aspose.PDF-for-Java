@@ -18,7 +18,6 @@ public class StrikeOutWordsUsingStrikeOutAnnotation {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/StrikeOutWordsUsingStrikeOutAnnotation/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);

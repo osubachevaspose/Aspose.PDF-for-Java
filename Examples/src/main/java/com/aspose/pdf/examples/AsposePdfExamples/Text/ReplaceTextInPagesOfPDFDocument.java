@@ -18,7 +18,6 @@ public class ReplaceTextInPagesOfPDFDocument {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceTextInPagesOfPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
@@ -28,21 +27,20 @@ public class ReplaceTextInPagesOfPDFDocument {
         replaceTextOnAllPages(dataDir, outputDir);
         System.out.println("Example replaceTextOnAllPages end");
 
-        // System.out.println("Example replaceTextUsingRegularExpression start");
-        // no suitable input file replaceTextUsingRegularExpression(dataDir, outputDir);
-        // System.out.println("Example replaceTextUsingRegularExpression end");
+        System.out.println("Example replaceTextUsingRegularExpression start");
+        replaceTextUsingRegularExpression(dataDir, outputDir);
+        System.out.println("Example replaceTextUsingRegularExpression end");
 
-        // System.out.println("Example useNonEnglishFontWhenReplacingText start");
-        // no suitable input file useNonEnglishFontWhenReplacingText(dataDir, outputDir);
-        // System.out.println("Example useNonEnglishFontWhenReplacingText end");
+        System.out.println("Example useNonEnglishFontWhenReplacingText start");
+        useNonEnglishFontWhenReplacingText(dataDir, outputDir);
+        System.out.println("Example useNonEnglishFontWhenReplacingText end");
 
-        // System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem start");
-        // no suitable input file searchTextStringsAndRemoveTheContentsBetweenThem(dataDir, outputDir);
-        // System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem end");
+        System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem start");
+        searchTextStringsAndRemoveTheContentsBetweenThem(dataDir, outputDir);
+        System.out.println("Example searchTextStringsAndRemoveTheContentsBetweenThem end");
     }
 
     public static void replaceTextOnAllPages(String dataDir, String outputDir) {
-        // Open document
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create TextAbsorber object to find all instances of the input search phrase
@@ -69,11 +67,11 @@ public class ReplaceTextInPagesOfPDFDocument {
     }
 
     public static void replaceTextUsingRegularExpression(String dataDir, String outputDir) {
-        // Open document
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create TextAbsorber object to find all instances of the input search phrase
-            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("\\d{4}-\\d{4}"); // like 1999-2000
+            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(
+                    "This is a sample text on page .{3} in PDF file");
             // Set text search option to specify regular expression usage
             TextSearchOptions textSearchOptions = new TextSearchOptions(true);
             textFragmentAbsorber.setTextSearchOptions(textSearchOptions);
@@ -99,13 +97,13 @@ public class ReplaceTextInPagesOfPDFDocument {
     }
 
     public static void useNonEnglishFontWhenReplacingText(String dataDir, String outputDir) {
-        // Instantiate Document object
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Lets to change every of word "Page" to some Japan text with specific font
             // MSGothic that might be installed in the OS
             // Also, it may be another font that supports hieroglyphs
-            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber("PAGE");
+            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(
+                    "This is a sample text on page .{3} in PDF file");
             // Create instance of Text Search options
             TextSearchOptions searchOptions = new TextSearchOptions(true);
             textFragmentAbsorber.setTextSearchOptions(searchOptions);
@@ -122,7 +120,7 @@ public class ReplaceTextInPagesOfPDFDocument {
                 // Get the size of current TextSegment object
                 float size = textSegment.getTextState().getFontSize();
                 // Replace the text Fragment with Japanese text
-                textFragment.setText("");
+                textFragment.setText("ュヰレントヮタチナヒヘベサア");
                 // Set font for TextFragment as MSGothic
                 textFragment.getTextState().setFont(font);
                 textFragment.getTextState().setFontSize(size);
@@ -136,29 +134,26 @@ public class ReplaceTextInPagesOfPDFDocument {
     }
 
     public static void searchTextStringsAndRemoveTheContentsBetweenThem(String dataDir, String outputDir) {
-        // open document
-        Document doc = new Document(dataDir + "testHeading (2).pdf");
+        Document doc = new Document(dataDir + "input.pdf");
         try {
             // create TextAbsorber object to find all instances of the input search phrase
-            String from = "this is heading of level 1";
-            String till = "this is bullet style 1";
-            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(from + ".*" + till,
+            TextFragmentAbsorber textFragmentAbsorber = new TextFragmentAbsorber(
+                    "This is a sample text on page .{3} in PDF file",
                     new TextSearchOptions(true));
             // accept the absorber for first page of document
             doc.getPages().accept(textFragmentAbsorber);
             // get the extracted text fragments into collection
-            TextFragmentCollection textFragmentCollection = textFragmentAbsorber.getTextFragments();
+            TextFragmentCollection textFragments = textFragmentAbsorber.getTextFragments();
             // loop through the Text fragments
-            for (TextFragment textFragment : (Iterable<TextFragment>) textFragmentCollection) {
+            for (TextFragment textFragment : (Iterable<TextFragment>) textFragments) {
                 // It is enough to remove all segments between the first and the last if they
                 // are separate segments.
                 int size = textFragment.getSegments().size();
                 size++;
                 // after each deleting size is decremented by 1
-                while (textFragment.getSegments().size() > 2) {
-                    textFragment.getSegments().delete(2);// removes the second fragment and recalculates the remaining
-                                                         // fragments
-                }
+                while (textFragment.getSegments().size() > 2)
+                    // removes the second fragment and recalculates the remaining fragments
+                    textFragment.getSegments().delete(2);
             }
             doc.save(outputDir + "testHeading_out.pdf");
         } finally {

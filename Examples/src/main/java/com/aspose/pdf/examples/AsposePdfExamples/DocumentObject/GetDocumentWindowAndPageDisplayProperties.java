@@ -10,7 +10,6 @@ public class GetDocumentWindowAndPageDisplayProperties {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/GetDocumentWindowAndPageDisplayProperties/";
         String dataDir = Utils.getDataDir(testID);
 

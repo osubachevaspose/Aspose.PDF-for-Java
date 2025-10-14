@@ -13,7 +13,6 @@ public class CreatePDFwithTaggedText {
     }
 
     public static void runExamples() {
-        // The paths to resources and output directories.
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreatePDFwithTaggedText/";
         String outputDir = Utils.getOutDir(testID);
 
