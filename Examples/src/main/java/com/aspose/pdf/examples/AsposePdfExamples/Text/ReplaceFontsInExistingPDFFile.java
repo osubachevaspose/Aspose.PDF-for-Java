@@ -28,8 +28,7 @@ public class ReplaceFontsInExistingPDFFile {
     }
 
     public static void replaceFontsInExistingPDFFile(String dataDir, String outputDir) {
-        // Load existing PDF Document
-        Document doc = new Document(dataDir + "input.pdf");
+        Document doc = new Document(dataDir + "fonts.pdf");
         try {
             // Search text fragments and set edit option as remove unused fonts
             TextFragmentAbsorber absorber = new TextFragmentAbsorber(
@@ -41,8 +40,8 @@ public class ReplaceFontsInExistingPDFFile {
             for (Iterator<TextFragment> iter = textFragmentCollection.iterator(); iter.hasNext();) {
                 TextFragment textFragment = iter.next();
                 String fontName = textFragment.getTextState().getFont().getFontName();
-                // if the font name is ArialMT, replace font name with Arial
-                if (fontName.equals("ArialMT"))
+                // if the font name is not Arial, replace it with Arial
+                if (!fontName.equals("Arial"))
                     textFragment.getTextState().setFont(FontRepository.findFont("Arial"));
             }
             // Save the updated document
