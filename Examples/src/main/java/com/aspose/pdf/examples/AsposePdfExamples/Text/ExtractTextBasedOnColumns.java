@@ -34,14 +34,14 @@ public class ExtractTextBasedOnColumns {
     }
 
     public static void extractTextBasedOnColumns(String dataDir, String outputDir) {
-        Document doc = new Document(dataDir + "net_New-age NED's.pdf");
+        Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
         try {
             // create TextFragment Absorber instance
-            TextFragmentAbsorber tfa = new TextFragmentAbsorber();
-            doc.getPages().accept(tfa);
+            TextFragmentAbsorber absorber = new TextFragmentAbsorber();
+            doc.getPages().accept(absorber);
             // create TextFragment Collection instance
-            TextFragmentCollection tfc = tfa.getTextFragments();
-            for (TextFragment tf : (Iterable<TextFragment>) tfc) {
+            TextFragmentCollection tfColl = absorber.getTextFragments();
+            for (TextFragment tf : (Iterable<TextFragment>) tfColl) {
                 // need to reduce font size at least for 70%
                 tf.getTextState().setFontSize(tf.getTextState().getFontSize() * 0.7f);
             }
@@ -58,7 +58,7 @@ public class ExtractTextBasedOnColumns {
             String extractedText = textAbsorber.getText();
             textAbsorber.visit(tempDoc);
             // Create a writer and open the file
-            FileWriter writer = new FileWriter(new File("Extracted_text.txt"));
+            FileWriter writer = new FileWriter(new File(outputDir + "Extracted_text.txt"));
             // Write a line of text to the file
             writer.write(extractedText);
             // Close the stream
@@ -72,11 +72,12 @@ public class ExtractTextBasedOnColumns {
     }
 
     public static void usingSetScaleFactorMethod(String dataDir) {
-        Document doc = new Document(dataDir + "inputFile.pdf");
+        Document doc = new Document(dataDir + "MultiColumnPdf.pdf");
         try {
             TextAbsorber textAbsorber = new TextAbsorber();
             textAbsorber.setExtractionOptions(new TextExtractionOptions(TextExtractionOptions.TextFormattingMode.Pure));
-            // Setting scale factor to 0.5 is enough to split columns in the majority of documents
+            // Setting scale factor to 0.5 is enough to split columns in the majority of
+            // documents
             // Setting to zero allows to choose scale factor automatically
             textAbsorber.getExtractionOptions().setScaleFactor((double) 0.5);
             doc.getPages().accept(textAbsorber);
