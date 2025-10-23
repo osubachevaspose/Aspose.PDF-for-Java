@@ -18,6 +18,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.Tables.*;
 import com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Text.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Annotations.*;
+import com.aspose.pdf.examples.AsposePdfFacades.Attachments.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Bookmarks.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Document.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Forms.*;
@@ -159,7 +160,8 @@ public class Utils {
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
         ConvertPDFPagesToTIFFImage.runExamples();
-        // no input file DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        // no input file
+        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
         DeleteImagesFromThePDFFile.runExamples();
         ExtractImageProperties.runExamples();
         ExtractImagesFromThePDFFile.runExamples();
@@ -272,6 +274,13 @@ public class Utils {
         AddAnnotationInAnExistingPDFFile.runExamples();
         DeleteAllAnnotationsBySpecifiedType.runExamples();
         ExportAnnotationsFromPDFFileToXFDF.runExamples();
+
+        // AsposePdfFacades.Attachments
+        AddAttachment.runExamples();
+        AddAttachmentStream.runExamples();
+        DeleteAllAttachments.runExamples();
+        ExtractAllAttachments.runExamples();
+        GetAttachmentNames.runExamples();
 
         // AsposePdfFacades.Bookmarks
         CreateBookmarksOfAllPages.runExamples();
