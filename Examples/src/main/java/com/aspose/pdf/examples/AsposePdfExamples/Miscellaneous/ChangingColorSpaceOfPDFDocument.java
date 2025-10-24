@@ -67,8 +67,7 @@ public class ChangingColorSpaceOfPDFDocument {
             OperatorCollection contents = doc2.getPages().get_Item(1).getContents();
             for (int i = 1; i <= contents.size(); i++) {
                 Operator oper = contents.get_Item(i);
-                if (oper instanceof com.aspose.pdf.operators.SetCMYKColor
-                        || oper instanceof com.aspose.pdf.operators.SetCMYKColorStroke) {
+                if (oper instanceof SetCMYKColor || oper instanceof SetCMYKColorStroke) {
                     System.out.println(oper.toString());
                 }
             }

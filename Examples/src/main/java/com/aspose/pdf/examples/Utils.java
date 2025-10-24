@@ -11,6 +11,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.Headings.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Images.*;
 import com.aspose.pdf.examples.AsposePdfExamples.LinksAndActions.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Miscellaneous.*;
+import com.aspose.pdf.examples.AsposePdfExamples.Operators.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Pages.*;
 import com.aspose.pdf.examples.AsposePdfExamples.SecurityAndSignatures.*;
 import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
@@ -180,6 +181,11 @@ public class Utils {
         // no input file ChangingColorSpaceOfPDFDocument.runExamples();
         GettingProductAndBuildInformation.runExamples();
         HowToAddDrawingWithTransparentColor.runExamples();
+
+        // AsposePdfExamples.Operators
+        DrawXFormOnPage.runExamples();
+        PDFOperators.runExamples();
+        RemoveGraphicsObjects.runExamples();
 
         // AsposePdfExamples.Pages
         AddImageAsPageBackground.runExamples();
