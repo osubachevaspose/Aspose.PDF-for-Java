@@ -1,14 +1,14 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Images;
 
-import java.io.IOException;
-import java.io.File;
-import java.io.FileOutputStream;
-import java.io.OutputStream;
-
 import com.aspose.pdf.Document;
 import com.aspose.pdf.devices.BmpDevice;
 import com.aspose.pdf.devices.Resolution;
 import com.aspose.pdf.examples.Utils;
+
+import java.io.IOException;
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.OutputStream;
 
 public class ConvertPDFPagesToBMPImage {
 
@@ -20,7 +20,6 @@ public class ConvertPDFPagesToBMPImage {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/ConvertPDFPagesToBMPImage/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

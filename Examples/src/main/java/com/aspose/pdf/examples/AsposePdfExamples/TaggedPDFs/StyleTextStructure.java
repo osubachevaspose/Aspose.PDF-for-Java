@@ -38,7 +38,7 @@ public class StyleTextStructure {
             // Under Development
             p.getStructureTextState().setFontSize(new Nullable<Float>(18F));
             p.getStructureTextState().setForegroundColor(Color.getRed());
-            p.getStructureTextState().setFontStyle(FontStyles.Italic);
+            p.getStructureTextState().setFontStyle(new Nullable<Integer>(FontStyles.Italic));
             p.setText("Red italic text.");
             // Save Tagged Pdf Document
             doc.save(outputDir + "StyleTextStructure.pdf");

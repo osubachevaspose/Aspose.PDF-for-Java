@@ -19,7 +19,6 @@ public class ConvertPDFPagesToPNGImages {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/ConvertPDFPagesToPNGImages/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

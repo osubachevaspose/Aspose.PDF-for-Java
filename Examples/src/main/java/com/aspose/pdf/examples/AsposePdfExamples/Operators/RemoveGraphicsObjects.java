@@ -3,9 +3,10 @@ package com.aspose.pdf.examples.AsposePdfExamples.Operators;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
+import com.aspose.pdf.vector.GraphicsAbsorber;
 
 public class RemoveGraphicsObjects {
-    
+
     public static void main(String[] args) {
         runExamples();
     }
@@ -26,8 +27,6 @@ public class RemoveGraphicsObjects {
         try {
             Page page = doc.getPages().get_Item(2);
             doc.save(outputDir + "No_Graphics_out.pdf");
-        // } catch (IOException e) {
-        //     e.printStackTrace();
         } finally {
             if (doc != null)
                 doc.close();

@@ -15,7 +15,6 @@ public class SetPDFFileInformation {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/SetPDFFileInformation/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

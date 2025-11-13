@@ -20,6 +20,7 @@ public class CreateALinkToAnotherPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/LinksAndActions/CreateALinkToAnotherPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createALinkToAnotherPDFDocument start");

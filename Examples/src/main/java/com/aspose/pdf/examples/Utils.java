@@ -1,5 +1,6 @@
 package com.aspose.pdf.examples;
 
+import com.aspose.pdf.MemoryExtender;
 import com.aspose.pdf.examples.AsposePdfExamples.Annotations.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Attachments.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.*;
@@ -35,6 +36,8 @@ import java.io.File;
 public class Utils {
 
     public static void main(String[] args) {
+        MemoryExtender.setTryToCreateFolderIfAbsent(true);
+
         // run all examples in evaluation mode:
 
         // AsposePdfExamples.Annotations

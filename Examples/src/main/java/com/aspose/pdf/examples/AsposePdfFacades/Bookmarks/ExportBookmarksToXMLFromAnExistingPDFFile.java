@@ -15,7 +15,6 @@ public class ExportBookmarksToXMLFromAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Bookmarks/ExportBookmarksToXMLFromAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

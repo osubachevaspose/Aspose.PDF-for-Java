@@ -17,7 +17,6 @@ public class SuppressLocationAndReason {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/SuppressLocationAndReason/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

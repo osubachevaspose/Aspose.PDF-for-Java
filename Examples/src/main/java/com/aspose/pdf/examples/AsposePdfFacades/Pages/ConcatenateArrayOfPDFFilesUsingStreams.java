@@ -18,7 +18,6 @@ public class ConcatenateArrayOfPDFFilesUsingStreams {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Pages/ConcatenateArrayOfPDFFilesUsingStreams/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

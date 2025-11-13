@@ -95,7 +95,7 @@ public class CreateTableElement {
                 tdElement.setText(String.format("Foot %s", colIndex));
                 tdElement.setAlignment(HorizontalAlignment.Center);
                 tdElement.getStructureTextState().setFontSize(new Nullable<Float>(7f));
-                tdElement.getStructureTextState().setFontStyle(FontStyles.Bold);
+                tdElement.getStructureTextState().setFontStyle(new Nullable<Integer>(FontStyles.Bold));
             }
             StructureAttributes tableAttributes = tableElement.getAttributes()
                     .getAttributes(AttributeOwnerStandard.Table);

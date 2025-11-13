@@ -18,7 +18,6 @@ public class ExportAnnotationsFromPDFFileToXFDF {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Annotations/ExportAnnotationsFromPDFFileToXFDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

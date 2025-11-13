@@ -19,6 +19,7 @@ public class GetAttachmentsFromPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/Attachments/GetAttachmentsFromPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example getAttachmentsFromPDFDocument start");
@@ -50,8 +51,6 @@ public class GetAttachmentsFromPDFDocument {
              * java.io.FileOutputStream(fileSpecification.getName(), true);
              */
 
-            // Create output directory if not exists
-            new File(outputDir).mkdirs();
             // extract attachment into selectable path:
             FileOutputStream output = new FileOutputStream(outputDir + "output.txt", true);
             byte[] buffer = new byte[4096];

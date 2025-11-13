@@ -20,7 +20,6 @@ public class ExtractingImageFromSignatureField {
         String testID = "com/aspose/pdf/examples/AsposePdf/SecurityAndSignatures/ExtractingImageFromSignatureField/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
-        // Create output directory if not exists
         new File(outputDir).mkdirs();
 
         System.out.println("============================");

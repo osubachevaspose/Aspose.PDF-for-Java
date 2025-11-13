@@ -6,6 +6,7 @@ import com.aspose.pdf.Dash;
 import com.aspose.pdf.DefaultAppearance;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.FreeTextAnnotation;
+import com.aspose.pdf.MemoryExtender;
 import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.TextAnnotation;
 import com.aspose.pdf.TextIcon;
