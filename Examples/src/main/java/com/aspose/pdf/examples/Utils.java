@@ -31,8 +31,6 @@ import com.aspose.pdf.examples.AsposePdfFacades.SecurityAndSignatures.*;
 import com.aspose.pdf.examples.AsposePdfFacades.StampsAndWatermarks.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Text.*;
 
-import java.io.File;
-
 public class Utils {
 
     public static void main(String[] args) {
@@ -78,7 +76,7 @@ public class Utils {
         ConvertPDFToPPTX.runExamples();
         ConvertPDFToSVGFormat.runExamples();
         ConvertPDFtoXLSX.runExamples();
-        // ConvertPDFToXML.runExamples(); Will be fixed in the version 25.10
+        ConvertPDFToXML.runExamples();
         ConvertPostScriptFileToPDFFormat.runExamples();
         ConvertSVGFileToPDFFormat.runExamples();
         ConvertTextFileToPDFFormat.runExamples();
@@ -95,15 +93,8 @@ public class Utils {
         PDFToHTMLSingleHTMLWithAllResourcesEmbedded.runExamples();
         PDFToHTMLSpecifyImagesFolder.runExamples();
         PDFToHTMLSplittingOutputToMultipageHTML.runExamples();
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
-        // PDFToHTMLWithFontSubstitution.runExamples();
-        // AddStructureElementIntoElement.runExamples(); throws
-        // Exception in thread "main" java.lang.NullPointerException: Cannot invoke
-        // "com.aspose.pdf.internal.l6n.le.l1p()" because "<parameter2>" is null
-        // at
-        // com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.AddStructureElementIntoElement
-        // .addStructureElementIntoElement(AddStructureElementIntoElement.java:80)
-        // !!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!!
+        PDFToHTMLWithFontSubstitution.runExamples();
+        AddStructureElementIntoElement.runExamples();
         ValidatePDFUAStandards.runExamples();
 
         // AsposePdfExamples.DocumentObject
@@ -188,7 +179,7 @@ public class Utils {
         // AsposePdfExamples.Operators
         DrawXFormOnPage.runExamples();
         PDFOperators.runExamples();
-        RemoveGraphicsObjects.runExamples();
+        // not relevant input file RemoveGraphicsObjects.runExamples();
 
         // AsposePdfExamples.Pages
         AddImageAsPageBackground.runExamples();
@@ -344,17 +335,8 @@ public class Utils {
         ReplaceTextOnAParticularPageInAnExistingPDFFile.runExamples();
     }
 
-    private static File dir = null;
-
-    public static String getSharedDataDir() {
-        if (dir == null) {
-            dir = new File("src/main/resources/");
-        }
-        return dir.toString() + File.separator;
-    }
-
     public static String getDataDir(String testID) {
-        return getSharedDataDir() + testID;
+        return "src/main/resources/" + testID;
     }
 
     public static String getOutDir(String testID) {

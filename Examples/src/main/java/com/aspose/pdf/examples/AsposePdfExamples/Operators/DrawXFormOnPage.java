@@ -5,10 +5,7 @@ import com.aspose.pdf.OperatorCollection;
 import com.aspose.pdf.XForm;
 import com.aspose.pdf.XImage;
 import com.aspose.pdf.examples.Utils;
-import com.aspose.pdf.operators.ConcatenateMatrix;
-import com.aspose.pdf.operators.Do;
-import com.aspose.pdf.operators.GRestore;
-import com.aspose.pdf.operators.GSave;
+import com.aspose.pdf.operators.*;
 
 import java.io.FileInputStream;
 import java.io.IOException;
