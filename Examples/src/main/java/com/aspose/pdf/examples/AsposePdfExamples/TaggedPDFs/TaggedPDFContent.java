@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 
+import java.io.File;
+
 public class TaggedPDFContent {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class TaggedPDFContent {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TaggedPDFContent/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example taggedPDFContent start");
@@ -21,7 +24,6 @@ public class TaggedPDFContent {
     }
 
     public static void taggedPDFContent(String outputDir) {
-        // Create Pdf Document
         Document doc = new Document();
         try {
             // Get Content for work with TaggedPdf

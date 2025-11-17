@@ -6,6 +6,8 @@ import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 
+import java.io.File;
+
 public class CreatePDFwithTaggedText {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class CreatePDFwithTaggedText {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreatePDFwithTaggedText/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createPDFwithTaggedText start");
@@ -23,7 +26,6 @@ public class CreatePDFwithTaggedText {
     }
 
     public static void createPDFwithTaggedText(String outputDir) {
-        // Create Pdf Document
         Document doc = new Document();
         try {
             // Get Content for work with TaggedPdf

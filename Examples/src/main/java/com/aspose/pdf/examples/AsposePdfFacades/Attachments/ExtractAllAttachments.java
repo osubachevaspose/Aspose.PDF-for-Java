@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Attachments;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfExtractor;
 
+import java.io.File;
+
 public class ExtractAllAttachments {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class ExtractAllAttachments {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Attachments/ExtractAllAttachments/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example extractAllAttachments start");

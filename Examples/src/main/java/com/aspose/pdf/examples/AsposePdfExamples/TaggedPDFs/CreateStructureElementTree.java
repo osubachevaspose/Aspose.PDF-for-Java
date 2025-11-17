@@ -8,6 +8,8 @@ import com.aspose.pdf.tagged.logicalstructure.elements.grouping.ArtElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.DivElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.SectElement;
 
+import java.io.File;
+
 public class CreateStructureElementTree {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class CreateStructureElementTree {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElementTree/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createStructureElementTree start");
@@ -25,7 +28,6 @@ public class CreateStructureElementTree {
     }
 
     public static void createStructureElementTree(String outputDir) {
-        // Create Pdf Document
         Document doc = new Document();
         try {
             // Get Content for work with TaggedPdf

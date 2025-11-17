@@ -13,6 +13,8 @@ import com.aspose.pdf.tagged.logicalstructure.elements.bls.TableElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.*;
 import com.aspose.pdf.tagged.logicalstructure.elements.ils.*;
 
+import java.io.File;
+
 public class CreateStructureElement {
 
     public static void main(String[] args) {
@@ -22,6 +24,7 @@ public class CreateStructureElement {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateStructureElement/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createStructureElement start");
