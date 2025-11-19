@@ -25,12 +25,11 @@ public class PDFToHTMLSplittingOutputToMultipageHTML {
         // Load PDF document
         Document doc = new Document(dataDir + "input.pdf");
         try {
-            // Instantiate HtmlSaveOptions instance
-            HtmlSaveOptions options = new HtmlSaveOptions();
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
             // Specify the folder to save images during conversion process
-            options.setSplitIntoPages(true);
+            htmlSaveOptions.setSplitIntoPages(true);
             // Save the resultant HTML file
-            doc.save(outputDir + "splittingOutputToMultipageHTML.html", options);
+            doc.save(outputDir + "splittingOutputToMultipageHTML.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.XslFoLoadOptions;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertXSLFOToPDF {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class ConvertXSLFOToPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertXSLFOToPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertXSLFOToPDF start");

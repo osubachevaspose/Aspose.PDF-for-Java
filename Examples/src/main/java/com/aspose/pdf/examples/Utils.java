@@ -1,6 +1,5 @@
 package com.aspose.pdf.examples;
 
-import com.aspose.pdf.MemoryExtender;
 import com.aspose.pdf.examples.AsposePdfExamples.Annotations.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Attachments.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Bookmarks.*;
@@ -19,6 +18,7 @@ import com.aspose.pdf.examples.AsposePdfExamples.StampsAndWatermarks.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Tables.*;
 import com.aspose.pdf.examples.AsposePdfExamples.TaggedPDFs.*;
 import com.aspose.pdf.examples.AsposePdfExamples.Text.*;
+import com.aspose.pdf.examples.AsposePdfExamples.XmlXslt.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Annotations.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Attachments.*;
 import com.aspose.pdf.examples.AsposePdfFacades.Bookmarks.*;
@@ -34,8 +34,6 @@ import com.aspose.pdf.examples.AsposePdfFacades.Text.*;
 public class Utils {
 
     public static void main(String[] args) {
-        MemoryExtender.setTryToCreateFolderIfAbsent(true);
-
         // run all examples in evaluation mode:
 
         // AsposePdfExamples.Annotations
@@ -270,6 +268,10 @@ public class Utils {
         UseLatexScript.runExamples();
         UseLatexScript3.runExamples();
 
+        // AsposePdfExamples.XmlXslt
+        BreakfastMenuUsingXmlAndXslt.runExamples();
+        HelloWorldPDFUsingXmlAndXslt.runExamples();
+        
         // AsposePdfFacades.Annotations
         AddAnnotationInAnExistingPDFFile.runExamples();
         DeleteAllAnnotationsBySpecifiedType.runExamples();

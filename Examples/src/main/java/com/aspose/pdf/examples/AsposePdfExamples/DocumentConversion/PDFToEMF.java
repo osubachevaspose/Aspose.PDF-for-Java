@@ -5,6 +5,8 @@ import com.aspose.pdf.devices.EmfDevice;
 import com.aspose.pdf.devices.Resolution;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class PDFToEMF {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class PDFToEMF {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/PDFToEMF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example pdftoemf start");

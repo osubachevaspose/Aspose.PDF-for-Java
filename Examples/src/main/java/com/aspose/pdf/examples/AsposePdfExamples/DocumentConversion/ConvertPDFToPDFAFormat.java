@@ -6,6 +6,8 @@ import com.aspose.pdf.FileSpecification;
 import com.aspose.pdf.PdfFormat;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertPDFToPDFAFormat {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class ConvertPDFToPDFAFormat {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertPDFToPDFAFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example pdfTopdfA1bConversion start");

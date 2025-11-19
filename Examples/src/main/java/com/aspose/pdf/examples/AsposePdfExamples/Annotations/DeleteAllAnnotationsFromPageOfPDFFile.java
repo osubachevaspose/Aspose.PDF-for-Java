@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfExamples.Annotations;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class DeleteAllAnnotationsFromPageOfPDFFile {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class DeleteAllAnnotationsFromPageOfPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/DeleteAllAnnotationsFromPageOfPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example deleteAllAnnotationsFromPageOfPDFFile start");

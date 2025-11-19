@@ -26,20 +26,18 @@ public class PDFToHTMLSingleHTMLWithAllResourcesEmbedded {
         // Load source PDF file
         Document doc = new Document(dataDir + "input.pdf");
         try {
-            // Instantiate HTML Save options object
-            HtmlSaveOptions newOptions = new HtmlSaveOptions();
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
             // Enable option to embed all resources inside the HTML
-            newOptions.setPartsEmbeddingMode(HtmlSaveOptions.PartsEmbeddingModes.EmbedAllIntoHtml);
+            htmlSaveOptions.setPartsEmbeddingMode(HtmlSaveOptions.PartsEmbeddingModes.EmbedAllIntoHtml);
             // This is just optimization for IE and can be omitted
-            newOptions.setLettersPositioningMethod(
+            htmlSaveOptions.setLettersPositioningMethod(
                     LettersPositioningMethods.UseEmUnitsAndCompensationOfRoundingErrorsInCss);
-            newOptions.setRasterImagesSavingMode(
+            htmlSaveOptions.setRasterImagesSavingMode(
                     HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground);
-            newOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SaveInAllFormats);
+            htmlSaveOptions.setFontSavingMode(HtmlSaveOptions.FontSavingModes.SaveInAllFormats);
             // Output file path
             String outHtmlFile = outputDir + "Single_output.html";
-            // Save the output file
-            doc.save(outHtmlFile, newOptions);
+            doc.save(outHtmlFile, htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

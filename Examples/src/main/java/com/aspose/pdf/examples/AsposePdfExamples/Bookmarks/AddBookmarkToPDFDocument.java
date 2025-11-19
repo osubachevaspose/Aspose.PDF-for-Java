@@ -5,6 +5,8 @@ import com.aspose.pdf.GoToAction;
 import com.aspose.pdf.OutlineItemCollection;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddBookmarkToPDFDocument {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class AddBookmarkToPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/AddBookmarkToPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addBookmarkToPDFDocument start");

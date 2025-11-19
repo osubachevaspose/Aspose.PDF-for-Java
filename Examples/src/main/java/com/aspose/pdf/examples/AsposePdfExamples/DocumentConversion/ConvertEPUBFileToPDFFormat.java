@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.EpubLoadOptions;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertEPUBFileToPDFFormat {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class ConvertEPUBFileToPDFFormat {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertEPUBFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertEPUBFileToPDFFormat start");

@@ -30,16 +30,15 @@ public class PDFToHTMLWithFontSubstitution {
             // configure font substitution
             CustomSubst1 subst1 = new CustomSubst1();
             FontRepository.getSubstitutions().add(subst1);
-            // Configure notifier to console
             doc.FontSubstitution.add(new Document.FontSubstitutionHandler() {
                 public void invoke(Font font, Font newFont) {
                     // print substituted FontNames into console
-                    System.out.println("Warning: Font " + font.getFontName() + " was substituted with another font -> "
-                            + newFont.getFontName());
+                    System.out.println("Warning: Font " + font.getFontName() +
+                            " was substituted with another font -> " + newFont.getFontName());
                 }
             });
-            HtmlSaveOptions options = new HtmlSaveOptions();
-            doc.save(outputDir + "pdfToHTMLWithFontSubstitution.html", options);
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
+            doc.save(outputDir + "pdfToHTMLWithFontSubstitution.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

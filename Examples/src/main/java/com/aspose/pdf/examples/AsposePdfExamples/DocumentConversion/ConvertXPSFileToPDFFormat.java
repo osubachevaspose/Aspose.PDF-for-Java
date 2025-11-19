@@ -5,6 +5,8 @@ import com.aspose.pdf.LoadOptions;
 import com.aspose.pdf.XpsLoadOptions;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertXPSFileToPDFFormat {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class ConvertXPSFileToPDFFormat {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertXPSFileToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertXPSFileToPDFFormat start");

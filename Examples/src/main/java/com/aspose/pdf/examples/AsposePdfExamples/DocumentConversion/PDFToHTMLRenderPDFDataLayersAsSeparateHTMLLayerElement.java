@@ -22,15 +22,12 @@ public class PDFToHTMLRenderPDFDataLayersAsSeparateHTMLLayerElement {
     }
 
     public static void renderPDFDataLayersAsSeparateHTMLLayerElement(String dataDir, String outputDir) {
-        // Open the PDF file
         Document doc = new Document(dataDir + "input2.pdf");
         try {
-            // Instantiate HTML SaveOptions object
-            HtmlSaveOptions htmlOptions = new HtmlSaveOptions();
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
             // Specify to render PDF document layers separately in output HTML
-            htmlOptions.setConvertMarkedContentToLayers(true);
-            // Save the document
-            doc.save(outputDir + "renderPDFDataLayersAsSeparateHTMLLayerElement.html", htmlOptions);
+            htmlSaveOptions.setConvertMarkedContentToLayers(true);
+            doc.save(outputDir + "renderPDFDataLayersAsSeparateHTMLLayerElement.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

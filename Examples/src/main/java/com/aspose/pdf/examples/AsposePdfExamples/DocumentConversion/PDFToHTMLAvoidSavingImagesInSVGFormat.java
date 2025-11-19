@@ -26,13 +26,13 @@ public class PDFToHTMLAvoidSavingImagesInSVGFormat {
         Document doc = new Document(dataDir + "input.pdf");
         try {
             // Create HtmlSaveOptions with tested feature
-            HtmlSaveOptions options = new HtmlSaveOptions();
-            options.setFixedLayout(true);
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
+            htmlSaveOptions.setFixedLayout(true);
             // save images in PNG format instead of SVG
-            options.setRasterImagesSavingMode(
+            htmlSaveOptions.setRasterImagesSavingMode(
                     HtmlSaveOptions.RasterImagesSavingModes.AsEmbeddedPartsOfPngPageBackground);
             // save output as HTML
-            doc.save(outputDir + "avoidSavingImagesInSVGFormat.html", options);
+            doc.save(outputDir + "avoidSavingImagesInSVGFormat.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

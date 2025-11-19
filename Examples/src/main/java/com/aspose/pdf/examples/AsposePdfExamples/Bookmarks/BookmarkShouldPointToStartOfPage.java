@@ -10,6 +10,8 @@ import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 import com.aspose.pdf.facades.ViewerPreference;
 
+import java.io.File;
+
 public class BookmarkShouldPointToStartOfPage {
 
     public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class BookmarkShouldPointToStartOfPage {
         String testID = "com/aspose/pdf/examples/AsposePdf/Bookmarks/BookmarkShouldPointToStartOfPage/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example bookmarkShouldPointToStartOfPage start");

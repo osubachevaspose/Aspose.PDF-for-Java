@@ -6,11 +6,12 @@ import com.aspose.pdf.Dash;
 import com.aspose.pdf.DefaultAppearance;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.FreeTextAnnotation;
-import com.aspose.pdf.MemoryExtender;
 import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.TextAnnotation;
 import com.aspose.pdf.TextIcon;
 import com.aspose.pdf.examples.Utils;
+
+import java.io.File;
 
 public class AddAnnotationToPDF {
 
@@ -22,6 +23,7 @@ public class AddAnnotationToPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/Annotations/AddAnnotationToPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addAnnotationToPDF start");

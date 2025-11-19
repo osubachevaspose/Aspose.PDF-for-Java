@@ -39,10 +39,9 @@ public class PDFToHTMLGetWarningForFontSubstitution {
                             + newFont.getFontName());
                 }
             });
-            // instantiate HTMLSave option to save output in HTML
-            HtmlSaveOptions options = new HtmlSaveOptions();
-            // save resultant file
-            doc.save(outputDir + "getWarningForFontSubstitution.html", options);
+            // instantiate HtmlSaveOptions to save output in HTML
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
+            doc.save(outputDir + "getWarningForFontSubstitution.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

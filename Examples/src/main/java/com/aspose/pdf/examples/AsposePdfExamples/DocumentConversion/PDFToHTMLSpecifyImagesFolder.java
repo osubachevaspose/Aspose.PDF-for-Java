@@ -25,12 +25,11 @@ public class PDFToHTMLSpecifyImagesFolder {
         // Load PDF document
         Document doc = new Document(dataDir + "SampleDataTable.pdf");
         try {
-            // Instantiate HtmlSaveOptions instance
-            HtmlSaveOptions options = new HtmlSaveOptions();
+            HtmlSaveOptions htmlSaveOptions = new HtmlSaveOptions();
             // Specify the folder (that exist) to save images during conversion process
-            options.setSpecialFolderForAllImages(outputDir + "imageFolder/");
+            htmlSaveOptions.setSpecialFolderForAllImages(outputDir + "imageFolder/");
             // Save the resultant HTML file
-            doc.save(outputDir + "resultant.html", options);
+            doc.save(outputDir + "resultant.html", htmlSaveOptions);
         } finally {
             if (doc != null)
                 doc.close();

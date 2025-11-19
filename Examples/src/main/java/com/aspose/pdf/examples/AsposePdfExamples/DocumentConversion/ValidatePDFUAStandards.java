@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfExamples.DocumentConversion;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ValidatePDFUAStandards {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class ValidatePDFUAStandards {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ValidatePDFUAStandards/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example validatePDFUAStandards start");

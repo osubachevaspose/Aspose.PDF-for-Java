@@ -5,6 +5,8 @@ import com.aspose.pdf.HtmlLoadOptions;
 import com.aspose.pdf.LoadOptions;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertHTMLToPDFFormat {
 
     public static void main(String[] args) {
@@ -15,18 +17,17 @@ public class ConvertHTMLToPDFFormat {
         String testID = "com/aspose/pdf/examples/AsposePdf/Conversion/ConvertHTMLToPDFFormat/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example renderHTMLwithSVGData start");
         renderHTMLwithSVGData(dataDir, outputDir);
         System.out.println("Example renderHTMLwithSVGData end");
 
-        System.out.println("============================");
         System.out.println("Example convertHTMLFileToPDF start");
         convertHTMLFileToPDF(dataDir, outputDir);
         System.out.println("Example convertHTMLFileToPDF end");
 
-        System.out.println("============================");
         System.out.println("Example renderContentToSamePage start");
         renderContentToSamePage(dataDir, outputDir);
         System.out.println("Example renderContentToSamePage end");

@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Annotations;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 
+import java.io.File;
+
 public class AddAnnotationInAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class AddAnnotationInAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Annotations/AddAnnotationInAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addAnnotationInAnExistingPDFFile start");
@@ -25,7 +28,7 @@ public class AddAnnotationInAnExistingPDFFile {
         try {
             // open document
             contentEditor.bindPdf(dataDir + "input.pdf");
-            // crate rectangle
+            // create rectangle
             java.awt.Rectangle rect = new java.awt.Rectangle(50, 50, 100, 100);
             // create annotation
             contentEditor.createFreeText(rect, "Sample content", 1);
