@@ -5,6 +5,8 @@ import com.aspose.pdf.PdfPageStamp;
 import com.aspose.pdf.Rotation;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddingPDFPageStampInThePDFFile {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class AddingPDFPageStampInThePDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/AddingPDFPageStampInThePDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addingPDFPageStampInThePDFFile start");

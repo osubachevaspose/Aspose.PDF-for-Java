@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class GetParticularPageInPDFFile {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class GetParticularPageInPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Pages/GetParticularPageInPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example getParticularPageInPDFFile start");

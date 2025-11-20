@@ -11,6 +11,8 @@ import com.aspose.pdf.Table;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ForceTableRenderingOnNewPage {
 
     public static void main(String[] args) {
@@ -20,6 +22,7 @@ public class ForceTableRenderingOnNewPage {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Tables/ForceTableRenderingOnNewPage/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example forceTableRenderingOnNewPage start");

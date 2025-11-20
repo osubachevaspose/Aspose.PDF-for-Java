@@ -9,6 +9,7 @@ import com.aspose.pdf.LinkAnnotation;
 import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.util.List;
 
 public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
@@ -21,6 +22,7 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example deleteImageFromPDFResourcesFoundByImagePlacementAbsorber start");

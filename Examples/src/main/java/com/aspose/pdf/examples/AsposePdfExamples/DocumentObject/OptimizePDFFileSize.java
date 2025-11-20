@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.optimization.OptimizationOptions;
 
+import java.io.File;
+
 public class OptimizePDFFileSize {
 
 	public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class OptimizePDFFileSize {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/OptimizePDFFileSize/";
 		String dataDir = Utils.getDataDir(testID);
 		String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
 		System.out.println("============================");
 		System.out.println("Example removeUnnecessaryObjects start");

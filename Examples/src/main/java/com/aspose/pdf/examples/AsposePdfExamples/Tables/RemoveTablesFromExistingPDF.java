@@ -8,6 +8,8 @@ import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfAnnotationEditor;
 
+import java.io.File;
+
 public class RemoveTablesFromExistingPDF {
 
     public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class RemoveTablesFromExistingPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/Tables/RemoveTablesFromExistingPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example removeTablesFromExistingPDF start");

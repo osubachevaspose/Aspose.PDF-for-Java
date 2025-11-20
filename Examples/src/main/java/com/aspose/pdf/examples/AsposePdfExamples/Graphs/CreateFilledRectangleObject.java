@@ -7,6 +7,8 @@ import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Rectangle;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class CreateFilledRectangleObject {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class CreateFilledRectangleObject {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Graphs/CreateFilledRectangleObject/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createFilledRectangleObject start");

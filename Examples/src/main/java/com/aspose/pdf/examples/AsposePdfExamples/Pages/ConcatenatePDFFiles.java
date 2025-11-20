@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfExamples.Pages;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConcatenatePDFFiles {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class ConcatenatePDFFiles {
         String testID = "com/aspose/pdf/examples/AsposePdf/Pages/ConcatenatePDFFiles/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example concatenatePDFFiles start");

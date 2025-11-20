@@ -25,6 +25,7 @@ public class AddImageToExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/AddImageToExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addImageToExistingPDFFile start");

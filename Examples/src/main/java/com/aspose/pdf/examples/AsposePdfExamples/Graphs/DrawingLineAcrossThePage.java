@@ -6,6 +6,8 @@ import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Line;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class DrawingLineAcrossThePage {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class DrawingLineAcrossThePage {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Graphs/DrawingLineAcrossThePage/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example drawingLineAcrossThePage start");

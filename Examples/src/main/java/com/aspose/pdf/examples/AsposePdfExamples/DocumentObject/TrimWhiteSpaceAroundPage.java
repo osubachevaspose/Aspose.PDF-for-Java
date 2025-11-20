@@ -5,6 +5,8 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.Rectangle;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class TrimWhiteSpaceAroundPage {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class TrimWhiteSpaceAroundPage {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/TrimWhiteSpaceAroundPage/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example trimWhiteSpaceAroundPage start");

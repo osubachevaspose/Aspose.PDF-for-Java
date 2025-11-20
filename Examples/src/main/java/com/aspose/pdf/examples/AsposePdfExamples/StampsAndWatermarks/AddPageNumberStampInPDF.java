@@ -8,6 +8,8 @@ import com.aspose.pdf.HorizontalAlignment;
 import com.aspose.pdf.PageNumberStamp;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddPageNumberStampInPDF {
 
     public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class AddPageNumberStampInPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/AddPageNumberStampInPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addPageNumberStampInPDF start");

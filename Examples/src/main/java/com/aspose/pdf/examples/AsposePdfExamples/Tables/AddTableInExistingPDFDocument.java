@@ -11,6 +11,8 @@ import com.aspose.pdf.MarginInfo;
 import com.aspose.pdf.Table;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddTableInExistingPDFDocument {
 
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ public class AddTableInExistingPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/Tables/AddTableInExistingPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addTableInExistingPDFDocument start");

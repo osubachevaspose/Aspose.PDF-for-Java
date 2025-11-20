@@ -6,6 +6,8 @@ import com.aspose.pdf.PageLayout;
 import com.aspose.pdf.PageMode;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class SetDocumentWindowAndPageDisplayProperties {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class SetDocumentWindowAndPageDisplayProperties {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/SetDocumentWindowAndPageDisplayProperties/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setDocumentWindowAndPageDisplayProperties start");

@@ -6,6 +6,8 @@ import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Line;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddLineObjectToPDF {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class AddLineObjectToPDF {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Graphs/AddLineObjectToPDF/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addLineObjectToPDF start");

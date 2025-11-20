@@ -5,6 +5,8 @@ import com.aspose.pdf.ImageStamp;
 import com.aspose.pdf.Rotation;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddingImageStampInPDFFile {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class AddingImageStampInPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/AddingImageStampInPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addingImageStampInPDFFile start");

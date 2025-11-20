@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.FormType;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ConvertDynamicXFAFormToStandardAcroForm {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class ConvertDynamicXFAFormToStandardAcroForm {
         String testID = "com/aspose/pdf/examples/AsposePdf/Forms/ConvertDynamicXFAFormToStandardAcroForm/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertDynamicXFAFormToStandardAcroForm start");

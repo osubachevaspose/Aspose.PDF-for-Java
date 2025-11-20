@@ -22,6 +22,7 @@ public class SettingDPIOrPPIOfImagesInPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/SettingDPIOrPPIOfImagesInPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example settingDPIOrPPIOfImagesInPDF start");

@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.DocumentInfo;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class SetPDFFileInformation {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class SetPDFFileInformation {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/SetPDFFileInformation/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setPDFFileInformation start");

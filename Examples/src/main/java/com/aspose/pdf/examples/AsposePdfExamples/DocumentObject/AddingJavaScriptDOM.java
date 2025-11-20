@@ -7,6 +7,8 @@ import com.aspose.pdf.TeXFragment;
 import com.aspose.pdf.TextBoxField;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddingJavaScriptDOM {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class AddingJavaScriptDOM {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddingJavaScriptDOM/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addingJavaScriptDOM start");

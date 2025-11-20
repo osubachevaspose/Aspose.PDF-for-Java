@@ -7,6 +7,7 @@ import com.aspose.pdf.XImage;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.operators.*;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -20,6 +21,7 @@ public class DrawXFormOnPage {
         String testID = "com/aspose/pdf/examples/AsposePdf/Operators/DrawXFormOnPage/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example drawXFormOnPage start");

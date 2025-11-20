@@ -5,6 +5,7 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 
@@ -18,6 +19,7 @@ public class AddImageAsPageBackground {
         String testID = "com/aspose/pdf/examples/AsposePdf/Pages/AddImageAsPageBackground/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addImageAsPageBackground start");

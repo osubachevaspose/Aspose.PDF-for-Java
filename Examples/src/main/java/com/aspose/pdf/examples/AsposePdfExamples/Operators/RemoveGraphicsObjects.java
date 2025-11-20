@@ -7,6 +7,8 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.operators.*;
 
+import java.io.File;
+
 public class RemoveGraphicsObjects {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class RemoveGraphicsObjects {
         String testID = "com/aspose/pdf/examples/AsposePdf/Operators/RemoveGraphicsObjects/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example removeGraphicsObjects start");

@@ -20,6 +20,7 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/ConvertingNonSearchablePDFToSearchablePDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertingNonSearchablePDFToSearchablePDFDocument start");
@@ -28,7 +29,6 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
     }
 
     public static void convertingNonSearchablePDFToSearchablePDFDocument(String dataDir, String outputDir) {
-        String myDir = "PathToDir";
         // Create callBack - logic recognize text for pdf images. Use outer OCR support
         // HOCR standard(http://en.wikipedia.org/wiki/HOCR).
         // We have used free google tesseract
@@ -37,14 +37,14 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
             @SuppressWarnings("deprecation")
             @Override
             public String invoke(java.awt.image.BufferedImage img) {
-                File outputfile = new File(myDir + "test.jpg");
+                File outputfile = new File(outputDir + "test.jpg");
                 try {
                     ImageIO.write(img, "jpg", outputfile);
                 } catch (IOException e1) {
                     e1.printStackTrace();
                 }
                 try {
-                    String tesseractCommand = "tesseract" + " " + myDir + "test.jpg" + " " + myDir + "out hocr";
+                    String tesseractCommand = "tesseract" + " " + outputDir + "test.jpg" + " " + outputDir + "out hocr";
                     java.lang.Process process = Runtime.getRuntime().exec(tesseractCommand);
                     System.out.println(tesseractCommand);
                     process.waitFor();
@@ -54,7 +54,7 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
                     e.printStackTrace();
                 }
                 // reading out.html to string
-                File file = new File(myDir + "out.html");
+                File file = new File(outputDir + "out.html");
                 StringBuilder fileContents = new StringBuilder((int) file.length());
                 Scanner scanner = null;
                 try {
@@ -70,21 +70,21 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
                         scanner.close();
                 }
                 // deleting temp files
-                File fileOut = new File(myDir + "out.html");
+                File fileOut = new File(outputDir + "out.html");
                 if (fileOut.exists()) {
                     fileOut.delete();
                 }
-                File fileTest = new File(myDir + "test.jpg");
+                File fileTest = new File(outputDir + "test.jpg");
                 if (fileTest.exists()) {
                     fileTest.delete();
                 }
                 return fileContents.toString();
             }
         };
-        Document doc = new Document(myDir + "outFile.pdf");
+        Document doc = new Document(outputDir + "outFile.pdf");
         try {
             doc.convert(cbgh);
-            doc.save(myDir + "output971.pdf");
+            doc.save(outputDir + "output971.pdf");
         } finally {
             if (doc != null)
                 doc.close();

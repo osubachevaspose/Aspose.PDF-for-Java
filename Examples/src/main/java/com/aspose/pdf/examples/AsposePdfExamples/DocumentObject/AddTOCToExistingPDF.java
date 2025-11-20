@@ -9,6 +9,8 @@ import com.aspose.pdf.TextSegment;
 import com.aspose.pdf.TocInfo;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddTOCToExistingPDF {
 
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class AddTOCToExistingPDF {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddTOCToExistingPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addTOCToExistingPDF start");

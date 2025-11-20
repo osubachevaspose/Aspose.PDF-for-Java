@@ -9,6 +9,8 @@ import com.aspose.pdf.TextStamp;
 import com.aspose.pdf.VerticalAlignment;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddingDifferentHeadersInOnePDFFile {
 
     public static void main(String[] args) {
@@ -18,6 +20,7 @@ public class AddingDifferentHeadersInOnePDFFile {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/AddingDifferentHeadersInOnePDFFile/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addingDifferentHeadersInOnePDFFile start");

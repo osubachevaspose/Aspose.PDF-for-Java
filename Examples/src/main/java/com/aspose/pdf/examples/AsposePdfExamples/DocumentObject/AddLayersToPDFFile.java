@@ -5,6 +5,7 @@ import com.aspose.pdf.Layer;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.util.ArrayList;
 
 public class AddLayersToPDFFile {
@@ -16,6 +17,7 @@ public class AddLayersToPDFFile {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/AddLayersToPDFFile/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addLayersToPDFFile start");

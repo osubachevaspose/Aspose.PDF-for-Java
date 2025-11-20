@@ -1,13 +1,14 @@
 package com.aspose.pdf.examples.AsposePdfExamples.Forms;
 
-import java.awt.Color;
-
 import com.aspose.pdf.DefaultAppearance;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.Font;
 import com.aspose.pdf.FontRepository;
 import com.aspose.pdf.TextBoxField;
 import com.aspose.pdf.examples.Utils;
+
+import java.awt.Color;
+import java.io.File;
 
 public class SetCustomFormFieldFont {
 
@@ -19,6 +20,7 @@ public class SetCustomFormFieldFont {
         String testID = "com/aspose/pdf/examples/AsposePdf/Forms/SetCustomFormFieldFont/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setCustomFormFieldFont start");

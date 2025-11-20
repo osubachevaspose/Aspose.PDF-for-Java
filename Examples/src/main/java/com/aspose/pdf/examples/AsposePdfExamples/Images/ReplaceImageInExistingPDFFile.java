@@ -3,6 +3,7 @@ package com.aspose.pdf.examples.AsposePdfExamples.Images;
 import com.aspose.pdf.Document;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 
@@ -16,6 +17,7 @@ public class ReplaceImageInExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Images/ReplaceImageInExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example replaceImageInExistingPDFFile start");

@@ -18,6 +18,7 @@ import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 
 import java.awt.Color;
+import java.io.File;
 
 public class AddFormFieldInPDFDocument {
 
@@ -29,6 +30,7 @@ public class AddFormFieldInPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/Forms/AddFormFieldInPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addFormFieldInPDFDocument start");

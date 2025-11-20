@@ -7,6 +7,8 @@ import com.aspose.pdf.NumberingStyle;
 import com.aspose.pdf.Page;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ApplyNumberingStyleInHeading {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class ApplyNumberingStyleInHeading {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Headings/ApplyNumberingStyleInHeading/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example applyNumberingStyleInHeading start");

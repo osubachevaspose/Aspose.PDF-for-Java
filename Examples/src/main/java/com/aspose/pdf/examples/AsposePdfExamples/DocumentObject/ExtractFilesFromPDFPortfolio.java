@@ -21,13 +21,13 @@ public class ExtractFilesFromPDFPortfolio {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/ExtractFilesFromPDFPortfolio/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createPortfolioFile start");
         createPortfolioFile(dataDir, outputDir);
         System.out.println("Example createPortfolioFile end");
 
-        System.out.println("============================");
         System.out.println("Example deletePDFPortfolioFile start");
         deletePDFPortfolioFile(dataDir, outputDir);
         System.out.println("Example deletePDFPortfolioFile end");

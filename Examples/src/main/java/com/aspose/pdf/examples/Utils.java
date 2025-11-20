@@ -34,6 +34,7 @@ import com.aspose.pdf.examples.AsposePdfFacades.Text.*;
 public class Utils {
 
     public static void main(String[] args) {
+        // MemoryExtender.setTryToCreateFolderIfAbsent(true);
         // run all examples in evaluation mode:
 
         // AsposePdfExamples.Annotations

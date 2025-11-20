@@ -8,6 +8,8 @@ import com.aspose.pdf.TextSegment;
 import com.aspose.pdf.TextState;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class EmbeddingFontsWhileCreatingPDF {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class EmbeddingFontsWhileCreatingPDF {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/EmbeddingFontsWhileCreatingPDF/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example embeddingFontsWhileCreatingPDF start");

@@ -4,6 +4,8 @@ import com.aspose.pdf.Document;
 import com.aspose.pdf.JavascriptAction;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class SetPDFExpiration {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class SetPDFExpiration {
         String testID = "com/aspose/pdf/examples/AsposePdf/DocumentObject/SetPDFExpiration/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setPDFExpiration start");

@@ -5,6 +5,8 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.PageCollection;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class UpdatePageDimensions {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class UpdatePageDimensions {
         String testID = "com/aspose/pdf/examples/AsposePdf/Pages/UpdatePageDimensions/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example updatePageDimensions start");

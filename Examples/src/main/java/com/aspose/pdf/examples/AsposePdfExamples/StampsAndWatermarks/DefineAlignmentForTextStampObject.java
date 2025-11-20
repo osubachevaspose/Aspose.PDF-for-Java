@@ -7,6 +7,8 @@ import com.aspose.pdf.VerticalAlignment;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.FormattedText;
 
+import java.io.File;
+
 public class DefineAlignmentForTextStampObject {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class DefineAlignmentForTextStampObject {
         String testID = "com/aspose/pdf/examples/AsposePdf/StampsAndWatermarks/DefineAlignmentForTextStampObject/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example defineAlignmentForTextStampObject start");
