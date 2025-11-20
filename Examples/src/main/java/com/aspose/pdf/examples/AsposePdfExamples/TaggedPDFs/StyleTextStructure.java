@@ -8,6 +8,8 @@ import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 
+import java.io.File;
+
 public class StyleTextStructure {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class StyleTextStructure {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StyleTextStructure/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example styleTextStructure start");

@@ -9,6 +9,8 @@ import com.aspose.pdf.TextBuilder;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddTextToAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -19,6 +21,7 @@ public class AddTextToAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddTextToAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addTextToAnExistingPDFFile start");

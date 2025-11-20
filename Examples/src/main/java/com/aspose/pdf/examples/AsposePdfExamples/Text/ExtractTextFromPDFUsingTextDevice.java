@@ -6,6 +6,7 @@ import com.aspose.pdf.TextExtractionOptions;
 import com.aspose.pdf.devices.TextDevice;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.io.FileOutputStream;
 import java.io.IOException;
 
@@ -19,6 +20,7 @@ public class ExtractTextFromPDFUsingTextDevice {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ExtractTextFromPDFUsingTextDevice/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example extractTextFromParticularPage start");

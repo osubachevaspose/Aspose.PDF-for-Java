@@ -6,6 +6,8 @@ import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.ils.NoteElement;
 
+import java.io.File;
+
 public class CreateNoteStructureElement {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class CreateNoteStructureElement {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/CreateNoteStructureElement/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createNoteStructureElement start");

@@ -11,6 +11,8 @@ import com.aspose.pdf.TextSearchOptions;
 import com.aspose.pdf.TextSegment;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class ReplaceTextInPagesOfPDFDocument {
 
     public static void main(String[] args) {
@@ -21,6 +23,7 @@ public class ReplaceTextInPagesOfPDFDocument {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceTextInPagesOfPDFDocument/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example replaceTextOnAllPages start");

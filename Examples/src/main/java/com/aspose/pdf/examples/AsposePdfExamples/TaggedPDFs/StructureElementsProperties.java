@@ -7,6 +7,8 @@ import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.HeaderElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.grouping.SectElement;
 
+import java.io.File;
+
 public class StructureElementsProperties {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class StructureElementsProperties {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/StructureElementsProperties/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example structureElementsProperties start");

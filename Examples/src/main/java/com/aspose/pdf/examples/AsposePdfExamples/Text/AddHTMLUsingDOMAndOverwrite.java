@@ -6,6 +6,8 @@ import com.aspose.pdf.Page;
 import com.aspose.pdf.TextState;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddHTMLUsingDOMAndOverwrite {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class AddHTMLUsingDOMAndOverwrite {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddHTMLUsingDOMAndOverwrite/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addHTMLUsingDOMAndOverwrite start");

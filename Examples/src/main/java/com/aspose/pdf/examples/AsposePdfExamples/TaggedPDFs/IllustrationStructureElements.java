@@ -5,6 +5,8 @@ import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.IllustrationElement;
 
+import java.io.File;
+
 public class IllustrationStructureElements {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class IllustrationStructureElements {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/IllustrationStructureElements/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example illustrationStructureElements start");

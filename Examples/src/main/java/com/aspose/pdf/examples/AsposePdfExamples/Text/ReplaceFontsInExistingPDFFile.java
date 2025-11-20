@@ -8,6 +8,7 @@ import com.aspose.pdf.TextFragmentAbsorber;
 import com.aspose.pdf.TextFragmentCollection;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
 import java.util.Iterator;
 
 public class ReplaceFontsInExistingPDFFile {
@@ -20,6 +21,7 @@ public class ReplaceFontsInExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ReplaceFontsInExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example replaceFontsInExistingPDFFile start");

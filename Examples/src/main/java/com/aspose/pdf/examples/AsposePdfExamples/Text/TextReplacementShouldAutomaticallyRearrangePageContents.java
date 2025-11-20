@@ -7,6 +7,8 @@ import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.TextFragmentAbsorber;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class TextReplacementShouldAutomaticallyRearrangePageContents {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class TextReplacementShouldAutomaticallyRearrangePageContents {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/TextReplacementShouldAutomaticallyRearrangePageContents/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example textReplacementShouldAutomaticallyRearrangePageContents start");

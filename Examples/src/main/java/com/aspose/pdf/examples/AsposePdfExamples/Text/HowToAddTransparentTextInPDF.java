@@ -8,6 +8,8 @@ import com.aspose.pdf.drawing.Graph;
 import com.aspose.pdf.drawing.Rectangle;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class HowToAddTransparentTextInPDF {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class HowToAddTransparentTextInPDF {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/HowToAddTransparentTextInPDF/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example howToAddTransparentTextInPDF start");

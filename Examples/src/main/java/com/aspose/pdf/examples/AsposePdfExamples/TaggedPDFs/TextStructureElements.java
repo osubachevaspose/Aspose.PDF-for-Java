@@ -6,6 +6,8 @@ import com.aspose.pdf.tagged.ITaggedContent;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 
+import java.io.File;
+
 public class TextStructureElements {
 
     public static void main(String[] args) {
@@ -15,6 +17,7 @@ public class TextStructureElements {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/TextStructureElements/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example textStructureElements start");

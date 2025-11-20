@@ -22,6 +22,7 @@ public class ExtractTextBasedOnColumns {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/ExtractTextBasedOnColumns/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example extractTextBasedOnColumns start");

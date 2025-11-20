@@ -8,6 +8,8 @@ import com.aspose.pdf.TextBuilder;
 import com.aspose.pdf.TextFragment;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class AddRotatedTextInPDF {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class AddRotatedTextInPDF {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/AddRotatedTextInPDF/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addRotatedTextInPDF start");

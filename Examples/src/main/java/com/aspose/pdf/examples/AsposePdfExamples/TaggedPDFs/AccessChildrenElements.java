@@ -7,6 +7,8 @@ import com.aspose.pdf.tagged.logicalstructure.ElementList;
 import com.aspose.pdf.tagged.logicalstructure.elements.Element;
 import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 
+import java.io.File;
+
 public class AccessChildrenElements {
 
     public static void main(String[] args) {
@@ -17,6 +19,7 @@ public class AccessChildrenElements {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/AccessChildrenElements/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example accessChildrenElements start");

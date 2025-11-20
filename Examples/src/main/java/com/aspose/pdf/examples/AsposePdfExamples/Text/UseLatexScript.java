@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfExamples.Text;
 import com.aspose.pdf.*;
 import com.aspose.pdf.examples.Utils;
 
+import java.io.File;
+
 public class UseLatexScript {
 
     public static void main(String[] args) {
@@ -12,6 +14,7 @@ public class UseLatexScript {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/Text/UseLatexScript/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example useLatexScript start");

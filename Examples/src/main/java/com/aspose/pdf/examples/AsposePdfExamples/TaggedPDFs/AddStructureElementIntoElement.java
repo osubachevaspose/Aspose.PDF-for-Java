@@ -7,6 +7,8 @@ import com.aspose.pdf.tagged.logicalstructure.elements.StructureElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.bls.ParagraphElement;
 import com.aspose.pdf.tagged.logicalstructure.elements.ils.SpanElement;
 
+import java.io.File;
+
 public class AddStructureElementIntoElement {
 
     public static void main(String[] args) {
@@ -16,6 +18,7 @@ public class AddStructureElementIntoElement {
     public static void runExamples() {
         String testID = "com/aspose/pdf/examples/AsposePdf/TaggedPDFs/AddStructureElementIntoElement/";
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addStructureElementIntoElement start");
