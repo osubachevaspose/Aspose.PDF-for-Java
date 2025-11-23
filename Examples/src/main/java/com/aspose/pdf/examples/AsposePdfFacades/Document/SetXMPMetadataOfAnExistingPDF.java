@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Document;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfXmpMetadata;
 
+import java.io.File;
+
 public class SetXMPMetadataOfAnExistingPDF {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class SetXMPMetadataOfAnExistingPDF {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/SetXMPMetadataOfAnExistingPDF/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setXMPMetadataOfAnExistingPDF start");

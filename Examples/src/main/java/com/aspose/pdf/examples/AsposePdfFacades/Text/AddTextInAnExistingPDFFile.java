@@ -8,6 +8,7 @@ import com.aspose.pdf.facades.PdfFileMend;
 import com.aspose.pdf.facades.WordWrapMode;
 
 import java.awt.Color;
+import java.io.File;
 
 public class AddTextInAnExistingPDFFile {
 
@@ -19,6 +20,7 @@ public class AddTextInAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Text/AddTextInAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addTextInAnExistingPDFFile start");

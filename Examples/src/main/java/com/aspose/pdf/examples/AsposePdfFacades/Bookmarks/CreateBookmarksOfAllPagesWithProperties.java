@@ -4,6 +4,7 @@ import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfBookmarkEditor;
 
 import java.awt.Color;
+import java.io.File;
 
 public class CreateBookmarksOfAllPagesWithProperties {
 
@@ -15,6 +16,7 @@ public class CreateBookmarksOfAllPagesWithProperties {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Bookmarks/CreateBookmarksOfAllPagesWithProperties/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example createBookmarksOfAllPagesWithProperties start");

@@ -4,6 +4,8 @@ import com.aspose.pdf.TextReplaceOptions;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 
+import java.io.File;
+
 public class ReplaceTextInAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class ReplaceTextInAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Text/ReplaceTextInAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example replaceTextInAnExistingPDFFile start");

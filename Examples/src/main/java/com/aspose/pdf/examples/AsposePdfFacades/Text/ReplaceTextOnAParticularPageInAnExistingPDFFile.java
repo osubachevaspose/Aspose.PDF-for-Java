@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Text;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfContentEditor;
 
+import java.io.File;
+
 public class ReplaceTextOnAParticularPageInAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class ReplaceTextOnAParticularPageInAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Text/ReplaceTextOnAParticularPageInAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example replaceTextOnAParticularPageInAnExistingPDFFile start");

@@ -4,6 +4,8 @@ import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.DocumentPrivilege;
 import com.aspose.pdf.facades.PdfFileSecurity;
 
+import java.io.File;
+
 public class SetPrivilegesOnAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class SetPrivilegesOnAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/SecurityAndSignatures/SetPrivilegesOnAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example setPrivilegesOnAnExistingPDFFile start");

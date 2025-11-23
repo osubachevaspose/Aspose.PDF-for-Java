@@ -7,6 +7,7 @@ import com.aspose.pdf.facades.PdfFileInfo;
 import com.aspose.pdf.facades.PdfFileStamp;
 
 import java.awt.Color;
+import java.io.File;
 
 public class AddPageNumberInAPDFFile {
 
@@ -18,6 +19,7 @@ public class AddPageNumberInAPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/StampsAndWatermarks/AddPageNumberInAPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addPageNumberInAPDFFile start");

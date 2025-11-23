@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Bookmarks;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfBookmarkEditor;
 
+import java.io.File;
+
 public class ImportBookmarksFromXMLToAnExistingPDFFile {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class ImportBookmarksFromXMLToAnExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Bookmarks/ImportBookmarksFromXMLToAnExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example importBookmarksFromXMLToAnExistingPDFFile start");

@@ -5,6 +5,7 @@ import com.aspose.pdf.facades.PdfContentEditor;
 
 import java.awt.Color;
 import java.awt.Rectangle;
+import java.io.File;
 
 public class AddingJavascriptActionsToExistingPDFFile {
 
@@ -16,6 +17,7 @@ public class AddingJavascriptActionsToExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Document/AddingJavascriptActionsToExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example addingJavascriptActionsToExistingPDFFile start");

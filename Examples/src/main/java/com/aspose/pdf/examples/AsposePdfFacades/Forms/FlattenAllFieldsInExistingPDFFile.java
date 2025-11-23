@@ -3,6 +3,8 @@ package com.aspose.pdf.examples.AsposePdfFacades.Forms;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.Form;
 
+import java.io.File;
+
 public class FlattenAllFieldsInExistingPDFFile {
 
     public static void main(String[] args) {
@@ -13,6 +15,7 @@ public class FlattenAllFieldsInExistingPDFFile {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Forms/FlattenAllFieldsInExistingPDFFile/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example flattenAllFieldsInExistingPDFFile start");

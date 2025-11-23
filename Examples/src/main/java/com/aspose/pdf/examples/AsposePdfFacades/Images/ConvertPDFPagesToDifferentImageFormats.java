@@ -4,6 +4,8 @@ import com.aspose.pdf.ImageType;
 import com.aspose.pdf.examples.Utils;
 import com.aspose.pdf.facades.PdfConverter;
 
+import java.io.File;
+
 public class ConvertPDFPagesToDifferentImageFormats {
 
     public static void main(String[] args) {
@@ -14,6 +16,7 @@ public class ConvertPDFPagesToDifferentImageFormats {
         String testID = "com/aspose/pdf/examples/AsposePdfFacades/Images/ConvertPDFPagesToDifferentImageFormats/";
         String dataDir = Utils.getDataDir(testID);
         String outputDir = Utils.getOutDir(testID);
+        new File(outputDir).mkdirs();
 
         System.out.println("============================");
         System.out.println("Example convertPDFPagesToDifferentImageFormats start");
