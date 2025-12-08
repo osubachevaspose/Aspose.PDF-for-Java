@@ -29,10 +29,10 @@ public class ConvertingNonSearchablePDFToSearchablePDFDocument {
     }
 
     public static void convertingNonSearchablePDFToSearchablePDFDocument(String dataDir, String outputDir) {
-        // Create callBack - logic recognize text for pdf images. Use outer OCR support
-        // HOCR standard(http://en.wikipedia.org/wiki/HOCR).
-        // We have used free google tesseract
-        // OCR(http://en.wikipedia.org/wiki/Tesseract_%28software%29)
+        // Create callBack - logic recognize text for pdf images.
+        // Use outer OCR support HOCR standard(http://en.wikipedia.org/wiki/HOCR).
+        // We have used free google tesseract OCR
+        // (http://en.wikipedia.org/wiki/Tesseract_%28software%29)
         CallBackGetHocr cbgh = new CallBackGetHocr() {
             @SuppressWarnings("deprecation")
             @Override

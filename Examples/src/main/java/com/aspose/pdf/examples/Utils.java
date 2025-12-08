@@ -154,8 +154,7 @@ public class Utils {
         ConvertPDFPagesToJPEGImage.runExamples();
         ConvertPDFPagesToPNGImages.runExamples();
         ConvertPDFPagesToTIFFImage.runExamples();
-        // no input file
-        // DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
+        DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber.runExamples();
         DeleteImagesFromThePDFFile.runExamples();
         ExtractImageProperties.runExamples();
         ExtractImagesFromThePDFFile.runExamples();
