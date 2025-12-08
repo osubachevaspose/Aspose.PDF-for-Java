@@ -32,7 +32,7 @@ public class DeleteImageFromPDFResourcesFoundByImagePlacementAbsorber {
             for (Page page : doc.getPages()) {
                 ImagePlacementAbsorber imagePlacementAbsorber = new ImagePlacementAbsorber();
                 page.accept(imagePlacementAbsorber);
-                for (ImagePlacement imagePlacement : (Iterable<ImagePlacement>) imagePlacementAbsorber.getImagePlacements())
+                for (ImagePlacement imagePlacement : imagePlacementAbsorber.getImagePlacements())
                     imagePlacement.getImage().delete();
             }
             doc.save(outputDir + "ImagesRemoved_output.pdf");
