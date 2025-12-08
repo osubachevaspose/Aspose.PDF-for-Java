@@ -250,7 +250,7 @@ public class Utils {
         AddRotatedTextInPDF.runExamples();
         AddTextToAnExistingPDFFile.runExamples();
         DetermineLineBreak.runExamples();
-        // no input file ExtractRotatedText.runExamples();
+        ExtractRotatedText.runExamples();
         ExtractTextBasedOnColumns.runExamples();
         ExtractTextFromAllThePagesOfPDFDocument.runExamples();
         ExtractTextFromAnParticularPageRegion.runExamples();
